@@ -1,0 +1,20 @@
+<?php if (!defined("HDPHP_PATH"))exit;return array (
+  'webname' => '后盾网77788787',
+  'icp' => '京ICP备12048441号-3',
+  'htmldir' => 'h',
+  'copyright' => 'Copyright © 2012-2013 HDCMS 后盾网 版权所有',
+  'keywords' => 'php培训,php实训,后盾网',
+  'description' => 'php顶尖培训--后盾网',
+  'email' => 'houdunwang@gmail.com',
+  'site_stat' => '2',
+  'water_on' => '1',
+  'backup_dir' => 'backup',
+  'editor' => 'ueditor',
+  'db_driver' => 'mysqli',
+  'auth_key' => 'houdunwang.com',
+  'upload_path' => 'upload',
+  'upload_img_path' => 'img',
+  'allow_type' => 'jpg,jpeg,png,bmp,gif',
+  'allow_size' => '2',
+);
+?>

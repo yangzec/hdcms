@@ -1,0 +1,132 @@
+<load file="__STATIC__/header.html"/>
+<js file="__CONTROL_TPL__/Js/add_field.js"/>
+        <script>
+            var mid={$hd.get.mid};
+        </script>
+</head>
+<body>
+<div class="right_content">
+    <div class="menu">
+        <a href="{|U:add_field,array('mid'=>$_GET['mid'])}"
+        <if value='METHOD==add'>class='action'</if>
+        >添加字段</a> <span>|</span>
+        <a href="{|U:'index',array('mid'=>$_GET['mid'])}"
+        <if value='METHOD==index'>class='action'</if>
+        >字段列表</a>
+    </div>
+    <div class="content">
+        <form action="{|U:'add'}" method="post">
+            <input type="hidden" name="mid" value="{$hd.get.mid}"/>
+            <table class="table">
+                <tr>
+                    <td style="text-align:right;width:300px;">字段类型</td>
+                    <td>
+                        <select id="field_select" name="show_type">
+                            <option value="input">单行文本</option>
+                            <option value="textarea">多行文本</option>
+                            <option value="num">数字</option>
+                            <option value="select">选项</option>
+                            <option value="editor">编辑器</option>
+                            <option value="image">单张图片</option>
+                            <option value="images">多图上传</option>
+                            <option value="datetime">日期与时间</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">作为主表字段</td>
+                    <td>
+                        <input type="radio" name="is_main_table" value="1"/> 是
+                        <input type="radio" name="is_main_table" value="0" checked="checked"/> 否
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align:right;">
+                        <span class="star">*</span>字段标题
+                    </td>
+                    <td>
+                        <input type="text" name="title" class="w200"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span class="star">*</span>字段名
+                    </td>
+                    <td>
+                        <input type="text" name="field_name" class="w200"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        字段提示
+                    </td>
+                    <td>
+                        <textarea name="message" style="width:350px;height:60px;"></textarea>
+                        <span class="validation">
+                    表单输入提示信息
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        参数
+                    </td>
+                    <td id="field_set">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        表单样式名
+                    </td>
+                    <td>
+                        <input type="text" name="css" class="w100"/>
+                        <span class="validation">
+                    定义表单的CSS样式名
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        表单验证
+                    </td>
+                    <td>
+                        <input type="text" name="validation" class="w250"/>
+                        <select id="validation_select">
+                            <option value="/^\d+$/">验证规则</option>
+                            <option value="/^\d+$/">数字</option>
+                            <option value="/^(http[s]?:)?(\/{2})?([a-z0-9]+\.)?[a-z0-9]+(\.(com|cn|cc|org|net|com.cn))$/i">网址</option>
+                            <option value="/(?:\(\d{3,4}\)|\d{3,4}-?)\d{8}/">电话</option>
+                            <option value="/^\d{11}$/">手机</option>
+                            <option value="/^[0-9]{1,20}$/">QQ</option>
+                        </select>
+                        <span class="validation">
+                    系统将通过此正则校验表单提交的数据合法性，如果不想校验数据请留空
+                </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        必须输入
+                    </td>
+                    <td>
+                        <input type="radio" name="required"/> 是
+                        <input type="radio" name="required" checked="checked"/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        数据校验未通过的提示信息
+                    </td>
+                    <td>
+                        <input type="text" name="error" class="w300"/>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" class="btn" value="添加字段" name="submit" style="margin-top:20px;margin-left:20px;"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

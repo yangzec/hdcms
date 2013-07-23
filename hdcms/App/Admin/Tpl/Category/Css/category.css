@@ -1,0 +1,19 @@
+/*********添加栏目***********/
+
+div.tab_content table.table {
+    border: none;
+}
+
+div.tab_content th {
+    width: 160px;
+}
+
+div.tab_content th, div.tab_content td {
+    border: none;
+    border-bottom: solid 1px #dcdcdc;
+}
+
+/*******添加栏目*********/
+div.send {
+    margin-top: 20px;
+}

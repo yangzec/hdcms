@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <bootstrap/>
+    <css file="__TPL__/Static/Css/login.css"/>
+</head>
+<body>
+<div class="top">
+
+</div>
+<div class="span12">
+    <form  class="form-horizontal" action="{|U:Login}" method="post">
+        <div class="control-group">
+            <label class="control-label" for="username">帐号</label>
+            <div class="controls">
+                <input type="text" name="username" id="username" placeholder="UserName">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">密码</label>
+            <div class="controls">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="code">验证码</label>
+            <div class="controls">
+                <input type="password" name="code" id="code" placeholder="">
+                <img src="{|U:code}" onclick="this.src='{|U:code}&'+Math.random()"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

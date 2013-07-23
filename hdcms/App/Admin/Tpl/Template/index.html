@@ -1,0 +1,75 @@
+<load file="__STATIC__/header.html"/>
+<js file="__CONTROL_TPL__/Js/template.js"/>
+<css file="__CONTROL_TPL__/Css/template.css"/>
+</head>
+<body>
+<div class="right_content">
+
+    <div class="tpl_list">
+            <h2>正在使用</h2>
+            <list from="$tpl" name="t">
+                <if value="$t.name==$conf.value">
+                    <ul>
+
+                        <li name="{$t.name}"
+                        <if value="$conf.value==$t.name">class="action"</if>
+                        >
+                        <div class="pic">
+                            <img src='{$t.pic}'/>
+                        </div>
+                        <p>
+                            <strong>风格名称:</strong><span>{$t.title}</span>
+                        </p>
+
+                        <p>
+                            <strong>模板目录:</strong><span>{$t.name}</span>
+                        </p>
+
+                        <p>
+                            <strong>模板作者:</strong><span>{$t.author}</span>
+                        </p>
+
+                        <p>
+                            <strong>作者QQ:</strong><span>{$t.qq}</span>
+                        </p>
+
+                        <div class="shade"></div>
+                        </li>
+                    </ul>
+                </if>
+            </list>
+    </div>
+    <div class="tpl_list">
+        <h2>所有风格</h2>
+        <ul>
+            <list from="$tpl" name="t">
+                <li name="{$t.name}"
+                <if value="$conf.value==$t.name">class="action"</if>
+                >
+                <div class="pic">
+                    <img src='{$t.pic}'/>
+                </div>
+                <p>
+                    <strong>风格名称:</strong><span>{$t.title}</span>
+                </p>
+
+                <p>
+                    <strong>模板目录:</strong><span>{$t.name}</span>
+                </p>
+
+                <p>
+                    <strong>模板作者:</strong><span>{$t.author}</span>
+                </p>
+
+                <p>
+                    <strong>作者QQ:</strong><span>{$t.qq}</span>
+                </p>
+
+                <div class="shade"></div>
+                </li>
+            </list>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

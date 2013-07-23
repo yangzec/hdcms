@@ -1,0 +1,55 @@
+div.tpl_list {
+    border: solid 2px #0088CC;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    background: #0088CC;
+    color: #fff;
+    text-indent: 10px;
+}
+
+div.tpl_list ul {
+    height: auto;
+    overflow: hidden;
+
+}
+
+div.tpl_list ul li {
+    border: solid 1px #ccc;
+    float: left;
+    width: 230px;
+    height: 270px;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 5px;
+    position: relative;
+}
+
+div.tpl_list ul li div.pic {
+    text-align: center;
+    margin-bottom: 15px;
+    margin: 6px 0px;
+
+    padding: 3px;
+    height: 160px;
+    overflow: hidden;
+}
+
+div.tpl_list ul li div.pic img {
+    width: 220px;
+}
+
+div.tpl_list ul li p {
+    height: 22px;
+    text-indent: 4px;
+    font-size: 12px;
+}
+
+div.tpl_list ul li p strong {
+    width: 60px;
+    display: inline-block;
+}

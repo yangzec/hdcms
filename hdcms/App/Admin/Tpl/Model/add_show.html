@@ -1,0 +1,101 @@
+<load file="__STATIC__/header.html"/>
+<script>
+    $(function () {
+        //表单验证
+        $("form").validation({
+            //验证规则
+            rules: {
+                model_name: {
+                    message: {default: "模型名称(必须为中文)", empty: "模型名不能为空", "error": "模型名称必须为中文"},
+                    rule: {required: true}
+                },
+                tablename: {
+                    message: {default: "模型主表名(不可以输入中文)", empty: "表名不能为空", "error": "表名已经存在"},
+                    rule: {regexp: /^[a-z]\w+$/i, ajax: "{|U:check_model}"}
+                }
+            }
+        });
+        //更改模型类型
+        $("input[name='type']").click(function () {
+            if ($(this).val() == 1) {
+                $("input[name='control']").val("Article{$hd.config.CONTROL_FIX}.class.php");
+            } else {
+                $("input[name='control']").val("ArticleSingle{$hd.config.CONTROL_FIX}.class.php");
+            }
+
+        })
+    })
+
+    //Ajax提交
+    $(function () {
+        $("formsdf").submit(function () {
+            if ($("*[validation='0']", this).length == 0) {
+                $.post("{|U:'add'}", $(this).serialize(), function (data) {
+                    if (data == 1) {
+                        $.dialog({'msg': "新增模型成功", type: "success", timeout: 1, close_handler: function () {
+                            location.href = "{|U:'index'}";
+                        }});
+                    } else {
+                        $.dialog({'msg': "模型添加失败", type: "error"});
+                    }
+                })
+            }
+            return false;
+        })
+    })
+</script>
+</head>
+<body>
+<div class="right_content">
+    <form action="{|U:'add'}" method="post">
+        <input type="hidden" name="enable" value="1"/>
+
+        <div class="tab">
+            <ul class="tab_menu">
+                <li lab="set"><a href="#site">添加模型</a></li>
+            </ul>
+            <div class="tab_content">
+                <div id="set">
+                    <table class="table">
+                        <tr>
+                            <th class="w200">模型名称</th>
+                            <td>
+                                <input type="text" name="model_name" class="w200"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>主表名</th>
+                            <td>
+                                <input type="text" name="tablename" class="w200"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>类型</th>
+                            <td>
+                                <input type="radio" name="type" value="1" checked="checked"/> 基本模型
+                                <input type="radio" name="type" value="2"/> 独立模型(只有主表)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>模型描述</th>
+                            <td>
+                                <input type="text" name="description" class="w200"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>处理程序</th>
+                            <td>
+                                <input type="text" name="control" value="Article{$hd.config.CONTROL_FIX}.class.php"
+                                       class="w200"/>
+                                <span class="validation">如果自定义了处理程序，具体方法名称参考Article{$hd.config.CONTROL_FIX}.class.php文件</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="btn" value="添加模型" style="margin-top:20px;"/>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>welcome</title>
+    <css file="__STATIC__/Css/common.css"/>
+    <jquery/>
+    <hdui/>
+</head>
+<body>
+<div class="right_content">
+    <form action="{|U:update_form}" method="post">
+        <div class="nav">
+            <div class="tab">
+                <ul class="tab_menu">
+                    <li lab="site"><a href="#site">站点配置</a></li>
+                    <li lab="base"><a href="#base">基本设置</a></li>
+                    <li lab="upload"><a href="#upload">上传配置</a></li>
+                </ul>
+                <div class="tab_content">
+                    <div id="site" class="con">
+                        <table class="table table-hover">
+                            <tr class="header">
+                                <th width="200">配置说明</th>
+                                <td width="300">配置值</td>
+                                <td class="info">模板调用</td>
+                            </tr>
+                            <list from="$site" name="$c">
+                                <tr>
+                                    <th width="200">{$c.info}</th>
+                                    <td width="300">
+                                        {|form_view:$c}
+                                    </td>
+                                    <td class="info">
+                                        <?php echo "{\$hd.".$c['name']."}";?>
+                                    </td>
+                                </tr>
+                            </list>
+                        </table>
+                    </div>
+                    <div id="base" class="con">
+                        <table class="table">
+                            <tr class="header">
+                                <th width="200">配置说明</th>
+                                <td width="300">配置值</td>
+                                <td class="info">模板调用</td>
+                            </tr>
+                            <list from="$base" name="$c">
+                                <tr>
+                                    <th width="200">{$c.info}</th>
+                                    <td width="300">
+                                        <input type="text" name="{$c.name}" value="{$c.value}" class="w250"/>
+                                    </td>
+                                    <td class="info">
+                                        <?php echo "{\$hd.".$c['name']."}";?>
+                                    </td>
+                                </tr>
+                            </list>
+                        </table>
+                    </div>
+                    <div id="upload" class="con">
+                        <table class="table">
+                            <tr class="header">
+                                <th width="200">配置说明</th>
+                                <td width="300">配置值</td>
+                                <td class="info">模板调用</td>
+                            </tr>
+                            <list from="$upload" name="$c">
+                                <tr>
+                                    <th width="200">{$c.info}</th>
+                                    <td width="300">
+                                        {|form_view:$c}
+                                    </td>
+                                    <td class="info">
+                                        <?php echo "{\$hd.".$c['name']."}";?>
+                                    </td>
+                                </tr>
+                            </list>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------提交修改----------->
+        <div class="send">
+            <input type="submit" value="修改配置" class="btn"/>
+        </div>
+    </form>
+    <!---------提交修改----------->
+</div>
+</body>
+</html>
