@@ -1,0 +1,134 @@
+<load file="__CONTROL_TPL__/header.html"/>
+</head>
+<body>
+<form action="{|U:add}" method="post" id="form" enctype="multipart/form-data">
+    <input type="hidden" name="mid" value="{$hd.get.mid}"/>
+    <if value="$hd.get.cid"><input type="hidden" name="cid" value="$hd.get.cid"/></if>
+    <div class="right_content">
+        <div class="tab">
+            <ul class="tab_menu">
+                <li lab="base"><a href="#base">发表文章</a></li>
+            </ul>
+            <div class="tab_content">
+                <div id="base" class="con">
+                    <table class="table">
+                        <tr>
+                            <th width="100">标题</th>
+                            <td>
+                                <input type="text" name="title" class="title w300"/>
+                                标题颜色：<input type="text" name="color" class="w100"/>
+                                <button type="button" onclick="select_color(this,'color')">选取颜色</button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>属性</th>
+                            <td>
+                                <list from="$flag" name="fl">
+                                    <label>
+                                        <input type="checkbox" name="flag[]" value="{$fl.fid}"/>
+                                        {$fl.flagname}[{$fl.fid}]
+                                    </label>
+                                </list>
+                            </td>
+
+                        </tr>
+                        <if value="!$hd.get.cid">
+                            <tr>
+                                <th>栏目</th>
+                                <td>
+                                    <select name="cid">
+                                        <list from="$category" name="cat">
+                                            <option value="{$cat.cid}">
+                                                <if value="$cat.pid!=0">└</if>
+                                                {$cat.html}{$cat.catname}
+                                            </option>
+                                        </list>
+                                    </select>
+                                </td>
+                            </tr>
+                        </if>
+                        <tr>
+                            <th>缩略图</th>
+                            <td>
+                                <table border="0">
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="thumb" class="w300" id="thumb"/>
+                                            <span class="thumb">
+                                            <input type="file" name="thumb_file" class="upload_thumb"
+                                                   onchange="img_upload(this,'{|U:thumbUpload}','img_target','thumb','thumbpic')"/>
+                                            </span>
+                                            <iframe name="img_target" style="display:none;"></iframe>
+                                        </td>
+                                        <td>
+                                            <div class="thumbpic"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>来源</th>
+                            <td>
+                                <input type="text" name="source" class="w150"/>
+                                作者:
+                                <input type="text" name="author" class="w150"/>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>跳转地址</th>
+                            <td>
+                                <input type="text" name="redirecturl" class="w300"/>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>生成静态</th>
+                            <td>
+                                <input type="radio" name="ishtml" value="1" checked="checked"/> 是
+                                <input type="radio" name="ishtml" value="2"/> 否
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>允许回复</th>
+                            <td>
+                                <input type="radio" name="allowreply" value="1" checked="checked"/> 允许
+                                <input type="radio" name="allowreply" value="2"/> 不允许
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>发布时间</th>
+                            <td>
+                                <input type="text" name="updatetime" id="updatetime" value="{|date:'Y-m-d'}"
+                                       class="w200"/>
+                                <script>
+                                    $(function () {
+                                        //日期中文字符
+                                        var dateFormat = {
+                                            dateFormat: "yy-mm-dd", monthNames: [ "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" ], dayNamesMin: [ "日", "一", "二", "三", "四", "五", "六" ]
+                                        };
+                                        //为ID为begin_time的input设置日历
+                                        $("#updatetime").datepicker(dateFormat);
+                                    });
+                                </script>
+
+                            </td>
+
+                        </tr>
+                        <list from="$user_field" name="f">
+                            {$f.html}
+                        </list>
+                    </table>
+                    <div class="send">
+                        <input type="submit" class="btn" name="send" value="发表"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

@@ -5,18 +5,20 @@
  * @category Admin
  * @author hdxj
  */
-class IndexControl extends Control
+class IndexControl extends RbacControl
 {
     function index()
     {
         header("Content-type:text/html;charset=utf-8");
-        $this->assign("model",M("model")->all());
+        $this->assign("model", M("model")->all());
         $this->display();
     }
+
     /**
      * 后台默认显示界面欢迎界面
      */
-    public function welcome(){
+    public function welcome()
+    {
         $this->display();
     }
 

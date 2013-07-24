@@ -9,12 +9,6 @@
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Admin/Tpl/Index/Js/index.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Admin/Tpl/Index/Css/index.css"/>
     <base target="con"/>
-    <script>
-        $(function () {
-            //首次进入栏目管理模块
-            $("a[lab='con']").trigger("click");
-        })
-    </script>
 </head>
 <body>
 <!--顶部导航-->
@@ -26,7 +20,7 @@
             <li><a href="#" lab="user">用户</a></li>
             <li><a href="#" lab="system">系统</a></li>
             <li><a href="#" lab="module">模块</a></li>
-            <li><a href="#" target="_blank">首页</a></li>
+            <li><a href="http://localhost/hdcms" target="_blank">首页</a></li>
         </ul>
     </div>
     <div class="m_menu">
@@ -37,13 +31,13 @@
 <!--左侧导航-->
 <div id="left">
     <!--内容-->
-    <div id="con" class="menu_block">
+    <div id="con" class="menu_block action">
         <h2>内容管理</h2>
         <ul class="menu">
             <?php foreach($model as $m):?>
-                <?php if($m["enable"]):?>
-                    <li><a href="<?php echo U($m['control'].'/index',array('mid'=>$m['mid']))?>"><?php echo $m['model_name'];?></a></li>
-                <?php endif;?>
+            <?php if($m["enable"]):?>
+            <li><a href="<?php echo U($m['control'].'/index',array('mid'=>$m['mid']))?>"><?php echo $m['model_name'];?></a></li>
+            <?php endif;?>
             <?php endforeach;?>
         </ul>
         <h2>基本操作</h2>
@@ -61,15 +55,14 @@
     <div id="user" class="menu_block">
         <h2>会员管理</h2>
         <ul class="menu">
-            <li class="active"><a href="http://localhost/hdcms/index.php/Admin/class">会员管理</a></li>
-            <li><a href="http://localhost/hdcms/index.php/Admin/stu">审核会员</a></li>
-            <li><a href="http://localhost/hdcms/index.php/Admin/stu">会员配置</a></li>
+            <li class="active"><a href="http://localhost/hdcms/index.php?a=Admin/class">会员管理</a></li>
+            <li><a href="http://localhost/hdcms/index.php?a=Admin/stu">审核会员</a></li>
+            <li><a href="http://localhost/hdcms/index.php?a=Admin/stu">会员配置</a></li>
         </ul>
-        <h2>会员管理</h2>
+        <h2>管理员配置</h2>
         <ul class="menu">
-            <li><a href="http://localhost/hdcms/index.php/Admin/class">会员管理</a></li>
-            <li><a href="http://localhost/hdcms/index.php/Admin/stu">审核会员</a></li>
-            <li><a href="http://localhost/hdcms/index.php/Admin/stu">会员配置</a></li>
+            <li><a href="<?php echo U('Admin/index');?>">管理员管理</a></li>
+            <li><a href="<?php echo U('Role/index');?>">角色管理</a></li>
         </ul>
     </div>
     <!--用户-->
@@ -82,11 +75,8 @@
             <li><a href="<?php echo U('System/code_show');?>/">验证码设置</a></li>
             <li><a href="<?php echo U('Template/index');?>/">模板风格</a></li>
         </ul>
-        <h2>管理员配置</h2>
-        <ul class="menu">
-            <li><a href="http://localhost/hdcms/index.php/Admin/class">角色管理</a></li>
-            <li><a href="http://localhost/hdcms/index.php/Admin/stu">管理员管理</a></li>
-        </ul>
+
+
     </div>
     <!--系统-->
 </div>

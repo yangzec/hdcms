@@ -1,5 +1,5 @@
 <?php
-class TemplateControl extends Control
+class TemplateControl extends SystemControl
 {
     /**
      * 模板风格列表
@@ -36,7 +36,7 @@ class TemplateControl extends Control
         }
         $this->assign("tpl", $tpl);
         //分配当前配置表中的风格
-        $conf = M("system")->find("name='tpl_style'");
+        $conf = M("system")->find("name='style'");
         $this->assign("conf", $conf);
         $this->display();
     }
@@ -45,10 +45,15 @@ class TemplateControl extends Control
     {
         $style = $_POST['style'];
         $db = M("system");
-        if ($db->where("name='tpl_style'")->save(array("value" => $style))) {
-            $this->_ajax(1);
-        } else {
-            $this->_ajax(0);
+        $db->where("name='style'")->save(array("value" => $style));
+        //修改缓存文件
+        $conf = $db->all();
+        $cacheData = array();
+        foreach ($conf as $c) {
+            $cacheData[$c['name']] = $c['value'];
         }
+        $config_file = "./data/config/base.inc.php";
+        $this->save($config_file, $cacheData);
+        $this->_ajax(1);
     }
 }

@@ -13,7 +13,7 @@ $(function () {
     $("a.select").click(function () {
         //父层表单名称
         var input_name = $(this).attr("action");
-        $(window.top.document.body).find("input[name='" + input_name + "']").val($(this).attr("href"));
+        $(window.parent.document.body).find("input[name='" + input_name + "']").val($(this).attr("href"));
         $(window.parent.document.body).find("div.modal").hide();
         $(window.parent.document.body).find("div.modal .content").html("<iframe src='#'></iframe>");
         return false;

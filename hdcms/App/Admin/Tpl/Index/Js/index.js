@@ -1,6 +1,6 @@
 //左侧菜单切换
 $(function () {
-    $(".top_menu ul.nav li a").click(function () {
+    $(".top_menu ul.nav li a[lab]").click(function () {
         $("div.menu_block").removeClass("action");
         var block = $("#" + $(this).attr("lab"));
         block.addClass("action");//显示菜单

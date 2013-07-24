@@ -4,10 +4,23 @@ class CategoryControl extends RbacControl
     /**
      * 显示栏目列表
      */
-    function index()
+    public function index()
     {
         $this->assign("category", F("category", false, './data/category'));
         $this->display();
+    }
+
+    /**
+     * 显示内容列表
+     * 点击栏目名后，根据当前栏目所属模型的控制器文件，显示当前栏目内容列表
+     */
+    public function showContentList()
+    {
+        $cid = $this->_get("cid", "intval");
+        $cid or exit;
+        $cat = M("category")->find($cid);
+        $model = M("model")->find($cat['mid']);
+        go(U($model['control'] . '/index', array("cid" => $cid, "mid" => $cat['mid'])));
     }
 
     /**
@@ -16,14 +29,11 @@ class CategoryControl extends RbacControl
     public function add()
     {
         //添加栏目
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['catname'])) {
             $db = M("category");
-            if ($db->add()) {
-                O("CacheControl", "category");
-                $this->success("栏目添加成功", "index");
-            } else {
-                $this->error("栏目添加失败", "index");
-            }
+            $db->add();
+            O("CacheControl", "category");
+            $this->success("栏目添加成功", "index");
         } else {
             $this->assign("model", F("model", false, './data/model'));
             $this->display();
@@ -37,13 +47,10 @@ class CategoryControl extends RbacControl
     {
         $db = M("category");
         //添加栏目
-        if (isset($_POST['submit'])) {
-            if ($db->save()) {
-                O("CacheControl", "category");
-                $this->success("栏目添加成功", "index");
-            } else {
-                $this->error("栏目添加失败", "index");
-            }
+        if (isset($_POST['catname'])) {
+            $db->save();
+            O("CacheControl", "category");
+            $this->success("编辑成功","index");
         } else {
             $field = $db->where("cid=" . $this->_get("cid"))->find();
             $this->assign("field", $field);
@@ -57,9 +64,9 @@ class CategoryControl extends RbacControl
      */
     public function updateCache()
     {
-        if (O("CacheControl", "category")) {
-            $this->success("更新栏目缓存成功", "index");
-        }
+        O("CacheControl", "category");
+        $this->success("更新栏目缓存成功", "index");
+
     }
 
     /**
@@ -68,7 +75,7 @@ class CategoryControl extends RbacControl
     public function selectTpl()
     {
         $db = M("system");
-        $tpl_style = $db->where("name='tpl_style'")->find();
+        $tpl_style = $db->where("name='style'")->find();
         $dir = isset($_GET['dir']) ? base64_decode($_GET['dir']) : "./template/" . $tpl_style['value'];
         $files = Dir::tree($dir, "html");
         $this->assign("tpl_style", $tpl_style['value']);
@@ -95,22 +102,31 @@ class CategoryControl extends RbacControl
      */
     public function del()
     {
-        $cid = $_GET['cid'];
+        $cid = $this->get("cid", "intval");
+        $cid or exit(0);
         $db = M("category");
         //删除栏目
-        if ($db->where("cid=$cid")->del()) {
-            //删除文章
-            if ($db->table("news")->where("cid=$cid")->del()) {
-                //删除文章正文
-                if ($db->table("news_data")->where("cid=$cid")->del()) {
-
-                }
-            }
-            exit(1);
-        } else {
-            exit(0);
-        }
+        $db->where("cid=$cid")->del();
+        //删除文章(
+        $db->table("news")->where("cid=$cid")->del();
+        //删除文章正文
+        $db->table("news_data")->where("cid=$cid")->del();
+        echo 1;
+        exit;
     }
+
+    /**
+     * 验证静态目录html_dir是否已经在使用
+     */
+//    public function checkHtmlDir()
+//    {
+//        $dir = $this->_post("html_dir");
+//        if (!M("category")->where("html_dir='$dir'")->find()) {
+//            echo 1;
+//            exit;
+//        }
+//
+//    }
 
 }
 

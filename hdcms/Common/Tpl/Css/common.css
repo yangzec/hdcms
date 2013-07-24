@@ -1,0 +1,17 @@
+/**缩略图上传按钮**/
+span.thumb {
+    position: relative;
+    display: inline-block;
+}
+
+span.thumb input.upload_thumb {
+    width: 55px;
+    border: none;
+    padding: 0px;
+}
+
+/*显示缩略图*/
+div.thumbpic {
+    margin-left: 20px;
+    font-size: 12px;
+}

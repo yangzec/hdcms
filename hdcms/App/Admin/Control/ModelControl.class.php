@@ -12,14 +12,6 @@ class ModelControl extends Control
     }
 
     /**
-     * 添加模型视图
-     */
-    public function add_show()
-    {
-        $this->display();
-    }
-
-    /**
      * 添加模型时Ajax验证模型是否存在
      */
     public function check_model()
@@ -37,18 +29,23 @@ class ModelControl extends Control
      */
     public function add()
     {
-        $db = M("model");
-        $table = $_POST['tablename'];
-        $_POST['control'] = ucfirst(preg_replace('@\.class\.php|' . C("CONTROL_FIX") . '@i', '', $_POST['control']));
-        //Model表中添加记录
-        if ($mid = $db->add()) {
-            //创建模型表
-            $this->create_model_table($table, $_POST['type']);
-            //更新缓存
-            O("CacheControl", "model");
-            $this->success("添加成功", "index");
+        if (isset($_POST['tablename'])) {
+            $db = M("model");
+            $table = $_POST['tablename'];
+            $_POST['control'] = ucfirst(preg_replace('@\.class\.php|' . C("CONTROL_FIX") . '@i', '', $_POST['control']));
+            //Model表中添加记录
+            if ($mid = $db->add()) {
+                //创建模型表
+                $this->create_model_table($table, $_POST['type']);
+                //更新缓存
+                O("CacheControl", "model");
+                $msg = "添加成功<script>window.top.location.href='".__APP__."&c=index&m=index&module=module'</script>";
+                $this->success($msg, "index");
+            } else {
+                $this->error("添加失败", "index");
+            }
         } else {
-            $this->error("添加失败", "index");
+            $this->display("add_show");
         }
     }
 

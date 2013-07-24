@@ -33,7 +33,7 @@ class FieldControl extends Control
      */
     public function add()
     {
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['field_name'])) {
             $db = k("Field");
             if ($db->addField($_POST)) {
                 $this->success("表字段修改成功", U("index", array("mid" => $_POST['mid'])));

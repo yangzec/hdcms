@@ -21,25 +21,26 @@ class SystemControl extends Control
             $db->where("name='$name'")->save(array("value" => $value));
         }
         $config_file = "./data/config/base.inc.php";
-        $this->save($config_file, $data);
+        $conf = $db->all();
+        $cacheData = array();
+        foreach ($conf as $c) {
+            $cacheData[$c['name']] = $c['value'];
+        }
+        $this->save($config_file, $cacheData);
     }
 
     /**
      * 写入配置文件
-     * @access private
-     * @param $config_file 文件名
+     * @param $config_file 配置文件
      * @param $data 数据
      */
-    private function save($config_file, $data, $url = "index")
+    protected function save($config_file, $data)
     {
         //检测目录写入权限
         if (!is_writable(dirname($config_file))) {
             $this->error("请修改目录" . dirname($config_file) . "为可写权限");
         }
-        $s = file_put_contents($config_file, "<?php if (!defined(\"HDPHP_PATH\"))exit;return " . var_export($data, true) . ";\n?>");
-        if ($s) {
-            $this->success("修改配置成功", $url);
-        }
+        file_put_contents($config_file, "<?php if (!defined(\"HDPHP_PATH\"))exit;return " . var_export($data, true) . ";\n?>");
     }
 
     /**
@@ -67,7 +68,8 @@ class SystemControl extends Control
             $_POST['water_img'] = $water_file;
         }
         $data = array_merge(include "./data/config/water.inc.php", $_POST);
-        $this->save("./data/config/water.inc.php", $data, "water_show");
+        $this->save("./data/config/water.inc.php", $data);
+        $this->success("修改配置成功", "water_show");
     }
 
     /**
@@ -86,6 +88,7 @@ class SystemControl extends Control
     {
         $config_file = "./data/config/code.inc.php";
         $data = array_merge(require $config_file, $_POST);
-        $this->save($config_file, $data, "code_show");
+        $this->save($config_file, $data);
+        $this->success("修改配置成功", "code_show");
     }
 }

@@ -4,7 +4,8 @@ if (!defined("HDPHP_PATH")) exit('No direct script access allowed');
 $config = array(
     "DEBUG_SHOW" => 0,
     "AUTO_LOAD_FILE" => "functions,html",
-
+    "PATHINFO_HTML" => "",
+    "URL_TYPE" => 2, //普通模式Url
 );
 return array_merge(include "./data/config/core.inc.php", $config);
 ?>

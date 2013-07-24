@@ -6,7 +6,7 @@ return array (
     'model_name' => '普通文章',
     'tablename' => 'news',
     'enable' => '1',
-    'description' => '普通文章',
+    'description' => '',
     'control' => 'Article',
     'type' => '1',
   ),

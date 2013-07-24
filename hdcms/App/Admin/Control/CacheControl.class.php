@@ -1,5 +1,5 @@
 <?php
-class CacheControl extends CommonControl
+class CacheControl extends RbacControl
 {
     /**
      * 更新所有缓存
@@ -20,7 +20,13 @@ class CacheControl extends CommonControl
      */
     public function category()
     {
-        $db = M("category");
+        $db = V("category");
+        $db->view = array( //定义视图
+            'model' => array( //定义user_info表规则
+                'type' => "inner", //指定连接方式
+                "on" => "category.mid=model.mid", //关联条件
+            )
+        );
         $data = Data::channel($db->all(), $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
         return F("category", $data, './data/category');
     }

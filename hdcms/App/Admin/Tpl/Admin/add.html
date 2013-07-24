@@ -1,0 +1,74 @@
+<load file="__CONTROL_TPL__/header.html"/>
+<script>
+
+    $(function () {
+        $("form").validation({
+            //验证规则
+            rules: {
+                username: {//验证id为email的表单
+                    message: {default: "请输入英文字母与数字组合", "success": "输入正确", "error": "用户名为空或此用户已经存在"},
+                    rule: {required: true, regexp: /^[a-z]\w+$/i, ajax: "{|U:'checkUser'}"}
+                },
+                password: {//静态目录
+                    message: {"error": "密码为空或2次输入密码不一致"},
+                    rule: {required: true, confirm: "password2"}
+                },
+                email: {//验证id为email的表单
+                    message: { default: "管理员邮箱", "error": "邮箱格式正确"},
+                    rule: {required: false, email: true}
+                }
+            }
+        })
+    })
+</script>
+<form action="{|U:'add'}" method="post">
+    <input type="hidden" name="type" value="1"/>
+    <table class="table">
+        <tr>
+            <th class="w100">管理员名称</th>
+            <td>
+                <input type="text" name="username" class="w200"/>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">所属角色</th>
+            <td>
+                <select name="rid">
+                    <list from="$role" name="r">
+                        <option value="{$r.rid}">{$r.rname}</option>
+                    </list>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">密码</th>
+            <td>
+                <input type="password" name="password" class="w200"/>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">确认密码</th>
+            <td>
+                <input type="password" name="password2" class="w200"/>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">真实名称</th>
+            <td>
+                <input type="text" name="realname" class="w200"/>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">邮箱</th>
+            <td>
+                <input type="text" name="email" class="w200"/>
+            </td>
+        </tr>
+    </table>
+    <div style="margin-top:20px;">
+        <input type="submit" class="btn" value="确定"/>
+    </div>
+</form>
+</div>
+</body>
+</html>

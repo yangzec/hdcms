@@ -1,5 +1,4 @@
 <load file="__CONTROL_TPL__/header.html"/>
-<js file="__COMMON__/Js/common.js"/>
 </head>
 <body>
 <form action="{|U:add}" method="post" id="form" enctype="multipart/form-data">
@@ -16,7 +15,7 @@
                         <tr>
                             <th width="100">标题</th>
                             <td>
-                                <input type="text" name="title" class="title w300"/>
+                                <input type="text" name="title" class="title w400"/>
                                 标题颜色：<input type="text" name="color" class="w100"/>
                                 <button type="button" onclick="select_color(this,'color')">选取颜色</button>
                             </td>
@@ -27,7 +26,8 @@
                             <td>
                                 <list from="$flag" name="fl">
                                     <label>
-                                        <input type="checkbox" name="flag" value="{$fl.fid}"/> {$fl.flagname}[{$fl.fid}]
+                                        <input type="checkbox" name="flag[]" value="{$fl.fid}"/>
+                                        {$fl.flagname}[{$fl.fid}]
                                     </label>
                                 </list>
                             </td>
@@ -57,7 +57,7 @@
                                             <input type="text" name="thumb" class="w300" id="thumb"/>
                                             <span class="thumb">
                                             <input type="file" name="thumb_file" class="upload_thumb"
-                                                   onchange="img_upload(this,'{|U:thumb_upload}','img_target','thumb','thumbpic')"/>
+                                                   onchange="img_upload(this,'{|U:thumbUpload}','img_target','thumb','thumbpic')"/>
                                             </span>
                                             <iframe name="img_target" style="display:none;"></iframe>
                                         </td>
@@ -87,21 +87,21 @@
                         <tr>
                             <th>关键字</th>
                             <td>
-                                <input type="text" name="{$stable}[keywords]" class="w400"/>
+                                <input type="text" name="{$model.tablename}_data[keywords]" class="w400"/>
                             </td>
 
                         </tr>
                         <tr>
                             <th>内容摘要</th>
                             <td>
-                                <textarea name="{$stable}[description]" style="width:500px;height:70px;"></textarea>
+                                <textarea name="{$model.tablename}_data[description]" style="width:500px;height:70px;"></textarea>
                             </td>
 
                         </tr>
                         <tr>
                             <th>内容</th>
                             <td>
-                                <script id="content" name="{$stable}[content]" type="text/plain"></script>
+                                <script id="content" name="{$model.tablename}_data[content]" type="text/plain"></script>
                                 <script type='text/javascript'>
                                     var ue = UE.getEditor('content', {
                                         imageUrl: '{|editor_upload_img}'//处理上传脚本
@@ -150,7 +150,7 @@
                             </td>
 
                         </tr>
-                        <list from="$field" name="f">
+                        <list from="$user_field" name="f">
                             {$f.html}
                         </list>
                     </table>

@@ -1,0 +1,31 @@
+<load file="__CONTROL_TPL__/header.html"/>
+<form action="{|U:'edit'}" method="post">
+    <input type="hidden" name="rid" value="{$field.rid}"/>
+    <table class="table">
+        <tr>
+            <th class="w100">角色名称</th>
+            <td>
+                <input type="text" name="rname" class="w200" value="{$field.rname}"/>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">角色描述</th>
+            <td>
+                <textarea name="title" class="w300">{$field.title}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th class="w100">是否启用</th>
+            <td>
+                <label><input type="radio" name="state" value="1" checked="checked"/> 启用</label>
+                <label><input type="radio" name="state" value="0"/> 禁止</label>
+            </td>
+        </tr>
+    </table>
+    <div style="margin-top:20px;">
+        <input type="submit" class="btn" value="确定"/>
+    </div>
+</form>
+</div>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <tr>
         <td width="30">CID</td>
         <td>栏目名称</td>
+        <td>所属模型</td>
         <td width="100">访问</td>
         <td width="200">操作</td>
     </tr>
@@ -13,8 +14,12 @@
         <tr>
             <td>{$c.cid}</td>
             <td>
-                <a hfef="{|U:'news/index'}">
-                    <if value="$c.pid!=0">└</if>{$c.html}{$c.catname}</a>
+                <a href="{|U:'showContentList',array('cid'=>$c['cid'])}">
+                    <if value="$c.pid!=0">└</if>
+                    {$c.html}{$c.catname}</a>
+            </td>
+            <td>
+                <a href="{|U:$c['control'].'/index','mid='.$c['mid']}">{$c.model_name}</a>
             </td>
             <td><a href="{|U:'index/index/index'}" target="_blank">访问</a></td>
             <td>
