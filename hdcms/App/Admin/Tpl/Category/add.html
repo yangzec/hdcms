@@ -1,11 +1,13 @@
 <load file="__CONTROL_TPL__/header.html"/>
 <form action="{|U:add}" method="post">
     <input type="hidden" name="pid" value="{$hd.get.pid|default:0}"/>
+
     <div class="tab">
         <ul class="tab_menu">
-            <li lab="base"><a href="#site">基本设置</a></li>
-            <li lab="tpl"><a href="#base">模板设置</a></li>
-            <li lab="html"><a href="#upload">静态HTML设置</a></li>
+            <li lab="base"><a href="#">基本设置</a></li>
+            <li lab="tpl"><a href="#">模板设置</a></li>
+            <li lab="html"><a href="#">静态HTML设置</a></li>
+            <li lab="access"><a href="#">权限设置</a></li>
         </ul>
         <div class="tab_content">
             <div id="base" class="con">
@@ -110,6 +112,42 @@
                         {aid} 文章ID,
                         {catdir} 栏目目录
                         </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="access" class="con">
+                <table class="table">
+                    <tr>
+                        <th class="w60">角色权限</th>
+                        <td>
+                            <table class="table table-title">
+                                <thead>
+                                <tr>
+                                    <td>角色名称</td>
+                                    <td>查看</td>
+                                    <td>添加</td>
+                                    <td>编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>超级管理员</td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                </tr>
+                                <tr>
+                                    <td>超级管理员</td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/> </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </td>
                     </tr>
                 </table>

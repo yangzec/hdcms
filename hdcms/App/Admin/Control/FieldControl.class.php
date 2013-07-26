@@ -3,7 +3,7 @@
  * 模型字段管理
  * Class ModelControl
  */
-class FieldControl extends Control
+class FieldControl extends RbacControl
 {
     /**
      * 字段列表

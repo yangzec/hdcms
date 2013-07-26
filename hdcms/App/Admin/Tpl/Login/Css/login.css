@@ -1,7 +1,29 @@
-body{
+body {
     background: #fcfcfc;
 }
+
 div.top {
-    background: #0088CC;
-    height:30px;margin-bottom: 20px;
+    background: #3A6EA5;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+div.main {
+    position: relative;
+}
+div.main tr th{
+    vertical-align: top;
+}
+div.main table tr td input {
+    height: 26px;
+}
+
+div.code {
+    background: #FCFCFC;
+}
+div.code span{
+    display:block;padding:3px 0px;
+}
+div.code img{
+    cursor: pointer;
 }

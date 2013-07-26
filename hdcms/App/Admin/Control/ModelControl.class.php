@@ -1,5 +1,5 @@
 <?php
-class ModelControl extends Control
+class ModelControl extends RbacControl
 {
     /**
      * 显示模型列表

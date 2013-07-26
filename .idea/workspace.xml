@@ -1,191 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="初始化">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/AccessControl.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleSingleControl.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/RoleControl.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/Js/access.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/Css/article.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/Js/article.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/Common/Tpl/Css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/Css/css.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/default/css/news.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/default/news_article.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/default/news_list.html" />
+    <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/BackupControl.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Member/IndexControl.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Login/Js/js.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/default/news_article copy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/table_list.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/5acb058d0cad1b053fb2794887417b3b.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/642fe801c689cbe375ac8586f0023627.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/645ddad7f1c824179e26d65d28ec598c.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/65d1d1916ea44f469f8eb2792f5c91ef.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/6b9c7f346118ddd0fa963edb4dffbe2e.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/70201e3296feafdad71c44f5a8763c92.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/7373f9034a59560e853f73537e639b70.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/7507897b765c460d1ec9b8028a1350ee.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/843f8e70a094ad8c93893bb9fa9ca9fc.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/9b0f06847c8ca49a5a50e73c78766c98.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/c4e0de3effeea9d4e8e555999ec59e9d.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/d0a32e958d1ddeeb61fcaca89bd75df5.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/d14e5f9cdef59a7804efc24ea4190df7.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/d30399cd068d86dbc947944a2ef85579.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/dff25b252b03c67b5e2950ab1d3eae51.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/e2ba738e1b8198aaf6bb131e346ba64a.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/f3f3150a13510b2b1607513f8b39539b.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/47edf9d8f1eaa47ec20f3acc89b1069c.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/4c857d7c6e641d80e4bdc4e51c8d57e0.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/58d431f42d5ee6b7ea36377ff4d073d7.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/660f42e952ba70b71a4a0a6463d7ec8f.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/81ea69c368ca37a0a57017f3f78104ff.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/a9d71d452d19a14f1757ba4134b18011.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/d05a7eebd823e138670e52c9d9c6161b.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/d3a425c9b84947a85e35022674142344.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Index/Table/d05a7eebd823e138670e52c9d9c6161b.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 2/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 2/ab/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 2/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 2/thumb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 3/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 3/ab/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 3/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 3/thumb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 4/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 4/ab/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 4/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 4/thumb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 5/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 5/ab/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 5/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy 5/thumb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy/ab/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default copy/thumb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default/ab/1.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Js/common.js" afterPath="$PROJECT_DIR$/hdcms/Common/Tpl/Js/common.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/ad22c3ae0eee7091c07e8df8c22984c5.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/13531374599524.jpg" afterPath="$PROJECT_DIR$/upload/13531374599524.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/13951374591129.jpg" afterPath="$PROJECT_DIR$/upload/13951374591129.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/15931374592491.jpg" afterPath="$PROJECT_DIR$/upload/15931374592491.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/19281374596738.jpg" afterPath="$PROJECT_DIR$/upload/19281374596738.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/27871374599327.jpg" afterPath="$PROJECT_DIR$/upload/27871374599327.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/33871374597388.jpg" afterPath="$PROJECT_DIR$/upload/33871374597388.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/34501374599917.jpg" afterPath="$PROJECT_DIR$/upload/34501374599917.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/37491374596669.jpg" afterPath="$PROJECT_DIR$/upload/37491374596669.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/43561374597491.jpg" afterPath="$PROJECT_DIR$/upload/43561374597491.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/44441374596639.jpg" afterPath="$PROJECT_DIR$/upload/44441374596639.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/46621374599368.jpg" afterPath="$PROJECT_DIR$/upload/46621374599368.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/54081374599466.jpg" afterPath="$PROJECT_DIR$/upload/54081374599466.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/55561374599848.jpg" afterPath="$PROJECT_DIR$/upload/55561374599848.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/60221374597260.jpg" afterPath="$PROJECT_DIR$/upload/60221374597260.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/64671374599352.jpg" afterPath="$PROJECT_DIR$/upload/64671374599352.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/66311374599708.jpg" afterPath="$PROJECT_DIR$/upload/66311374599708.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/72581374596650.jpg" afterPath="$PROJECT_DIR$/upload/72581374596650.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/76511374599726.jpg" afterPath="$PROJECT_DIR$/upload/76511374599726.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/7941374597629.jpg" afterPath="$PROJECT_DIR$/upload/7941374597629.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/8651374599614.jpg" afterPath="$PROJECT_DIR$/upload/8651374599614.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/95951374597571.jpg" afterPath="$PROJECT_DIR$/upload/95951374597571.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/water/water.png" afterPath="$PROJECT_DIR$/Data/water/water.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/model/20f35e630daf44dbfa4c3f68f5399d8c.php" afterPath="$PROJECT_DIR$/Data/model/20f35e630daf44dbfa4c3f68f5399d8c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/CacheControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/CacheControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/CategoryControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/CategoryControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/IndexControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Index/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Index/Control/IndexControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/LoginControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/LoginControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/ModelControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/ModelControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/SystemControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/SystemControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/TemplateControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/TemplateControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/add.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/add.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/add.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/Css/article.css" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/Css/article.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/config/base.inc.php" afterPath="$PROJECT_DIR$/Data/config/base.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" afterPath="$PROJECT_DIR$/Data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" afterPath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/category.js" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Static/Css/common.css" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Static/Css/common.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/config/core.inc.php" afterPath="$PROJECT_DIR$/Data/config/core.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/edit.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/hdcms.iml" afterPath="$PROJECT_DIR$/.idea/hdcms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/default/config.xml" afterPath="$PROJECT_DIR$/template/default/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/edit.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/Css/index.css" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/Css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Template/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Template/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Login/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Login/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/System/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/System/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/Js/index.js" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/Js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/selectTpl.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/selectTpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Tpl/thumb_upload.html" afterPath="$PROJECT_DIR$/hdcms/Common/Tpl/thumb_upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/validation.js" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/validation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Login/Css/login.css" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Login/Css/login.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374690775575" ignored="false" />
+    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374834987435" ignored="false" />
     <file path="/thumb_upload.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374647162123" ignored="false" />
-    <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374695540095" ignored="false" />
-    <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374691493302" ignored="false" />
+    <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374703770126" ignored="false" />
+    <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374744725608" ignored="false" />
     <file path="/common.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374647406104" ignored="false" />
     <file path="/common.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374649011187" ignored="false" />
     <file path="/ArticleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374669322497" ignored="false" />
     <file path="/CommonControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374672455454" ignored="false" />
-    <file path="/CacheControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374672975641" ignored="false" />
-    <file path="/ModelControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374654022182" ignored="false" />
+    <file path="/CacheControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374841106683" ignored="false" />
+    <file path="/ModelControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374701827001" ignored="false" />
     <file path="/add_show.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374652622294" ignored="false" />
-    <file path="/index.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374694773058" ignored="false" />
+    <file path="/index.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374840683230" ignored="false" />
     <file path="/FieldModel.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374666146807" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Org/HdUi/css/hdui.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374670193245" ignored="false" />
-    <file path="/hdui.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374670141496" ignored="false" />
-    <file path="/CategoryControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682193818" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Org/HdUi/css/hdui.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374706115832" ignored="false" />
+    <file path="/hdui.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705996756" ignored="false" />
+    <file path="/CategoryControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705294985" ignored="false" />
     <file path="/ArticleSingleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374672681399" ignored="false" />
-    <file path="/IndexControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374683622589" ignored="false" />
+    <file path="/IndexControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704380616" ignored="false" />
     <file path="/SystemControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374674038531" ignored="false" />
     <file path="/TemplateControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682098813" ignored="false" />
     <file path="/news_article.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374680321773" ignored="false" />
     <file path="/validation.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374675985078" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Config/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374678008046" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Config/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374699771800" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/Control.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374678014333" ignored="false" />
     <file path="/template.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374678460661" ignored="false" />
     <file path="/news.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374681404095" ignored="false" />
     <file path="/selectTpl.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682356056" ignored="false" />
-    <file path="/category.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682653407" ignored="false" />
+    <file path="/category.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705560493" ignored="false" />
     <file path="/news_list.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682713408" ignored="false" />
-    <file path="/RbacControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374695759873" ignored="false" />
+    <file path="/RbacControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374702990260" ignored="false" />
     <file path="/RoleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374695593050" ignored="false" />
     <file path="/access.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374690569702" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Rbac.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374686422617" ignored="false" />
-    <file path="/Rbac.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374686235925" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Rbac.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704107117" ignored="false" />
+    <file path="/Rbac.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704097179" ignored="false" />
     <file path="/css.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374689411795" ignored="false" />
     <file path="/access.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374689617501" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Function/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374688238754" ignored="false" />
-    <file path="/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374688129800" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Function/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374702578493" ignored="false" />
+    <file path="/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374702563381" ignored="false" />
     <file path="/AccessControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374690449741" ignored="false" />
-    <file path="/edit.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374695406756" ignored="false" />
+    <file path="/edit.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374702203539" ignored="false" />
     <file path="/AdminControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374694869281" ignored="false" />
     <file path="/dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374692658291" ignored="false" />
+    <file path="/login.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374697346350" ignored="false" />
+    <file path="/LoginControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704139819" ignored="false" />
+    <file path="/js.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374839725781" ignored="false" />
+    <file path="/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374699686262" ignored="false" />
+    <file path="/index.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374701087159" ignored="false" />
+    <file path="/index.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374701036770" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Org/HdUi/js/hdui.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705455705" ignored="false" />
+    <file path="/hdui.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705455704" ignored="false" />
+    <file path="/index.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374741221665" ignored="false" />
+    <file path="/BackupControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374841121458" ignored="false" />
+    <file path="/table_list.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374838697475" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Backup.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374839319497" ignored="false" />
+    <file path="/Backup.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374773653546" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Hd/Compile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374778819550" ignored="false" />
+    <file path="/Compile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374777140760" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/Example/Index/Config/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374833297147" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,46 +117,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="51" selection-start="623" selection-end="623" vertical-scroll-proportion="-4.7419353">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RbacControl.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="12" selection-start="306" selection-end="306" vertical-scroll-proportion="-10.645162">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginControl.class.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/LoginControl.class.php">
+      <file leaf-file-name="add_show.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/add_show.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoleControl.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/RoleControl.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="35" selection-start="543" selection-end="543" vertical-scroll-proportion="-4.612903">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="64" selection-start="766" selection-end="766" vertical-scroll-proportion="-8.5161295">
               <folding />
             </state>
           </provider>
@@ -265,28 +141,25 @@
       <MyDateState />
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/AccessControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/header.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/header.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/header.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/index.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/edit.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/LoginControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Member/IndexControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/CategoryControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/category.js" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/System/index.html" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/SystemControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/index.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/edit.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/add.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/edit.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/RoleControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/add.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/index.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/Js/js.js" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/table_list.html" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/index.html" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/header.html" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/CacheControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/BackupControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/index.html" />
       </list>
     </option>
   </component>
@@ -322,6 +195,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -350,24 +224,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="hdcms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -387,36 +243,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Control" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -472,225 +298,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Role" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Category" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Category" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Access" />
+              <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,88 +347,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Control" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="field" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -829,17 +360,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hdcms/App/Member/Control" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/Css" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/Js" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role" />
       <recent name="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access" />
-      <recent name="$PROJECT_DIR$/hdcms/Common/Tpl/Js" />
     </key>
   </component>
   <component name="RunManager">
@@ -887,7 +419,11 @@
       <created>1374602027048</created>
       <updated>1374602027048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加RBAC权限验证">
+      <created>1374695807844</created>
+      <updated>1374695807844</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -898,12 +434,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17263843" sideWeight="0.49832216" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980457" sideWeight="0.67114097" order="0" side_tool="false" content_ui="combo" x="507" y="69" width="265" height="596" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24918567" sideWeight="0.67114097" order="0" side_tool="false" content_ui="combo" x="507" y="69" width="265" height="596" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21579805" sideWeight="0.38758388" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32550335" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -915,6 +450,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -960,7 +496,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加RBAC权限验证" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -975,123 +511,105 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="初始化" />
+    <MESSAGE value="添加RBAC权限验证" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="21" selection-start="50" selection-end="50" vertical-scroll-proportion="0.086105675" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AccessControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="44" selection-start="639" selection-end="639" vertical-scroll-proportion="0.442029">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="228" selection-end="265" vertical-scroll-proportion="0.11646587" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/header.html">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/IndexControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="30" selection-start="645" selection-end="645" vertical-scroll-proportion="0.68115944">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/validation.js">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="18" selection-end="577" vertical-scroll-proportion="0.3773585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="143" selection-end="143" vertical-scroll-proportion="0.23362832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="216" selection-end="216" vertical-scroll-proportion="0.23362832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="44" selection-start="720" selection-end="720" vertical-scroll-proportion="0.81769913">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="23" selection-start="168" selection-end="168" vertical-scroll-proportion="-1.7101449">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Access/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="55" selection-start="1463" selection-end="1463" vertical-scroll-proportion="1.712381">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="5" column="38" selection-start="84" selection-end="84" vertical-scroll-proportion="0.041904762" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="57" selection-start="2011" selection-end="2011" vertical-scroll-proportion="2.5507247">
+        <state line="97" column="25" selection-start="3040" selection-end="3040" vertical-scroll-proportion="0.5045872" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleSingleControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/BackupControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="5" selection-start="1589" selection-end="1589" vertical-scroll-proportion="0.47769517">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Admin/add.html">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/CacheControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="43" selection-end="800" vertical-scroll-proportion="0.039855074">
+        <state line="16" column="20" selection-start="396" selection-end="396" vertical-scroll-proportion="0.557971">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="18" selection-start="70" selection-end="70" vertical-scroll-proportion="-0.7572464">
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#form#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/edit.html">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="64" selection-start="766" selection-end="766" vertical-scroll-proportion="-8.5161295">
+        <state line="9" column="11" selection-start="375" selection-end="375" vertical-scroll-proportion="0.35044247">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/add.html">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Backup/table_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="70" selection-start="1040" selection-end="1042" vertical-scroll-proportion="0.59782606">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/RoleControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="35" selection-start="543" selection-end="543" vertical-scroll-proportion="-4.612903">
+        <state line="9" column="13" selection-start="141" selection-end="301" vertical-scroll-proportion="0.2913669">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Role/index.html">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="51" selection-start="623" selection-end="623" vertical-scroll-proportion="-4.7419353">
+        <state line="28" column="20" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.442029">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/CategoryControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="306" selection-end="306" vertical-scroll-proportion="-10.645162">
+        <state line="119" column="38" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.09963768">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/LoginControl.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/add_show.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />

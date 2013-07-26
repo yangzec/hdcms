@@ -3,38 +3,63 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title></title>
-    <bootstrap/>
-    <css file="__TPL__/Static/Css/login.css"/>
+    <jquery/>
+    <hdui/>
+    <css file="__CONTROL_TPL__/Css/login.css"/>
+    <js file="__CONTROL_TPL__/Js/js.js"/>
+    <script>
+        $(function () {
+            $("form").validation({
+                //验证规则
+                rules: {
+                    username: {//验证id为email的表单
+                        message: {default: "请输入后台帐号", "success": "输入正确", "error": "用户名不能为空"},
+                        rule: {required: true}
+                    },
+                    password: {//静态目录
+                        message: {"error": "密码不能为空"},
+                        rule: {required: true}
+                    },
+                    code: {//验证id为email的表单
+                        message: { default: "请输入验证码", "error": "验证码错误"},
+                        rule: {required: true, ajax: "{|U:'checkCode'}"}
+                    }
+                }
+            })
+        })
+    </script>
 </head>
 <body>
-<div class="top">
+<div class="top"></div>
+<div class="main">
+    <form action="{|U:Login}" method="post">
+        <table class="table">
+            <tr>
+                <th class="w100">帐号</th>
+                <td>
+                    <input type="text" name="username"/>
+                </td>
+            </tr>
+            <tr>
+                <th>密码</th>
+                <td>
+                    <input type="password" name="password"/>
+                </td>
+            </tr>
+            <tr>
+                <th>验证码</th>
+                <td>
+                    <input type="text" name="code"/><br/>
+                    <div class="code">
+                        <span>输入下图中的字符</span>
+                        <img src="{|U:'code'}" onclick="this.src='{|U:'code'}&'+Math.random()"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
 
-</div>
-<div class="span12">
-    <form  class="form-horizontal" action="{|U:Login}" method="post">
-        <div class="control-group">
-            <label class="control-label" for="username">帐号</label>
-            <div class="controls">
-                <input type="text" name="username" id="username" placeholder="UserName">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="password">密码</label>
-            <div class="controls">
-                <input type="password" name="password" id="password" placeholder="Password">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="code">验证码</label>
-            <div class="controls">
-                <input type="password" name="code" id="code" placeholder="">
-                <img src="{|U:code}" onclick="this.src='{|U:code}&'+Math.random()"/>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-primary">登录</button>
-            </div>
+        <div class="send" style="margin-top:20px;margin-left:80px;">
+            <input type="submit" class="btn" value="登录"/>
         </div>
     </form>
 </div>

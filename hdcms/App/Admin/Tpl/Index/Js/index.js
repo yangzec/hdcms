@@ -30,3 +30,11 @@ function resize_window_size() {
     $("#right_content").height(h);
     $("#left").height(h);
 }
+//显示顶部导航用户下拉菜单
+$(function () {
+    $("div.m_menu div.user").mouseover(function () {
+        $("div.userinfo").show();
+    }).mouseleave(function () {
+            $("div.userinfo").hide();
+        });
+})

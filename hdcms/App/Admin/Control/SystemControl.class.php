@@ -1,5 +1,5 @@
 <?php
-class SystemControl extends Control
+class SystemControl extends RbacControl
 {
     function index()
     {
@@ -7,6 +7,7 @@ class SystemControl extends Control
         $this->assign("site", $db->all("groupid=1"));
         $this->assign("base", $db->all("groupid=2"));
         $this->assign("upload", $db->all("groupid=3"));
+        $this->assign("member", $db->all("groupid=5"));
         $this->display();
     }
 

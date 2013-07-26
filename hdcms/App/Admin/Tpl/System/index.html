@@ -13,9 +13,10 @@
         <div class="nav">
             <div class="tab">
                 <ul class="tab_menu">
-                    <li lab="site"><a href="#site">站点配置</a></li>
-                    <li lab="base"><a href="#base">基本设置</a></li>
-                    <li lab="upload"><a href="#upload">上传配置</a></li>
+                    <li lab="site"><a href="#">站点配置</a></li>
+                    <li lab="base"><a href="#">基本设置</a></li>
+                    <li lab="upload"><a href="#">上传配置</a></li>
+                    <li lab="member"><a href="#">会员设置</a></li>
                 </ul>
                 <div class="tab_content">
                     <div id="site" class="con">
@@ -66,6 +67,26 @@
                                 <td class="info">模板调用</td>
                             </tr>
                             <list from="$upload" name="$c">
+                                <tr>
+                                    <th width="200">{$c.info}</th>
+                                    <td width="300">
+                                        {|form_view:$c}
+                                    </td>
+                                    <td class="info">
+                                        <?php echo "{\$hd.".$c['name']."}";?>
+                                    </td>
+                                </tr>
+                            </list>
+                        </table>
+                    </div>
+                    <div id="member" class="con">
+                        <table class="table">
+                            <tr class="header">
+                                <th width="200">配置说明</th>
+                                <td width="300">配置值</td>
+                                <td class="info">模板调用</td>
+                            </tr>
+                            <list from="$member" name="$c">
                                 <tr>
                                     <th width="200">{$c.info}</th>
                                     <td width="300">

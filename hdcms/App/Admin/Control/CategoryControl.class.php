@@ -50,7 +50,7 @@ class CategoryControl extends RbacControl
         if (isset($_POST['catname'])) {
             $db->save();
             O("CacheControl", "category");
-            $this->success("编辑成功","index");
+            $this->success("编辑成功", "index");
         } else {
             $field = $db->where("cid=" . $this->_get("cid"))->find();
             $this->assign("field", $field);
@@ -102,17 +102,22 @@ class CategoryControl extends RbacControl
      */
     public function del()
     {
-        $cid = $this->get("cid", "intval");
+        $cid = $this->_get("cid", "intval");
         $cid or exit(0);
         $db = M("category");
+        if ($db->where("pid=$cid")->find()) {
+            $this->_ajax(array("stat" => 0, "message" => "请先删除子栏目"));
+        }
         //删除栏目
         $db->where("cid=$cid")->del();
         //删除文章(
         $db->table("news")->where("cid=$cid")->del();
         //删除文章正文
         $db->table("news_data")->where("cid=$cid")->del();
-        echo 1;
-        exit;
+        //删除属性
+        $db->table("flag_relation")->where("cid=$cid")->del();
+        O("CacheControl", "category");
+        $this->_ajax(array("stat" => 1, "message" => "删除栏目成功"));
     }
 
     /**

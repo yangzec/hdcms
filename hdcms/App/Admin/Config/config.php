@@ -6,6 +6,12 @@ $config = array(
     "AUTO_LOAD_FILE" => "functions,html",
     "PATHINFO_HTML" => "",
     "URL_TYPE" => 2, //普通模式Url
+    "RBAC_NO_AUTH" => array(
+        "index/index",
+        "index/welcome",
+        "cache/all"
+    ),
+    "RBAC_TYPE" => 1,
 );
 return array_merge(include "./data/config/core.inc.php", $config);
 ?>

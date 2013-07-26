@@ -2,10 +2,10 @@
 return array (
   0 => 
   array (
-    'cid' => '1',
+    'cid' => '19',
     'pid' => '0',
-    'catname' => '前端开发',
-    'html_dir' => 'qianduan',
+    'catname' => 'abcdsf',
+    'html_dir' => 'abc',
     'keyworks' => '',
     'description' => '',
     'list_tpl' => '{style}/news_list.html',
@@ -25,10 +25,10 @@ return array (
   ),
   1 => 
   array (
-    'cid' => '2',
-    'pid' => '1',
-    'catname' => 'DIV&CSS',
-    'html_dir' => 'divcss',
+    'cid' => '20',
+    'pid' => '0',
+    'catname' => 'fff',
+    'html_dir' => 'fffff',
     'keyworks' => '',
     'description' => '',
     'list_tpl' => '{style}/news_list.html',
@@ -43,31 +43,8 @@ return array (
     'enable' => '1',
     'control' => 'Article',
     'type' => '1',
-    'level' => 2,
-    'html' => '─',
-  ),
-  2 => 
-  array (
-    'cid' => '3',
-    'pid' => '1',
-    'catname' => 'Jquery',
-    'html_dir' => 'Jquery',
-    'keyworks' => '',
-    'description' => '',
-    'list_tpl' => '{style}/news_list.html',
-    'arc_tpl' => '{style}/news_article.html',
-    'is_cat_html' => '1',
-    'is_arc_html' => '1',
-    'list_html_url' => '{catdir}/list_{cid}_{page}.html',
-    'arc_html_url' => '{catdir}/{Y}/{M}{D}/{aid}.html',
-    'mid' => '1',
-    'model_name' => '普通文章',
-    'tablename' => 'news',
-    'enable' => '1',
-    'control' => 'Article',
-    'type' => '1',
-    'level' => 2,
-    'html' => '─',
+    'level' => 1,
+    'html' => '',
   ),
 );
 ?>

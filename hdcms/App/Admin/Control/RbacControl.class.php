@@ -4,6 +4,7 @@ class RbacControl extends CommonControl
 {
     public function __init()
     {
+
         $this->checkAccess();
         header("Cache-control: private");
     }
@@ -13,11 +14,13 @@ class RbacControl extends CommonControl
      */
     private function checkAccess()
     {
+
         if(!isset($_SESSION['uid'])){
             go(U("Login/index"));
         }
         if (!Rbac::checkAccess()) {
-            $this->error("对不起你没有操作权限", U("Login/index"));
+            $this->error("对不起你没有操作权限");
         }
+//        p(session());
     }
 }

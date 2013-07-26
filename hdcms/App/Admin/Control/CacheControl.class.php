@@ -4,7 +4,7 @@ class CacheControl extends RbacControl
     /**
      * 更新所有缓存
      */
-    public function all()
+    public function all($type = true)
     {
         if (!$this->model()) {
             $this->error("缓存目录./data/model不可写，请修改权限");
@@ -12,7 +12,9 @@ class CacheControl extends RbacControl
         if (!$this->category()) {
             $this->error("缓存目录./data/category不可写，请修改权限");
         }
-        $this->success("缓存更新成功");
+        if ($type)
+            $this->success("缓存更新成功");
+        return true;
     }
 
     /**

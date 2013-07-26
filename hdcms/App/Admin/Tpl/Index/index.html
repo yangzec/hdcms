@@ -24,7 +24,25 @@
         </ul>
     </div>
     <div class="m_menu">
+        <div class="user" style="float:left;">
+            <a href="javascript:">
+                {$hd.session.username}({$hd.session.role})
+            </a>
+
+            <div class="userinfo">
+                <ul>
+                    <li>
+                        <a href="{|U:'Login/out'}" target="_blank">退出</a>
+                    </li>
+                    <li>
+                        <a href="{|U:'Member/Index/index'}" target="_blank">会员中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span>|</span>
         <a href="{|U:'Cache/all'}">更新缓存</a>
+
     </div>
 </div>
 <!--顶部导航-->
@@ -59,11 +77,7 @@
             <li><a href="__APP__/stu">审核会员</a></li>
             <li><a href="__APP__/stu">会员配置</a></li>
         </ul>
-        <h2>管理员配置</h2>
-        <ul class="menu">
-            <li><a href="{|U:'Admin/index'}">管理员管理</a></li>
-            <li><a href="{|U:'Role/index'}">角色管理</a></li>
-        </ul>
+
     </div>
     <!--用户-->
     <!--系统-->
@@ -75,8 +89,17 @@
             <li><a href="{|U:'System/code_show'}/">验证码设置</a></li>
             <li><a href="{|U:'Template/index'}/">模板风格</a></li>
         </ul>
-
-
+        <h2>管理员配置</h2>
+        <ul class="menu">
+            <li><a href="{|U:'Admin/index'}">管理员管理</a></li>
+            <li><a href="{|U:'Role/index'}">角色管理</a></li>
+        </ul>
+        <h2>数据库备份</h2>
+        <ul class="menu">
+            <li><a href="{|U:'Backup/backup'}">数据备份</a></li>
+            <li><a href="{|U:'Backup/index'}">还原数据</a></li>
+            <!--<li><a href="{|U:'Role/index'}">SQL命令行工具</a></li>-->
+        </ul>
     </div>
     <!--系统-->
 </div>

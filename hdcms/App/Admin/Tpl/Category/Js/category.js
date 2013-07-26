@@ -25,10 +25,23 @@ $(function () {
         var stat = confirm("确定删除栏目" + $(this).attr("cat_name") + "吗？");
         if (stat) {
             $.post($(this).attr("href"), function (data) {
-                if (data) {
-                    dialog("删除成功", 2);
+                if (data.stat == 1) {
+                    $.dialog({
+                        "msg": "栏目删除成功",
+                        "type": "success",
+                        "timeout": 2,
+                        "close_handler": function () {
+                            location.reload();
+                        }
+                    });
+                } else {
+                    $.dialog({
+                        "msg": data.message,
+                        "type": "error",
+                        "timeout": 2
+                    });
                 }
-            })
+            }, "json")
         }
         return false;
     })
