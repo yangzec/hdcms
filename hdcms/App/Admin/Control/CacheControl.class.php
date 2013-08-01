@@ -9,6 +9,9 @@ class CacheControl extends RbacControl
         if (!$this->model()) {
             $this->error("缓存目录./data/model不可写，请修改权限");
         }
+        if (!$this->modelField()) {
+            $this->error("更新模型字段失败");
+        }
         if (!$this->category()) {
             $this->error("缓存目录./data/category不可写，请修改权限");
         }
@@ -40,7 +43,19 @@ class CacheControl extends RbacControl
     {
         $db = M("model");
         return F("model", $db->all(), './data/model');
+    }
 
+    /**
+     * 更新模型字段缓存
+     */
+    public function modelField()
+    {
+        $model = M("model")->all();
+        $dbField = K("Field");
+        foreach ($model as $m) {
+            $dbField->updateCache($m['mid']);
+        }
+        return true;
     }
 }
 

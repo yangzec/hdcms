@@ -1,4 +1,45 @@
 <load file="__CONTROL_TPL__/header.html"/>
+<script>
+    /**
+     * 添加栏目验证
+     */
+    $(function () {
+        $("form").validation({
+            //验证规则
+            rules: {
+                catname: {//验证id为email的表单
+                    message: {default: "栏目名称（可以输入中文）", "success": "输入正确", "error": "栏目名称不能为空"},
+                    rule: {required: true}
+                },
+                html_dir: {//静态目录
+                    message: {"error": "目录已经使用或目录名输入错误"},
+                    rule: {required: true, regexp: /^[a-z0-9]+$/i}
+                },
+                arc_dir: {//验证id为email的表单
+                    message: { "error": "输入错误"},
+                    rule: {required: true}
+                },
+                list_tpl: {//验证id为email的表单
+                    message: {"error": "输入错误"},
+                    rule: {required: true}
+                },
+                arc_tpl: {//验证id为email的表单
+                    message: { "error": "输入错误"},
+                    rule: {required: true}
+                },
+                list_html_url: {//验证id为email的表单
+                    message: { "error": "不能为空"},
+                    rule: {required: true}
+                },
+                arc_html_url: {//验证id为email的表单
+                    message: {  "error": "不能为空"},
+                    rule: {required: true}
+                }
+
+            }
+        });
+    })
+</script>
 <form action="{|U:add}" method="post">
     <input type="hidden" name="pid" value="{$hd.get.pid|default:0}"/>
 
@@ -37,18 +78,38 @@
                             <span class="validation">静态文件存放目录</span>
                         </td>
                     </tr>
-
+                    <tr>
+                        <th>生成静态</th>
+                        <td>
+                            <input type="radio" name="urltype" value="1" checked="checked"/> 静态访问
+                            <input type="radio" name="urltype"  value="2"/> 动态访问
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>栏目类型</th>
+                        <td>
+                            <input type="radio" name="cattype" checked="checked" value="1"/> 普通栏目
+                            <input type="radio" name="cattype" value="2"/> 频道封面
+                            <input type="radio" name="cattype" value="3"/> 外部链接(在跳转Url处填写网址)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>跳转Url</th>
+                        <td>
+                            <input type="text" name="redirecturl" class="w300"/>
+                        </td>
+                    </tr>
                     <tr>
                         <th>栏目关键字</th>
                         <td>
-                            <input type="text" name="keyworks" class="w200"/>
+                            <input type="text" name="keyworks" class="w300"/>
                             <span class="label">SEO关键字</span>
                         </td>
                     </tr>
                     <tr>
                         <th>栏目描述</th>
                         <td>
-                            <textarea name="description" cols="35" rows="4"></textarea>
+                            <textarea name="description" class="w350 h80"></textarea>
                             <span class="label">不能超过100字</span>
                         </td>
                     </tr>
@@ -56,6 +117,14 @@
             </div>
             <div id="tpl" class="con">
                 <table class="table">
+                    <tr>
+                        <th>封面模板</th>
+                        <td>
+                            <input type="text" name="index_tpl" class="w200" value="{style}/news_index.html"/>
+                            <button type="button" class="select_tpl" action="index_tpl">选择列表模板</button>
+                            <span class="validation">{style}指模板风格</span>
+                        </td>
+                    </tr>
                     <tr>
                         <th>列表页模板</th>
                         <td>
@@ -105,9 +174,9 @@
                     <tr>
                         <th>内容页URL规则</th>
                         <td>
-                            <input type="text" name="arc_html_url" class="w200" value="{catdir}/{Y}/{M}{D}/{aid}.html"/>
+                            <input type="text" name="arc_html_url" class="w200" value="{catdir}/{y}/{m}{d}/{aid}.html"/>
                         <span class="validation">
-                        {Y}、{M}、{D} 年月日,
+                        {y}、{m}、{d} 年月日,
                         {timestamp}UNIX时间戳,
                         {aid} 文章ID,
                         {catdir} 栏目目录
@@ -134,17 +203,17 @@
                                 <tbody>
                                 <tr>
                                     <td>超级管理员</td>
-                                    <td><input type="checkbox" name="node"/> </td>
-                                    <td><input type="checkbox" name="node"/> </td>
-                                    <td><input type="checkbox" name="node"/> </td>
-                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
                                 </tr>
                                 <tr>
                                     <td>超级管理员</td>
-                                    <td><input type="checkbox" name="node"/> </td>
-                                    <td><input type="checkbox" name="node"/> </td>
-                                    <td><input type="checkbox" name="node"/> </td>
-                                    <td><input type="checkbox" name="node"/> </td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
                                 </tr>
                                 </tbody>
                             </table>

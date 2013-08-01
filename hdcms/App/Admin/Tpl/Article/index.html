@@ -33,10 +33,10 @@
                     <td>{$c.click}</td>
                     <td>{$c.username}</td>
                     <td>
-                        <a href="{|U:'Index/Index/article',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}" target="_blank">预览</a> |
-                        <a href="{|U:'edit_show',array('cid'=>$c['cid'])}">修改</a> |
-                        <a href="{|U:'del',array('cid'=>$c['cid'])}" class="del_category"
-                           cat_name="{$c.cat_name}">删除</a>
+                        <a href="{|U:'Index/Index/article',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}"
+                           target="_blank">预览</a> |
+                        <a href="{|U:'edit',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}">修改</a> |
+                        <a href="{|U:'del',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}">删除</a>
                     </td>
                 </tr>
             </list>

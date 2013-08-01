@@ -1,0 +1,48 @@
+<load file="__STATIC__/header.html"/>
+<script>
+    $(function () {
+        //表单验证
+        $("form").validation({
+            //验证规则
+            rules: {
+                model_name: {
+                    message: {default: "模型名称(必须为中文)", empty: "模型名不能为空", "error": "模型名称必须为中文"},
+                    rule: {required: true}
+                }
+            }
+        });
+    })
+</script>
+</head>
+<body>
+<div class="right_content">
+    <form action="{|U:'edit'}" method="post">
+        <input type="hidden" name="mid" value="{$field.mid}"/>
+        <div class="tab">
+            <ul class="tab_menu">
+                <li lab="set"><a href="#site">修改模型</a></li>
+            </ul>
+            <div class="tab_content">
+                <div id="set">
+                    <table class="table">
+                        <tr>
+                            <th class="w200">模型名称</th>
+                            <td>
+                                <input type="text" name="model_name" class="w200" value="{$field.model_name}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>模型描述</th>
+                            <td>
+                                <input type="text" name="description" class="w200" value="{$field.description}"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="btn" value="添加模型" style="margin-top:20px;"/>
+    </form>
+</div>
+</body>
+</html>

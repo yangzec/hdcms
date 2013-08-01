@@ -108,12 +108,15 @@ class CategoryControl extends RbacControl
         if ($db->where("pid=$cid")->find()) {
             $this->_ajax(array("stat" => 0, "message" => "请先删除子栏目"));
         }
+        $cat = $db->find($cid);
+        $model = $db->table("model")->where("mid={$cat['mid']}")->find();
+        $tableName = strtolower($model['tablename']); //主表名
         //删除栏目
         $db->where("cid=$cid")->del();
         //删除文章(
-        $db->table("news")->where("cid=$cid")->del();
+        $db->table($tableName)->where("cid=$cid")->del();
         //删除文章正文
-        $db->table("news_data")->where("cid=$cid")->del();
+        $db->table($tableName . "_data")->where("cid=$cid")->del();
         //删除属性
         $db->table("flag_relation")->where("cid=$cid")->del();
         O("CacheControl", "category");

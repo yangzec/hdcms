@@ -25,13 +25,63 @@ class ModelControl extends RbacControl
     }
 
     /**
+     * 删除模型
+     */
+    public function del()
+    {
+        $mid = $this->_get("mid");
+        if (!$mid) {
+            $this->error("非法请求");
+        }
+        if (M("category")->find("mid=$mid")) {
+            $this->error("请先删除模型的栏目");
+        }
+        $db = M("model");
+        $model = $db->find($mid);
+        //删除主表与表字段缓存
+        $db->exe("DROP TABLE " . C("DB_PREFIX") . $model['tablename']);
+        F(C("DB_DATABASE") . C("DB_PREFIX") . $model['tablename']);
+        //删除附表与表字段缓存
+        if ($model['type'] == 1) {
+            $db->exe("DROP TABLE " . C("DB_PREFIX") . $model['tablename'] . '_data');
+            F(C("DB_DATABASE") . C("DB_PREFIX") . $model['tablename'] . '_data');
+        }
+        $db->del($mid);
+        $db->table("model_field")->del($mid);
+        //删除字段缓存
+        if (F($mid, NULL, './data/field/')) {
+            $this->success("模型删除成功", "index");
+        }
+
+    }
+
+    /**
+     * 编辑模型
+     */
+    public function edit()
+    {
+        if (isset($_POST['model_name'])) {
+            $db = M("model");
+            $db->save();
+            $this->success("模型修改成功");
+        } else {
+            $mid = $this->_get("mid");
+            $db = M("model");
+            $model = $db->find($mid);
+            $this->assign("field", $model);
+            $this->display();
+        }
+    }
+
+    /**
      * 添加模型
      */
     public function add()
     {
         if (isset($_POST['tablename'])) {
             $db = M("model");
-            $table = $_POST['tablename'];
+            $_POST['tablename'] = $this->_post('tablename', 'strtolower');
+            $table = strtolower($_POST['tablename']);
             $_POST['control'] = ucfirst(preg_replace('@\.class\.php|' . C("CONTROL_FIX") . '@i', '', $_POST['control']));
             //Model表中添加记录
             if ($mid = $db->add()) {
@@ -39,13 +89,13 @@ class ModelControl extends RbacControl
                 $this->create_model_table($table, $_POST['type']);
                 //更新缓存
                 O("CacheControl", "model");
-                $msg = "添加成功<script>window.top.location.href='".__APP__."&c=index&m=index&module=module'</script>";
+                $msg = "添加成功<script>window.top.location.href='" . __APP__ . "&c=index&m=index&module=module'</script>";
                 $this->success($msg, "index");
             } else {
                 $this->error("添加失败", "index");
             }
         } else {
-            $this->display("add_show");
+            $this->display();
         }
     }
 
@@ -63,6 +113,8 @@ class ModelControl extends RbacControl
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
   `aid` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+  `cid` SMALLINT UNSIGNED NOT NULL COMMENT '栏目cid' ,
+  `mid` SMALLINT UNSIGNED NOT NULL COMMENT '模型mid' ,
   `title` char(60) NOT NULL DEFAULT '' COMMENT '标题' ,
   `thumb` CHAR(200) NOT NULL DEFAULT '' COMMENT '缩略图' ,
   `click` MEDIUMINT NOT NULL DEFAULT 100 COMMENT '点击次数' ,
@@ -74,14 +126,14 @@ CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
   `updatetime` INT(10) NOT NULL COMMENT '发布时间 ' ,
   `color` CHAR(7) NOT NULL COMMENT '标题颜色\n' ,
   `ishtml` TINYINT(1) NOT NULL DEFAULT 1 ,
-  `username` CHAR(20) NOT NULL ,
-  `cid` SMALLINT UNSIGNED NOT NULL COMMENT '栏目cid' ,
+  `username` CHAR(20) NOT NULL,
   PRIMARY KEY (`aid`) ,
   INDEX `cid` (`cid` ASC))
 ENGINE = MyISAM;
 str;
         $db = M();
         $db->exe($masterSql);
+        F(C("DB_DATABASE") . $masterTable, NULL, TABLE_PATH);
         //独立模型不创建附表
         if ($type != 1) return;
         $slaveTable = $masterTable . '_data';
@@ -101,5 +153,6 @@ ENGINE = MyISAM;
 str;
 
         $db->exe($slaveSql);
+        F(C("DB_DATABASE") . $slaveTable, NULL, TABLE_PATH);
     }
 }

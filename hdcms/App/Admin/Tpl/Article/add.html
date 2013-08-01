@@ -1,4 +1,24 @@
 <load file="__CONTROL_TPL__/header.html"/>
+<script>
+    $(function () {
+        $("form").submit(function () {
+            if (!$(this).attr("target")) {
+                if (!$("input[name='title']").val()) {
+                    alert("标题不能为空");
+                    return false;
+                }
+                if ($("select[name='cid'] option:selected").attr('lab') == 1) {
+                    alert("栏目不能为频道封面，请更改");
+                    return false;
+                }
+                if (!UE.getEditor('content').getContent()) {
+                    alert("内容不能为空");
+                    return false;
+                }
+            }
+        })
+    })
+</script>
 </head>
 <body>
 <form action="{|U:add}" method="post" id="form" enctype="multipart/form-data">
@@ -16,7 +36,7 @@
                             <th width="100">标题</th>
                             <td>
                                 <input type="text" name="title" class="title w400"/>
-                                标题颜色：<input type="text" name="color" class="w100"/>
+                                标题颜色 <input type="text" name="color" class="w100"/>
                                 <button type="button" onclick="select_color(this,'color')">选取颜色</button>
                             </td>
 
@@ -39,9 +59,12 @@
                                 <td>
                                     <select name="cid">
                                         <list from="$category" name="cat">
-                                            <option value="{$cat.cid}">
-                                                <if value="$cat.pid!=0">└</if>
-                                                {$cat.html}{$cat.catname}
+                                            <option value="{$cat.cid}" lab="{$cat.type}"
+                                            <if value="$cat['type']==1">style="background:#3A6EA5;color:#fff;"</if>
+                                            >
+                                            <if value="$cat.pid!=0">└</if>
+                                            {$cat.html}{$cat.catname}
+                                            <if value="$cat['type']==1">(频道封面)</if>
                                             </option>
                                         </list>
                                     </select>
@@ -72,8 +95,7 @@
                             <th>来源</th>
                             <td>
                                 <input type="text" name="source" class="w150"/>
-                                作者:
-                                <input type="text" name="author" class="w150"/>
+                                作者 <input type="text" name="author" class="w150" value="{$hd.session.username}"/>
                             </td>
 
                         </tr>
@@ -94,9 +116,9 @@
                         <tr>
                             <th>内容摘要</th>
                             <td>
-                                <textarea name="{$model.tablename}_data[description]" style="width:500px;height:70px;"></textarea>
+                                <textarea name="{$model.tablename}_data[description]"
+                                          style="width:500px;height:70px;"></textarea>
                             </td>
-
                         </tr>
                         <tr>
                             <th>内容</th>
@@ -104,7 +126,7 @@
                                 <script id="content" name="{$model.tablename}_data[content]" type="text/plain"></script>
                                 <script type='text/javascript'>
                                     var ue = UE.getEditor('content', {
-                                        imageUrl: '{|editor_upload_img}'//处理上传脚本
+                                        imageUrl: '{|U:editorUploadImg}'//处理上传脚本
                                         , zIndex: 0, autoClearinitialContent: false, initialFrameWidth: "100%" //宽度1000
                                         , initialFrameHeight: "300" //宽度1000
                                         , autoHeightEnabled: false //是否自动长高,默认true
@@ -120,14 +142,14 @@
                             <th>生成静态</th>
                             <td>
                                 <input type="radio" name="ishtml" value="1" checked="checked"/> 是
-                                <input type="radio" name="ishtml" value="2"/> 否
+                                <input type="radio" name="ishtml" value="0"/> 否
                             </td>
                         </tr>
                         <tr>
                             <th>允许回复</th>
                             <td>
                                 <input type="radio" name="allowreply" value="1" checked="checked"/> 允许
-                                <input type="radio" name="allowreply" value="2"/> 不允许
+                                <input type="radio" name="allowreply" value="0"/> 不允许
                             </td>
 
                         </tr>
@@ -150,12 +172,18 @@
                             </td>
 
                         </tr>
+                        <tr>
+                            <th>点击</th>
+                            <td>
+                                <input type="text" name="click" class="w100" value="100"/> 次
+                            </td>
+                        </tr>
                         <list from="$user_field" name="f">
                             {$f.html}
                         </list>
                     </table>
                     <div class="send">
-                        <input type="submit" class="btn" name="send" value="发表"/>
+                        <input type="submit" class="btn" value="确定"/>
                     </div>
                 </div>
             </div>

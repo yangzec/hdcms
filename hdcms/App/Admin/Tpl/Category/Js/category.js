@@ -29,7 +29,7 @@ $(function () {
                     $.dialog({
                         "msg": "栏目删除成功",
                         "type": "success",
-                        "timeout": 2,
+                        "timeout": 1,
                         "close_handler": function () {
                             location.reload();
                         }
@@ -38,7 +38,7 @@ $(function () {
                     $.dialog({
                         "msg": data.message,
                         "type": "error",
-                        "timeout": 2
+                        "timeout": 1
                     });
                 }
             }, "json")

@@ -22,12 +22,35 @@ class ArticleControl extends RbacControl
     public function add()
     {
         //添加文章神图
-        if (isset($_POST['send'])) {
+        if (isset($_POST['title'])) {
             //添加内容
             $this->addContent();
         } else {
             //添加正文
             $this->addView();
+        }
+    }
+
+    /**
+     * 删除文章
+     */
+    public function del()
+    {
+        $this->delArticle();
+    }
+
+    /**
+     * 修改文章
+     */
+    public function edit()
+    {
+        //添加文章神图
+        if (isset($_POST['title'])) {
+            //添加内容
+            $this->editContent();
+        } else {
+            //添加正文
+            $this->editView();
         }
     }
 }

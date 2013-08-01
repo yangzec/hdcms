@@ -44,4 +44,27 @@ class FieldControl extends RbacControl
             $this->display();
         }
     }
+
+    /**
+     * 删除字段
+     */
+    public function del()
+    {
+        $table_name = $this->_get("table_name");
+        $field_name = $this->_get("field_name");
+        $fid = $this->_get("fid", "intval");
+        $mid = $this->_get("mid", "intval");
+        if (!$table_name || !$field_name || !$fid || !$mid) {
+            $this->error("非法传参数");
+        }
+        $sql = "ALTER TABLE " . C("DB_PREFIX") . $table_name . " DROP $field_name";
+        $db = K("Field");
+        //删除表字段
+        $db->exe($sql);
+        //删除表model_field中记录
+        $db->del("fid=$fid");
+        //修改表缓存
+        $db->updateCache($mid);
+        $this->success("删除字段成功", U("index", "mid=$mid"));
+    }
 }

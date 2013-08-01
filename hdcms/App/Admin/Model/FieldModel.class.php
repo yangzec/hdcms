@@ -13,6 +13,8 @@ class FieldModel extends Model
         //获得表名
         $db = M("model")->find($field['mid']);
         $table = $field['is_main_table'] ? $db['tablename'] : $db['tablename'] . '_data';
+        //清除表缓存
+        F(C("DB_DATABASE") . C("DB_PREFIX") . $table, NULL, TABLE_PATH);
         //字段所在表
         $field['table_name'] = $table;
         //字段html视图显示信息
@@ -59,20 +61,22 @@ class FieldModel extends Model
 
     /**
      * 更新字段缓存
-     * @param array $field 字段信息
+     * @param int $mid 模型mid
      * @return bool
      */
-    private function updateCache($mid)
+    public function updateCache($mid)
     {
         //获得当前模型所有表单信息
         $field = M("model_field")->all("mid=$mid");
-        if (empty($field)) return true;
+        if (empty($field)) {
+            return F($mid, NULL, './data/field/');
+        }
         foreach ($field as $k => $f) {
-            eval('$field[$k]["set"]=' . $f['set'].';');
+            eval('$field[$k]["set"]=' . $f['set'] . ';');
             $field[$k]['html'] = $this->getHtml($f);
         }
         //缓存字段信息
-        return F($mid, $field, './data/field');
+        return F($mid, $field, './data/field/');
     }
 
     /**
@@ -191,7 +195,7 @@ str;
             case "num":
             case "editor":
             case "datetime":
-                $html = str_replace("{FIELD_VALUE}", $field['set']['default'], $field['html']);
+                $html = str_replace("{FIELD_VALUE}", $value, $field['html']);
                 break;
         }
         return $html;

@@ -4,7 +4,6 @@ class RbacControl extends CommonControl
 {
     public function __init()
     {
-
         $this->checkAccess();
         header("Cache-control: private");
     }

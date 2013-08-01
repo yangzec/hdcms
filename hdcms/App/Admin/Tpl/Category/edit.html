@@ -3,11 +3,13 @@
     <input type="hidden" name="mid" value="{$field.mid}"/>
     <input type="hidden" name="pid" value="{$field.pid}"/>
     <input type="hidden" name="cid" value="{$field.cid}"/>
+
     <div class="tab">
         <ul class="tab_menu">
             <li lab="base"><a href="#site">基本设置</a></li>
             <li lab="tpl"><a href="#base">模板设置</a></li>
             <li lab="html"><a href="#upload">静态HTML设置</a></li>
+            <li lab="access"><a href="#">权限设置</a></li>
         </ul>
         <div class="tab_content">
             <div id="base" class="con">
@@ -21,11 +23,41 @@
                     <tr>
                         <th>静态目录</th>
                         <td>
-                            <input type="text" name="html_dir"  value="{$field.html_dir}" id="html_dir" class="w200"/>
+                            <input type="text" name="html_dir" value="{$field.html_dir}" id="html_dir" class="w200"/>
                             <span class="validation">静态文件存放目录</span>
                         </td>
                     </tr>
-
+                    <tr>
+                        <th>生成静态</th>
+                        <td>
+                            <input type="radio" name="urltype" value="1" checked="checked"
+                            <if value="$field.urltype==1">checked="checked"</if>
+                            /> 静态访问
+                            <input type="radio" name="urltype" value="2"
+                            <if value="$field.urltype==2">checked="checked"</if>
+                            /> 动态访问
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>栏目类型</th>
+                        <td>
+                            <input type="radio" name="cattype" value="1"
+                            <if value="$field.cattype==1">checked="checked"</if>
+                            /> 普通栏目
+                            <input type="radio" name="cattype" value="2"
+                            <if value="$field.cattype==2">checked="checked"</if>
+                            /> 频道封面
+                            <input type="radio" name="cattype" value="3"
+                            <if value="$field.cattype==3">checked="checked"</if>
+                            /> 外部链接(在跳转Url处填写网址)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>跳转Url</th>
+                        <td>
+                            <input type="text" name="redirecturl" class="w300" value="{$field.redirecturl}"/>
+                        </td>
+                    </tr>
                     <tr>
                         <th>栏目关键字</th>
                         <td>
@@ -47,7 +79,8 @@
                     <tr>
                         <th>列表页模板</th>
                         <td>
-                            <input type="text" name="list_tpl" value="{$field.list_tpl}" class="w200" value="{style}/news_list.html"/>
+                            <input type="text" name="list_tpl" value="{$field.list_tpl}" class="w200"
+                                   value="{style}/news_list.html"/>
                             <button type="button" class="select_tpl" action="list_tpl">选择列表模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -55,7 +88,8 @@
                     <tr>
                         <th>内容页模板</th>
                         <td>
-                            <input type="text" name="arc_tpl" value="{$field.arc_tpl}" class="w200" value="{style}/news_article.html"/>
+                            <input type="text" name="arc_tpl" value="{$field.arc_tpl}" class="w200"
+                                   value="{style}/news_article.html"/>
                             <button type="button" class="select_tpl" action="arc_tpl">选择内容页模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -67,15 +101,23 @@
                     <tr>
                         <th>栏目生成Html</th>
                         <td>
-                            <input type="radio" class="radio" name="is_cat_html" value="1" <if value='$field.is_cat_html==1'>checked="checked"</if>/> 是
-                            <input type="radio" class="radio" name="is_cat_html" value="0" <if value='$field.is_cat_html==0'>checked="checked"</if>/> 否
+                            <input type="radio" class="radio" name="is_cat_html" value="1"
+                            <if value='$field.is_cat_html==1'>checked="checked"</if>
+                            /> 是
+                            <input type="radio" class="radio" name="is_cat_html" value="0"
+                            <if value='$field.is_cat_html==0'>checked="checked"</if>
+                            /> 否
                         </td>
                     </tr>
                     <tr>
                         <th>内容页生成Html</th>
                         <td>
-                            <input type="radio" class="radio" name="is_arc_html" value="1" <if value='$field.is_arc_html==1'>checked="checked"</if>/> 是
-                            <input type="radio" class="radio" name="is_arc_html" value="0" <if value='$field.is_arc_html==0'>checked="checked"</if>/> 否
+                            <input type="radio" class="radio" name="is_arc_html" value="1"
+                            <if value='$field.is_arc_html==1'>checked="checked"</if>
+                            /> 是
+                            <input type="radio" class="radio" name="is_arc_html" value="0"
+                            <if value='$field.is_arc_html==0'>checked="checked"</if>
+                            /> 否
                         </td>
                     </tr>
                     <tr>
@@ -99,6 +141,42 @@
                         {aid} 文章ID,
                         {catdir} 栏目目录
                         </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="access" class="con">
+                <table class="table">
+                    <tr>
+                        <th class="w60">角色权限</th>
+                        <td>
+                            <table class="table table-title">
+                                <thead>
+                                <tr>
+                                    <td>角色名称</td>
+                                    <td>查看</td>
+                                    <td>添加</td>
+                                    <td>编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>超级管理员</td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                </tr>
+                                <tr>
+                                    <td>超级管理员</td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                    <td><input type="checkbox" name="node"/></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </td>
                     </tr>
                 </table>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <jquery/>
+    <style type="text/css">
+        input[type='submit'] {
+            border: solid 1px #dcdcdc;
+            padding: 3px;
+            margin-top: 10px;
+        }
+
+        div.content {
+            background: #F6F9FB;
+            border: solid 1px #dedede;
+            padding: 6px;
+            margin: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        div.title {
+            font-size: 14px;
+            color: #f00;
+        }
+
+        div.comment_hr {
+
+            margin-bottom: 30px;
+        }
+
+        textarea.reply_data {
+            width: 600px;
+            border: solid 1px #dcdcdc;
+            padding: 3px;
+            height: 80px;
+        }
+
+        div.content span.info {
+            font-size: 12px;
+            color: #3A6EA5;
+        }
+
+        div.content a.send {
+            font-size: 12px;
+            color: #0088CC;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("a[lab='reply']").click(function () {
+                var mid = $(this).attr("mid");
+                var _textarea = '<form action="__CONTROL__&m=add&mid=' + mid + '" method="post">';
+                _textarea += "<textarea name='data' class='reply_data'></textarea>";
+                _textarea += "<br/>";
+                _textarea += "<input type='submit'/>";
+                _textarea += "</form>";
+                $("div#reply_" + mid).html(_textarea);
+            })
+        })
+    </script>
+</head>
+<body>
+<form action="{|U:'add'}" method="post">
+    内容:<textarea name="data" class="reply_data"></textarea><br/>
+    <input type="submit"/>
+</form>
+<list from="$comment" name="c">
+    <div class="content">
+        <div class="title">2013-2-22 12:23:12</div>
+        {$c.data}
+        <div>
+            <a href="javascript:" class="send" lab="reply" mid="{$c.mid}">回复</a>
+        </div>
+        <div id="reply_{$c.mid}"></div>
+    </div>
+    <div class="comment_hr"></div>
+</list>
+</body>
+</html>
