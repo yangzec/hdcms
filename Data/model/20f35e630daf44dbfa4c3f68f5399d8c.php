@@ -4,7 +4,7 @@ return array (
   array (
     'mid' => '1',
     'model_name' => '普通文章',
-    'tablename' => 'news',
+    'tablename' => 'article',
     'enable' => '1',
     'description' => '',
     'control' => 'Article',

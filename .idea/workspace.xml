@@ -2,187 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comment/Tpl/Index/index.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Model/CategoryRelationModel.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Model/UserRelationModel.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/validation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/5acb058d0cad1b053fb2794887417b3b.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/d14e5f9cdef59a7804efc24ea4190df7.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/f3f3150a13510b2b1607513f8b39539b.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Compile/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/a9d71d452d19a14f1757ba4134b18011.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/Temp/Admin/Table/d05a7eebd823e138670e52c9d9c6161b.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/1001374518553.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/10311374519646.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/11731374218254.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/12781374219216.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/13241374218496.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/13251374217575.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/13531374599524.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/1361374520739.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/13951374591129.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/15931374514305.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/15931374592491.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/16641374519234.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/17851374514544.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/18691374045622.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/19161374217998.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/19281374596738.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/20021374222443.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/20401374169261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/21991374518558.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/22101374218968.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/22361374218403.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/22541374222308.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/22991374046280.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/2301374519990.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/24191374218997.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/24571374519302.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/24691374222204.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/25281374514360.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/26631374226372.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/26771374518716.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/26881374514644.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/27871374599327.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/28201374518807.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/28601374519718.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/29881374514486.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/31931374521197.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/3291374520063.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/33871374597388.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/34501374599917.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/3581374514521.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/37491374596669.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/37881374219044.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/38771374051298.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/40271374520705.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/4081374518596.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/40901374221623.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/43561374597491.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/44441374596639.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/45501374521504.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/45711374522236.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/45751374521279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/46621374599368.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/46801374519874.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/4721374221571.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/48151374045759.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/48331374521125.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/4871374226711.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/49411374520684.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/51201374519869.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/51631374217994.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/52201374569013.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/52551374519547.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/53661374218039.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/53921374335325.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/54081374599466.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/5531374521209.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/55561374599848.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/56241374220625.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/57191374521568.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/58941374518665.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/60221374597260.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/6091374046070.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/60921374520678.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/61571374521149.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/61631374514387.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/61711374519910.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/6211374522210.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/62451374521582.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/64671374599352.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/65851374519513.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/66311374599708.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/66361374046282.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/67521374222921.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/67861374219065.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/6801374519428.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/68441374253532.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/68831374520077.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/69011374519749.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/69521374521104.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/70071374222941.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/70531374522348.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/70581374521271.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/71091374567273.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/7141374519811.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/72581374596650.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/72701374046241.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/73501374219033.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/7471374218669.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/75031374023126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/75431374045097.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/75781374164707.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/75891374519418.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/76081374221945.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/76511374599726.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/76741374222987.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/7711374518795.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/78521374518887.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/7941374597629.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/79451374253557.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/8141374521651.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/8171374219020.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/8231374335301.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/83121374521173.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/83511374521579.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/84171374218886.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/84461374519454.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/85131374514409.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/86511374219123.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/8651374599614.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/8701374226716.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/87741374521510.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/88091374334775.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/88511374565979.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/90571374218565.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/9071374221936.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/91001374226742.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/91491374335314.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/91631374219464.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/92041374519403.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/93731374519539.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/93801374521770.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/93821374218217.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/93991374520038.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/94331374219107.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/95951374597571.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/96011374519590.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/96221374224470.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/96421374519958.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/96491374519579.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/96901374217566.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/97771374052067.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/98311374519849.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/98931374519359.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/99201374519437.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/99301374218902.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/add_show.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/CacheControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/CacheControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/CategoryControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/CategoryControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/ModelControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/ModelControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/add.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/add.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/category.js" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/Js/category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/edit.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/header.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Model/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/model/20f35e630daf44dbfa4c3f68f5399d8c.php" afterPath="$PROJECT_DIR$/data/model/20f35e630daf44dbfa4c3f68f5399d8c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" afterPath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375241515749" ignored="false" />
+    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375319117741" ignored="false" />
     <file path="/thumb_upload.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374647162123" ignored="false" />
     <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375254533300" ignored="false" />
     <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374859601662" ignored="false" />
@@ -455,190 +281,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Article" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Control" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -729,13 +371,18 @@
       <created>1374841432328</created>
       <updated>1374841432328</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改删除栏目删除失败错误">
+      <created>1375319122457</created>
+      <updated>1375319122457</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="723" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31879196" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -751,7 +398,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31879196" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2576" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -802,7 +448,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加数据备份" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改删除栏目删除失败错误" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -819,6 +465,7 @@
     <MESSAGE value="初始化" />
     <MESSAGE value="添加RBAC权限验证" />
     <MESSAGE value="添加数据备份" />
+    <MESSAGE value="修改删除栏目删除失败错误" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -831,12 +478,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/comment/Tpl/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="38" selection-start="398" selection-end="398" vertical-scroll-proportion="0.038938053" />
+        <state line="9" column="38" selection-start="398" selection-end="398" vertical-scroll-proportion="0.038938053">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="32" selection-start="61" selection-end="61" vertical-scroll-proportion="0.077876106" />
+        <state line="2" column="32" selection-start="61" selection-end="61" vertical-scroll-proportion="0.077876106">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Category/index.html">
