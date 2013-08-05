@@ -41,7 +41,7 @@ class TemplateControl extends SystemControl
         $this->display();
     }
 
-    public function updateStyle()
+    public function edit()
     {
         $style = $_POST['style'];
         $db = M("system");
@@ -54,6 +54,6 @@ class TemplateControl extends SystemControl
         }
         $config_file = "./data/config/base.inc.php";
         $this->save($config_file, $cacheData);
-        $this->_ajax(1);
+        $this->success("模板风格更新成功", "index");
     }
 }

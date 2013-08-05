@@ -4,71 +4,69 @@
 </head>
 <body>
 <div class="right_content">
+    <div class="path">模板风格</div>
+    <h3 class="message">把模板风格放到template目录下</h3>
 
-    <div class="tpl_list">
-            <h2>正在使用</h2>
-            <list from="$tpl" name="t">
-                <if value="$t.name==$conf.value">
-                    <ul>
-                        <li name="{$t.name}"
-                        <if value="$conf.value==$t.name">class="action"</if>
-                        >
-                        <div class="pic">
-                            <img src='{$t.pic}'/>
-                        </div>
-                        <p>
-                            <strong>风格名称:</strong><span>{$t.title}</span>
-                        </p>
+    <form action="{|U:edit}" method="post">
+        <div class="tpl_list">
+            <ul>
+                <list from="$tpl" name="t">
+                    <if value="$t['name'] eq $conf['value']">
+                        <li><!--显示默认-->
+                            <div class="pic">
+                                <p class="thumb">
+                                    <img alt="预览" src="{$t.pic}">
+                                </p>
 
-                        <p>
-                            <strong>模板目录:</strong><span>{$t.name}</span>
-                        </p>
+                                <p class="tpltitle">{$t.title}</p>
 
-                        <p>
-                            <strong>模板作者:</strong><span>{$t.author}</span>
-                        </p>
+                                <p class="info"><b>作者: </b>{$t.author}</p>
 
-                        <p>
-                            <strong>作者QQ:</strong><span>{$t.qq}</span>
-                        </p>
-
-                        <div class="shade"></div>
+                                <p class="info"><b>QQ: </b>{$t.qq}</p>
+                            </div>
+                            <div>
+                                <p style="margin: 2px 0">
+                                    <label>
+                                        使用
+                                        <input class="radio" type="radio" checked="checked" value="{$t.name}" name="style">
+                                    </label>
+                                </p>
+                            </div>
                         </li>
-                    </ul>
-                </if>
-            </list>
-    </div>
-    <div class="tpl_list">
-        <h2>所有风格</h2>
-        <ul>
-            <list from="$tpl" name="t">
-                <li name="{$t.name}"
-                <if value="$conf.value==$t.name">class="action"</if>
-                >
-                <div class="pic">
-                    <img src='{$t.pic}'/>
-                </div>
-                <p>
-                    <strong>风格名称:</strong><span>{$t.title}</span>
-                </p>
+                    </if>
+                </list>
+                <list from="$tpl" name="t">
+                    <if value="$t['name'] neq $conf['value']">
+                        <li><!--显示默认-->
+                            <div class="pic">
+                                <p class="thumb">
+                                    <img alt="预览" src="{$t.pic}">
+                                </p>
 
-                <p>
-                    <strong>模板目录:</strong><span>{$t.name}</span>
-                </p>
+                                <p class="tpltitle">{$t.title}</p>
 
-                <p>
-                    <strong>模板作者:</strong><span>{$t.author}</span>
-                </p>
+                                <p class="info"><b>作者: </b>{$t.author}</p>
 
-                <p>
-                    <strong>作者QQ:</strong><span>{$t.qq}</span>
-                </p>
-
-                <div class="shade"></div>
-                </li>
-            </list>
-        </ul>
-    </div>
+                                <p class="info"><b>QQ: </b>{$t.qq}</p>
+                            </div>
+                            <div>
+                                <p style="margin: 2px 0">
+                                    <label>
+                                        使用
+                                        <input class="radio" type="radio" value="{$t.name}" name="style">
+                                    </label>
+                                </p>
+                            </div>
+                        </li>
+                    </if>
+                </list>
+            </ul>
+        </div>
+        <div style="border-top: 1px dotted #DEEFFB;height:5px;overflow: hidden;margin-top:10px;"></div>
+        <div class="send">
+            <input type="submit" value="提交" class="btn2"/>
+        </div>
+    </form>
 </div>
 </body>
 </html>

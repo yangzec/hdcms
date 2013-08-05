@@ -11,7 +11,8 @@ class FieldControl extends RbacControl
     public function index()
     {
         $mid = $this->_get("mid");
-        $this->assign("fields", M("model_field")->order("fieldsort ASC")->all());
+        $field = M("model_field")->order("fieldsort ASC")->all("mid=$mid");
+        $this->assign("fields", $field);
         $this->display();
     }
 
@@ -57,10 +58,13 @@ class FieldControl extends RbacControl
         if (!$table_name || !$field_name || !$fid || !$mid) {
             $this->error("非法传参数");
         }
-        $sql = "ALTER TABLE " . C("DB_PREFIX") . $table_name . " DROP $field_name";
         $db = K("Field");
-        //删除表字段
-        $db->exe($sql);
+        //如果表中有字段则删除
+        if ($db->is_field($field_name, $table_name)) {
+            $sql = "ALTER TABLE " . C("DB_PREFIX") . $table_name . " DROP $field_name";
+            //删除表字段
+            $db->exe($sql);
+        }
         //删除表model_field中记录
         $db->del("fid=$fid");
         //修改表缓存

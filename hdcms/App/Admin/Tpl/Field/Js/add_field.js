@@ -130,27 +130,9 @@ $(function () {
                     '</td></tr>' +
                     '<tr><td style="width:100px;">允许上传图片类型</td>' +
                     '<td><input type="text" name="set[allow_upload_type]" value="*.gif;*.jpg;*.png;*.jpeg" class="w300"/>' +
+                    '<input type="hidden" name="set[default]" value=""/>' +
                     '<input type="hidden" name="field_type" value="char"/>' +
                     '<input type="hidden" name="field_size" value="200"/></td></tr>' +
-                    '</table>';
-                $("input[name='css']").parents("tr").hide();
-                $("input[name='validation']").parents("tr").hide();
-                $("input[name='required']").parents("tr").hide();
-                $("input[name='error']").parents("tr").hide();
-                $("textarea[name='message']").parents("tr").hide();
-                break;
-            case "images":
-                field_set = '<table class="table">' +
-                    '<tr><td style="width:100px;">允许大小</td>' +
-                    '<td><input type="text" name="set[upload_size]" value="5" class="w100"/> MB ' +
-                    '</td></tr>' +
-                    '<tr><td style="width:100px;">上传数量</td>' +
-                    '<td><input type="text" name="set[upload_num]" value="1" class="w100"/> 个 ' +
-                    '</td></tr>' +
-                    '<tr><td style="width:100px;">允许上传图片类型</td>' +
-                    '<td><input type="text" name="set[allow_upload_type]" value="*.gif;*.jpg;*.png;*.jpeg" class="w300"/>' +
-                    '<input type="hidden" name="field_type" value="char"/>' +
-                    '</td></tr>' +
                     '</table>';
                 $("input[name='css']").parents("tr").hide();
                 $("input[name='validation']").parents("tr").hide();

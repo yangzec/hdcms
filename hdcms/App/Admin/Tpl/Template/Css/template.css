@@ -1,6 +1,31 @@
+.path {
+    color: #555555;
+    font-size: 12px;
+    background: none repeat scroll 0 0 #F2F9FD;
+    border-bottom: 2px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-top: 5px solid #FFFFFF;
+    line-height: 25px;
+    padding-left: 10px;
+    border-bottom: 1px solid #B5CFD9;
+    clear: both;
+    height: 32px;
+    margin-bottom: 6px;
+}
+
+.message {
+    font-size: 12px;
+    line-height: 160%;
+    font-weight: normal;
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+    border-bottom: 1px dotted #DEEFFB;
+    text-indent: 10px;
+}
+
 div.tpl_list {
-    border: solid 2px #0088CC;
-    margin-bottom: 10px;
+
+    padding: 5px 5px 3px 0;
 }
 
 h2 {
@@ -19,37 +44,39 @@ div.tpl_list ul {
 }
 
 div.tpl_list ul li {
-    border: solid 1px #ccc;
+    width: 33%;
     float: left;
-    width: 230px;
-    height: 270px;
-    overflow: hidden;
-    cursor: pointer;
-    margin: 5px;
-    position: relative;
-}
-
-div.tpl_list ul li div.pic {
-    text-align: center;
-    margin-bottom: 15px;
-    margin: 6px 0px;
-
-    padding: 3px;
-    height: 160px;
-    overflow: hidden;
-}
-
-div.tpl_list ul li div.pic img {
-    width: 220px;
-}
-
-div.tpl_list ul li p {
-    height: 22px;
-    text-indent: 4px;
     font-size: 12px;
 }
 
-div.tpl_list ul li p strong {
-    width: 60px;
+div.tpl_list ul li div.pic {
+    width: 150px;
+    float: left;
+    text-align: left;
+    margin-right: 10px;
+}
+
+div.tpl_list ul li div.pic p.thumb {
+    margin-bottom: 5px;
+    height: 140px;
+    border: solid 1px #dcdcdc;
+    overflow: hidden;
+}
+
+div.tpl_list ul li div.pic p.thumb img {
+    height: 140px;
+    width: 150px;
+}
+
+div.tpl_list ul li div.pic p.tpltitle {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 20px;
+    color:#aaa;
+}
+
+div.tpl_list ul li div.pic p.info{
     display: inline-block;
+    font-weight: normal;
+    color:#ccc;
 }

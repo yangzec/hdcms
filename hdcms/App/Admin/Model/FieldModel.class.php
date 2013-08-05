@@ -72,8 +72,8 @@ class FieldModel extends Model
             return F($mid, NULL, './data/field/');
         }
         foreach ($field as $k => $f) {
-            eval('$field[$k]["set"]=' . $f['set'] . ';');
-            $field[$k]['html'] = $this->getHtml($f);
+            eval("\$field[\$k]['set']=" . $f['set'] . ';');
+            $field[$k]['html'] = $this->getHtml($field[$k]);
         }
         //缓存字段信息
         return F($mid, $field, './data/field/');
@@ -95,6 +95,13 @@ class FieldModel extends Model
                 <th>{$f['title']}</th>
                 <td><input name='$name' value='{FIELD_VALUE}' size='{$f['set']['size']}'
                  css='{$f['css']}'/><span class='validation'>{$f['message']}</span>
+                 </td></tr>";
+                break;
+            case "image":
+                $html = "<tr>
+                <th>{$f['title']}</th>
+                <td><input name='$name' lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
+                 <input class='inputbut' type='button' onclick='selectImage(this)' value='浏览...'>
                  </td></tr>";
                 break;
             case "textarea":
@@ -195,6 +202,7 @@ str;
             case "num":
             case "editor":
             case "datetime":
+            case "image":
                 $html = str_replace("{FIELD_VALUE}", $value, $field['html']);
                 break;
         }

@@ -28,6 +28,7 @@ class SystemControl extends RbacControl
             $cacheData[$c['name']] = $c['value'];
         }
         $this->save($config_file, $cacheData);
+        $this->success("修改配置成功", "water_show");
     }
 
     /**

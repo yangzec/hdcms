@@ -43,3 +43,19 @@ function select_color(obj, _input) {
         $("[name='title']").css({color: _c});
     })
 }
+
+/** 图片上传***/
+function selectImage(obj) {
+    var inputlab = $(obj).prev().attr("lab");
+    window.open(METH + "&action=uploadImage&lab=" + inputlab, 'newwindow', 'height=400,width=650,top=100,left=200,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+}
+/**
+ 在弹出窗体中选择上传图片，修改父级input
+ */
+function updateImageInput(obj) {
+    var path = $(obj).attr("path");
+    var inputLab = $(obj).attr("inputlab");
+    $(opener.document).find("input[lab='" + inputLab + "']").val(path);
+    window.close();
+
+}

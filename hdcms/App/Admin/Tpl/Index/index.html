@@ -16,10 +16,11 @@
     <div class="top_menu">
         <ul class="nav">
             <li><a href="#" lab="con">内容</a></li>
-            <li><a href="#" lab="collect">采集</a></li>
+            <li><a href="#" lab="html">生成</a></li>
+            <!--<li><a href="#" lab="collect">采集</a></li>-->
             <li><a href="#" lab="user">用户</a></li>
             <li><a href="#" lab="system">系统</a></li>
-            <li><a href="#" lab="module">模块</a></li>
+            <!--<li><a href="#" lab="module">模块</a></li>-->
             <li><a href="__ROOT__" target="_blank">首页</a></li>
         </ul>
     </div>
@@ -32,7 +33,7 @@
             <div class="userinfo">
                 <ul>
                     <li>
-                        <a href="{|U:'Login/out'}" target="_blank">退出</a>
+                        <a href="{|U:'Login/out'}" target="_parent">退出</a>
                     </li>
                     <li>
                         <a href="{|U:'Member/Index/index'}" target="_blank">会员中心</a>
@@ -62,13 +63,23 @@
         <ul class="menu">
             <li><a href="{|U:'Category/index'}">栏目管理</a></li>
         </ul>
-
         <h2>模型管理</h2>
         <ul class="menu">
             <li><a href="{|U:'Model/index'}">模型管理</a></li>
         </ul>
     </div>
     <!--内容-->
+    <!--生成静态等-->
+    <div id="html" class="menu_block">
+        <h2>生成HTML</h2>
+        <ul class="menu">
+            <li><a href="{|U:'html/all'}">一键更新静态</a></li>
+            <li><a href="{|U:'Html/index'}">生成首页</a></li>
+            <li><a href="{|U:'Html/category'}">生成栏目页</a></li>
+            <li><a href="{|U:'html/article'}">生成内容页</a></li>
+        </ul>
+    </div>
+    <!--生成静态等-->
     <!--用户-->
     <div id="user" class="menu_block">
         <h2>会员管理</h2>

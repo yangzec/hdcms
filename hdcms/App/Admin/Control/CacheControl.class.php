@@ -52,8 +52,10 @@ class CacheControl extends RbacControl
     {
         $model = M("model")->all();
         $dbField = K("Field");
-        foreach ($model as $m) {
-            $dbField->updateCache($m['mid']);
+        if ($model) {
+            foreach ($model as $m) {
+                $dbField->updateCache($m['mid']);
+            }
         }
         return true;
     }

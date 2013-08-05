@@ -10,5 +10,15 @@ return array (
     'control' => 'Article',
     'type' => '1',
   ),
+  1 => 
+  array (
+    'mid' => '2',
+    'model_name' => '学生项目',
+    'tablename' => 'study_project',
+    'enable' => '1',
+    'description' => '',
+    'control' => 'Article',
+    'type' => '1',
+  ),
 );
 ?>

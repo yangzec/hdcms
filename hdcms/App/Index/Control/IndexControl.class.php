@@ -4,13 +4,14 @@ class IndexControl extends Control
 {
     public function __init()
     {
-        C("tpl_style", __ROOT__.'/template/' . C("style"));
     }
 
-    function index()
+    /**
+     * 网站首页
+     */
+    public function index()
     {
-        header("Content-type:text/html;charset=utf-8");
-
+        $this->display(TPL_PATH . 'index.html');
     }
 
     public function article()

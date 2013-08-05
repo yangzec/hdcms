@@ -21,12 +21,18 @@ class ArticleControl extends RbacControl
      */
     public function add()
     {
-        //添加文章神图
-        if (isset($_POST['title'])) {
+        $action = $this->_get('action');
+
+        if ($action) {
+            //图片上传
+            if($action=='uploadImage'){
+                $this->uploadImage();
+            }
+        } elseif (isset($_POST['title'])) {
             //添加内容
             $this->addContent();
         } else {
-            //添加正文
+            //添加正文视图
             $this->addView();
         }
     }

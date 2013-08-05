@@ -336,6 +336,34 @@ class CommonControl extends Control
         }
         $this->_ajax($json, 'TEXT');
     }
+
+    /**
+     * 图片上传
+     */
+    public function uploadImage()
+    {
+        $image = $this->_files("image");
+        $dirs = array();
+        //上传图片
+        if ($image) {
+            $uploadDir = "./upload/" . date("ymd") . '/';
+            $upload = new Upload($uploadDir, array('jpg', 'jpeg', 'png'));
+            $file = $upload->upload();
+            //上传成功
+            if ($file) {
+                $dirs = $file;
+                $dirs[0]['filemtime'] = time();
+                $this->assign("dirs", $dirs);
+                $this->assign("uploadimage",true);
+            }
+        } else {
+            $dir = $this->_get("dir");
+            $path = $dir ? base64_decode($dir) : "./upload/";
+            $dirs = Dir::tree($path);
+        }
+        $this->assign("dirs", $dirs);
+        $this->display("./hdcms/Common/tpl/uploadImage.html");
+    }
 }
 
 
