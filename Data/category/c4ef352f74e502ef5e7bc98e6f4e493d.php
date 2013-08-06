@@ -2,7 +2,7 @@
 return array (
   0 => 
   array (
-    'cid' => '19',
+    'cid' => '20',
     'pid' => '0',
     'catname' => '学生项目',
     'html_dir' => 'project',
@@ -14,15 +14,15 @@ return array (
     'is_arc_html' => '1',
     'list_html_url' => '{catdir}/list_{cid}_{page}.html',
     'arc_html_url' => '{catdir}/{y}/{m}{d}/{aid}.html',
-    'mid' => '2',
+    'mid' => '4',
     'cattype' => '1',
     'urltype' => '1',
     'redirecturl' => '',
     'model_name' => '学生项目',
     'tablename' => 'study_project',
     'enable' => '1',
-    'control' => 'Article',
-    'type' => '1',
+    'control' => 'ArticleSingle',
+    'type' => '2',
     'level' => 1,
     'html' => '',
   ),

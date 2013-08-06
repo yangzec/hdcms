@@ -19,7 +19,7 @@ class FieldControl extends RbacControl
     /**
      * 验证字段是否存
      */
-    public function check_field_name()
+    public function checkFieldName()
     {
         $mid = $this->_get("mid", "intval");
         $db = M("model_field");
@@ -35,13 +35,21 @@ class FieldControl extends RbacControl
     public function add()
     {
         if (isset($_POST['field_name'])) {
-            $db = k("Field");
-            if ($db->addField($_POST)) {
-                $this->success("表字段修改成功", U("index", array("mid" => $_POST['mid'])));
-            } else {
-                $this->error("表字段修改失败", U("index", array("mid" => $_POST['mid'])));
+            //检测字段是否存在
+            $db = M("model");
+            $model = $db->find($this->_get("mid"));
+            $table = $_POST['is_main_table'] == 1 ? $mode['tablename'] : $model['tablename'] . '_data';
+            if ($db->fieldExists($_POST["field_name"], $table)) {
+                $this->_ajax(array('stat' => 0, "msg" => "字段已经存在"));
             }
+            //添加字段
+            $db = k("Field");
+            $db->addField($_POST);
+            $this->_ajax(array("stat"=>1));
         } else {
+            $mid = $this->_get("mid");
+            $model = M("model")->find($mid);
+            $this->assign("model", $model);
             $this->display();
         }
     }
@@ -70,5 +78,21 @@ class FieldControl extends RbacControl
         //修改表缓存
         $db->updateCache($mid);
         $this->success("删除字段成功", U("index", "mid=$mid"));
+    }
+
+    /**
+     * 修改字段
+     */
+    public function edit()
+    {
+        if ($this->_post("title")) {
+
+        } else {
+            $fid = $this->_get("fid");
+            $field = M("model_field")->find($fid);
+            p($field);
+            $this->assign("field", $field);
+            $this->display();
+        }
     }
 }

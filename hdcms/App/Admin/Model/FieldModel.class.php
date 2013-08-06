@@ -33,7 +33,6 @@ class FieldModel extends Model
      */
     private function alterTable($field)
     {
-
         switch ($field['field_type']) {
             case "char":
             case "varchar":
@@ -50,7 +49,7 @@ class FieldModel extends Model
                 break;
         }
         //是否已经存在字段
-        $is_have = $this->is_field($field['field_name'], $field['table_name']);
+        $is_have = $this->fieldExists($field['field_name'], $field['table_name']);
         if ($is_have) {
             $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " CHANGE " . $field['field_name'] . " " . $_field;
         } else {

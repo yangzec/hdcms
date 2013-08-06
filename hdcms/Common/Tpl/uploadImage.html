@@ -13,38 +13,40 @@
 <?php if(isset($_GET['dir']) || isset($uploadimage)):?>
 <a href="javascript:window.history.back();" style='color:#3A6EA5;font-size:12px;margin:10px;'>返回上级目录</a>
 <?php endif;?>
-<table class="table table-title">
-    <thead>
-    <tr>
-        <td width="50%">名称</td>
-        <td width="20%">大小</td>
-        <td>创建时间</td>
-    </tr>
-    </thead>
-    <tbody>
-    <list from="$dirs" name="d">
+<div style="height:350px;overflow:auto;">
+    <table class="table table-title">
+        <thead>
         <tr>
-            <td>
-                <if value="$d['type'] eq 'dir'">
-                    <img src="__GROUP__/Common/tpl/image/dir.gif"/>
-                    <a href="{|U:'uploadImage',array('dir'=>base64_encode($d['path']),'lab'=>$_GET['lab'])}">{$d.name}</a>
-                    <else>
-                        <img src="__GROUP__/Common/tpl/image/pic.gif"/>
-                        <a href="javascript:" inputlab='{$hd.get.lab}'
-                           path="<?php echo '__ROOT__'.'/'.str_replace(ROOT_PATH,'',$d['path']);?>"
-                           onclick="updateImageInput(this)">{$d.name}</a>
-                </if>
-            </td>
-            <td>
-                <?php echo get_size($d['size']);?>
-            </td>
-            <td>
-                {$d['filemtime']|date:"Y-m-d h:i",@@}
-            </td>
+            <td width="50%">名称</td>
+            <td width="20%">大小</td>
+            <td>创建时间</td>
         </tr>
-    </list>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <list from="$dirs" name="d">
+            <tr>
+                <td>
+                    <if value="$d['type'] eq 'dir'">
+                        <img src="__GROUP__/Common/tpl/image/dir.gif"/>
+                        <a href="{|U:'uploadImage',array('dir'=>base64_encode($d['path']),'lab'=>$_GET['lab'])}">{$d.name}</a>
+                        <else>
+                            <img src="__GROUP__/Common/tpl/image/pic.gif"/>
+                            <a href="javascript:" inputlab='{$hd.get.lab}'
+                               path="<?php echo '__ROOT__'.'/'.str_replace(ROOT_PATH,'',$d['path']);?>"
+                               onclick="updateImageInput(this)">{$d.name}</a>
+                    </if>
+                </td>
+                <td>
+                    <?php echo get_size($d['size']);?>
+                </td>
+                <td>
+                    {$d['filemtime']|date:"Y-m-d h:i",@@}
+                </td>
+            </tr>
+        </list>
+        </tbody>
+    </table>
+</div>
 <style type="text/css">
     div.uploadimg {
         font-size: 12px;
