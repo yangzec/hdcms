@@ -18,11 +18,32 @@ class FieldModel extends Model
         //字段所在表
         $field['table_name'] = $table;
         //字段html视图显示信息
-        $field['set'] = var_export($field['set'], true);
-        //根据参数$_POST['is_main_table']修改请表或副表的表结构
         $this->alterTable($field);
         //添加字段信息到model_field表
+        $field['set'] = var_export($field['set'], true);
+        //根据参数$_POST['is_main_table']修改请表或副表的表结构
         $this->add($field);
+        //将字段信息缓存，缓存名是模型mid
+        return $this->updateCache($field['mid']);
+    }
+
+    /**
+     * 修改字段
+     * @param array $field 字段信息
+     * @return bool 成功或失败
+     */
+    public function editField($field)
+    {
+        //获得表名
+        $db = M("model")->find($field['mid']);
+        //清除表缓存
+        F(C("DB_DATABASE") . C("DB_PREFIX") . $field['table_name'], NULL, TABLE_PATH);
+        //修改字段
+        $this->alterTable($field,false);
+        //添加字段信息到model_field表
+        $field['set'] = var_export($field['set'], true);
+        //修改model_field信息
+        $this->save($field);
         //将字段信息缓存，缓存名是模型mid
         return $this->updateCache($field['mid']);
     }
@@ -30,30 +51,30 @@ class FieldModel extends Model
     /**
      * 修改表结构
      * @param array $field 字段信息
+     * @param boolean $addField 添加或修改字段
      */
-    private function alterTable($field)
+    private function alterTable($field,$addField=true)
     {
-        switch ($field['field_type']) {
+        switch ($field['set']['field_type']) {
             case "char":
             case "varchar":
-                $_field = $field['field_name'] . " " . $field['field_type'] . "(255)";
+                $_field = $field['field_name'] . " " . $field['set']['field_type'] . "(" . $field['set']['field_size'] . ")";
                 break;
             case "text":
-                $_field = $field['field_name'] . " " . $field['field_type'];
+                $_field = $field['field_name'] . " " . $field['set']['field_type'];
                 break;
             case "decimal":
-                $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['set']['integer'] . "," . $field['set']['decimal'] . ")";
+                $_field = $field['field_name'] . " " . $field['set']['field_type'] . "(" . $field['set']['integer'] . "," . $field['set']['decimal'] . ")";
                 break;
             default:
-                $_field = $field['field_name'] . " " . $field['field_type'];
+                $_field = $field['field_name'] . " " . $field['set']['field_type'];
                 break;
         }
-        //是否已经存在字段
-        $is_have = $this->fieldExists($field['field_name'], $field['table_name']);
-        if ($is_have) {
-            $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " CHANGE " . $field['field_name'] . " " . $_field;
-        } else {
+        //修改或添加字段
+        if($addField){
             $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " ADD " . $_field;
+        }else{
+            $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " CHANGE " . $field['field_name'] . " " . $_field;
         }
         $this->exe($sql);
     }
@@ -135,14 +156,14 @@ class FieldModel extends Model
                 break;
             case "select":
                 $param = explode(",", $f['set']['param']);
-                $html = "<tr>
-                <th>{$f['title']}</th><td>";
-                if ($f['set']['type'] == 'select') {
-                    "<select name='$name'>";
-                }
+                $html = "";
                 foreach ($param as $p) {
                     $s = explode("|", $p); //男|1,女|0
-                    $checked = $f['set']['default'] == $s[1] ? "checked='checked'" : "";
+                    if ($f['set']['type'] == 'select') {
+                        $selected = $f['set']['default'] == $s[1] ? "selected='selected'" : "";
+                    } else {
+                        $checked = $f['set']['default'] == $s[1] ? "checked='checked'" : "";
+                    }
                     switch ($f['set']['type']) {
                         case "radio":
                             $html .= " <input type='radio' name='$name' value='{$s[1]}' {$checked} css='{$f['css']}'/> " . $s[0];
@@ -151,29 +172,30 @@ class FieldModel extends Model
                             $html .= " <input type='checkbox' name='$name' value='{$s[1]}' {$checked} css='{$f['css']}'/> " . $s[0];
                             break;
                         case "select":
-                            $html .= " <option value='{$s[1]}' $checked>{$s[0]}</option>";
+                            $html .= " <option value='{$s[1]}' $selected>{$s[0]}</option>";
                             break;
                     }
                 }
                 if ($f['set']['type'] == 'select') {
-                    "</select>";
+                    $html = "<select name='$name'><option value=''>===选择===</option>" . $html . "</select>";
                 }
+                $html = "<tr><th>{$f['title']}</th><td>" . $html;
                 $html .= "<span class='validation'>{$f['message']}</span></td></tr>";
                 break;
             case "editor":
                 $html = "<tr><th>{$f['title']}</th><td>";
                 $html .= <<<str
 <script id="hd_$name" name="$name" type="text/plain"></script>
-    <script type='text/javascript'>
-        var ue = UE.getEditor('hd_$name',{
-        imageUrl:url_method//处理上传脚本
+    <script type="text/javascript">
+        var ue = UE.getEditor("hd_$name",{
+        imageUrl:editor_upload_image//处理上传脚本
         ,zIndex : 0
         ,autoClearinitialContent:false
         ,initialFrameWidth:"100%" //宽度1000
-        ,initialFrameHeight:"{$f['set']['height']}" //宽度1000
+        ,initialFrameHeight:'{$f["set"]["height"]}' //宽度1000
         ,autoHeightEnabled:false //是否自动长高,默认true
         ,autoFloatEnabled:false //是否保持toolbar的位置不动,默认true
-        ,initialContent:'{FIELD_VALUE}' //初始化编辑器的内容 也可以通过textarea/script给值
+        ,initialContent:"{FIELD_VALUE}" //初始化编辑器的内容 也可以通过textarea/script给值
     });
         </script>
 str;
@@ -193,7 +215,7 @@ str;
     public function replaceValue($field, $value = null)
     {
         //默认值
-        $value = $value == null ? $field['set']['default'] : $value;
+        $_replaceValue = $value == null ? $field['set']['default'] : $value;
         $html = '';
         switch ($field['show_type']) {
             case "input":
@@ -202,8 +224,24 @@ str;
             case "editor":
             case "datetime":
             case "image":
-                $html = str_replace("{FIELD_VALUE}", $value, $field['html']);
+                $html = str_replace("{FIELD_VALUE}", $_replaceValue, $field['html']);
                 break;
+            case "select":
+                if ($value) {
+                    switch ($field['set']['type']) {
+                        case "radio":
+                        case "checkbox":
+                            $field['html'] = str_replace('checked="checked"', '', $field['html']);
+                            $field['html'] = str_replace('value="' . $value . '"', 'value="' . $value . '" checked="checked"', $field['html']);
+                            break;
+                        case "select":
+                            $field['html'] = str_replace('selected="selected"', '', $field['html']);
+                            $field['html'] = str_replace('value="' . $value . '"', 'value="' . $value . '" selected="selected"', $field['html']);
+                            break;
+                    }
+                } else {
+                    $html = $field['html'];
+                }
         }
         return $html;
     }

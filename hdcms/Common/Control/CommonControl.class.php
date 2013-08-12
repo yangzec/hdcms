@@ -190,7 +190,6 @@ class CommonControl extends Control
         if (empty($category)) {
             $this->error("请先添加栏目", U("Category/index"));
         }
-
         $this->assign("model", M("model")->find($mid));
         $this->assign("category", $this->getCategory($mid));
         $this->display();
@@ -350,11 +349,11 @@ class CommonControl extends Control
             $upload = new Upload($uploadDir, array('jpg', 'jpeg', 'png'));
             $file = $upload->upload();
             //上传成功
-            if ($file) {
+            if (!empty($file)) {
+                $file[0] = str_replace('./', '', $file[0]);
+                $file[0]['filemtime'] = time();
                 $dirs = $file;
-                $dirs[0]['filemtime'] = time();
-                $this->assign("dirs", $dirs);
-                $this->assign("uploadimage",true);
+                $this->assign("uploadimage", true);
             }
         } else {
             $dir = $this->_get("dir");

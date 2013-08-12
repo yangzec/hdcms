@@ -22,7 +22,7 @@ return array (
   ),
   2 => 
   array (
-    'mid' => '5',
+    'mid' => '6',
     'model_name' => 'test',
     'tablename' => 'test',
     'enable' => '1',

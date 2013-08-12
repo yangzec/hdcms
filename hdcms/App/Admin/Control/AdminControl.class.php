@@ -1,4 +1,5 @@
 <?php
+
 class AdminControl extends RbacControl
 {
     public function index()

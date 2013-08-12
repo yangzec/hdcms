@@ -32,7 +32,7 @@
                         <else>
                             <img src="__GROUP__/Common/tpl/image/pic.gif"/>
                             <a href="javascript:" inputlab='{$hd.get.lab}'
-                               path="<?php echo '__ROOT__'.'/'.str_replace(ROOT_PATH,'',$d['path']);?>"
+                               path="<?php echo str_replace(ROOT_PATH,'',$d['path']);?>"
                                onclick="updateImageInput(this)">{$d.name}</a>
                     </if>
                 </td>

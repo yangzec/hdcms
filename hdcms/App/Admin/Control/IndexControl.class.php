@@ -9,7 +9,6 @@ class IndexControl extends RbacControl
 {
     function index()
     {
-        header("Content-type:text/html;charset=utf-8");
         $this->assign("model", M("model")->all());
         $this->display();
     }

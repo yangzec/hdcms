@@ -20,6 +20,5 @@ class RbacControl extends CommonControl
         if (!Rbac::checkAccess()) {
             $this->error("对不起你没有操作权限");
         }
-//        p(session());
     }
 }

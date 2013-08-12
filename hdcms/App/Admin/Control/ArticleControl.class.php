@@ -22,7 +22,6 @@ class ArticleControl extends RbacControl
     public function add()
     {
         $action = $this->_get('action');
-
         if ($action) {
             //图片上传
             if($action=='uploadImage'){

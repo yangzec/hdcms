@@ -22,9 +22,9 @@
     })
     //验证select选择器
     $(function () {
-        $("#validation_select").click(function () {
+        $(".validation_select").change(function () {
             var reg = $(this).val();
-            $("input[name='validation']").val(reg);
+            $(this).prev().val(reg);
         })
     })
     $(function () {
@@ -56,7 +56,7 @@
                     _table.find("input[name='required']").eq(1).click();//是否必须输入
                     break;
                 case "editor":
-                    _table.find("input[name='set[type]']").eq(0).click();//格式设置
+                    _table.find("input[name='set[type]']").eq(1).click();//格式设置
                     break;
             }
         });
@@ -65,21 +65,22 @@
     //添加字段发送表单
     $(function () {
         $("form").submit(function () {
-            $("table.recycle").remove();
+            $("#recycle").append($("#field_set_table table.recycle"));
             var _data = $("form").serialize();
             $.ajax({
                 url: "",
                 data: _data,
                 async: false,
                 type: "POST",
-                dataType:"JSON",
+                dataType: "JSON",
                 success: function (data) {
                     if (data.stat == 1) {
                         alert("字段添加成功");
+                        location.href = '{|U:"index",array("mid"=>$model['mid'])}';
                     } else {
                         alert(data.msg);
+                        $("#field_set_table").append($("#recycle table.recycle"));
                     }
-                  location.href = '{|U:"index",array("mid"=>$model['mid'])}';
                 }
             });
             return false;
@@ -91,7 +92,6 @@
         border: none;
         display: none;
     }
-
     table.fieldParam.action {
         display: block;
     }
@@ -164,6 +164,7 @@
         </td>
     </tr>
 </table>
+<div id="field_set_table">
 <!------------------------input------------------------>
 <table class="table fieldParam action" lab="input">
     <tr class="input action">
@@ -217,8 +218,8 @@
         </td>
         <td>
             <input type="text" name="validation" class="w250"/>
-            <select id="validation_select">
-                <option value="/^\d+$/">验证规则</option>
+            <select class="validation_select">
+                <option value="">验证规则</option>
                 <option value="/^\d+$/">数字</option>
                 <option value="/^(http[s]?:)?(\/{2})?([a-z0-9]+\.)?[a-z0-9]+(\.(com|cn|cc|org|net|com.cn))$/i">
                     网址
@@ -300,7 +301,7 @@
         </td>
         <td>
             <input type="text" name="validation" class="w250"/>
-            <select id="validation_select">
+            <select class="validation_select">
                 <option value="/^\d+$/">验证规则</option>
                 <option value="/^\d+$/">数字</option>
                 <option value="/^(http[s]?:)?(\/{2})?([a-z0-9]+\.)?[a-z0-9]+(\.(com|cn|cc|org|net|com.cn))$/i">
@@ -382,7 +383,7 @@
         </td>
         <td>
             <input type="text" name="validation" class="w250"/>
-            <select id="validation_select">
+            <select class="validation_select">
                 <option value="/^\d+$/">验证规则</option>
                 <option value="/^\d+$/">数字</option>
                 <option value="/^(http[s]?:)?(\/{2})?([a-z0-9]+\.)?[a-z0-9]+(\.(com|cn|cc|org|net|com.cn))$/i">
@@ -430,8 +431,7 @@
                     <td>
                         <input type="radio" name="field_type" value="date"/> 日期 (2013-6-18)<br/>
                         <input type="radio" name="field_type" value="datetime"/> 日期+时间 (2013-6-18 16:22:28)<br/>
-                        <input type="radio" name="field_type" value="int"/> 数字 (2013-6-18
-                        16:22:28)
+                        <input type="radio" name="field_type" value="int"/> 数字 (2013-6-18 16:22:28)
                     </td>
                 </tr>
                 <tr>
@@ -454,7 +454,8 @@
             <table>
                 <tr>
                     <td style="width:100px;">选项类型</td>
-                    <td><input type="radio" name="set[type]" value="radio"/> 单选框
+                    <td>
+                        <input type="radio" name="set[type]" value="radio"/> 单选框
                         <input type="radio" name="set[type]" value="checkbox"/> 多选框
                         <input type="radio" name="set[type]" value="select"/> 下拉列表
                     </td>
@@ -465,8 +466,10 @@
                 </tr>
                 <tr>
                     <td style="width:100px;">默认值</td>
-                    <td><input type="text" name="set[default]" class="w200"/>
-                        <input type="hidden" name="field_type" value="tinyint"/></td>
+                    <td>
+                        <input type="text" name="set[default]" class="w200"/>
+                        <input type="hidden" name="field_type" value="tinyint"/>
+                    </td>
                 </tr>
             </table>
         </td>
@@ -484,26 +487,31 @@
             <table>
                 <tr>
                     <td style="width:100px;">样式</td>
-                    <td><input type="radio" name="set[style]" value="small"/> 精简
-                        <input type="radio" name="set[style]" value="full" checked="checked"/> 完整
+                    <td>
+                        <input type="radio" name="set[type]" value="small"/> 精简
+                        <input type="radio" name="set[type]" value="full"/> 完整
                     </td>
                 </tr>
                 <tr>
                     <td style="width:100px;">默认值</td>
-                    <td><textarea cols="50" rows="3" name="set[default]"></textarea></td>
+                    <td>
+                        <textarea cols="50" rows="3" name="set[default]"></textarea>
+                    </td>
                 </tr>
                 <tr>
                     <td style="width:100px;">编辑器高度</td>
-                    <td><input type="text" name="set[height]" value="200" class="w100"/> px
-                        <input type="hidden" name="field_type" value="text"/></td>
+                    <td>
+                        <input type="text" name="set[height]" value="200" class="w100"/> px
+                        <input type="hidden" name="field_type" value="text"/>
+                    </td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
-<!------------------------editor------------------------>
+<!---------------------------editor-------------------------->
 
-<!------------------------image------------------------>
+<!---------------------------image--------------------------->
 <table class="table fieldParam" lab="image">
     <tr class="input action">
         <td style="text-align:right;width:300px;border-top:none;">
@@ -530,11 +538,12 @@
         </td>
     </tr>
 </table>
-<!------------------------num------------------------>
-
-
+</div>
+<!---------------------------num--------------------------->
 <input type="submit" class="btn" value="添加字段" style="margin-top:20px;margin-left:20px;"/>
 </form>
+<!--放置不用的表单元素-->
+<div id="recycle" style="display:none;"></div>
 </div>
 </div>
 </body>

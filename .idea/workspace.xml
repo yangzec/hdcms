@@ -2,60 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/Js/add_field.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/model/20f35e630daf44dbfa4c3f68f5399d8c.php" afterPath="$PROJECT_DIR$/data/model/20f35e630daf44dbfa4c3f68f5399d8c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/IndexControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/RbacControl.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" afterPath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/index.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/Common/Config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/header.html" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Tpl/ArticleSingle/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/hdedu/static/js/index.js" afterPath="$PROJECT_DIR$/template/hdedu/static/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Tpl/uploadImage.html" afterPath="$PROJECT_DIR$/hdcms/Common/Tpl/uploadImage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375806285953" ignored="false" />
+    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376324357998" ignored="false" />
     <file path="/thumb_upload.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374647162123" ignored="false" />
-    <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375782236123" ignored="false" />
-    <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375721604704" ignored="false" />
+    <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376233621588" ignored="false" />
+    <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376124562595" ignored="false" />
     <file path="/common.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375723073400" ignored="false" />
     <file path="/common.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374649011187" ignored="false" />
     <file path="/ArticleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375720881024" ignored="false" />
-    <file path="/CommonControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375725263738" ignored="false" />
+    <file path="/CommonControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376230871258" ignored="false" />
     <file path="/CacheControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375592630061" ignored="false" />
     <file path="/ModelControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375249484471" ignored="false" />
     <file path="/add_show.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374652622294" ignored="false" />
-    <file path="/index.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375755790598" ignored="false" />
-    <file path="/FieldModel.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375755192658" ignored="false" />
+    <file path="/index.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376270296733" ignored="false" />
+    <file path="/FieldModel.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376271152814" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Org/HdUi/css/hdui.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375687934509" ignored="false" />
     <file path="/hdui.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375687921048" ignored="false" />
     <file path="/CategoryControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375249195432" ignored="false" />
-    <file path="/ArticleSingleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374672681399" ignored="false" />
-    <file path="/IndexControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375710534655" ignored="false" />
+    <file path="/ArticleSingleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376322635260" ignored="false" />
+    <file path="/IndexControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376130112180" ignored="false" />
     <file path="/SystemControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374674038531" ignored="false" />
     <file path="/TemplateControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375707883918" ignored="false" />
     <file path="/news_article.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374680321773" ignored="false" />
     <file path="/validation.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374675985078" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Config/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375007751172" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Config/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376323318649" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/Control.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375724418035" ignored="false" />
     <file path="/template.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375687564388" ignored="false" />
     <file path="/news.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374681404095" ignored="false" />
     <file path="/selectTpl.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682356056" ignored="false" />
     <file path="/category.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375248806498" ignored="false" />
     <file path="/news_list.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374682713408" ignored="false" />
-    <file path="/RbacControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374850631281" ignored="false" />
+    <file path="/RbacControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376127350501" ignored="false" />
     <file path="/RoleControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374695593050" ignored="false" />
     <file path="/access.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374690569702" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Rbac.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704107117" ignored="false" />
     <file path="/Rbac.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704097179" ignored="false" />
     <file path="/css.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374689411795" ignored="false" />
     <file path="/access.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374689617501" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Function/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374850537967" ignored="false" />
-    <file path="/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374850536496" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Function/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375937737465" ignored="false" />
+    <file path="/Functions.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375937575982" ignored="false" />
     <file path="/AccessControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374690449741" ignored="false" />
-    <file path="/edit.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375755998097" ignored="false" />
-    <file path="/AdminControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374694869281" ignored="false" />
+    <file path="/edit.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376234950985" ignored="false" />
+    <file path="/AdminControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375934527918" ignored="false" />
     <file path="/dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374692658291" ignored="false" />
     <file path="/login.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374697346350" ignored="false" />
     <file path="/LoginControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374704139819" ignored="false" />
@@ -65,28 +74,28 @@
     <file path="/index.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375713722256" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Org/HdUi/js/hdui.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705455705" ignored="false" />
     <file path="/hdui.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374705455704" ignored="false" />
-    <file path="/index.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374741221665" ignored="false" />
+    <file path="/index.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376285804763" ignored="false" />
     <file path="/BackupControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374841121458" ignored="false" />
     <file path="/table_list.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374838697475" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Backup.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374839319497" ignored="false" />
     <file path="/Backup.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374773653546" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Hd/Compile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374778819550" ignored="false" />
-    <file path="/Compile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374777140760" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Hd/Compile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376323133897" ignored="false" />
+    <file path="/Compile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376123245022" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/Example/Index/Config/config.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1374833297147" ignored="false" />
-    <file path="/FieldControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375782350805" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Db/Db.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375780710487" ignored="false" />
-    <file path="/Db.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375780708754" ignored="false" />
+    <file path="/FieldControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376323958442" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Db/Db.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376286253109" ignored="false" />
+    <file path="/Db.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376286247329" ignored="false" />
     <file path="/common.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375006590570" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Upload.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375725033454" ignored="false" />
     <file path="/Upload.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375724772198" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Function/Common.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375365681461" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Function/Common.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376324320831" ignored="false" />
     <file path="/HtmlControl.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375618995623" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/App.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375675589226" ignored="false" />
     <file path="/App.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375675577644" ignored="false" />
-    <file path="/Route.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375721395683" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/Route.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375721417725" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/HDPHP.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375675820110" ignored="false" />
-    <file path="/HDPHP.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375675743159" ignored="false" />
+    <file path="/Route.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376269608445" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/Route.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376269618553" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/HDPHP.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376323259392" ignored="false" />
+    <file path="/HDPHP.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376278676934" ignored="false" />
     <file path="/template.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375680604131" ignored="false" />
     <file path="/header.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375713831778" ignored="false" />
     <file path="/library.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375714493557" ignored="false" />
@@ -97,6 +106,29 @@
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Dir.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375724584804" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Model/Model.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375780805687" ignored="false" />
     <file path="/Model.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375780504537" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/hdphp.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375837773811" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Hd/HdBaseTag.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376126399947" ignored="false" />
+    <file path="/HdBaseTag.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376126363337" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Driver/HdView.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376130412912" ignored="false" />
+    <file path="/HdView.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376123415657" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Org/Uploadify/hd_uploadify.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376127900580" ignored="false" />
+    <file path="/hd_uploadify.js" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376126542955" ignored="false" />
+    <file path="/SessionAbstract.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376127834555" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Session/SessionAbstract.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376127843197" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Session/SessionFile.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376127719342" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/Boot.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376130383374" ignored="false" />
+    <file path="/Boot.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376129515466" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Core/Log.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376324121588" ignored="false" />
+    <file path="/Log.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376285368533" ignored="false" />
+    <file path="/Common.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376324144693" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Db/DbMysqli.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376323940282" ignored="false" />
+    <file path="/DbMysqli.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376286381500" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Db/DbMysql.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376324038490" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Tpl/halt.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376281704312" ignored="false" />
+    <file path="/halt.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376281702707" ignored="false" />
+    <file path="/DbMysql.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376286659568" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Db/DbPdo.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376324018811" ignored="false" />
+    <file path="/DbPdo.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376286782924" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,120 +151,52 @@
       <file leaf-file-name="FieldControl.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="65" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
+            <state line="11" column="14" selection-start="157" selection-end="157" vertical-scroll-proportion="-7.806452">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="29" selection-start="2941" selection-end="2941" vertical-scroll-proportion="0.041904762">
-              <folding>
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#if#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#4;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#4;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#3;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#4;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldModel.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="37" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1375782123000" expanded="true" signature="2864:3104" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="2924:3099" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="2993:3029" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3185:3463" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3245:3458" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3302:3313" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3547:3836" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3607:3831" placeholder="..." />
-                <marker date="1375782123000" expanded="false" signature="3639:3699" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3701:3737" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3915:4155" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="3975:4150" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="4044:4080" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="4282:4450" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="4367:4403" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="4487:4959" placeholder="..." />
-                <marker date="1375782123000" expanded="true" signature="4525:4924" placeholder="{...}" />
-                <marker date="1375782123000" expanded="true" signature="4568:4832" placeholder="{&quot;dateFormat&quot;: 'yy-mm-dd'...}" />
-                <marker date="1375782123000" expanded="true" signature="5139:5156" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonControl.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="356" column="42" selection-start="11024" selection-end="11035" vertical-scroll-proportion="0.0">
+            <state line="2" column="24" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.4545455">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleControl.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php">
+      <file leaf-file-name="2013-08-13-9a325.log" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/log/2013-08-13-9a325.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="36" selection-start="393" selection-end="404" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.07913669">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleSingleControl.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleSingleControl.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="5" selection-start="222" selection-end="222" vertical-scroll-proportion="-9.225806">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comment/Config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="40" selection-start="542" selection-end="542" vertical-scroll-proportion="-7.096774">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="21" selection-start="146" selection-end="146" vertical-scroll-proportion="-2.8387096">
               <folding />
             </state>
           </provider>
@@ -256,22 +220,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/template/hdedu/static/css/index.css" />
-        <option value="$PROJECT_DIR$/template/hdedu/static/css/library.css" />
-        <option value="$PROJECT_DIR$/data/field/c81e728d9d4c2f636f067f89cc14862c.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Image/uploadImage.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/ImageControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html" />
-        <option value="$PROJECT_DIR$/hdcms/Common/Tpl/Js/common.js" />
-        <option value="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
+        <option value="$PROJECT_DIR$/temp/Boot.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/IndexControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/Common/Tpl/uploadImage.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/index.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/Js/add_field.js" />
+        <option value="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/index.html" />
         <option value="$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html" />
+        <option value="$PROJECT_DIR$/data/log/2013-08-12-9a325.log" />
+        <option value="$PROJECT_DIR$/comment/Config/config.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleSingleControl.class.php" />
+        <option value="$PROJECT_DIR$/temp/Admin/Compile/ba0525f1e8cd4acaf79d2b7111e73d0f.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/data/log/2013-08-13-9a325.log" />
       </list>
     </option>
   </component>
@@ -336,6 +300,268 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="temp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="temp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="temp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Compile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,7 +667,11 @@
       <created>1375725464111</created>
       <updated>1375725464111</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="修改自定义字段">
+      <created>1375806336314</created>
+      <updated>1375806336314</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -452,7 +682,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17263843" sideWeight="0.49832216" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25081432" sideWeight="0.6003185" order="0" side_tool="false" content_ui="combo" x="507" y="69" width="265" height="596" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1490228" sideWeight="0.6003185" order="0" side_tool="false" content_ui="combo" x="507" y="69" width="265" height="596" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968154" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21579805" sideWeight="0.38758388" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32550335" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -514,7 +744,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改删除栏目删除失败错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改自定义字段" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -532,177 +762,191 @@
     <MESSAGE value="添加RBAC权限验证" />
     <MESSAGE value="添加数据备份" />
     <MESSAGE value="修改删除栏目删除失败错误" />
+    <MESSAGE value="修改自定义字段" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="36" selection-start="393" selection-end="404" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.67753625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp/Admin/Compile/e2ba738e1b8198aaf6bb131e346ba64a.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.5504762" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/Admin/Compile/c464c553eeca4e891e0af7d96619f364.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.2990476" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Common/Tpl/Css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.58666664" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="36" selection-start="393" selection-end="404" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="12" column="6" selection-start="355" selection-end="355" vertical-scroll-proportion="0.26277372">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="356" column="42" selection-start="11024" selection-end="11035" vertical-scroll-proportion="0.0">
+        <state line="348" column="43" selection-start="10752" selection-end="10752" vertical-scroll-proportion="0.3352381">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/Js/article.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Article/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Common/Tpl/uploadImage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="581" selection-end="581" vertical-scroll-proportion="0.3352381" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Common/Tpl/Js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="19" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.6981132" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="100" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.24571429" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="62" selection-start="614" selection-end="614" vertical-scroll-proportion="-3.0171428" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Model/FieldModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="37" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.0">
+        <state line="45" column="28" selection-start="1295" selection-end="1295" vertical-scroll-proportion="0.5693694">
           <folding>
-            <marker date="1375782123000" expanded="true" signature="2864:3104" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="2924:3099" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="2993:3029" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3185:3463" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3245:3458" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3302:3313" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3547:3836" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3607:3831" placeholder="..." />
-            <marker date="1375782123000" expanded="false" signature="3639:3699" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3701:3737" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3915:4155" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="3975:4150" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="4044:4080" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="4282:4450" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="4367:4403" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="4487:4959" placeholder="..." />
-            <marker date="1375782123000" expanded="true" signature="4525:4924" placeholder="{...}" />
-            <marker date="1375782123000" expanded="true" signature="4568:4832" placeholder="{&quot;dateFormat&quot;: 'yy-mm-dd'...}" />
-            <marker date="1375782123000" expanded="true" signature="5139:5156" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1376271379000" expanded="true" signature="-1:-1" placeholder="{&quot;dateFormat&quot;: 'yy-mm-dd'...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/Common/Tpl/uploadImage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="65" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
+        <state line="34" column="85" selection-start="1371" selection-end="1408" vertical-scroll-proportion="0.35869566">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="527" selection-end="527" vertical-scroll-proportion="0.72202164">
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#if#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#if#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#if#2;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#3;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#3;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#3;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#3;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#4;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#4;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#4;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#4;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#4;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#5;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#5;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#5;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#5;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#5;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#if#6;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#if#6;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#6;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#0;n#if#6;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Tpl/Field/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="29" selection-start="2941" selection-end="2941" vertical-scroll-proportion="0.041904762">
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#if#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#td#1;n#tr#0;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#table#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#table#2;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#table#3;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#4;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#5;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#1;n#tr#0;n#table#6;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#1;n#tr#0;n#table#7;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="93" column="5" selection-start="3562" selection-end="3562" vertical-scroll-proportion="0.11956522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/Common/Config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/Config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="40" selection-start="542" selection-end="542" vertical-scroll-proportion="-7.096774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="21" selection-start="146" selection-end="146" vertical-scroll-proportion="-2.8387096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/ArticleSingleControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="5" selection-start="222" selection-end="222" vertical-scroll-proportion="-9.225806">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/Admin/Compile/ba0525f1e8cd4acaf79d2b7111e73d0f.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="37" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.17904761">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/FieldControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="14" selection-start="157" selection-end="157" vertical-scroll-proportion="-7.806452">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="24" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.4545455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/log/2013-08-13-9a325.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.07913669">
+          <folding />
         </state>
       </provider>
     </entry>
