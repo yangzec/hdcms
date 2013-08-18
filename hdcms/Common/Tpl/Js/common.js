@@ -47,7 +47,7 @@ function select_color(obj, _input) {
 /** 图片上传***/
 function selectImage(obj) {
     var inputlab = $(obj).prev().attr("lab");
-    window.open(METH + "&action=uploadImage&lab=" + inputlab, 'newwindow', 'height=400,width=650,top=100,left=200,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+    window.open(URL + "&action=uploadImage&lab=" + inputlab, 'newwindow', 'height=400,width=650,top=100,left=200,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 /**
  在弹出窗体中选择上传图片，修改父级input
@@ -58,4 +58,38 @@ function updateImageInput(obj) {
     $(opener.document).find("input[lab='" + inputLab + "']").val(path);
     window.close();
 
+}
+/**
+ * 自定义字段验证
+ * @param obj 表单对象
+ * @param required 是否必须验证
+ * @param validation 验证正则
+ * @param message 提示文字
+ * @param error 出错提示文字
+ * @returns {boolean}
+ */
+function checkField(obj,required,validation,message,error){
+    //移除validation属性，必须验证与验证不通过的表单会添加validation且属性值为0
+    $(obj).removeAttr("validation");
+    var _val =$(obj).val();
+    //如果内容为空并且不是必须输入时
+    if(_val=='' && !required){
+        $(obj).next("span").html(message).removeClass("error").removeClass("success");
+        return true;
+    }
+    //必须验证字段 验证失败
+    if(!validation.test(_val)){
+        $(obj).next("span").html(error).removeClass("success").addClass("error");
+        $(obj).attr("validation",0);//验证失败添加属性
+        return false;
+    }
+    $(obj).next("span").html("输入正确").removeClass("error").addClass("success");
+    return true;
+}
+/**
+ * 验证表单获利焦点时设置提示内容
+ * @param message
+ */
+function checkFieldMsg(obj,message){
+    message && $(obj).next("span").html(message).removeClass("error").removeClass("success");
 }

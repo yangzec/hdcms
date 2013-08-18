@@ -22,13 +22,13 @@ return array (
   ),
   2 => 
   array (
-    'mid' => '6',
+    'mid' => '7',
     'model_name' => 'test',
     'tablename' => 'test',
     'enable' => '1',
     'description' => '',
-    'control' => 'Article',
-    'type' => '1',
+    'control' => 'ArticleSingle',
+    'type' => '2',
   ),
 );
 ?>

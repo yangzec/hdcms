@@ -2,6 +2,7 @@
 <script>
     $(function () {
         $("form").submit(function () {
+            //对form表单验证  对图片上传form不验证
             if (!$(this).attr("target")) {
                 if (!$("input[name='title']").val()) {
                     alert("标题不能为空");
@@ -15,6 +16,11 @@
                     alert("内容不能为空");
                     return false;
                 }
+                $("input[blur]").trigger("blur");
+                if($("input[validation='0']").length>0){
+                    return false;
+                }
+                return false;
             }
         })
     })

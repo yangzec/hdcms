@@ -55,26 +55,29 @@ class FieldModel extends Model
      */
     private function alterTable($field,$addField=true)
     {
-        switch ($field['set']['field_type']) {
+        switch ($field['field_type']) {
             case "char":
             case "varchar":
-                $_field = $field['field_name'] . " " . $field['set']['field_type'] . "(" . $field['set']['field_size'] . ")";
+                if(!isset($field['field_size']) || $field['field_size']){
+                    $field['field_size']=255;
+                }
+                $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['field_size'] . ")";
                 break;
             case "text":
-                $_field = $field['field_name'] . " " . $field['set']['field_type'];
+                $_field = $field['field_name'] . " " . $field['field_type'];
                 break;
             case "decimal":
-                $_field = $field['field_name'] . " " . $field['set']['field_type'] . "(" . $field['set']['integer'] . "," . $field['set']['decimal'] . ")";
+                $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['set']['integer'] . "," . $field['set']['decimal'] . ")";
                 break;
             default:
-                $_field = $field['field_name'] . " " . $field['set']['field_type'];
+                $_field = $field['field_name'] . " " . $field['field_type'];
                 break;
         }
         //修改或添加字段
         if($addField){
             $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " ADD " . $_field;
         }else{
-            $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " CHANGE " . $field['field_name'] . " " . $_field;
+            $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " CHANGE " . $field['field_old_name'] . " " . $_field;
         }
         $this->exe($sql);
     }
@@ -106,15 +109,17 @@ class FieldModel extends Model
      */
     private function getHtml($f)
     {
+
         $html = '';
         //表单name值
         $name = $f['is_main_table'] == 1 ? $f['field_name'] : $f['table_name'] . "[{$f['field_name']}]";
+        $validation = !empty($f['validation'])?"checkField(this,{$f['required']},{$f['validation']},'{$f['message']}','{$f['error']}');":"";
         switch ($f['show_type']) {
             case "input":
                 $html = "<tr>
                 <th>{$f['title']}</th>
                 <td><input name='$name' value='{FIELD_VALUE}' size='{$f['set']['size']}'
-                 css='{$f['css']}'/><span class='validation'>{$f['message']}</span>
+                 css='{$f['css']}' onblur=\"$validation\" onfocus=\"checkFieldMsg(this,'{$f['message']}')\"/><span class='validation'>{$f['message']}</span>
                  </td></tr>";
                 break;
             case "image":
@@ -127,14 +132,14 @@ class FieldModel extends Model
             case "textarea":
                 $html = "<tr>
                 <th>{$f['title']}</th>
-                <td><textarea name='$name' style=\"width:{$f['set']['width']}px;height:{$f['set']['height']}px;\"
+                <td><textarea onblur=\"$validation\" onfocus=\"checkFieldMsg(this,'{$f['message']}')\" name='$name' style=\"width:{$f['set']['width']}px;height:{$f['set']['height']}px;\"
                  css='{$f['css']}'/>{FIELD_VALUE}</textarea><span class='validation'>{$f['message']}</span>
                  </td></tr>";
                 break;
             case "num":
                 $html = "<tr>
                 <th>{$f['title']}</th>
-                <td><input name='$name' value='{FIELD_VALUE}' size='{$f['set']['size']}'
+                <td><input onblur=\"$validation\"  onfocus=\"checkFieldMsg(this,'{$f['message']}')\" name='$name' value='{FIELD_VALUE}' size='{$f['set']['size']}'
                  css='{$f['css']}'/><span class='validation'>{$f['message']}</span>
                  </td></tr>";
                 break;
@@ -201,9 +206,6 @@ class FieldModel extends Model
 str;
                 $html .= "<span class='validation'>{$f['message']}</span>";
                 $html .= "</td></tr>";
-                break;
-            case "image":
-
                 break;
         }
         return $html;

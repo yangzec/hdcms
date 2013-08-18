@@ -1,101 +1,119 @@
-<load file="__STATIC__/header.html"/>
-<script>
-    //验证
-    $(function () {
-        //表单验证
-        $("form").validation({
-            //验证规则
-            rules: {
-                field_name: {
-                    message: {default: "只能由英文字母、数字或下划线组成", empty: "请输入字段名称", success: "字段名设置正确", error: "字段已经存在或设置错误"},
-                    rule: {required: true, regexp: /^[a-z0-9_]+$/}
-                },
-                title: {
-                    message: {default: "例：文章标题,请输入中文", empty: "请输入字段标题", "error": "必须输入标题"},
-                    rule: {required: true}
-                },
-                description: {
-                    message: {default: "模型描述(可以输入中文)"}
-                }
-            }
-        });
-    })
-    //验证select选择器
-    $(function () {
-        $(".validation_select").change(function () {
-            var reg = $(this).val();
-            $(this).prev().val(reg);
-        })
-    })
-    $(function () {
-        $("#field_select").change(function () {
-            var fieldType = $(this).val();
-            $("table.fieldParam").removeClass("action").addClass("recycle");
-            var _table = $("table[lab='" + fieldType + "']");//表格
-            _table.removeClass("recycle").addClass("action");
-            $("table.fieldParam input").removeAttr("checked");
-            switch (fieldType) {
-                case "input":
-                    _table.find("input[name='field_type']").eq(0).click();//字段类型
-                    _table.find("input[name='set[ispasswd]']").eq(1).click();//是否为密码
-                    _table.find("input[name='required']").eq(1).click();//是否必须输入
-                    break;
-                case "textarea":
-                    _table.find("input[name='field_type']").eq(0).click();//字段类型
-                    _table.find("input[name='required']").eq(1).click();//是否必须输入
-                    break;
-                case "num":
-                    _table.find("input[name='required']").eq(1).click();//是否必须输入
-                    break;
-                case "datetime":
-                    _table.find("input[name='field_type']").eq(0).click();//格式设置
-                    _table.find("input[name='required']").eq(1).click();//是否必须输入
-                    break;
-                case "select":
-                    _table.find("input[name='set[type]']").eq(0).click();//格式设置
-                    _table.find("input[name='required']").eq(1).click();//是否必须输入
-                    break;
-                case "editor":
-                    _table.find("input[name='set[type]']").eq(1).click();//格式设置
-                    break;
-            }
-        });
-        $("#field_select").trigger("change");
-    });
-    //添加字段发送表单
-    $(function () {
-        $("form").submit(function () {
-            $("#recycle").append($("#field_set_table table.recycle"));
-            var _data = $("form").serialize();
-            $.ajax({
-                url: "",
-                data: _data,
-                async: false,
-                type: "POST",
-                dataType: "JSON",
-                success: function (data) {
-                    if (data.stat == 1) {
-                        alert("字段添加成功");
-                        location.href = '{|U:"index",array("mid"=>$model['mid'])}';
-                    } else {
-                        alert(data.msg);
-                        $("#field_set_table").append($("#recycle table.recycle"));
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <css file="__STATIC__/Css/common.css"/>
+    <title></title>
+    <jquery/>
+    <jsconst/>
+    <hdui/>
+    <script>
+        //验证
+        $(function () {
+            //表单验证
+            $("fo1rm").validation({
+                //验证规则
+                rules: {
+                    field_name: {
+                        message: {default: "只能由英文字母、数字或下划线组成", empty: "请输入字段名称", success: "字段名设置正确", error: "字段已经存在或设置错误"},
+                        rule: {required: true, regexp: /^[a-z0-9_]+$/}
+                    },
+                    title: {
+                        message: {default: "例：文章标题,请输入中文", empty: "请输入字段标题", "error": "必须输入标题"},
+                        rule: {required: true}
+                    },
+                    description: {
+                        message: {default: "模型描述(可以输入中文)"}
                     }
                 }
             });
-            return false;
         })
-    })
-</script>
-<style type="text/css">
-    table.fieldParam {
-        border: none;
-        display: none;
-    }
-    table.fieldParam.action {
-        display: block;
-    }
-</style>
+        //验证select选择器
+        $(function () {
+            $(".validation_select").change(function () {
+                var reg = $(this).val();
+                $(this).prev().val(reg);
+            })
+        })
+        $(function () {
+            //更改字段类型
+            $("#field_select").change(function () {
+                var fieldType = $(this).val();
+                $("table.fieldParam").appendTo("div#recycle");//全部set表格移动到recycle的div中
+                var _table = $("table[lab='" + fieldType + "']");//当前select选择的类型表格
+                _table.appendTo("div#field_set_table");//将选中的添加到div中
+                //所有input第一个默认选中
+                $("td table td",_table).each(function(i){
+                    if($(this).find("input").length){
+                        $("input[type='radio']",this).eq(0).attr("checked","checked");
+                    }
+                })
+                //是否必须添写的表单
+                if($("input[name='required']",_table).length){
+                    $("input[name='required']",_table).eq(1).attr("checked","checked");
+                }
+//                $("table.fieldParam").removeClass("action").addClass("recycle");
+//                var _table = $("table[lab='" + fieldType + "']");//表格
+//                _table.removeClass("recycle").addClass("action");
+//                $("table.fieldParam input").removeAttr("checked");
+//                switch (fieldType) {
+//                    case "input":
+//                        _table.find("input[name='field_type']").eq(0).click();//字段类型
+//                        _table.find("input[name='set[ispasswd]']").eq(1).click();//是否为密码
+//                        _table.find("input[name='required']").eq(1).click();//是否必须输入
+//                        break;
+//                    case "textarea":
+//                        _table.find("input[name='field_type']").eq(0).click();//字段类型
+//                        _table.find("input[name='required']").eq(1).click();//是否必须输入
+//                        break;
+//                    case "num":
+//                        _table.find("input[name='required']").eq(1).click();//是否必须输入
+//                        break;
+//                    case "datetime":
+//                        _table.find("input[name='field_type']").eq(0).click();//格式设置
+//                        _table.find("input[name='required']").eq(1).click();//是否必须输入
+//                        break;
+//                    case "select":
+//                        _table.find("input[name='set[type]']").eq(0).click();//格式设置
+//                        _table.find("input[name='required']").eq(1).click();//是否必须输入
+//                        break;
+//                    case "editor":
+//                        _table.find("input[name='set[type]']").eq(1).click();//格式设置
+//                        break;
+//                }
+            });
+            $("#field_select").trigger("change");
+        });
+        //添加字段发送表单
+        $(function () {
+            $("form").submit(function () {
+                $("#recycle").append($("#field_set_table table.recycle"));
+                var _data = $("form").serialize();
+                $.ajax({
+                    url: "",
+                    data: _data,
+                    async: false,
+                    type: "POST",
+                    dataType: "JSON",
+                    success: function (data) {
+                        if (data.stat == 1) {
+                            alert("字段添加成功");
+                            location.href = '{|U:"index",array("mid"=>$model['mid'])}';
+                        } else {
+                            alert(data.msg);
+                            $("#field_set_table").append($("#recycle table.recycle"));
+                        }
+                    }
+                });
+                return false;
+            })
+        })
+    </script>
+    <style type="text/css">
+        div#recycle{display:none;}
+        table.fieldParam{border-top:none;}
+    </style>
 </head>
 <body>
 <div class="right_content">
@@ -174,14 +192,6 @@
         <td style="border-top:none;">
             <table>
                 <tr>
-                    <td style="width:100px;">文本框长度</td>
-                    <td><input type="text" name="set[size]" class="w200" value="30"/></td>
-                </tr>
-                <tr>
-                    <td style="width:100px;">默认值</td>
-                    <td><input type="text" name="set[default]" class="w200"/></td>
-                </tr>
-                <tr>
                     <td style="width:100px;">字段类型</td>
                     <td>
                         <input type="radio" name="field_type" value="char"/> char
@@ -189,13 +199,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width:100px;">字段长度</td>
+                    <td style="width:100px;">表字段大小</td>
                     <td><input type="text" name="field_size" class="w200" value="50"/></td>
+                </tr>
+
+                <tr>
+                    <td style="width:100px;">默认值</td>
+                    <td><input type="text" name="set[default]" class="w200"/></td>
+                </tr>
+
+                <tr>
+                    <td style="width:100px;">文本框显示长度</td>
+                    <td><input type="text" name="set[size]" class="w200" value="30"/></td>
                 </tr>
                 <tr>
                     <td style="width:100px;">是否为密码</td>
-                    <td><input type="radio" name="set[ispasswd]" value="1"/> 是
+                    <td>
                         <input type="radio" name="set[ispasswd]" value="0"/> 否
+                        <input type="radio" name="set[ispasswd]" value="1"/> 是
                     </td>
                 </tr>
             </table>
@@ -238,8 +259,8 @@
             必须输入
         </td>
         <td>
-            <input type="radio" name="required"/> 是
-            <input type="radio" name="required" checked="checked"/> 否
+            <input type="radio" name="required" value="1"/> 是
+            <input type="radio" name="required" value="0" checked="checked"/> 否
         </td>
     </tr>
     <tr>
@@ -321,8 +342,8 @@
             必须输入
         </td>
         <td>
-            <input type="radio" name="required"/> 是
-            <input type="radio" name="required" checked="checked"/> 否
+            <input type="radio" name="required" value="1"/> 是
+            <input type="radio" name="required" value="0" checked="checked"/> 否
         </td>
     </tr>
     <tr>
@@ -403,8 +424,8 @@
             必须输入
         </td>
         <td>
-            <input type="radio" name="required"/> 是
-            <input type="radio" name="required" checked="checked"/> 否
+            <input type="radio" name="required" value="1"/> 是
+            <input type="radio" name="required" value="0" checked="checked"/> 否
         </td>
     </tr>
     <tr>
@@ -425,7 +446,7 @@
             参数
         </td>
         <td style="border-top:none;">
-            <table class="set" lab="datetime">
+            <table class="set">
                 <tr>
                     <td style="width:100px;">格式设置</td>
                     <td>

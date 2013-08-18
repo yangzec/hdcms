@@ -1,4 +1,13 @@
-<load file="__STATIC__/header.html"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <css file="__STATIC__/Css/common.css"/>
+    <title></title>
+    <jquery/>
+    <jsconst/>
+    <hdui/>
 <script>
     //验证
     $(function () {
@@ -16,9 +25,16 @@
             }
         });
     })
+    //验证select选择器
+    $(function () {
+        $(".validation_select").change(function () {
+            var reg = $(this).val();
+            $(this).prev().val(reg);
+        })
+    })
     //添加字段发送表单
     $(function () {
-        $("f1orm").submit(function () {
+        $("form").submit(function () {
             var _data = $("form").serialize();
             $.ajax({
                 url: "",
@@ -28,10 +44,8 @@
                 dataType: "JSON",
                 success: function (data) {
                     if (data.stat == 1) {
-                        alert("字段添加成功");
-                        location.href = '{|U:"index",array("mid"=>$model['
-                        mid
-                        '])}';
+                        alert("字段修改成功");
+                        location.href = '{|U:"index",array("mid"=>$field['mid'])}';
                     } else {
                         alert(data.msg);
                         $("#field_set_table").append($("#recycle table.recycle"));
@@ -57,10 +71,10 @@
 <body>
 <div class="right_content">
 <div class="menu">
-    <a href="{|U:add,array('mid'=>$_GET['mid'])}"
-    <if value='METHOD==add'>class='action'</if>
-    >添加字段</a> <span>|</span>
-    <a href="{|U:'index',array('mid'=>$_GET['mid'])}"
+    <a href="{|U:add,array('mid'=>$field['mid'])}"
+    <if value='METHOD==edit'>class='action'</if>
+    >编辑字段</a> <span>|</span>
+    <a href="{|U:'index',array('mid'=>$field['mid'])}"
     <if value='METHOD==index'>class='action'</if>
     >字段列表</a>
 </div>
@@ -70,8 +84,7 @@
 <input type="hidden" name="fid" value="{$field.fid}"/>
 <input type="hidden" name="show_type" value="{$field.show_type}"/>
 <input type="hidden" name="is_main_table" value="{$field.is_main_table}"/>
-<input type="hidden" name="table_name" value="{$field.table_name}"/>
-<input type="hidden" name="field_name" value="{$field.field_name}"/>
+<input type="hidden" name="field_old_name" value="{$field.field_name}"/>
 <table class="table">
     <tr>
         <td style="text-align:right;width:300px;">
@@ -101,6 +114,7 @@
         </td>
     </tr>
 </table>
+<input type="hidden" name="table_name" value="{$field.table_name}"/>
 <div id="field_set_table">
 <!------------------------input------------------------>
 <if value="$field.show_type==input">
@@ -112,36 +126,30 @@
             <td style="border-top:none;">
                 <table>
                     <tr>
-                        <td style="width:100px;">文本框长度</td>
-                        <td><input type="text" name="set[size]" class="w200" value="30" value="{$field.set.size}"/></td>
+                        <td style="width:100px;">字段类型</td>
+                        <td>
+                            <input type="radio" name="field_type" value="char" <if value="$field.field_type=='char'">checked="checked"</if>/> char
+                            <input type="radio" name="field_type" value="varchar" <if value="$field.field_type=='varchar'">checked="checked"</if>/> varchar
+                        </td>
                     </tr>
+                    <tr>
+                        <td style="width:100px;">表字段大小</td>
+                        <td><input type="text" name="field_size" class="w200" value="{$field.field_size}"/></td>
+                    </tr>
+
                     <tr>
                         <td style="width:100px;">默认值</td>
                         <td><input type="text" name="set[default]" class="w200" value="{$field.set.default}"/></td>
                     </tr>
+
                     <tr>
-                        <td style="width:100px;">字段类型</td>
-                        <td>
-                            <input type="radio" name="field_type" value="char"
-                            <if value="$field.field_type=='char'">checked="checked"</if>
-                            /> char
-                            <input type="radio" name="field_type" value="varchar"
-                            <if value="$field.field_type=='varchar'">checked="checked"</if>
-                            /> varchar
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:100px;">字段长度</td>
-                        <td><input type="text" name="field_size" class="w200" value="{$field.field_size}"/></td>
+                        <td style="width:100px;">文本框显示长度</td>
+                        <td><input type="text" name="set[size]" class="w200" value="{$field.set.size}"/></td>
                     </tr>
                     <tr>
                         <td style="width:100px;">是否为密码</td>
-                        <td><input type="radio" name="set[ispasswd]" value="1"
-                            <if value="$field.set.ispasswd==1">checked="checked"</if>
-                            /> 是
-                            <input type="radio" name="set[ispasswd]" value="0"
-                            <if value="$field.set.ispasswd==0">checked="checked"</if>
-                            /> 否
+                        <td><input type="radio" name="set[ispasswd]" value="1" <if value="$field.set.ispasswd==1">checked="checked"</if>/>是
+                            <input type="radio" name="set[ispasswd]" value="0" <if value="$field.set.ispasswd==0">checked="checked"</if>/>否
                         </td>
                     </tr>
                 </table>
@@ -184,12 +192,8 @@
                 必须输入
             </td>
             <td>
-                <input type="radio" name="required"
-                <if value="$field.set.ispasswd==1">checked="checked"</if>
-                /> 是
-                <input type="radio" name="required"
-                <if value="$field.set.ispasswd==0">checked="checked"</if>
-                /> 否
+                <input type="radio" name="required" value="1" <if value="$field.required==1">checked="checked"</if>/> 是
+                <input type="radio" name="required" value="0" <if value="$field.required==0">checked="checked"</if>/> 否
             </td>
         </tr>
         <tr>
@@ -206,7 +210,7 @@
 
 <!------------------------textarea------------------------>
 <if value="$field.show_type=='textarea'">
-    <table class="table fieldParam" lab="textarea">
+    <table class="table fieldParam action" lab="textarea">
         <tr class="input action">
             <td style="text-align:right;width:300px;border-top:none;">
                 参数
@@ -215,22 +219,22 @@
                 <table>
                     <tr>
                         <td style="width:100px;">宽度</td>
-                        <td><input type="text" name="set[width]" class="w100" value="400"/> px</td>
+                        <td><input type="text" name="set[width]" class="w100" value="{$field.set.width}"/> px</td>
                     </tr>
                     <tr>
                         <td style="width:100px;">高度</td>
-                        <td><input type="text" name="set[height]" class="w100" value="80"/> px</td>
+                        <td><input type="text" name="set[height]" class="w100" value="{$field.set.height}"/> px</td>
                     </tr>
                     <tr>
                         <td style="width:100px;">默认值</td>
-                        <td><textarea cols="50" rows="3" name="set[default]"></textarea></td>
+                        <td><textarea cols="50" rows="3" name="set[default]">{$field.set.default}</textarea></td>
                     </tr>
                     <tr>
                         <td style="width:100px;">字段类型</td>
                         <td>
-                            <input type="radio" name="field_type" value="char"/> char
-                            <input type="radio" name="field_type" value="varchar"/> varchar
-                            <input type="radio" name="field_type" value="text"/> text
+                            <input type="radio" name="field_type" value="char" <if value="$field.field_type=='char'">checked="checked"</if>/> char
+                            <input type="radio" name="field_type" value="varchar" <if value="$field.field_type=='varchar'">checked="checked"</if>/> varchar
+                            <input type="radio" name="field_type" value="text" <if value="$field.field_type=='text'">checked="checked"</if>/> text
                         </td>
                     </tr>
                 </table>
@@ -241,7 +245,7 @@
                 表单样式名
             </td>
             <td>
-                <input type="text" name="css" class="w100"/>
+                <input type="text" name="css" class="w100" value="{$field.css}"/>
                         <span class="validation">
                     定义表单的CSS样式名
                 </span>
@@ -252,7 +256,7 @@
                 表单验证
             </td>
             <td>
-                <input type="text" name="validation" class="w250"/>
+                <input type="text" name="validation" class="w250" value="{$field.validation}"/>
                 <select class="validation_select">
                     <option value="/^\d+$/">验证规则</option>
                     <option value="/^\d+$/">数字</option>
@@ -273,8 +277,8 @@
                 必须输入
             </td>
             <td>
-                <input type="radio" name="required"/> 是
-                <input type="radio" name="required" checked="checked"/> 否
+                <input type="radio" name="required" value="1" <if value="$field.required==1">checked="checked"</if>/> 是
+                <input type="radio" name="required" value="0" <if value="$field.required==0">checked="checked"</if>/> 否
             </td>
         </tr>
         <tr>
@@ -282,7 +286,7 @@
                 数据校验未通过的提示信息
             </td>
             <td>
-                <input type="text" name="error" class="w300"/>
+                <input type="text" name="error" class="w300" value="{$field.error}"/>
             </td>
         </tr>
     </table>
@@ -357,8 +361,8 @@
                 必须输入
             </td>
             <td>
-                <input type="radio" name="required"/> 是
-                <input type="radio" name="required" checked="checked"/> 否
+                <input type="radio" name="required" value="1"/> 是
+                <input type="radio" name="required" value="0" checked="checked"/> 否
             </td>
         </tr>
         <tr>
@@ -505,7 +509,7 @@
 <!---------------------------image--------------------------->
 </div>
 
-<input type="submit" class="btn" value="添加字段" style="margin-top:20px;margin-left:20px;"/>
+<input type="submit" class="btn" value="确定" style="margin-top:20px;margin-left:20px;"/>
 </form>
 <!--放置不用的表单元素-->
 <div id="recycle" style="display:none;"></div>

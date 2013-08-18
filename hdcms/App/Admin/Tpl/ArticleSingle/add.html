@@ -1,4 +1,46 @@
-<load file="__CONTROL_TPL__/header.html"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>文章管理</title>
+    <jquery/>
+    <jqueryui/>
+    <jsconst/>
+    <hdui/>
+    <js file="__CONTROL_TPL__/Js/article.js"/>
+    <css file="__CONTROL_TPL__/Css/article.css"/>
+    <!--公共文件-->
+    <js file="__GROUP__/Common/Tpl/Js/common.js"/>
+    <css file="__GROUP__/Common/Tpl/Css/common.css"/>
+    <!--编辑器-->
+    <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
+    <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
+    <!--验证表单-->
+    <script>
+        $(function () {
+            $("form").submit(function () {
+                //对form表单验证  对图片上传form不验证
+                if (!$(this).attr("target")) {
+                    if (!$("input[name='title']").val()) {
+                        alert("标题不能为空");
+                        return false;
+                    }
+                    if ($("select[name='cid'] option:selected").attr('lab') == 1) {
+                        alert("栏目不能为频道封面，请更改");
+                        return false;
+                    }
+                    //触发表单验证事件
+                    $("input[onblur]").trigger("blur");
+                    $("input[onselect]").trigger("select");
+                    if ($("*[validation='0']").length > 0) {
+                        return false;
+                    }
+                    return true;
+                }
+            })
+        })
+    </script>
 </head>
 <body>
 <form action="{|U:add}" method="post" id="form" enctype="multipart/form-data">
