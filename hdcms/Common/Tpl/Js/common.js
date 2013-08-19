@@ -6,7 +6,7 @@
  * @param _input 记录图片地址的input表单
  * @param picdiv 显示缩略图的div元素
  */
-function img_upload(obj, action, target, _input, picdiv) {
+function thumbUpload(obj, action, target, _input, picdiv) {
     var form = $(obj).parents("form");//表单
     $action = form.attr("action");//原action
     form.attr("action", action + "&name=" + _input + "&div=" + picdiv);
@@ -22,7 +22,7 @@ function img_upload(obj, action, target, _input, picdiv) {
  * @param obj 颜色选择对象，按钮对象
  * @param _input 颜色name=color表单
  */
-function select_color(obj, _input) {
+function selectColor(obj, _input) {
     if ($("div.colors").length == 0) {
         var _div = "<div class='colors' style='width:80px;height:160px;position: absolute;z-index:999;'>";//颜色块
         var colors = ["#f00f00", "#272964", "#4C4952", "#74C0C0", "#3B111B", "#147ABC", "#666B7F", "#A95026", "#7F8150"
@@ -47,7 +47,7 @@ function select_color(obj, _input) {
 /** 图片上传***/
 function selectImage(obj) {
     var inputlab = $(obj).prev().attr("lab");
-    window.open(URL + "&action=uploadImage&lab=" + inputlab, 'newwindow', 'height=400,width=650,top=100,left=200,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
+    window.open(CONTROL + "&m=uploadImage&lab=" + inputlab, 'newwindow', 'height=400,width=650,top=100,left=200,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 /**
  在弹出窗体中选择上传图片，修改父级input
@@ -68,28 +68,28 @@ function updateImageInput(obj) {
  * @param error 出错提示文字
  * @returns {boolean}
  */
-function checkField(obj,required,validation,message,error){
+function checkField(obj, required, validation, message, error) {
     //移除validation属性，必须验证与验证不通过的表单会添加validation且属性值为0
     $(obj).removeAttr("validation");
-    var _val =$(obj).val();
+    var _val = $(obj).val();
     //如果内容为空并且不是必须输入时
-    if(_val=='' && !required){
+    if (_val == '' && !required) {
         $(obj).next("span").html(message).removeClass("error").removeClass("success");
         return true;
     }
     //必须验证字段 验证失败
-    if(!validation.test(_val)){
+    if (!validation.test(_val)) {
         $(obj).next("span").html(error).removeClass("success").addClass("error");
-        $(obj).attr("validation",0);//验证失败添加属性
+        $(obj).attr("validation", 0);//验证失败添加属性
         return false;
     }
     $(obj).next("span").html("输入正确").removeClass("error").addClass("success");
-    return true;
+    return false;
 }
 /**
  * 验证表单获利焦点时设置提示内容
  * @param message
  */
-function checkFieldMsg(obj,message){
+function checkFieldMsg(obj, message) {
     message && $(obj).next("span").html(message).removeClass("error").removeClass("success");
 }

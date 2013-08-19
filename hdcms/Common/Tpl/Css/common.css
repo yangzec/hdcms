@@ -1,3 +1,12 @@
+/**提交**/
+div.btn_send {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    height: auto;
+    overflow: hidden;
+}
+
 /**缩略图上传按钮**/
 span.thumb {
     position: relative;

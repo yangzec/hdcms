@@ -20,6 +20,8 @@ class CommonControl extends Control
      */
     protected function editView()
     {
+        //删除缩略图id或图片字段id
+        session("hdcms_article", null);
         $mid = $this->_get("mid", 'intval');
         if (!$mid) $this->error("模型mid为空，非法提交");
         $aid = $this->_get("aid", 'intval');
@@ -90,31 +92,27 @@ class CommonControl extends Control
                 $db->table($stable)->where("aid=$aid")->save($data);
             }
         }
+        //更改upload表中的当前文档图片的状态
+        $this->updateUploadTable($aid, $cid, $mid);
         //修改缩略图
-        $thumb = $this->_post("thumb");
-        if (!empty($thumb)) {
-            $this->updateThumbStat($mid, $cid, $aid, $thumb);
-            //如果上传缩略图时，添加图文属性
-            if (!isset($_POST['flag'])) {
-                $_POST['flag'] = array();
-            }
-            $_POST['flag'][] = 4;
-        }
+        $this->setThumbImage($db, $aid, $cid, $mid);
         //添加属性
         if (!empty($_POST['flag'])) {
             $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
         }
-        $this->success("文章编辑成功", U("index", "mid=$mid"));
+        $this->success("文章编辑成功", U("index", "mid=$mid"), 1);
     }
 
     /**
      * 删除文章
+     * @param null $aid 文章id
+     * @param null $mid 模型mid
      */
-    protected function delArticle()
+    protected function delArticle($aid = null, $mid = null)
     {
-        $mid = $this->_get("mid", 'intval');
+        $mid = $mid ? $mid : $this->_get("mid", 'intval');
         if (!$mid) $this->error("模型mid为空，非法提交");
-        $aid = $this->_get("aid", 'intval');
+        $aid = $aid ? $aid : $this->_get("aid", 'intval');
         if (!$aid) $this->error("文章aid为空，非法提交");
         $db = M("model");
         $model = $db->find($mid);
@@ -134,7 +132,6 @@ class CommonControl extends Control
         if ($model['type'] == 1) {
             $db->table($model['tablename'] . '_data')->del("aid=$aid");
         }
-        $this->success("删除文章成功", U("index", array('mid' => $_GET['mid'])));
     }
 
     /**
@@ -173,6 +170,8 @@ class CommonControl extends Control
      */
     protected function addView()
     {
+        //删除缩略图id或图片字段id
+        session("hdcms_article", null);
         $mid = $this->_get("mid", "intval");
         if (empty($mid)) $this->error("模型mid为空，非法提交");
         $user_field = F($mid, false, './data/field');
@@ -223,22 +222,81 @@ class CommonControl extends Control
                 $db->table($stable)->add($data);
             }
         }
-
+        //更改upload表中的当前文档图片的状态
+        $this->updateUploadTable($aid, $cid, $mid);
         //修改缩略图
-        $thumb = $this->_post("thumb");
-        if (!empty($thumb)) {
-            $this->updateThumbStat($mid, $cid, $aid, $thumb);
+        $this->setThumbImage($db, $aid, $cid, $mid);
+        //添加属性
+        if (!empty($_POST['flag'])) {
+            $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
+        }
+        $this->success("添加文章成功", U("index", "mid=$mid"), 1);
+    }
+
+    /**
+     * 更改upload表中的当前文档图片的状态
+     * @param $aid 文档id
+     * @param $cid 栏目id
+     * @param $mid 模型id
+     */
+    private function updateUploadTable($aid, $cid, $mid)
+    {
+        if (isset($_SESSION['hdcms_article']['images'])) {
+            $images_id = $_SESSION['hdcms_article']['images'];
+            $uploadDb = M("upload");
+            foreach ($images_id as $id) {
+                $data = array(
+                    "id" => $id,
+                    "aid" => $aid,
+                    "cid" => $cid,
+                    "mid" => $mid
+                );
+                $uploadDb->save($data);
+            }
+        }
+    }
+
+    /**
+     * 修改缩略图
+     * @param $db 文章模型
+     * @param $aid 文档id
+     * @param $cid 栏目id
+     * @param $mid 模型id
+     */
+    private function setThumbImage($db, $aid, $cid, $mid)
+    {
+        $thumb_id = isset($_SESSION['hdcms_article']["thumb_image_id"]) ?
+            $_SESSION['hdcms_article']["thumb_image_id"] : null;
+        $uploadDb = M("upload");
+        if ($thumb_id) {
+            $thumbData = array(
+                "id" => $thumb_id,
+                "aid" => $aid,
+                "mid" => $mid,
+                "cid" => $cid
+            );
+            //没有缩略图时，是否使用编辑器第一张图片做缩略图
+        } else if (isset($_SESSION['hdcms_article']['editor_image'])) {
+            $thumbData = array(
+                "id" => $_SESSION['hdcms_article']['editor_image']['id'],
+                "aid" => $aid,
+                "mid" => $mid,
+                "cid" => $cid
+            );
+            $articleData = array(
+                'thumb' => $_SESSION['hdcms_article']['editor_image']['path'],
+                "aid" => $aid
+            );
+            $db->save($articleData);
+        }
+        if (isset($thumbData)) {
+            $uploadDb->save($thumbData);
             //如果上传缩略图时，添加图文属性
             if (!isset($_POST['flag'])) {
                 $_POST['flag'] = array();
             }
             $_POST['flag'][] = 4;
         }
-        //添加属性
-        if (!empty($_POST['flag'])) {
-            $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
-        }
-        $this->success("添加文章成功", U("index", "mid=$mid"));
     }
 
     /**
@@ -252,28 +310,12 @@ class CommonControl extends Control
     }
 
     /**
-     * 修改upload表中的缩略图状态
-     * @param int $mid 模型id
-     * @param int $cid 栏目id
-     * @param int $aid 文章id
-     * @param string $thumb 缩略图
-     */
-    protected function updateThumbStat($mid, $cid, $aid, $thumb)
-    {
-        $data = array(
-            "aid" => $aid,
-            "mid" => $mid,
-            "cid" => $cid
-        );
-        M("upload")->where("path='$thumb'")->save($data);
-    }
-
-    /**
      * 上传缩略图
      */
     public function thumbUpload()
     {
-        $upload = new Upload();
+        $uploadDir = "upload/" . date("ymd") . '/';
+        $upload = new Upload($uploadDir, array('jpg', 'jpeg', 'png', 'gif'));
         $file = $upload->upload();
         $stat = $file ? 1 : 0;
         if ($stat) {
@@ -282,7 +324,11 @@ class CommonControl extends Control
             $file['uptime'] = time();
             $file['uid'] = session("uid");
             $upload_id = $db->add($file);
-            $this->assign("upload_id", $upload_id);
+            //储存缩略图ID
+            if (!isset($_SESSION['hdcms_article'])) {
+                $_SESSION['hdcms_article'] = array();
+            }
+            $_SESSION['hdcms_article']["thumb_image_id"] = $upload_id;
             $this->assign("img_path", $file['path']);
         }
         $this->assign("stat", $stat);
@@ -323,8 +369,28 @@ class CommonControl extends Control
     {
         $title = htmlspecialchars($_POST['pictitle'], ENT_QUOTES); //对标题实体化
         //目录，上传类型，大小，不加水印，不产生缩略图
-        $upload = new Upload('./upload/' . date("ymd"), array('jpg', 'jpeg', 'png'), array(), true, false); //实例化上传类
+        C("UPLOAD_IMG_MAX_WIDTH", $_GET['width']);
+        C("UPLOAD_IMG_MAX_HEIGHT", $_GET['height']);
+        $upload = new Upload('upload/' . date("ymd"), array('jpg', 'jpeg', 'png'), array(), $_GET['water'] == 1, false); //实例化上传类
         $file = $upload->upload(); //上传图像
+        //添加到upload表
+        $data = $file[0];
+        $data['uptime'] = time();
+        $data['uid'] = session("uid");
+        $upload_id = M("upload")->add($data);
+        if (!isset($_SESSION['hdcms_article'])) {
+            $_SESSION['hdcms_article'] = array();
+        }
+        if (!isset($_SESSION['hdcms_article']['images'])) {
+            $_SESSION['hdcms_article']['images'] = array();
+        }
+        $_SESSION['hdcms_article']["images"][] = $upload_id;
+        //保存编辑器第一张图为缩略图
+        if (!isset($_SESSION['hdcms_article']['editor_image'])) {
+            $_SESSION['hdcms_article']['editor_image'] = array();
+            $_SESSION['hdcms_article']['editor_image']['id'] = $upload_id;
+            $_SESSION['hdcms_article']['editor_image']['path'] = $file[0]['path'];
+        }
         if (!$file) { //发生上传错误
             $json = "{'title':'" . $upload->error . "','state':'" . $upload->error . "'}";
         } else {
@@ -345,25 +411,33 @@ class CommonControl extends Control
         $dirs = array();
         //上传图片
         if ($image) {
-            $uploadDir = "./upload/" . date("ymd") . '/';
-            $upload = new Upload($uploadDir, array('jpg', 'jpeg', 'png'));
+            $uploadDir = "upload/" . date("ymd") . '/';
+            $upload = new Upload($uploadDir, array('jpg', 'jpeg', 'png', 'gif'));
             $file = $upload->upload();
             //上传成功
             if (!empty($file)) {
-                $file[0] = str_replace('./', '', $file[0]);
                 $file[0]['filemtime'] = time();
+                //储存缩略图ID
+                $data = $file[0];
+                $data['uptime'] = time();
+                $data['uid'] = session("uid");
+                $upload_id = M("upload")->add($data);
+                if (!isset($_SESSION['hdcms_article'])) {
+                    $_SESSION['hdcms_article'] = array();
+                }
+                if (!isset($_SESSION['hdcms_article']['images'])) {
+                    $_SESSION['hdcms_article']['images'] = array();
+                }
+                $_SESSION['hdcms_article']["images"][] = $upload_id;
                 $dirs = $file;
                 $this->assign("uploadimage", true);
             }
         } else {
             $dir = $this->_get("dir");
-            $path = $dir ? base64_decode($dir) : "./upload/";
+            $path = $dir ? base64_decode($dir) : "upload/";
             $dirs = Dir::tree($path);
         }
         $this->assign("dirs", $dirs);
         $this->display("./hdcms/Common/tpl/uploadImage.html");
     }
 }
-
-
-?>

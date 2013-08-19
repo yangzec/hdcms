@@ -29,7 +29,7 @@ class ModelControl extends RbacControl
      */
     public function del()
     {
-        $mid = $this->_get("mid");
+        $mid = $this->_post("mid");
         if (!$mid) {
             $this->error("非法请求");
         }
@@ -50,7 +50,7 @@ class ModelControl extends RbacControl
         $db->table("model_field")->del($mid);
         //删除字段缓存
         if (F($mid, NULL, './data/field/')) {
-            $this->success("模型删除成功", "index");
+            $this->_ajax(1,"text");
         }
 
     }
@@ -113,20 +113,20 @@ class ModelControl extends RbacControl
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
   `aid` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
-  `cid` SMALLINT UNSIGNED NOT NULL COMMENT '栏目cid' ,
-  `mid` SMALLINT UNSIGNED NOT NULL COMMENT '模型mid' ,
+  `cid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '栏目cid' ,
+  `mid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '模型mid' ,
   `title` char(60) NOT NULL DEFAULT '' COMMENT '标题' ,
   `thumb` CHAR(200) NOT NULL DEFAULT '' COMMENT '缩略图' ,
   `click` MEDIUMINT NOT NULL DEFAULT 100 COMMENT '点击次数' ,
   `source` CHAR(30) NOT NULL DEFAULT '' COMMENT '来源' ,
   `redirecturl` CHAR(100) NOT NULL DEFAULT '' COMMENT '转向链接' ,
   `allowreply` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '是否允许回复' ,
-  `author` CHAR(45) NOT NULL COMMENT '作者' ,
-  `addtime` INT(10) NOT NULL COMMENT '添加时间' ,
-  `updatetime` INT(10) NOT NULL COMMENT '发布时间 ' ,
-  `color` CHAR(7) NOT NULL COMMENT '标题颜色\n' ,
+  `author` CHAR(45) NOT NULL default '' COMMENT '作者' ,
+  `addtime` INT(10) NOT NULL default 0 COMMENT '添加时间' ,
+  `updatetime` INT(10) NOT NULL default 0 COMMENT '发布时间 ' ,
+  `color` CHAR(7) NOT NULL default '' COMMENT '标题颜色\n' ,
   `ishtml` TINYINT(1) NOT NULL DEFAULT 1 ,
-  `username` CHAR(20) NOT NULL,
+  `username` CHAR(20) NOT NULL default '',
   PRIMARY KEY (`aid`) ,
   INDEX `cid` (`cid` ASC))
 ENGINE = MyISAM;
@@ -142,8 +142,8 @@ str;
 -- 从表
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `{$slaveTable}`(
-  `aid` INT UNSIGNED NOT NULL COMMENT '文章主表ID' ,
-  `cid` SMALLINT UNSIGNED NOT NULL COMMENT '栏目ID' ,
+  `aid` INT UNSIGNED NOT NULL default 0 COMMENT '文章主表ID' ,
+  `cid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '栏目ID' ,
   `keywords` CHAR(45) NOT NULL DEFAULT '' COMMENT '关键字' ,
   `description` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '描述' ,
   `content` text NULL COMMENT '正文' ,

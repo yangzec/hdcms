@@ -1,29 +1,107 @@
 body {
-    background: #fcfcfc;
+    background: url('../../../../../../data/img/login_bg.png');
 }
 
 div.top {
-    background: #3A6EA5;
+    background: #e8e8e8;
     height: 60px;
-    margin-bottom: 20px;
+    border-bottom: 5px solid #5AA020;
 }
 
+div.top div.logo {
+    height: 50px;
+    background: url('../../../../../../data/img/logo.png') no-repeat;
+    width:980px;
+    margin:0px auto;
+    margin-top:10px;
+}
+div.big{
+    background: #fff;
+    height:auto;
+    overflow: hidden;
+    margin:0px auto;
+    width:860px;
+    padding:60px 60px 100px 60px;
+    border:12px solid #eaeaea;
+    border-top:none;
+}
 div.main {
     position: relative;
+    width: 50%;
+    float: left;
 }
-div.main tr th{
+
+div.main table.table {
+    border: none;
+}
+div.main tr th ,div.main tr td{
+    border:none;
+}
+div.main tr th {
     vertical-align: top;
+    padding-bottom:20px;
+    font-size: 14px;
 }
+
 div.main table tr td input {
     height: 26px;
+    width: 260px;
 }
 
 div.code {
     background: #FCFCFC;
 }
-div.code span{
-    display:block;padding:3px 0px;
+
+div.code span {
+    display: block;
+    padding: 3px 0px;
 }
-div.code img{
+
+div.code img {
     cursor: pointer;
+}
+
+div.hdcms {
+    float: left;
+    height: 200px;
+    width: 40%;
+    padding-left: 30px;
+}
+
+div.hdcms h2 {
+    color: #262626;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+div.hdcms ul li {
+    color: #535353;
+    font-size: 14px;
+    height: 29px;
+    line-height: 29px;
+    overflow: hidden;
+    padding-left: 15px;
+    background: url('../../../../../../data/img/logo_pix.png') no-repeat 0px 12px;
+}
+div.hdcms div.link{
+    border-top:solid 1px #eaeaea;
+    margin-top:10px;
+    padding-top:5px;
+}
+div.hdcms a {
+    font-size: 12px;
+    color: #333;
+}
+div.hdcms a:hover{
+    color:#5aa020;
+}
+div.hdcms div.link span{
+    overflow: hidden;
+    height:15px;
+    color:#666666;
+    display:inline-block;
+    position: relative;
+    top:2px;
 }

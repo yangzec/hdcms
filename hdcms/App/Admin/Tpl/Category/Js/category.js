@@ -26,20 +26,10 @@ $(function () {
         if (stat) {
             $.post($(this).attr("href"), function (data) {
                 if (data.stat == 1) {
-                    $.dialog({
-                        "msg": "栏目删除成功",
-                        "type": "success",
-                        "timeout": 1,
-                        "close_handler": function () {
-                            location.reload();
-                        }
-                    });
+                    alert("栏目删除成功");
+                    location.reload(true);
                 } else {
-                    $.dialog({
-                        "msg": data.message,
-                        "type": "error",
-                        "timeout": 1
-                    });
+                    alert(data.message);
                 }
             }, "json")
         }

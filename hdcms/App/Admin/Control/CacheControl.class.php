@@ -16,7 +16,7 @@ class CacheControl extends RbacControl
             $this->error("缓存目录./data/category不可写，请修改权限");
         }
         if ($type)
-            $this->success("缓存更新成功");
+            $this->success("缓存更新成功",'',1);
         return true;
     }
 

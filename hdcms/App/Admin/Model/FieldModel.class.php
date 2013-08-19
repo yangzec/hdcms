@@ -125,7 +125,7 @@ class FieldModel extends Model
             case "image":
                 $html = "<tr>
                 <th>{$f['title']}</th>
-                <td><input name='$name' lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
+                <td><input name='$name' readonly='readonly'  lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
                  <input class='inputbut' type='button' onclick='selectImage(this)' value='浏览...'>
                  </td></tr>";
                 break;
@@ -193,18 +193,17 @@ class FieldModel extends Model
 <script id="hd_$name" name="$name" type="text/plain"></script>
     <script type="text/javascript">
         var ue = UE.getEditor("hd_$name",{
-        imageUrl:editor_upload_image//处理上传脚本
+        imageUrl:CONTROL+'&m=editorUploadImg&water=0&width=600&height=600'//处理上传脚本
         ,zIndex : 0
         ,autoClearinitialContent:false
         ,initialFrameWidth:"100%" //宽度1000
         ,initialFrameHeight:'{$f["set"]["height"]}' //宽度1000
         ,autoHeightEnabled:false //是否自动长高,默认true
         ,autoFloatEnabled:false //是否保持toolbar的位置不动,默认true
-        ,initialContent:"{FIELD_VALUE}" //初始化编辑器的内容 也可以通过textarea/script给值
+        ,initialContent:'{FIELD_VALUE}' //初始化编辑器的内容 也可以通过textarea/script给值
     });
         </script>
 str;
-                $html .= "<span class='validation'>{$f['message']}</span>";
                 $html .= "</td></tr>";
                 break;
         }

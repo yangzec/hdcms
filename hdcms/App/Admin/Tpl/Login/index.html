@@ -30,38 +30,58 @@
     </script>
 </head>
 <body>
-<div class="top"></div>
-<div class="main">
-    <form action="{|U:Login}" method="post">
-        <table class="table">
-            <tr>
-                <th class="w100">帐号</th>
-                <td>
-                    <input type="text" name="username"/>
-                </td>
-            </tr>
-            <tr>
-                <th>密码</th>
-                <td>
-                    <input type="password" name="password"/>
-                </td>
-            </tr>
-            <tr>
-                <th>验证码</th>
-                <td>
-                    <input type="text" name="code"/><br/>
-                    <div class="code">
-                        <span>输入下图中的字符</span>
-                        <img src="{|U:'code'}" onclick="this.src='{|U:'code'}&'+Math.random()"/>
-                    </div>
-                </td>
-            </tr>
-        </table>
+<div class="top">
+    <div class="logo"></div>
+</div>
+<div class="big">
+    <div class="main">
+        <form action="{|U:Login}" method="post">
+            <table class="table">
+                <tr>
+                    <th class="w100">帐号</th>
+                    <td>
+                        <input type="text" name="username"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>密码</th>
+                    <td>
+                        <input type="password" name="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>验证码</th>
+                    <td>
+                        <input type="text" name="code"/><br/>
 
-        <div class="send" style="margin-top:20px;margin-left:80px;">
-            <input type="submit" class="btn" value="登录"/>
+                        <div class="code">
+                            <span>输入下图中的字符</span>
+                            <img src="{|U:'code'}" onclick="this.src='{|U:'code'}&'+Math.random()"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="send" style="margin-top:20px;margin-left:80px;">
+                <input type="submit" class="btn" value="登录"/>
+            </div>
+        </form>
+    </div>
+    <div class="hdcms">
+        <h2>HDCMS快速建站利器</h2>
+        <ul>
+            <li>使用HDCMS完全免费</li>
+            <li>完全基于后盾网HDPHP框架开发</li>
+            <li>更安全更高效</li>
+            <li>免费提供技术支持</li>
+            <li>免费提供<b>精品模板</b></li>
+            <li>6万盾友与你同在</li>
+        </ul>
+        <div class="link">
+            <a href="http://www.houdunwang.com" target="_blank">php培训</a> <span>|</span>
+            <a href="http://bbs.houdunwang.com" target="_blank">获得帮助</a>
         </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>

@@ -17,7 +17,15 @@ class RbacControl extends CommonControl
         if(!isset($_SESSION['uid'])){
             go(U("Login/index"));
         }
-        if (!Rbac::checkAccess()) {
+        //不需要验证的方法
+        $noAuth=array(
+            "thumbUpload",
+            "updateFlag",
+            "editorUploadImg"
+        );
+        if(in_array(METHOD,$noAuth)){
+            return true;
+        }else if (!Rbac::checkAccess()) {
             $this->error("对不起你没有操作权限");
         }
     }

@@ -1,12 +1,16 @@
-//左侧菜单切换
+//点部菜单点击
 $(function () {
     $(".top_menu ul.nav li a[lab]").click(function () {
+        $(".top_menu ul.nav a[lab]").css("color","#cccccc");
+        $(this).css("color","#74b029");
         $("div.menu_block").removeClass("action");
         var block = $("#" + $(this).attr("lab"));
         block.addClass("action");//显示菜单
         var url = $("li", block).eq(0).trigger("click");
         return false;
     })
+    //初始点击第一个
+    $(".top_menu ul.nav li a[lab]").eq(0).click();
 })
 //改变左侧菜单点击样式
 $(function () {

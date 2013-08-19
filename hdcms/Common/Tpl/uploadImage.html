@@ -59,7 +59,7 @@
 </style>
 <?php if(!isset($uploadimage)):?>
 <div class="uploadimg" style="margin:15px;">
-    <form action="__METH__&action=uploadImage&lab=<?php echo $_GET['lab'];?>" method="post"
+    <form action="__CONTROL__&m=uploadImage&lab=<?php echo $_GET['lab'];?>" method="post"
           enctype="multipart/form-data">
         上传新图片：<input type="file" name="image" class="img"/>
         <input type="submit" value="确定"/>

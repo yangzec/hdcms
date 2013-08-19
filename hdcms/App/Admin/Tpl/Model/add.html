@@ -24,15 +24,7 @@
                 }
             }
         });
-        //更改模型类型
-        $("input[name='type']").click(function () {
-            if ($(this).val() == 1) {
-                $("input[name='control']").val("Article{$hd.config.CONTROL_FIX}.class.php");
-            } else {
-                $("input[name='control']").val("ArticleSingle{$hd.config.CONTROL_FIX}.class.php");
-            }
 
-        })
     })
 
     //Ajax提交

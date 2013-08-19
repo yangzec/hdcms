@@ -65,7 +65,7 @@ class CategoryControl extends RbacControl
     public function updateCache()
     {
         O("CacheControl", "category");
-        $this->success("更新栏目缓存成功", "index");
+        $this->success("更新栏目缓存成功", "index", 1);
 
     }
 
@@ -90,12 +90,12 @@ class CategoryControl extends RbacControl
      * @param $d_cid 移动目标cid(父）
      * @return bool
      */
-    private function isChild($s_cid, $d_cid)
-    {
-        $db = M("category");
-        //将要移动的栏目是目标栏目的父级，不允许移动
-        return Data::is_child($db->all(), $_POST['cid'], $_POST['pid']);
-    }
+//    private function isChild($s_cid, $d_cid)
+//    {
+//        $db = M("category");
+//        //将要移动的栏目是目标栏目的父级，不允许移动
+//        return Data::is_child($db->all(), $_POST['cid'], $_POST['pid']);
+//    }
 
     /**
      * 删除栏目
@@ -109,16 +109,21 @@ class CategoryControl extends RbacControl
             $this->_ajax(array("stat" => 0, "message" => "请先删除子栏目"));
         }
         $cat = $db->find($cid);
-        $model = $db->table("model")->where("mid={$cat['mid']}")->find();
-        $tableName = strtolower($model['tablename']); //主表名
-        //删除栏目
-        $db->where("cid=$cid")->del();
-        //删除文章(
-        $db->table($tableName)->where("cid=$cid")->del();
-        //删除文章正文
-        $db->table($tableName . "_data")->where("cid=$cid")->del();
-        //删除属性
-        $db->table("flag_relation")->where("cid=$cid")->del();
+        if ($cat) {
+            $model = $db->table("model")->where("mid={$cat['mid']}")->find();
+            $tableName = strtolower($model['tablename']); //主表名
+            //删除栏目
+            $db->where("cid=$cid")->del();
+            //删除文章(
+            $db->table($tableName)->where("cid=$cid")->del();
+            //删除附表
+            if ($model['type'] == 1) {
+                //删除文章正文
+                $db->table($tableName . "_data")->where("cid=$cid")->del();
+            }
+            //删除属性
+            $db->table("flag_relation")->where("cid=$cid")->del();
+        }
         O("CacheControl", "category");
         $this->_ajax(array("stat" => 1, "message" => "删除栏目成功"));
     }

@@ -21,13 +21,7 @@ class ArticleControl extends RbacControl
      */
     public function add()
     {
-        $action = $this->_get('action');
-        if ($action) {
-            //图片上传
-            if($action=='uploadImage'){
-                $this->uploadImage();
-            }
-        } elseif (isset($_POST['title'])) {
+        if (isset($_POST['title'])) {
             //添加内容
             $this->addContent();
         } else {
@@ -35,13 +29,19 @@ class ArticleControl extends RbacControl
             $this->addView();
         }
     }
-
     /**
      * 删除文章
      */
     public function del()
     {
-        $this->delArticle();
+        $mid = $this->_get("mid");
+        $aids = $this->_post("aids");
+        if ($aids && $mid) {
+            foreach ($aids as $aid) {
+                $this->delArticle($aid, $mid);
+            }
+            $this->success("删除文章成功", U("index", array('mid' => $mid)), 1);
+        }
     }
 
     /**
