@@ -1,14 +1,54 @@
-<load file="__TPL__/category/header.html"/>
+<load file="__CONTROL_TPL__/header.html"/>
+<script>
+    /**
+     * 添加栏目验证
+     */
+    $(function () {
+        $("form").validation({
+            //验证规则
+            rules: {
+                catname: {//验证id为email的表单
+                    message: {default: "栏目名称（可以输入中文）", "success": "输入正确", "error": "栏目名称不能为空"},
+                    rule: {required: true}
+                },
+                html_dir: {//静态目录
+                    message: {"error": "目录已经使用或目录名输入错误"},
+                    rule: {required: true, regexp: /^[a-z_0-9]+$/i}
+                },
+                arc_dir: {//验证id为email的表单
+                    message: { "error": "输入错误"},
+                    rule: {required: true}
+                },
+                list_tpl: {//验证id为email的表单
+                    message: {"error": "输入错误"},
+                    rule: {required: true}
+                },
+                arc_tpl: {//验证id为email的表单
+                    message: { "error": "输入错误"},
+                    rule: {required: true}
+                },
+                list_html_url: {//验证id为email的表单
+                    message: { "error": "不能为空"},
+                    rule: {required: true}
+                },
+                arc_html_url: {//验证id为email的表单
+                    message: {  "error": "不能为空"},
+                    rule: {required: true}
+                }
+
+            }
+        });
+    })
+</script>
 <form action="{|U:edit}" method="post">
     <input type="hidden" name="mid" value="{$field.mid}"/>
     <input type="hidden" name="pid" value="{$field.pid}"/>
     <input type="hidden" name="cid" value="{$field.cid}"/>
-
     <div class="tab">
         <ul class="tab_menu">
-            <li lab="base"><a href="#site">基本设置</a></li>
-            <li lab="tpl"><a href="#base">模板设置</a></li>
-            <li lab="html"><a href="#upload">静态HTML设置</a></li>
+            <li lab="base"><a href="#">基本设置</a></li>
+            <li lab="tpl"><a href="#">模板设置</a></li>
+            <li lab="html"><a href="#">静态HTML设置</a></li>
             <li lab="access"><a href="#">权限设置</a></li>
         </ul>
         <div class="tab_content">
@@ -31,11 +71,8 @@
                         <th>生成静态</th>
                         <td>
                             <input type="radio" name="urltype" value="1" checked="checked"
-                            <if value="$field.urltype==1">checked="checked"</if>
-                            /> 静态访问
-                            <input type="radio" name="urltype" value="2"
-                            <if value="$field.urltype==2">checked="checked"</if>
-                            /> 动态访问
+                            <if value="$field.urltype==1">checked="checked"</if>/> 静态访问
+                            <input type="radio" name="urltype" value="2"<if value="$field.urltype==2">checked="checked"</if>/> 动态访问
                         </td>
                     </tr>
                     <tr>
@@ -77,10 +114,17 @@
             <div id="tpl" class="con">
                 <table class="table">
                     <tr>
+                        <th>封面模板</th>
+                        <td>
+                            <input type="text" name="index_tpl" class="w200" value="{$field.index_tpl}"/>
+                            <button type="button" class="select_tpl" action="index_tpl">选择列表模板</button>
+                            <span class="validation">{style}指模板风格</span>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>列表页模板</th>
                         <td>
-                            <input type="text" name="list_tpl" value="{$field.list_tpl}" class="w200"
-                                   value="{style}/news_list.html"/>
+                            <input type="text" name="list_tpl" value="{$field.list_tpl}" class="w200"/>
                             <button type="button" class="select_tpl" action="list_tpl">选择列表模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -88,8 +132,7 @@
                     <tr>
                         <th>内容页模板</th>
                         <td>
-                            <input type="text" name="arc_tpl" value="{$field.arc_tpl}" class="w200"
-                                   value="{style}/news_article.html"/>
+                            <input type="text" name="arc_tpl" value="{$field.arc_tpl}" class="w200"/>
                             <button type="button" class="select_tpl" action="arc_tpl">选择内容页模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -102,45 +145,41 @@
                         <th>栏目生成Html</th>
                         <td>
                             <input type="radio" class="radio" name="is_cat_html" value="1"
-                            <if value='$field.is_cat_html==1'>checked="checked"</if>
-                            /> 是
+                            <if value='$field.is_cat_html==1'>checked="checked"</if>/> 是
                             <input type="radio" class="radio" name="is_cat_html" value="0"
-                            <if value='$field.is_cat_html==0'>checked="checked"</if>
-                            /> 否
+                            <if value='$field.is_cat_html==0'>checked="checked"</if>/> 否
                         </td>
                     </tr>
                     <tr>
                         <th>内容页生成Html</th>
                         <td>
                             <input type="radio" class="radio" name="is_arc_html" value="1"
-                            <if value='$field.is_arc_html==1'>checked="checked"</if>
-                            /> 是
+                            <if value='$field.is_arc_html==1'>checked="checked"</if>/> 是
                             <input type="radio" class="radio" name="is_arc_html" value="0"
-                            <if value='$field.is_arc_html==0'>checked="checked"</if>
-                            /> 否
+                            <if value='$field.is_arc_html==0'>checked="checked"</if>/> 否
                         </td>
                     </tr>
                     <tr>
                         <th>栏目页URL规则</th>
                         <td>
                             <input type="text" name="list_html_url" value="{$field.list_html_url}" class="w200"/>
-                        <span class="validation">
-                        {cid} 栏目ID,
-                        {catdir} 栏目目录,
-                        {page} 列表的页码
-                        </span>
+                            <span class="validation">
+                            {cid} 栏目ID,
+                            {catdir} 栏目目录,
+                            {page} 列表的页码
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <th>内容页URL规则</th>
                         <td>
                             <input type="text" name="arc_html_url" class="w200" value="{$field.arc_html_url}"/>
-                        <span class="validation">
-                        {Y}、{M}、{D} 年月日,
-                        {timestamp}UNIX时间戳,
-                        {aid} 文章ID,
-                        {catdir} 栏目目录
-                        </span>
+                            <span class="validation">
+                            {Y}、{M}、{D} 年月日,
+                            {timestamp}UNIX时间戳,
+                            {aid} 文章ID,
+                            {catdir} 栏目目录
+                            </span>
                         </td>
                     </tr>
                 </table>

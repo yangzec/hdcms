@@ -33,7 +33,7 @@ class CategoryControl extends RbacControl
             $db = M("category");
             $db->add();
             O("CacheControl", "category");
-            $this->success("栏目添加成功", "index");
+            $this->success("栏目添加成功", "index", 1);
         } else {
             $this->assign("model", F("model", false, './data/model'));
             $this->display();
@@ -67,20 +67,6 @@ class CategoryControl extends RbacControl
         O("CacheControl", "category");
         $this->success("更新栏目缓存成功", "index", 1);
 
-    }
-
-    /**
-     * 选择模板
-     */
-    public function selectTpl()
-    {
-        $db = M("system");
-        $tpl_style = $db->where("name='style'")->find();
-        $dir = isset($_GET['dir']) ? base64_decode($_GET['dir']) : "./template/" . $tpl_style['value'];
-        $files = Dir::tree($dir, "html");
-        $this->assign("tpl_style", $tpl_style['value']);
-        $this->assign("files", $files);
-        $this->display();
     }
 
     /**

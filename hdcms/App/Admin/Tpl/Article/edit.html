@@ -137,7 +137,7 @@
                                         <tr>
                                             <td width="60" style="padding:6px;">内容选项:</td>
                                             <td>
-                                                <input type="checkbox" name="editer_image_to_thumb" value="1"/>
+                                                <input type="checkbox" name="editer_image_to_thumb" value="1" checked="checked"/>
                                                 使用第一张图做为缩略图
                                                 <input type="checkbox" name="content_image_water" value="1"/> 图片加水印
                                                 <br/>
@@ -160,6 +160,7 @@
                                     <script type='text/javascript'>
                                         var ue = UE.getEditor('content', {
                                             imageUrl: '__CONTROL__&m=editorUploadImg&water=0'//处理上传脚本
+                                            ,catcherUrl:'__CONTROL__&m=editorCatcherUrl&water=0'//抓取远程图片
                                             , zIndex: 0, autoClearinitialContent: false, initialFrameWidth: "100%" //宽度1000
                                             , initialFrameHeight: "300" //宽度1000
                                             , autoHeightEnabled: false //是否自动长高,默认true
@@ -223,6 +224,14 @@
                 <th>点击</th>
                 <td>
                     <input type="text" name="click" class="w100" value="{$field.click}"/> 次
+                </td>
+            </tr>
+            <tr>
+                <th>模板</th>
+                <td>
+                    <input class="w200" type="text" value="{$field.template}" name="template">
+                    <button class="select_tpl" action="template" type="button">选择列表模板</button>
+                    <span class="validation">{style}指模板风格,不设置将使用栏目模板</span>
                 </td>
             </tr>
             <list from="$user_field" name="f">

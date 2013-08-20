@@ -2,17 +2,39 @@
 class CommonControl extends Control
 {
     /**
+     * 选择模板
+     */
+    public function selectTpl()
+    {
+        $db = M("system");
+        $tpl_style = $db->where("name='style'")->find();
+        $dir = isset($_GET['dir']) ? base64_decode($_GET['dir']) : "./template/" . $tpl_style['value'];
+        $files = Dir::tree($dir, "html");
+        $this->assign("tpl_style", $tpl_style['value']);
+        $this->assign("files", $files);
+        $this->display('./hdcms/Common/Tpl/selectTpl.html');
+    }
+
+    /**
      * 获得栏目
      */
     protected function getCategory($mid = null)
     {
         $data = array();
         if ($mid) {
-            $data = M("category")->where("mid=$mid")->all();
+            $allCategory= M("category")->all();
+            $modelCategory = M("category")->where("mid=$mid")->all();
+            foreach ($modelCategory as $v) {
+                $data = array_merge($data, Data::channel($allCategory, $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = $v['cid'], $type = 3, '─'));
+            }
+            $category=array();
+            foreach($data as $v){
+                $category[$v['cid']]=$v;
+            }
         } else {
-            $data = M("category")->all();
+            $category = M("category")->all();
         }
-        return Data::channel($data, $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
+        return Data::channel($category, $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
     }
 
     /**
@@ -77,8 +99,13 @@ class CommonControl extends Control
         $cid = $this->_post("cid", 'intval'); //栏目cid
         if (!$cid) $this->error("栏目不能为空");
         $model = $this->getModel($mid);
-        $db = M($model['tablename']);
         $_POST['updatetime'] = strtotime($_POST['updatetime']);
+        $tablename = $model['tablename']; //主表名
+        //描述为空时，取正文内容
+        if (empty($_POST[$tablename . '_data']['description']) && $model['type'] == 1) {
+            $_POST[$tablename . '_data']['description'] = mb_substr(trim(strip_tags(str_ireplace('&nbsp;', '', $_POST[$tablename . '_data']['content']))), 0, 80, "utf8");
+        }
+        $db = M($tablename);
         //修改主表
         $db->save();
         //模型为基本模型时，添加附表
@@ -95,12 +122,10 @@ class CommonControl extends Control
         //更改upload表中的当前文档图片的状态
         $this->updateUploadTable($aid, $cid, $mid);
         //修改缩略图
-        $this->setThumbImage($db, $aid, $cid, $mid);
+        $this->setThumbImage($db, $aid, $cid, $mid, $model['type'] == 1 ? $tablename . '_data' : null);
         //添加属性
-        if (!empty($_POST['flag'])) {
-            $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
-        }
-        $this->success("文章编辑成功", U("index", "mid=$mid"), 1);
+        $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
+        $this->success("文章编辑成功", U("index", "mid=$mid&cid={$_POST['cid']}"), 1);
     }
 
     /**
@@ -205,10 +230,15 @@ class CommonControl extends Control
         $cid = $this->_post("cid", 'intval'); //栏目cid
         if (!$cid) $this->error("栏目不能为空");
         $model = $this->getModel($mid);
-        $db = M($model['tablename']);
         $_POST['addtime'] = time();
         $_POST['updatetime'] = strtotime($_POST['updatetime']);
         $_POST['username'] = $_SESSION["username"];
+        $tablename = $model['tablename']; //主表名
+        //描述为空时，取正文内容
+        if (empty($_POST[$tablename . '_data']['description']) && $model['type'] == 1) {
+            $_POST[$tablename . '_data']['description'] = mb_substr(trim(strip_tags(str_ireplace('&nbsp;', '', $_POST[$tablename . '_data']['content']))), 0, 80, "utf8");
+        }
+        $db = M($tablename);
         //添加主表
         $aid = $db->add();
         //模型为基本模型时，添加附表
@@ -225,12 +255,12 @@ class CommonControl extends Control
         //更改upload表中的当前文档图片的状态
         $this->updateUploadTable($aid, $cid, $mid);
         //修改缩略图
-        $this->setThumbImage($db, $aid, $cid, $mid);
+        $this->setThumbImage($db, $aid, $cid, $mid, $model['type'] == 1 ? $tablename . '_data' : null);
         //添加属性
         if (!empty($_POST['flag'])) {
             $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
         }
-        $this->success("添加文章成功", U("index", "mid=$mid"), 1);
+        $this->success("添加文章成功", U("index", "mid=$mid&cid={$_POST['cid']}"), 1);
     }
 
     /**
@@ -262,12 +292,25 @@ class CommonControl extends Control
      * @param $aid 文档id
      * @param $cid 栏目id
      * @param $mid 模型id
+     * @param $stable 附表
+     * @return boolean
      */
-    private function setThumbImage($db, $aid, $cid, $mid)
+    private function setThumbImage($db, $aid, $cid, $mid, $stable)
     {
         $thumb_id = isset($_SESSION['hdcms_article']["thumb_image_id"]) ?
             $_SESSION['hdcms_article']["thumb_image_id"] : null;
+        //如果上传缩略图时，添加图文属性
+        if (!isset($_POST['flag'])) {
+            $_POST['flag'] = array();
+        }
+        //删除图片flag属性
+        $flag = $_POST['flag'];
+        foreach ($flag as $k => $v) {
+            if ($v == 4) unset($_POST['flag'][$k]);
+        }
+
         $uploadDb = M("upload");
+        //新上传缩略图
         if ($thumb_id) {
             $thumbData = array(
                 "id" => $thumb_id,
@@ -275,27 +318,22 @@ class CommonControl extends Control
                 "mid" => $mid,
                 "cid" => $cid
             );
-            //没有缩略图时，是否使用编辑器第一张图片做缩略图
-        } else if (isset($_SESSION['hdcms_article']['editor_image'])) {
-            $thumbData = array(
-                "id" => $_SESSION['hdcms_article']['editor_image']['id'],
-                "aid" => $aid,
-                "mid" => $mid,
-                "cid" => $cid
-            );
-            $articleData = array(
-                'thumb' => $_SESSION['hdcms_article']['editor_image']['path'],
-                "aid" => $aid
-            );
-            $db->save($articleData);
-        }
-        if (isset($thumbData)) {
             $uploadDb->save($thumbData);
-            //如果上传缩略图时，添加图文属性
-            if (!isset($_POST['flag'])) {
-                $_POST['flag'] = array();
-            }
             $_POST['flag'][] = 4;
+        } else if (isset($_POST['thumb']) && !empty($_POST['thumb'])) { //有$_POST['thumb']
+            $_POST['flag'][] = 4;
+        } else if ($stable && isset($_POST['editer_image_to_thumb'])) {
+            $content = $_POST[$stable]['content']; //内容
+            preg_match('@<img.*?src=([\'"])(.*?)\1@i', $content, $img);
+            if ($img) {
+                $thumbImg = str_ireplace(__ROOT__ . '/', '', $img[2]);
+                $articleData = array(
+                    'thumb' => $thumbImg,
+                    "aid" => $aid
+                );
+                $db->save($articleData);
+                $_POST['flag'][] = 4;
+            }
         }
     }
 
@@ -345,11 +383,10 @@ class CommonControl extends Control
      */
     protected function updateFlag($mid, $cid, $aid, $flag)
     {
-        $flag = array_unique($flag);
-
         $db = M("flag_relation");
         $db->where = "aid=$aid and mid=$mid";
         $db->del();
+        $flag = array_unique($flag);
         $data = array(
             "mid" => $mid,
             "cid" => $cid,
@@ -360,6 +397,126 @@ class CommonControl extends Control
             $db->add($data);
         }
         return true;
+    }
+
+    /**
+     * 编辑器远程上传图片处理
+     */
+    public function editorCatcherUrl()
+    {
+        /**
+         * 处理远程上传图片
+         * @author 后盾网
+         */
+        C("SHOW_WARNING", 0);
+        header("Content-Type: text/html; charset=utf-8");
+        error_reporting(E_ERROR | E_WARNING);
+//远程抓取图片配置
+        $config = array(
+            "savePath" => "upload/", //保存路径
+            "allowFiles" => array(".gif", ".png", ".jpg", ".jpeg", ".bmp"), //文件允许格式
+            "maxSize" => 3000 //文件大小限制，单位KB
+        );
+        $uri = htmlspecialchars($_POST['upfile']);
+        $uri = str_replace("&amp;", "&", $uri);
+        /**
+         * 远程抓取
+         * @param $uri
+         * @param $config
+         */
+        function getRemoteImage($uri, $config)
+        {
+            //忽略抓取时间限制
+            set_time_limit(0);
+            //ue_separate_ue  ue用于传递数据分割符号
+            $imgUrls = explode("ue_separate_ue", $uri);
+            $tmpNames = array();
+            foreach ($imgUrls as $imgUrl) {
+                //http开头验证
+                if (strpos($imgUrl, "http") !== 0) {
+                    array_push($tmpNames, "error");
+                    continue;
+                }
+                //获取请求头
+                $heads = get_headers($imgUrl);
+                //死链检测
+                if (!(stristr($heads[0], "200") && stristr($heads[0], "OK"))) {
+                    array_push($tmpNames, "error");
+                    continue;
+                }
+
+                //格式验证(扩展名验证和Content-Type验证)
+                $fileType = strtolower(strrchr($imgUrl, '.'));
+                if (!in_array($fileType, $config['allowFiles']) || stristr($heads['Content-Type'], "image")) {
+                    array_push($tmpNames, "error");
+                    continue;
+                }
+                //打开输出缓冲区并获取远程图片
+                ob_start();
+                $context = stream_context_create(
+                    array(
+                        'http' => array(
+                            'follow_location' => false // don't follow redirects
+                        )
+                    )
+                );
+                //请确保php.ini中的fopen wrappers已经激活
+                readfile($imgUrl, false, $context);
+                $img = ob_get_contents();
+                ob_end_clean();
+                //大小验证
+                $uriSize = strlen($img); //得到图片大小
+                $allowSize = 1024 * $config['maxSize'];
+                if ($uriSize > $allowSize) {
+                    array_push($tmpNames, "error");
+                    continue;
+                }
+                //创建保存位置
+                $savePath = $config['savePath'];
+                if (!file_exists($savePath)) {
+                    mkdir("$savePath", 0777);
+                }
+                //写入文件
+                $tmpName = $savePath . date("ymd").'/'.rand(1, 10000) . time() . strrchr($imgUrl, '.');
+                try {
+                    $fp2 = @fopen($tmpName, "a");
+                    fwrite($fp2, $img);
+                    fclose($fp2);
+                    array_push($tmpNames, $tmpName);
+                } catch (Exception $e) {
+                    array_push($tmpNames, "error");
+                }
+            }
+            /**
+             * 返回数据格式
+             * {
+             *   'url'   : '新地址一ue_separate_ue新地址二ue_separate_ue新地址三',
+             *   'srcUrl': '原始地址一ue_separate_ue原始地址二ue_separate_ue原始地址三'，
+             *   'tip'   : '状态提示'
+             * }
+             */
+            $_catcherimg = implode("ue_separate_ue", $tmpNames);
+            echo "{'url':'" . __ROOT__ . '/' . $_catcherimg . "','tip':'远程图片抓取成功！','srcUrl':'" . $uri . "'}";
+            //添加到upload表
+            $data['path'] = $_catcherimg;
+            $data['size'] = filesize($_catcherimg);
+            $info = pathinfo($_catcherimg);
+            $data['name'] = $info['basename'];
+            $data['ext'] = $info['extension'];
+            $data['uptime'] = time();
+            $data['uid'] = session("uid");
+            $upload_id = M("upload")->add($data);
+            if (!isset($_SESSION['hdcms_article'])) {
+                $_SESSION['hdcms_article'] = array();
+            }
+            if (!isset($_SESSION['hdcms_article']['images'])) {
+                $_SESSION['hdcms_article']['images'] = array();
+            }
+            $_SESSION['hdcms_article']["images"][] = $upload_id;
+            exit;
+        }
+
+        getRemoteImage($uri, $config);
     }
 
     /**

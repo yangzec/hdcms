@@ -21,7 +21,8 @@ class RbacControl extends CommonControl
         $noAuth=array(
             "thumbUpload",
             "updateFlag",
-            "editorUploadImg"
+            "editorUploadImg",
+            "selectTpl",
         );
         if(in_array(METHOD,$noAuth)){
             return true;

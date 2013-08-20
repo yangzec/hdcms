@@ -13,7 +13,7 @@
                 },
                 html_dir: {//静态目录
                     message: {"error": "目录已经使用或目录名输入错误"},
-                    rule: {required: true, regexp: /^[a-z0-9]+$/i}
+                    rule: {required: true, regexp: /^[a-z_0-9]+$/i}
                 },
                 arc_dir: {//验证id为email的表单
                     message: { "error": "输入错误"},
@@ -224,6 +224,6 @@
         </div>
     </div>
     <div class="send">
-        <input type="submit" class="btn" value="添加栏目"/>
+        <input type="submit" class="btn" value="确定"/>
     </div>
 </form>

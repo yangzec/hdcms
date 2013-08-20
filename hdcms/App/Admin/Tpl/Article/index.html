@@ -24,7 +24,7 @@
          */
         function delArticle(aid) {
             if (aid) {//删除单篇文章
-                aids = {'aids[]':aid};
+                aids = {'aids[]': aid};
             } else {//批量删除
                 var aids = $("input[name='aids[]']").serialize();
             }
@@ -48,7 +48,7 @@
         <a href="{|U:index,array('tablename'=>$_GET['tablename'])}"
         <if value='METHOD==index'>class='action'</if>
         >内容列表</a> <span>|</span>
-        <a href="{|U:add,array('mid'=>$_GET['mid'])}"
+        <a href="{|U:add,array('mid'=>$_GET['mid'])}<if value='$hd.get.cid'>&cid={$hd.get.cid}</if>"
         <if value='METHOD=="add"'>class='action'</if>
         >添加文章</a>
     </div>
@@ -63,7 +63,7 @@
                 <td width="100">更新时间</td>
                 <td width="60">点击</td>
                 <td width="80">发布人</td>
-                <td width="200">操作</td>
+                <td width="100">操作</td>
             </tr>
             </thead>
             <tbody>
@@ -71,8 +71,26 @@
                 <tr>
                     <td><input type="checkbox" name="aids[]" value="{$c.aid}"/></td>
                     <td>{$c.aid}</td>
-                    <td>{$c.title}</td>
-                    <td>{$c.catname}</td>
+                    <td>
+                        <a href="{|U:'Index/Index/article',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}"
+                           target="_blank">{$c.title|mb_substr:0,26,"utf8"}</a>
+                        <span>
+                            <?php $flag=getArticleFlag($c['aid'],$c['cid'],$c['mid']);
+                            if($flag){
+                                $_flag_show='[<span style="color:#a40000;">';
+                                foreach($flag as $f){
+                                    $_flag_show.=$f["flagname"].',';
+                                }
+                                echo rtrim($_flag_show,',').'</span>]';
+                            }
+                            ?>
+                        </span>
+                    </td>
+                    <td>
+                        <a href="__APP__&c=Article&m=index&cid={$c.cid}&mid={$c.mid}">
+                            {$c.catname}
+                        </a>
+                    </td>
                     <td>{$c.updatetime|date:"Y-m-d",@@}</td>
                     <td>{$c.click}</td>
                     <td>{$c.username}</td>

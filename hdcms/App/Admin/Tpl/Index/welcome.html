@@ -4,13 +4,123 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>welcome</title>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #4e8700;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        div.big {
+            padding: 20px;
+        }
+
+        div.title {
+            margin-bottom: 10px;
+        }
+
+        div.title h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        ul li {
+            font-size: 12px;
+            width: 45%;
+            background: #fff;
+            border: solid 1px #dadada;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        ul li dl dt {
+            background: #f0f0f0;
+            border-bottom: solid 1px #4e8700;
+            padding:5px 10px;
+        }
+
+        ul li dl dd {
+            padding: 5px 10px;
+        }
+
+        ul li dl dd a {
+            color: #666;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-<div>
-    <div class="hero-unit" style="background: #fff;">
-        <h1>Welcome</h1>
-
+<div class="big">
+    <div class="title" style="background: #fff;">
+        <h2>欢迎使用HDCMS建站系统，底层基于HDPHP框架开发，稳定高效</h2>
     </div>
+    <ul>
+        <li>
+            <dl>
+                <dt>HDCMS最新消息</dt>
+                <dd>
+                    <a href="#">HDCMS系统正式发布！</a>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>最新文章</dt>
+                <list from="$article" name="n">
+                    <dd>
+                        <span style="float:right;display:block;color:#999;">({$n.updatetime|date:"Y-m-d",@@})</span>
+                        <a href="{|getArticleUrl:$n}" target="_blank">{$n.title}</a>
+                    </dd>
+                </list>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>最新回复</dt>
+                <list from="$article" name="n">
+                    <dd>
+                        <span style="float:right;display:block;color:#999;">({$n.updatetime|date:"Y-m-d",@@})</span>
+                        <a href="{|getArticleUrl:$n}" target="_blank">{$n.title}</a>
+                    </dd>
+                </list>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>审核文章</dt>
+                <list from="$article" name="n">
+                    <dd>
+                        <span style="float:right;display:block;color:#999;">({$n.updatetime|date:"Y-m-d",@@})</span>
+                        <a href="{|getArticleUrl:$n}" target="_blank">{$n.title}</a>
+                    </dd>
+                </list>
+            </dl>
+        </li>
+        <li style="width:91.5%">
+            <dl>
+                <dt>免费模板</dt>
+                <list from="$article" name="n">
+                    <dd style="float:left;">
+                        <a href="#">
+                            <img src="http://localhost/hdcms/data/img/tpl_thumb.png" width="140" height="150"/>
+                        </a>
+                    </dd>
+                </list>
+            </dl>
+        </li>
+    </ul>
 </div>
 </body>
 </html>

@@ -29,7 +29,6 @@
 <body>
 <form action="{|U:add}" method="post" id="form" enctype="multipart/form-data">
 <input type="hidden" name="mid" value="{$hd.get.mid}"/>
-<if value="$hd.get.cid"><input type="hidden" name="cid" value="$hd.get.cid"/></if>
 <div class="right_content">
 <div class="tab">
     <div class="tab_content" style="border:none;">
@@ -56,24 +55,20 @@
                     </td>
 
                 </tr>
-                <if value="!$hd.get.cid">
                     <tr>
                         <th>栏目</th>
                         <td>
                             <select name="cid">
                                 <list from="$category" name="cat">
-                                    <option value="{$cat.cid}" cattype="{$cat.cattype}"
-                                    <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>
-                                    >
-                                    <if value="$cat.pid!=0">└</if>
-                                    {$cat.html}{$cat.catname}
+                                    <option value="{$cat.cid}" <if value="$hd.get.cid && $cat['cid']==$_GET['cid']">selected="selected"</if> cattype="{$cat.cattype}"
+                                    <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>>
+                                    <if value="$cat.pid!=0">└</if>{$cat.html}{$cat.catname}
                                     <if value="$cat['cattype']==2">(频道封面)</if>
                                     </option>
                                 </list>
                             </select>
                         </td>
                     </tr>
-                </if>
                 <tr>
                     <th>缩略图</th>
                     <td>
@@ -131,7 +126,7 @@
                                             <tr>
                                                 <td width="60" style="padding:6px;">内容选项:</td>
                                                 <td>
-                                                    <input type="checkbox" name="editer_image_to_thumb" value="1"/>
+                                                    <input type="checkbox" name="editer_image_to_thumb" value="1"  checked="checked"/>
                                                     使用第一张图做为缩略图
                                                     <input type="checkbox" name="content_image_water" value="1"/> 图片加水印
                                                     <br/>
@@ -154,6 +149,7 @@
                                         <script type='text/javascript'>
                                             var ue = UE.getEditor('content', {
                                                 imageUrl: '__CONTROL__&m=editorUploadImg&water=0'//处理上传脚本
+                                                ,catcherUrl:'__CONTROL__&m=editorCatcherUrl&water=0'//抓取远程图片
                                                 , zIndex: 0, autoClearinitialContent: false, initialFrameWidth: "100%" //宽度1000
                                                 , initialFrameHeight: "300" //宽度1000
                                                 , autoHeightEnabled: false //是否自动长高,默认true
@@ -222,11 +218,18 @@
                         <input type="text" name="click" class="w100" value="100"/> 次
                     </td>
                 </tr>
+                <tr>
+                    <th>模板</th>
+                    <td>
+                        <input class="w200" type="text" value="" name="template">
+                        <button class="select_tpl" action="template" type="button">选择列表模板</button>
+                        <span class="validation">{style}指模板风格,不设置将使用栏目模板</span>
+                    </td>
+                </tr>
                 <list from="$user_field" name="f">
                     {$f.html}
                 </list>
             </table>
-
         </div>
     </div>
 </div>

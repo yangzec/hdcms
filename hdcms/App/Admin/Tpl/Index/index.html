@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>后台管理-{$hd.config.webname}</title>
     <jquery/>
     <hdui/>
     <js file="__CONTROL_TPL__/Js/index.js"/>
@@ -27,8 +27,9 @@
     </div>
     <div class="m_menu">
         <div class="user" style="float:left;">
+
             <a href="javascript:">
-                {$hd.session.username}({$hd.session.role})
+                {$hd.session.realname} [ {$hd.session.role} ]
             </a>
 
             <div class="userinfo">

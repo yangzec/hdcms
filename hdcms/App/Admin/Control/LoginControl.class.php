@@ -55,6 +55,8 @@ class LoginControl extends Control
         if (!Rbac::login($username, $password, 'admin')) {
             $this->error(Rbac::$error, 'index/login');
         }
+        $user =M("user")->find(session("uid"));
+        session("realname",$user['realname']);
         go("Index/index");
     }
 

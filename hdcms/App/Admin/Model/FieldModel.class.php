@@ -39,7 +39,7 @@ class FieldModel extends Model
         //清除表缓存
         F(C("DB_DATABASE") . C("DB_PREFIX") . $field['table_name'], NULL, TABLE_PATH);
         //修改字段
-        $this->alterTable($field,false);
+        $this->alterTable($field, false);
         //添加字段信息到model_field表
         $field['set'] = var_export($field['set'], true);
         //修改model_field信息
@@ -53,13 +53,13 @@ class FieldModel extends Model
      * @param array $field 字段信息
      * @param boolean $addField 添加或修改字段
      */
-    private function alterTable($field,$addField=true)
+    private function alterTable($field, $addField = true)
     {
         switch ($field['field_type']) {
             case "char":
             case "varchar":
-                if(!isset($field['field_size']) || $field['field_size']){
-                    $field['field_size']=255;
+                if (!isset($field['field_size']) || $field['field_size']) {
+                    $field['field_size'] = 255;
                 }
                 $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['field_size'] . ")";
                 break;
@@ -74,9 +74,9 @@ class FieldModel extends Model
                 break;
         }
         //修改或添加字段
-        if($addField){
+        if ($addField) {
             $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " ADD " . $_field;
-        }else{
+        } else {
             $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] . " CHANGE " . $field['field_old_name'] . " " . $_field;
         }
         $this->exe($sql);
@@ -109,11 +109,10 @@ class FieldModel extends Model
      */
     private function getHtml($f)
     {
-
         $html = '';
         //表单name值
         $name = $f['is_main_table'] == 1 ? $f['field_name'] : $f['table_name'] . "[{$f['field_name']}]";
-        $validation = !empty($f['validation'])?"checkField(this,{$f['required']},{$f['validation']},'{$f['message']}','{$f['error']}');":"";
+        $validation = !empty($f['validation']) ? "checkField(this,{$f['required']},{$f['validation']},'{$f['message']}','{$f['error']}');" : "";
         switch ($f['show_type']) {
             case "input":
                 $html = "<tr>
@@ -127,6 +126,7 @@ class FieldModel extends Model
                 <th>{$f['title']}</th>
                 <td><input name='$name' readonly='readonly'  lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
                  <input class='inputbut' type='button' onclick='selectImage(this)' value='浏览...'>
+                 <img lab='upload_field_img' align='middle' id='{$name}_thumb' width='10' height='10' src='{FIELD_VALUE}'/>
                  </td></tr>";
                 break;
             case "textarea":
@@ -194,6 +194,7 @@ class FieldModel extends Model
     <script type="text/javascript">
         var ue = UE.getEditor("hd_$name",{
         imageUrl:CONTROL+'&m=editorUploadImg&water=0&width=600&height=600'//处理上传脚本
+        ,catcherUrl:CONTROL+'&m=editorCatcherUrl&water=0'
         ,zIndex : 0
         ,autoClearinitialContent:false
         ,initialFrameWidth:"100%" //宽度1000
@@ -225,7 +226,13 @@ str;
             case "editor":
             case "datetime":
             case "image":
-                $html = str_replace("{FIELD_VALUE}", $_replaceValue, $field['html']);
+                if ($_replaceValue) {
+                    $html = str_replace(10,80,$field['html']);
+                    $html = str_replace("{FIELD_VALUE}", $_replaceValue, $html);
+                }else{
+                    $html = preg_replace('@src="{FIELD_VALUE}"@',__ROOT__."/data/img/upload_img_default.png",$field['html']);
+                    $html = str_replace("{FIELD_VALUE}",'' ,$html);
+                }
                 break;
             case "select":
                 if ($value) {

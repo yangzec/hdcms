@@ -8,6 +8,6 @@
   'water_pct' => '80',
   'water_img' => './data/water/water.png',
   'water_type' => '2',
-  'water_pos' => '5',
+  'water_pos' => '9',
 );
 ?>

@@ -2,10 +2,6 @@
 //测试控制器类
 class IndexControl extends Control
 {
-    public function __init()
-    {
-    }
-
     /**
      * 网站首页
      */
@@ -45,9 +41,31 @@ class IndexControl extends Control
         if (empty($field)) {
             $this->error("非法请求");
         }
+        $tpl = $field['template'] ? $field['template'] : $field['arc_tpl'];
+        $field['url'] = getArticleUrl($field);
         $this->assign("field", $field);
-        $arc_html = './template/' . str_replace("{style}", C("style"), $field['arc_tpl']);
+        $arc_html = './template/' . str_replace("{style}", C("style"), $tpl);
         $this->display($arc_html);
+    }
+
+    /**
+     * 显示栏目列表
+     */
+    public function category()
+    {
+        $mid = $this->_get('mid', 'intval');
+        $cid = $this->_get('cid', 'intval');
+        if (!$mid || !$cid) {
+            error("非法请求", "index");
+        }
+        $category = M("category")->find($cid);
+        if ($category['cattype'] == 2) {
+            $tpl = './template/' . str_replace("{style}", C("style"), $category['index_tpl']);
+        } else {
+            $tpl = './template/' . str_replace("{style}", C("style"), $category['list_tpl']);
+        }
+        $this->assign("field", $category);
+        $this->display($tpl);
     }
 }
 

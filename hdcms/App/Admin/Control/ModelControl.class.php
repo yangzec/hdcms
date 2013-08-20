@@ -125,6 +125,7 @@ CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
   `addtime` INT(10) NOT NULL default 0 COMMENT '添加时间' ,
   `updatetime` INT(10) NOT NULL default 0 COMMENT '发布时间 ' ,
   `color` CHAR(7) NOT NULL default '' COMMENT '标题颜色\n' ,
+  `template` varchar(255) NOT NULL default '' COMMENT '模板\n' ,
   `ishtml` TINYINT(1) NOT NULL DEFAULT 1 ,
   `username` CHAR(20) NOT NULL default '',
   PRIMARY KEY (`aid`) ,

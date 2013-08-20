@@ -56,9 +56,27 @@ function updateImageInput(obj) {
     var path = $(obj).attr("path");
     var inputLab = $(obj).attr("inputlab");
     $(opener.document).find("input[lab='" + inputLab + "']").val(path);
+    var img_id = "#" + $(opener.document).find("input[lab='" + inputLab + "']").attr("name") + "_thumb";
+    $(opener.document).find(img_id).attr("src", ROOT + "/" + path).css({width: 80, height: 80});
     window.close();
 
 }
+/**
+ * 自定义上传图片字段，当鼠标移动到上面时，显示放大图片，移出图片时放大图片隐藏
+ */
+$(function () {
+    $("img[lab='upload_field_img']").mouseover(function (event) {
+        var _top = $(window).height() - 450;
+        var _src = $(this).attr("src");
+        var _div = "<div id='upload_field_thumb' style='position: absolute;'><img src='" + _src + "' width='260' height='260'/></div>";
+        $("body").append(_div);
+        var _offset = $(this).offset();
+        $("#upload_field_thumb").css({top: _offset.top-50,left: _offset.left+90,"z-index":100});
+    })
+    $("img[lab='upload_field_img']").mouseout(function (event) {
+        $("#upload_field_thumb").remove();
+    });
+})
 /**
  * 自定义字段验证
  * @param obj 表单对象
@@ -93,3 +111,25 @@ function checkField(obj, required, validation, message, error) {
 function checkFieldMsg(obj, message) {
     message && $(obj).next("span").html(message).removeClass("error").removeClass("success");
 }
+
+//选择模板
+$(function () {
+    $("button.select_tpl").click(function () {
+        $.modal({
+            content: "<iframe src='#'></iframe>"
+        });
+        $("div.modal iframe").attr("src", CONTROL + "&m=selectTpl&action=" + $(this).attr('action'), {"action": $(this).attr("list_tpl")});
+        $("div.modal").show();
+    })
+})
+//弹窗IFRAME中选择模板
+$(function () {
+    $("a.select").click(function () {
+        //父层表单名称
+        var input_name = $(this).attr("action");
+        $(window.parent.document.body).find("input[name='" + input_name + "']").val($(this).attr("href"));
+        $(window.parent.document.body).find("div.modal").hide();
+        $(window.parent.document.body).find("div.modal .content").html("<iframe src='#'></iframe>");
+        return false;
+    })
+})

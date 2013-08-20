@@ -18,6 +18,7 @@ class IndexControl extends RbacControl
      */
     public function welcome()
     {
+        $this->assign("article", M("article")->limit(6)->order("aid desc")->all());
         $this->display();
     }
 
