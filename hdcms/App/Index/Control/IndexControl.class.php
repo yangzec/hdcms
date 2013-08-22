@@ -67,6 +67,23 @@ class IndexControl extends Control
         $this->assign("field", $category);
         $this->display($tpl);
     }
+
+    /**
+     * 修改文章点击次数
+     */
+    public function updateClick(){
+        $model = M("model")->find($this->_get("mid","intval"));
+        $table = $model['tablename'];
+        $aid = $this->_get("aid","intval");
+        $data=array(
+            "aid"=>$aid,
+            "click"=>"click+1"
+        );
+        $db = M($table);
+        $db->inc("click","aid=$aid",1);
+        $field = $db->find($aid);
+        echo "document.write({$field['click']})";exit;
+    }
 }
 
 ?>

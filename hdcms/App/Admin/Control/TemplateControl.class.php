@@ -54,6 +54,6 @@ class TemplateControl extends SystemControl
         }
         $config_file = "./data/config/base.inc.php";
         $this->save($config_file, $cacheData);
-        $this->success("模板风格更新成功", "index");
+        $this->success("模板风格更新成功", "index",1);
     }
 }

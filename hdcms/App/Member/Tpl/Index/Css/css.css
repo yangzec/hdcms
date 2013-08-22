@@ -1,0 +1,237 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+div.topbar {
+    background: #efeee7;
+    padding: 0px;
+    border-bottom: solid 2px #dcdcdc;
+}
+
+div.topbar div.container {
+    background: url("../../images/logo.png") no-repeat scroll 0px 2px transparent;
+    height: 50px;
+    width: 960px;
+    margin: 0 auto;
+}
+
+div.topbar div.container.login {
+    background: url("../../images/logo_mini.png") no-repeat scroll 0px 2px transparent;
+}
+
+div.topbar div.container h3 {
+    font-size: 26px;
+    text-indent: 220px;
+    padding-top: 10px;
+    text-indent: -9999px;
+    float: left;
+}
+
+div.topbar div.container div.user_info {
+    font-size: 12px;
+    color: #aaa;
+    float: right;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+div.topbar div.container div.user_info a {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+div.topbar div.container div.user_info a:hover {
+    color: #f00f00;
+}
+
+div.big {
+    width: 960px;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+div.big div.left_menu {
+    width: 180px;
+    margin-right: 20px;
+    height: auto;
+    overflow: hidden;
+    font-size: 12px;
+    color: #666;
+    float: left;
+}
+
+div.big div.left_menu div.user {
+    padding: 15px;
+    border: solid 1px #eee;
+}
+
+div.big div.left_menu div.user ul {
+    margin-top: 10px;
+}
+
+div.big div.left_menu div.user ul li {
+    padding: 2px 0px;
+}
+
+div.big div.left_menu div.menu_list {
+    border: solid 1px #eee;
+    border-bottom: none;
+    margin-top: 15px;
+}
+
+div.big div.left_menu div.menu_list ul li {
+}
+
+div.big div.left_menu div.menu_list ul li a {
+    border-bottom: 1px solid #F3F2F1;
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+}
+div.big div.left_menu div.menu_list ul li a:hover{
+    background: #ddd;
+    color: #fff;
+}
+div.big div.left_menu div.menu_list ul li a.active {
+    background: #81BA15;
+    color: #fff;
+}
+
+div.big div.right_content {
+    float: right;
+    width: 750px;
+    border: solid 0px #aaa;
+    height: auto;
+    overflow: hidden;
+}
+
+div.big div.right_content div.con {
+    border: none;
+    padding: 0px;
+}
+
+div.big div.right_content div.tab ul.tab_menu li a {
+    margin-right: 0px;
+}
+
+div.big div.right_content div.tab div.tab_content {
+    margin-top: 20px;
+}
+
+div.big div.right_content div.tab div.tab_content table.table_field {
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.big div.right_content div.tab div.tab_content table.table_field tr th {
+    width: 68px;
+    border: none;
+    text-align: right;
+    font-weight: bold;
+    padding: 0px;
+}
+
+div.big div.right_content div.tab div.tab_content table.table_field tr td {
+    border: none;
+}
+
+div.big div.right_content div.tab div.tab_content table.table_field tr td input {
+    font-weight: bold;
+    height: 30px;
+}
+
+div.reg {
+    width: 960px;
+    margin: 0px auto;
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #666;
+    position: relative;
+}
+
+div.reg table tr th {
+    text-align: left;font-size:14px;font-weight: bold;
+    padding-right: 10px;
+}
+
+div.reg table tr td {
+    height: 50px;
+}
+div.reg table tr td span.validation{
+    color:#aaa;
+    font-weight: normal;
+    height: 32px;
+    line-height: 30px;
+    padding-right:10px;
+    margin-left:10px;
+    text-indent: 10px;
+    width:135px;
+}
+div.reg table tr td span.success{
+    color:#fff;
+    background: #00a4d5;
+    width:135px;
+}
+div.reg table tr td span.error{
+    color:#fff;
+    background: #f00f00;
+    width:135px;
+}
+div.reg table input {
+    height: 30px;
+}
+div.login_ad{
+    position: absolute;
+    top:10px;
+    right:0px;
+}
+
+/***登录***/
+strong.reg_link {
+    display:inline-block;font-weight: normal;
+}
+strong.reg_link span.line{
+    height:12px;
+    position: relative;
+    top:2px;
+    color:#aaa;
+    overflow: hidden;
+    display:inline-block;
+    padding:0px;
+    margin:0px;
+    text-indent: 0px;
+    line-height: 8px;
+}
+strong.reg_link a {
+    font-size: 12px;
+    color: #4095CE;
+
+}
+
+strong.reg_link a:hover {
+    color: #f00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

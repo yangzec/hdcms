@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>会员中心</title>
+    <jsconst/>
+    <jquery/>
+    <css file="__CONTROL_TPL__/Css/css.css"/>
+    <hdui/>
+    <script>
+        $(function () {
+            $("form").validation({
+                "username": {
+                    rule: {
+                        required: true,
+                        user: "5,20",
+                        ajax: "{|U:'checkUser'}"
+                    },
+                    error: {
+                        required: "用户名不能为空",
+                        user: "用户名不能小于5位",
+                        ajax: "用户已经存在"
+                    }
+                },
+                "password": {
+                    rule: {
+                        required: true,
+                        minlen: 6
+                    },
+                    error: {
+                        required: "密码不能为空",
+                        minlen: "密码不能小于6位"
+                    }
+                },
+                "password2": {
+                    rule: {
+                        required: true,
+                        confirm: "password"
+                    },
+                    error: {
+                        required: "密码不能为空",
+                        confirm: "两次密码不一致"
+                    }
+                },
+                "email": {
+                    rule: {
+                        email: true
+                    },
+                    error: {
+                        email: "邮箱格式不正确"
+                    }
+                },
+                "code": {
+                    rule: {
+                        required: true,
+                        ajax: "{|U:'checkCode'}"
+                    },
+                    error: {
+                        required: "请输入验证码",
+                        ajax: "验证码错误"
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="topbar">
+    <div class="container login">
+        <h3>会员中心</h3>
+    </div>
+</div>
+<div class="reg">
+    <form action="{|U:'reg'}" method="post" target="reg_iframe">
+        <table width="550">
+            <tr>
+                <th width="60">用户名</th>
+                <td><input class="w250" type="text" name="username"/></td>
+                <td>
+                    <span id="hd_username"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>登陆密码</th>
+                <td><input class="w250" type="password" name="password"/></td>
+                <td>
+                    <span id="hd_password"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>确认密码</th>
+                <td><input class="w250" type="password" name="password2"/></td>
+                <td>
+                    <span id="hd_password2"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>电子邮箱</th>
+                <td><input class="w250" type="text" name="email"/></td>
+                <td>
+                    <span id="hd_email"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>性别</th>
+                <td>
+                    <input type="radio" name="sex" checked="checked"/> 男
+                    <input type="radio" name="sex"/> 女
+                </td>
+                <td>
+                    <span id="hd_sex"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>验证码</th>
+                <td>
+                    <input class="w80" type="text" name="code"/>
+                    <img src="{|U:'code'}" id="code_img" align="middle" style="cursor: pointer"
+                         onclick="this.src='{|U:'code'}&'+Math.random()"/>
+                </td>
+                <td>
+                    <span id="hd_code"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input style="width:180px;height:40px;" type="submit" value="确定" class="btn"/>
+                    <strong class="reg_link">
+                        <a href="#">忘记密码</a> <span class="line">|</span> <a href="{|U:'login'}">登录</a>
+                    </strong>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="login_ad">
+        <a href="#">
+            <img src="__TPL__/images/login_ad.jpg"/>
+        </a>
+    </div>
+</div>
+<iframe name="reg_iframe" id="reg_iframe" style="display: none;"></iframe>
+</body>
+</html>

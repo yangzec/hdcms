@@ -1,3 +1,10 @@
+$(function(){
+    $("input,textarea").focus(function(){
+        $(this).css({"border":"solid 1px #60940E"});
+    }).blur(function(){
+            $(this).css({"border":"solid 1px #dadada"});
+    })
+})
 /**
  * 缩略图上传
  * @param obj [input:type=file]表单对象

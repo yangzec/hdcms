@@ -1,5 +1,5 @@
 <?php if (!defined("HDPHP_PATH"))exit;return array (
-  'webname' => '后盾网顶尖php培训机构',
+  'webname' => '中国顶尖php培训机构-后盾网',
   'icp' => '京ICP备12048441号-3',
   'htmldir' => 'h',
   'copyright' => 'Copyright © 2012-2013 HDCMS 后盾网 版权所有',

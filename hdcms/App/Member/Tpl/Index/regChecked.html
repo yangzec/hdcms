@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>验证表单</title>
+    <jquery/>
+</head>
+<body>
+<script>
+    var _json = jQuery.parseJSON('{$stat}');
+    if (_json.stat == 1) {
+        top.location.reload();
+    } else {
+        var top_document = top.document;//顶级窗口
+        for (var i in _json.field) {
+            if (i == 'code') {
+                $(top_document).find("span#code").removeAttr("class").addClass("error").html("验证码输入错误");
+            }
+            if(i=='username'){
+                $(top_document).find("span#username").removeAttr("class").addClass("error").html("用户名已经存在");
+            }
+        }
+    }
+</script>
+</body>
+</html>

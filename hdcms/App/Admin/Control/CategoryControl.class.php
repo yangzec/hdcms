@@ -50,7 +50,7 @@ class CategoryControl extends RbacControl
         if (isset($_POST['catname'])) {
             $db->save();
             O("CacheControl", "category");
-            $this->success("编辑成功", "index");
+            $this->success("编辑成功", "index",1);
         } else {
             $field = $db->where("cid=" . $this->_get("cid"))->find();
             $this->assign("field", $field);

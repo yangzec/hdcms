@@ -12,22 +12,32 @@ return array (
   ),
   1 => 
   array (
-    'mid' => '4',
-    'model_name' => '学生项目',
-    'tablename' => 'study_project',
+    'mid' => '3',
+    'model_name' => '视频教程',
+    'tablename' => 'video',
     'enable' => '1',
     'description' => '',
-    'control' => 'ArticleSingle',
+    'control' => 'Article',
     'type' => '2',
   ),
   2 => 
   array (
-    'mid' => '7',
-    'model_name' => 'test',
-    'tablename' => 'test',
+    'mid' => '6',
+    'model_name' => '实训作品',
+    'tablename' => 'project',
     'enable' => '1',
     'description' => '',
-    'control' => 'ArticleSingle',
+    'control' => 'Article',
+    'type' => '2',
+  ),
+  3 => 
+  array (
+    'mid' => '7',
+    'model_name' => '开学典礼',
+    'tablename' => 'ofschool',
+    'enable' => '1',
+    'description' => '',
+    'control' => 'Article',
     'type' => '2',
   ),
 );
