@@ -124,9 +124,9 @@ class FieldModel extends Model
             case "image":
                 $html = "<tr>
                 <th>{$f['title']}</th>
-                <td><input name='$name' readonly='readonly'  lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
+                <td><input name='$name' readonly='readonly' lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
                  <input class='inputbut' type='button' onclick='selectImage(this)' value='浏览...'>
-                 <img lab='upload_field_img' align='middle' id='{$name}_thumb' width='10' height='10' src='{FIELD_VALUE}'/>
+                 <img lab='upload_field_img' align='middle' id='pic_{$f['field_name']}' width='10' height='10' src='{FIELD_VALUE}'/>
                  </td></tr>";
                 break;
             case "textarea":

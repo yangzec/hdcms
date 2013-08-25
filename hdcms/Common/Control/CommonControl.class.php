@@ -1,4 +1,6 @@
 <?php
+//加载字段处理模型
+require COMMON_PATH . 'Model/FieldModel.class.php';
 class CommonControl extends Control
 {
     /**
@@ -22,14 +24,14 @@ class CommonControl extends Control
     {
         $data = array();
         if ($mid) {
-            $allCategory= M("category")->all();
+            $allCategory = M("category")->all();
             $modelCategory = M("category")->where("mid=$mid")->all();
             foreach ($modelCategory as $v) {
                 $data = array_merge($data, Data::channel($allCategory, $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = $v['cid'], $type = 3, '─'));
             }
-            $category=array();
-            foreach($data as $v){
-                $category[$v['cid']]=$v;
+            $category = array();
+            foreach ($data as $v) {
+                $category[$v['cid']] = $v;
             }
         } else {
             $category = M("category")->all();
@@ -162,7 +164,7 @@ class CommonControl extends Control
     /**
      * 显示列表首页
      */
-    protected function showIndex()
+    protected function showIndex($author = null)
     {
         $mid = $this->_get("mid", 'intval');
         if (!$mid) $this->error("模型mid为空，非法提交");
@@ -176,11 +178,17 @@ class CommonControl extends Control
             if ($cid) {
                 $db->where("cid=$cid");
             }
+            if ($author) {
+                $db->where("username='$author'");
+            }
             $count = $db->count();
             //设置分布
             $page = new Page($count);
             //查询当前页文章
             $where = $cid ? " WHERE a.cid=$cid" : "";
+            if ($author) {
+                $where = $where . ($where ? " AND username='$author'" : " WHERE username='$author'");
+            }
             $fix = C("DB_PREFIX");
             $sql = "SELECT title,a.cid,username,catname,a.mid,click,aid,updatetime FROM " . $fix . $model['tablename'] . " AS a JOIN " . $fix . "category AS c ON a.cid=c.cid
              " . $where . " ORDER BY a.aid DESC LIMIT " . current($page->limit());
@@ -231,7 +239,7 @@ class CommonControl extends Control
         if (!$cid) $this->error("栏目不能为空");
         $model = $this->getModel($mid);
         $_POST['addtime'] = time();
-        $_POST['updatetime'] = strtotime($_POST['updatetime']);
+        $_POST['updatetime'] = isset($_POST['updatetime'])?strtotime($_POST['updatetime']):time();
         $_POST['username'] = $_SESSION["username"];
         $tablename = $model['tablename']; //主表名
         //描述为空时，取正文内容
@@ -260,7 +268,7 @@ class CommonControl extends Control
         if (!empty($_POST['flag'])) {
             $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
         }
-        $this->success("添加文章成功", U("index", "mid=$mid&cid={$_POST['cid']}"), 1);
+        $this->success("添加文章成功", U("index", "mid=$mid}"), 1);
     }
 
     /**
@@ -477,7 +485,7 @@ class CommonControl extends Control
                     mkdir("$savePath", 0777);
                 }
                 //写入文件
-                $tmpName = $savePath . date("ymd").'/'.rand(1, 10000) . time() . strrchr($imgUrl, '.');
+                $tmpName = $savePath . date("ymd") . '/' . rand(1, 10000) . time() . strrchr($imgUrl, '.');
                 try {
                     $fp2 = @fopen($tmpName, "a");
                     fwrite($fp2, $img);

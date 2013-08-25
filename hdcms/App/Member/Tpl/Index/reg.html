@@ -6,7 +6,7 @@
     <title>会员中心</title>
     <jsconst/>
     <jquery/>
-    <css file="__CONTROL_TPL__/Css/css.css"/>
+    <css file="__PUBLIC__/Css/css.css"/>
     <hdui/>
     <script>
         $(function () {
@@ -14,12 +14,12 @@
                 "username": {
                     rule: {
                         required: true,
-                        user: "5,20",
+                        user: "4,20",
                         ajax: "{|U:'checkUser'}"
                     },
                     error: {
                         required: "用户名不能为空",
-                        user: "用户名不能小于5位",
+                        user: "用户名不能小于4位",
                         ajax: "用户已经存在"
                     }
                 },
@@ -66,13 +66,13 @@
     </script>
 </head>
 <body>
-<div class="topbar">
-    <div class="container login">
+<div class="topbar login">
+    <div class="container login" style="width:960px;">
         <h3>会员中心</h3>
     </div>
 </div>
 <div class="reg">
-    <form action="{|U:'reg'}" method="post" target="reg_iframe">
+    <form action="{|U:'reg'}" method="post">
         <table width="550">
             <tr>
                 <th width="60">用户名</th>
@@ -105,8 +105,8 @@
             <tr>
                 <th>性别</th>
                 <td>
-                    <input type="radio" name="sex" checked="checked"/> 男
-                    <input type="radio" name="sex"/> 女
+                    <input type="radio" name="sex" checked="checked" value="1"/> 男
+                    <input type="radio" name="sex" value="2"/> 女
                 </td>
                 <td>
                     <span id="hd_sex"></span>

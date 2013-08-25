@@ -10,23 +10,35 @@
     <script>
         $(function () {
             $("form").validation({
-                //验证规则
-                rules: {
-                    username: {//验证id为email的表单
-                        message: {default: "请输入后台帐号", "success": "输入正确", "error": "用户名不能为空"},
-                        rule: {required: true}
+                //=================修改个人资料=================
+                username: {
+                    rule: {
+                        required: true
                     },
-                    password: {//静态目录
-                        message: {"error": "密码不能为空"},
-                        rule: {required: true}
+                    error: {
+                        required: "帐号不能为空"
+                    }
+                },
+                password: {
+                    rule: {
+                        required: true
                     },
-                    code: {//验证id为email的表单
-                        message: { default: "请输入验证码", "error": "验证码错误"},
-                        rule: {required: true, ajax: "{|U:'checkCode'}"}
+                    error: {
+                        required: "密码不能为空"
+                    }
+                },
+                "code":{
+                    rule:{
+                        required:true,
+                        ajax:"{|U:'checkCode'}"
+                    },
+                    error:{
+                        required:"请输入验证码",
+                        ajax:"验证码错误"
                     }
                 }
-            })
-        })
+            });
+        });
     </script>
 </head>
 <body>

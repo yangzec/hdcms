@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
 }
+html{overflow: hidden;}
 
 a {
     text-decoration: none;
@@ -11,17 +12,24 @@ div.topbar {
     background: #efeee7;
     padding: 0px;
     border-bottom: solid 2px #dcdcdc;
+    margin-bottom: 10px;
 }
 
 div.topbar div.container {
-    background: url("../../images/logo.png") no-repeat scroll 0px 2px transparent;
-    height: 50px;
-    width: 960px;
+    background: url("../../images/logo.png") no-repeat scroll 10px 2px transparent;
+    height: 30px;
     margin: 0 auto;
+    overflow: hidden;
 }
-
+div.topbar.login div.container {
+    height: 38px;
+    width: 960px;
+}
 div.topbar div.container.login {
-    background: url("../../images/logo_mini.png") no-repeat scroll 0px 2px transparent;
+    background: url("../../images/logo_mini.png") no-repeat scroll 0px 5px transparent;
+}
+div.topbar.login div.container.login {
+    background: url("../../images/logo_mini.png") no-repeat scroll 0px 5px transparent;
 }
 
 div.topbar div.container h3 {
@@ -36,7 +44,7 @@ div.topbar div.container div.user_info {
     font-size: 12px;
     color: #aaa;
     float: right;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-right: 20px;
 }
 
@@ -51,14 +59,15 @@ div.topbar div.container div.user_info a:hover {
 }
 
 div.big {
-    width: 960px;
     margin: 0px auto;
-    margin-top: 10px;
+    position: relative;
+    height: auto;
+    overflow: hidden;
 }
 
 div.big div.left_menu {
     width: 180px;
-    margin-right: 20px;
+    margin-left: 20px;
     height: auto;
     overflow: hidden;
     font-size: 12px;
@@ -96,7 +105,7 @@ div.big div.left_menu div.menu_list ul li a {
     color: #333;
 }
 div.big div.left_menu div.menu_list ul li a:hover{
-    background: #ddd;
+    background: #81BA15;
     color: #fff;
 }
 div.big div.left_menu div.menu_list ul li a.active {
@@ -105,8 +114,9 @@ div.big div.left_menu div.menu_list ul li a.active {
 }
 
 div.big div.right_content {
-    float: right;
-    width: 750px;
+    position: absolute;
+    left:210px;
+    right:0px;
     border: solid 0px #aaa;
     height: auto;
     overflow: hidden;
@@ -220,6 +230,7 @@ strong.reg_link a {
 strong.reg_link a:hover {
     color: #f00;
 }
+
 
 
 

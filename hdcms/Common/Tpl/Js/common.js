@@ -62,9 +62,7 @@ function selectImage(obj) {
 function updateImageInput(obj) {
     var path = $(obj).attr("path");
     var inputLab = $(obj).attr("inputlab");
-    $(opener.document).find("input[lab='" + inputLab + "']").val(path);
-    var img_id = "#" + $(opener.document).find("input[lab='" + inputLab + "']").attr("name") + "_thumb";
-    $(opener.document).find(img_id).attr("src", ROOT + "/" + path).css({width: 80, height: 80});
+    $(opener.document).find("#"+inputLab).attr("src", ROOT + "/" + path).css({width: 80, height: 80});
     window.close();
 
 }

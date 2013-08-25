@@ -5,8 +5,32 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>会员中心</title>
     <jquery/>
-    <css file="__CONTROL_TPL__/Css/css.css"/>
+    <css file="__PUBLIC__/Css/css.css"/>
     <hdui/>
+    <base target="content"/>
+    <script>
+        //改变left与right高度
+        $(function () {
+            resize_window_size();
+            $(window).resize(function () {
+                resize_window_size();
+            })
+        })
+        function resize_window_size() {
+            var h = $(window).height() - 60;
+//            h=200;
+            $("#right_content").height(h);
+            $("#left").height(h);
+        }
+    </script>
+    <script>
+        $(function () {
+            $("div.menu_list li a").click(function () {
+                $("div.menu_list li a").removeClass("active");
+                $(this).addClass("active");
+            })
+        })
+    </script>
 </head>
 <body>
 <div class="topbar">
@@ -15,14 +39,14 @@
 
         <div class="user_info">
             <a href="#">
-                {$hd.session.username}
+                {$hd.session.realname}
             </a>
-            <a id="logout" href="{|U:'out'}">[退出]</a>
+            <a id="logout" href="{|U:'out'}" target="_blank">[退出]</a>
         </div>
     </div>
 </div>
 <div class="big">
-    <div class="left_menu">
+    <div class="left_menu" id="left">
         <div class="user">
             <img src="__TPL__/images/user_ico.jpg"/>
             <ul>
@@ -37,64 +61,23 @@
         <div class="menu_list">
             <ul>
                 <li>
-                    <a href="#">用户资料</a>
+                    <a href="{|U:'Article/index',array('mid'=>1)}" class="active">发布的资料</a>
+                </li>
+                <li>
+                    <a href="{|U:'User/edit'}">用户资料</a>
                 </li>
                 <li>
                     <a href="#">文章管理</a>
                 </li>
                 <li>
-                    <a href="#">短消息</a>
-                </li>
-                <li>
-                    <a class="active" href="#">我的回复</a>
+                    <a href="#">我的回复</a>
                 </li>
             </ul>
         </div>
     </div>
     <!--右侧内容-->
-    <div class="right_content">
-        <div class="tab">
-            <ul class="tab_menu">
-                <li lab="base">
-                    <a class="action" href="#">基本设置</a>
-                </li>
-                <li lab="tpl">
-                    <a class="" href="#">模板设置</a>
-                </li>
-            </ul>
-            <div class="tab_content">
-                <div id="base" class="con action">
-                    <table class="table table-title">
-                        <thead>
-                        <tr>
-                            <td width="30">CID</td>
-                            <td>栏目名称</td>
-                            <td width="100">所属模型</td>
-                            <td width="50">访问</td>
-                            <td width="130">操作</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td width="30">CID</td>
-                            <td>栏目名称</td>
-                            <td width="100">所属模型</td>
-                            <td width="50">访问</td>
-                            <td width="130">操作</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="tpl" class="con ">
-                    <table class="table table_field">
-                        <tr>
-                            <th> 用户名</th>
-                            <td>中国1111人</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
+    <div class="right_content" id="right_content">
+        <iframe src="{|U:'Article/index',array('mid'=>1)}" id="frame_content" name="content"></iframe>
     </div>
 </div>
 </body>

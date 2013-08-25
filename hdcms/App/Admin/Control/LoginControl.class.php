@@ -1,10 +1,6 @@
 <?php
 class LoginControl extends Control
 {
-    function __init()
-    {
-
-    }
 
     /**
      * 登录页面

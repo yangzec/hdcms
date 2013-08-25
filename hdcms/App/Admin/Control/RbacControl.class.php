@@ -14,7 +14,7 @@ class RbacControl extends CommonControl
     private function checkAccess()
     {
 
-        if(!isset($_SESSION['uid'])){
+        if(!isset($_SESSION['uid']) || !isset($_SESSION['RBAC'])){
             go(U("Login/index"));
         }
         //不需要验证的方法

@@ -14,7 +14,7 @@ span.thumb {
 }
 
 span.thumb input.upload_thumb {
-    width: 55px;
+    width: 65px;
     border: none;
     padding: 0px;
 }
@@ -24,3 +24,4 @@ div.thumbpic {
     margin-left: 20px;
     font-size: 12px;
 }
+div.tab_content div.con{border:none;}
