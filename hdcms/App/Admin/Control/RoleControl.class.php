@@ -3,7 +3,7 @@ class RoleControl extends RbacControl
 {
     public function index()
     {
-        $role = M("role")->all();
+        $role = M("role")->where("type=1")->all();
         $this->assign("role", $role);
         $this->display();
     }

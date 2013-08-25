@@ -33,15 +33,16 @@
     </script>
 </head>
 <body>
+{$hd.language.webname}
 <div class="topbar">
     <div class="container">
         <h3>会员中心</h3>
 
         <div class="user_info">
-            <a href="#">
+            <a href="{|U:'User/edit'}">
                 {$hd.session.realname}
             </a>
-            <a id="logout" href="{|U:'out'}" target="_blank">[退出]</a>
+            <a id="logout" href="{|U:'out'}" target="_self">[退出]</a>
         </div>
     </div>
 </div>
@@ -61,23 +62,19 @@
         <div class="menu_list">
             <ul>
                 <li>
-                    <a href="{|U:'Article/index',array('mid'=>1)}" class="active">发布的资料</a>
+                    <a href="{|U:'User/edit'}" class="active">用户资料</a>
                 </li>
-                <li>
-                    <a href="{|U:'User/edit'}">用户资料</a>
-                </li>
-                <li>
-                    <a href="#">文章管理</a>
-                </li>
-                <li>
-                    <a href="#">我的回复</a>
-                </li>
+                <?php foreach($model as $m):?>
+                <?php if($m["enable"] && $m["is_submit"]):?>
+                <li><a href="<?php echo U($m['control'].'/index',array('mid'=>$m['mid']))?>">{$m.model_name}</a></li>
+                <?php endif;?>
+                <?php endforeach;?>
             </ul>
         </div>
     </div>
     <!--右侧内容-->
     <div class="right_content" id="right_content">
-        <iframe src="{|U:'Article/index',array('mid'=>1)}" id="frame_content" name="content"></iframe>
+        <iframe src="{|U:'User/edit',array('mid'=>1)}" id="frame_content" name="content"></iframe>
     </div>
 </div>
 </body>

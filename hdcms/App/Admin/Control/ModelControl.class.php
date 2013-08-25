@@ -63,7 +63,7 @@ class ModelControl extends RbacControl
         if (isset($_POST['model_name'])) {
             $db = M("model");
             $db->save();
-            $this->success("模型修改成功");
+            $this->success("模型修改成功","index",1);
         } else {
             $mid = $this->_get("mid");
             $db = M("model");
@@ -84,6 +84,7 @@ class ModelControl extends RbacControl
             $table = strtolower($_POST['tablename']);
             $_POST['control'] = ucfirst(preg_replace('@\.class\.php|' . C("CONTROL_FIX") . '@i', '', $_POST['control']));
             //Model表中添加记录
+
             if ($mid = $db->add()) {
                 //创建模型表
                 $this->create_model_table($table, $_POST['type']);
@@ -117,7 +118,7 @@ CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
   `mid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '模型mid' ,
   `title` char(60) NOT NULL DEFAULT '' COMMENT '标题' ,
   `thumb` CHAR(200) NOT NULL DEFAULT '' COMMENT '缩略图' ,
-  `click` MEDIUMINT NOT NULL DEFAULT 100 COMMENT '点击次数' ,
+  `click` MEDIUMINT NOT NULL DEFAULT 0 COMMENT '点击次数' ,
   `source` CHAR(30) NOT NULL DEFAULT '' COMMENT '来源' ,
   `redirecturl` CHAR(100) NOT NULL DEFAULT '' COMMENT '转向链接' ,
   `allowreply` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '是否允许回复' ,

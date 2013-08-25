@@ -194,27 +194,18 @@
                                 <thead>
                                 <tr>
                                     <td>角色名称</td>
-                                    <td>查看</td>
-                                    <td>添加</td>
-                                    <td>编辑</td>
-                                    <td>删除</td>
+                                    <td>允许访问</td>
+                                    <td>允许投稿</td>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>超级管理员</td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                </tr>
-                                <tr>
-                                    <td>超级管理员</td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                    <td><input type="checkbox" name="node"/></td>
-                                </tr>
+                                <list from="$member" name="m">
+                                    <tr>
+                                        <td>{$m.rname}</td>
+                                        <td><input type="checkbox" name="category_member_access[{$m.rid}][isshow]" value="1"/></td>
+                                        <td><input type="checkbox" name="category_member_access[{$m.rid}][issend]" value="1"/></td>
+                                    </tr>
+                                </list>
                                 </tbody>
                             </table>
                         </td>

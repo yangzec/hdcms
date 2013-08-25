@@ -31,10 +31,24 @@ class CategoryControl extends RbacControl
         //添加栏目
         if (isset($_POST['catname'])) {
             $db = M("category");
-            $db->add();
+            $cid = $db->add();
             O("CacheControl", "category");
+            //设置权限
+            $access = isset($_POST['category_member_access']) ? $_POST['category_member_access'] : null;
+            if ($access) {
+                $db = M("category_member_access"); //目录权限表
+                $db->del("cid=$cid"); //删除栏目权限
+                $mid = $this->_post("mid"); //模型mid
+                foreach ($access as $k => $a) {
+                    $a['mid'] = $mid;
+                    $a['cid'] = $cid;
+                    $a['rid'] = $k; //角色id
+                    $db->add($a);
+                }
+            }
             $this->success("栏目添加成功", "index", 1);
         } else {
+            $this->assign("member", M("role")->where("type=2")->all());
             $this->assign("model", F("model", false, './data/model'));
             $this->display();
         }
@@ -46,14 +60,33 @@ class CategoryControl extends RbacControl
     public function edit()
     {
         $db = M("category");
+        $cid = $this->_post("cid");
         //添加栏目
-        if (isset($_POST['catname'])) {
+        if ($cid) {
             $db->save();
             O("CacheControl", "category");
-            $this->success("编辑成功", "index",1);
+            //设置权限
+            $access = isset($_POST['category_member_access']) ? $_POST['category_member_access'] : null;
+            if ($access) {
+                $db = M("category_member_access"); //目录权限表
+                $db->del("cid=$cid"); //删除栏目权限
+                $mid = $this->_post("mid"); //模型mid
+                foreach ($access as $k => $a) {
+                    $a['mid'] = $mid; //模型mid
+                    $a['isshow'] = isset($a['isshow']) ? $a['isshow'] : 0;
+                    $a['issend'] = isset($a['issend']) ? $a['issend'] : 0;
+                    $a['cid'] = $cid;
+                    $a['rid'] = $k; //角色id
+                    $db->add($a);
+                }
+            }
+            $this->success("编辑成功", "index", 1);
         } else {
-            $field = $db->where("cid=" . $this->_get("cid"))->find();
+            $cid = $this->_get("cid");
+            $field = $db->where("cid=" . $cid)->find();
             $this->assign("field", $field);
+            $this->assign("access", M("category_member_access")->where("cid=$cid")->all());
+            $this->assign("member", M("role")->where("type=2")->all());
             $this->assign("model", F("model", false, './data/model'));
             $this->display();
         }
@@ -111,7 +144,7 @@ class CategoryControl extends RbacControl
             $db->table("flag_relation")->where("cid=$cid")->del();
         }
         O("CacheControl", "category");
-        $this->_ajax(array("stat" => 1, "message" => "删除栏目成功"));
+        $this->_ajax(array("stat" => 1, "message" => "删除栏目成功","url"=>U("index")));
     }
 
     /**

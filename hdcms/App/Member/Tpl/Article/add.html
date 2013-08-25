@@ -25,136 +25,160 @@
             <?php break;endif;?>
             <?php endforeach;?>
     </if>
+    <script>
+        $(function () {
+            $("[name='cid']").change(function () {
+                if ($("option:selected", this).attr("allow") == 0) {
+                    alert("本栏目没有投稿权限");
+                }
+            })
+        })
+        $(function(){
+            $("form").submit(function(){
+                if ($("[name='cid'] option:selected").attr("allow") == 0) {
+                    alert("本栏目你没有投稿权限");
+                    return false;
+                }
+            })
+        })
+    </script>
 </head>
 <body>
 <form action="{|U:add}" method="post" id="form" enctype="multipart/form-data">
-<input type="hidden" name="mid" value="{$hd.get.mid}"/>
-<div class="right_content">
-<div class="tab">
-<div class="tab_content" style="border:none;">
-    <div id="base" class="con">
-        <table class="table">
-            <tr>
-                <th width="100">标题</th>
-                <td>
-                    <input type="text" name="title" class="title w400"/>
-                </td>
-
-            </tr>
-            <tr>
-                <th>栏目</th>
-                <td>
-                    <select name="cid">
-                        <list from="$category" name="cat">
-                            <option value="{$cat.cid}" <if value="$hd.get.cid && $cat['cid']==$_GET['cid']">selected="selected"</if> cattype="{$cat.cattype}"
-                            <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>>
-                            <if value="$cat.pid!=0">└</if>{$cat.html}{$cat.catname}
-                            <if value="$cat['cattype']==2">(频道封面)</if>
-                            </option>
-                        </list>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>缩略图</th>
-                <td>
-                    <table border="0">
+    <input type="hidden" name="mid" value="{$hd.get.mid}"/>
+    <div class="right_content">
+        <div class="tab">
+            <div class="tab_content" style="border:none;">
+                <div id="base" class="con">
+                    <table class="table">
                         <tr>
+                            <th width="100">标题</th>
                             <td>
-                                <input type="text" readonly="readonly" name="thumb" class="w300" id="thumb"/>
+                                <input type="text" name="title" class="title w400"/>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th>栏目</th>
+                            <td>
+                                <select name="cid">
+                                    <list from="$category" name="cat">
+                                        <option value="{$cat.cid}"
+                                        <if value="$_SESSION['type']==1 || in_array($cat['cid'],$allowCategory)">allow="1"
+                                            <else>allow="0"
+                                        </if>
+                                        cattype="{$cat.cattype}"
+                                        <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>><if value="$cat.pid!=0">└</if>{$cat.html}{$cat.catname}
+                                        <if value="$_SESSION['type']!=1 && !in_array($cat['cid'],$allowCategory)">(没有投稿权限)</if>
+                                        <if value="$cat['cattype']==2">(频道封面)</if>
+                                        </option>
+                                    </list>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>缩略图</th>
+                            <td>
+                                <table border="0">
+                                    <tr>
+                                        <td>
+                                            <input type="text" readonly="readonly" name="thumb" class="w300"
+                                                   id="thumb"/>
                                             <span class="thumb">
                                             <input type="file" name="thumb_file" class="upload_thumb"
                                                    onchange="thumbUpload(this,'{|U:thumbUpload}','img_target','thumb','thumbpic')"/>
                                             </span>
-                                <iframe name="img_target" style="display:none;"></iframe>
-                            </td>
-                            <td>
-                                <div class="thumbpic"></div>
+                                            <iframe name="img_target" style="display:none;"></iframe>
+                                        </td>
+                                        <td>
+                                            <div class="thumbpic"></div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <th>来源</th>
-                <td>
-                    <input type="text" name="source" class="w150"/>
-                </td>
-            </tr>
-            <if value="$model.type==1">
+                        <tr>
+                            <th>来源</th>
+                            <td>
+                                <input type="text" name="source" class="w150"/>
+                            </td>
+                        </tr>
+                        <if value="$model.type==1">
 
-                <tr>
-                    <td colspan="2">
-                        <table class="table">
                             <tr>
-                                <td>
-                                    <table class="table" style="background:#F3F3F3;">
+                                <td colspan="2">
+                                    <table class="table">
                                         <tr>
-                                            <td width="60" style="padding:6px;">内容选项:</td>
                                             <td>
-                                                <input type="checkbox" name="editer_image_to_thumb" value="1"  checked="checked"/>
-                                                使用第一张图做为缩略图
-                                                <input type="checkbox" name="content_image_water" value="1"/> 图片加水印
-                                                <br/>
-                                                图片最大宽度: <input lab="ueditor_param" type="text"
-                                                               name="content_image_width" value="600"
-                                                               style="width:50px;"/> px
-                                                图片最大高度: <input lab="ueditor_param" type="text"
-                                                               name="content_image_height" value="600"
-                                                               style="width:50px;"/> px
-                                                (图片超过最大宽度或高度将自动缩放)
+                                                <table class="table" style="background:#F3F3F3;">
+                                                    <tr>
+                                                        <td width="60" style="padding:6px;">内容选项:</td>
+                                                        <td>
+                                                            <input type="checkbox" name="editer_image_to_thumb"
+                                                                   value="1" checked="checked"/>
+                                                            使用第一张图做为缩略图
+                                                            <input type="checkbox" name="content_image_water"
+                                                                   value="1"/> 图片加水印
+                                                            <br/>
+                                                            图片最大宽度: <input lab="ueditor_param" type="text"
+                                                                           name="content_image_width" value="600"
+                                                                           style="width:50px;"/> px
+                                                            图片最大高度: <input lab="ueditor_param" type="text"
+                                                                           name="content_image_height" value="600"
+                                                                           style="width:50px;"/> px
+                                                            (图片超过最大宽度或高度将自动缩放)
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <script id="content" name="{$model.tablename}_data[content]"
+                                                        type="text/plain"></script>
+                                                <script type='text/javascript'>
+                                                    var ue = UE.getEditor('content', {
+                                                        imageUrl: '__CONTROL__&m=editorUploadImg&water=0'//处理上传脚本
+                                                        , catcherUrl: '__CONTROL__&m=editorCatcherUrl&water=0'//抓取远程图片
+                                                        , zIndex: 0, autoClearinitialContent: false, initialFrameWidth: "100%" //宽度1000
+                                                        , initialFrameHeight: "300" //宽度1000
+                                                        , autoHeightEnabled: false //是否自动长高,默认true
+                                                        , autoFloatEnabled: false //是否保持toolbar的位置不动,默认true
+                                                        , maximumWords: 2000 //允许的最大字符数
+                                                        , initialContent: '' //初始化编辑器的内容 也可以通过textarea/script给值
+                                                    });
+                                                    //设置编辑器选项
+                                                    function setUeditorParam() {
+                                                        var water = $("input[name='content_image_water']").attr("checked") ? 1 : 0;
+                                                        var width = parseInt($("input[name='content_image_width']").val());
+                                                        var height = parseInt($("input[name='content_image_height']").val());
+                                                        ue.options.imageUrl = '__CONTROL__&m=editorUploadImg&water=' + water + "&width=" + width + "&height=" + height;
+                                                    }
+                                                    $("input[name='content_image_water']").click(function () {
+                                                        setUeditorParam();
+                                                    })
+                                                    $("input[lab='ueditor_param']").blur(function () {
+                                                        setUeditorParam();
+                                                    })
+                                                    setUeditorParam();//初始化
+                                                </script>
                                             </td>
                                         </tr>
                                     </table>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <script id="content" name="{$model.tablename}_data[content]"
-                                            type="text/plain"></script>
-                                    <script type='text/javascript'>
-                                        var ue = UE.getEditor('content', {
-                                            imageUrl: '__CONTROL__&m=editorUploadImg&water=0'//处理上传脚本
-                                            ,catcherUrl:'__CONTROL__&m=editorCatcherUrl&water=0'//抓取远程图片
-                                            , zIndex: 0, autoClearinitialContent: false, initialFrameWidth: "100%" //宽度1000
-                                            , initialFrameHeight: "300" //宽度1000
-                                            , autoHeightEnabled: false //是否自动长高,默认true
-                                            , autoFloatEnabled: false //是否保持toolbar的位置不动,默认true
-                                            , maximumWords: 2000 //允许的最大字符数
-                                            , initialContent: '' //初始化编辑器的内容 也可以通过textarea/script给值
-                                        });
-                                        //设置编辑器选项
-                                        function setUeditorParam() {
-                                            var water = $("input[name='content_image_water']").attr("checked") ? 1 : 0;
-                                            var width = parseInt($("input[name='content_image_width']").val());
-                                            var height = parseInt($("input[name='content_image_height']").val());
-                                            ue.options.imageUrl = '__CONTROL__&m=editorUploadImg&water=' + water + "&width=" + width + "&height=" + height;
-                                        }
-                                        $("input[name='content_image_water']").click(function () {
-                                            setUeditorParam();
-                                        })
-                                        $("input[lab='ueditor_param']").blur(function () {
-                                            setUeditorParam();
-                                        })
-                                        setUeditorParam();//初始化
-                                    </script>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </if>
-            <list from="$user_field" name="f">
-                {$f.html}
-            </list>
-        </table>
+                        </if>
+                        <list from="$user_field" name="f">
+                            {$f.html}
+                        </list>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-</div>
-<div class="btn_send">
-    <input type="submit" class="btn" value="确定"/>
-</div>
+    <div class="btn_send">
+        <input type="submit" class="btn" value="确定"/>
+    </div>
 </form>
 </body>
 </html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>评论列表</title>
+    <jquery/>
+    <hdui/>
+    <script>
+        //移到到指定留言位置
+        $(function () {
+            var comment_id = "{$hd.get.position}";
+            if (comment_id) {
+                var divObj = $("#comment_" + comment_id);
+                var offset = divObj.offset();
+                window.scrollTo(0,offset.top);
+            }
+        })
+        $(function () {
+            //评论内容处理
+            $("[name='title']").focus(function () {
+                if ($(this).val() == "有什么感想，你也来说说吧！") {
+                    $(this).val("");
+                }
+            }).blur(function () {
+                        if ($(this).val() == '') {
+                            $(this).val("有什么感想，你也来说说吧！")
+                        }
+                    })
+        })
+    </script>
+    <script>
+        //点击回复产生回复框
+        //http://localhost/yc1/comment/index.php/Index&m=add&mid=2
+        $(function () {
+            //是否登录
+            var isLogin = "<if value='$hd.session.uid'> 1 <else>0 </if>";
+            $("a[lab='reply']").click(function () {
+                var comment_id = $(this).attr("comment_id");//回复贴子的mid
+                var aid = "{$hd.get.aid}";
+                var cid = "{$hd.get.cid}";
+                var mid = "{$hd.get.mid}";
+                var _form = "<form action='__CONTROL__&m=add&aid=" + aid + "&cid=" + cid + "&mid=" + mid + "&comment_id=" + comment_id + "' method='post' onsubmit='submitEvent()'>";
+                _form += "<textarea name='title' class='reply_data'></textarea>";
+                _form += "<div class='submit_btn'><input type='submit' value='提交' class='btn'/>"
+                if (!isLogin) {
+                    _form += "<h5 style='float:right;'><a href='__WEB__?a=Member&c=index&m=login' target='_top'>登录</a><span>|</span><a href='__WEB__?a=Member&c=index&m=reg' target='_top'>注册</a></h5>";
+                }
+                _form += "</div></form>";
+                $("div#replay_" + comment_id).html(_form);
+                editTopFrame();
+            })
+            editTopFrame();
+        });
+    </script>
+    <script>
+        //重置父级窗口
+        function editTopFrame() {
+            var _h = $("#big").height();
+            $(top.document).find("#comment_list").css("height", _h + "px");
+        }
+        function submitEvent() {
+            $("#big").hide();
+            $(top.document).find("#comment_list").css("height", "200px");
+            return false;
+        }
+    </script>
+    <style type="text/css">
+        div.big {
+            width: 98%;
+        }
+
+        div.comment_list {
+
+        }
+
+        div.comment_line {
+            border-bottom: solid 1px #efefef;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+
+        div.comment {
+            font-size: 12px;
+        }
+
+        h5 {
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        h5 a {
+            color: #3399E0;
+            font-size: 12px;
+        }
+
+        h5 span {
+            color: #dcdcdc;
+        }
+
+        div.comment div.comment_content {
+            margin-bottom: 10px;
+        }
+
+        div.comment_content textarea {
+            width: 95%;
+            height: 80px;
+            font-size: 12px;
+            color: #666;
+            border: solid 2px #dcdcdc;
+            padding: 6px;
+        }
+
+            /*评论列表*/
+        div.content {
+            border: solid 1px #C4D5DF;
+            padding: 10px;
+            background: #f4f7fa;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        div.content span.info {
+            font-size: 12px;
+            color: #3399E0;
+            font-weight: normal;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        div.title {
+            font-size: 14px;
+            color: #004499;
+            padding: 10px 0px 5px;
+        }
+
+        div.title span.datetime {
+            color: #004499;
+            font-size: 12px;
+        }
+
+        div.content a.send {
+            color: #006699;
+        }
+
+        div.content textarea.reply_data {
+            width: 99%;
+            border: soild 1px #dcdcdc;
+            padding: 3px;
+            height: 80px;
+            margin-top: 5px;
+        }
+
+        div.reply {
+            text-align: right;
+
+        }
+
+        div.submit_btn {
+            margin-top: 5px;
+        }
+
+        div.page1 {
+            height: auto;
+            float: none;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+<body>
+<div id="big">
+    <form action="{|U:'Comment/add',array('aid'=>$_GET['aid'],'cid'=>$_GET['cid'],'mid'=>$_GET['mid'])}" method="post"
+          onsubmit="submitEvent();">
+        <div class="comment">
+            <if value="!$hd.session.uid">
+                <h5>
+                    <a href='__WEB__?a=Member&c=index&m=login' target='_top'>登录</a>
+                    <span>|</span>
+                    <a href='__WEB__?a=Member&c=index&m=reg' target='_top'>注册</a>
+                </h5>
+            </if>
+            <div class="comment_content">
+                <textarea name="title" class="reply_data">有什么感想，你也来说说吧！</textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="发表评论" class="btn" style="width:80px;"/>
+            </div>
+        </div>
+    </form>
+    <div class="page1">
+        {$page}
+    </div>
+    <list from="$comment" name="c">
+        <div class="comment_list" id="comment_{$c.comment_id}">
+            <div class="title">
+                {$c.username}
+                <span class="datetime">({$c.reply_time|date:"Y-m-d H:i:s",@@})</span>
+            </div>
+            <div class="content">
+                <p>
+                    {$c.content}
+                </p>
+
+                <div class="reply">
+                    <a href="javascript:;" class="send" lab="reply" comment_id="{$c.comment_id}">回复</a>
+                </div>
+                <div id="replay_{$c.comment_id}"></div>
+            </div>
+        </div>
+    </list>
+    <div class="page1">
+        {$page}
+    </div>
+</div>
+</body>
+</html>

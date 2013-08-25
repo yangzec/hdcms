@@ -1,11 +1,26 @@
 <?php
+/**
+ * 编辑栏目的权限
+ * @param $action isshow 允许浏览 |issend 允许投稿
+ * @param $rid 角色id
+ * @param $access 权限
+ * @return string
+ */
+function categoryMemberAccess($action, $rid, $access)
+{
+    foreach ($access as $a) {
+        if ($a['rid'] == $rid && $a[$action]) {
+            return "checked='checked'";
+        }
+    }
+}
 
 function getArticleFlag($aid, $cid, $mid)
 {
     $db = M();
     $pre = C("DB_PREFIX");
     $sql = "SELECT distinct(flagname) from {$pre}flag as f JOIN {$pre}flag_relation as fr ";
-    $sql.=" ON f.fid=fr.fid ";
+    $sql .= " ON f.fid=fr.fid ";
     $sql .= " WHERE fr.aid=$aid AND fr.cid=$cid AND fr.mid=$mid";
     return $db->query($sql);
 }
@@ -41,9 +56,9 @@ function form_view($field)
         case "radio":
             $arr = explode(",", $field['param']);
             foreach ($arr as $k => $n) {
-                $f= explode(":",$n);
-                $checked = $field['value']==$n[0]?"checked='checked'":"";
-                $form.= "<label class='radio'></label><input type='radio' class='radio' {$checked} name='{$field['name']}' value='{$f[0]}'/> {$f[1]} </label>";
+                $f = explode(":", $n);
+                $checked = $field['value'] == $n[0] ? "checked='checked'" : "";
+                $form .= "<label class='radio'></label><input type='radio' class='radio' {$checked} name='{$field['name']}' value='{$f[0]}'/> {$f[1]} </label>";
             }
             break;
     }

@@ -7,6 +7,7 @@ class IndexControl extends Control
         if (!session("uid")) {
             go("login");
         }
+        $this->assign("model", M("model")->all());
         $this->display();
     }
 
@@ -22,6 +23,7 @@ class IndexControl extends Control
     public function login()
     {
         if (session("uid")) {
+            go("index");
         }
         $username = $this->_post("username", "strip_tags,htmlspecialchars");
         if ($username) {
@@ -29,7 +31,7 @@ class IndexControl extends Control
             $user = $pre . "user";
             $role = $pre . 'role';
             $user_role = $pre . 'user_role';
-            $sql = "SELECT {$role}.rid,{$role}.rname,{$user}.uid,username,password,user_status FROM $role JOIN $user_role JOIN $user
+            $sql = "SELECT {$role}.type,{$role}.rid,{$role}.rname,{$user}.uid,username,password,status FROM $role JOIN $user_role JOIN $user
              ON {$role}.rid = {$user_role}.rid AND {$user_role}.uid = {$user}.uid WHERE {$user}.uid = {$user_role}.uid";
             $user = M()->query($sql);
             if (!$user) {
@@ -43,8 +45,11 @@ class IndexControl extends Control
             session("uid", $user[0]['uid']);
             session("username", $user[0]['username']);
             session("rname", $user[0]['rname']);
+            session("type", $user[0]['type']);// 1 后台管理员  2 前台会员
             session("rid", $user[0]['rid']);
-            session("user_status", $user[0]['user_status']);
+
+            session("status", $user[0]['status']);
+
             go("index");
         } else {
             $this->display();
@@ -89,9 +94,9 @@ class IndexControl extends Control
             $_POST['realname']=$username;
             $this->_post("password","md5");//密码加密
             $uid = $userDb->add();
-            $userDb->table("user_role")->add(array("uid" => $uid, "rid" => 4));
+            $userDb->table("user_role")->add(array("uid" => $uid, "rid" => 5));
             session("uid", $uid);
-            session("rid", 4);
+            session("rid", 5);//默认组 新手上路
             session("rname", "普通用户");
             session("username", $username);
             session("realname", $username);

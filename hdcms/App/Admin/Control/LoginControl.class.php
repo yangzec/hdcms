@@ -51,8 +51,10 @@ class LoginControl extends Control
         if (!Rbac::login($username, $password, 'admin')) {
             $this->error(Rbac::$error, 'index/login');
         }
-        $user =M("user")->find(session("uid"));
-        session("realname",$user['realname']);
+        $user = M("user")->find(session("uid"));
+        $role = M("role")->find($_SESSION['rid']);//角色信息
+        $_SESSION['type'] = $role['type']; //帐号类型 1后台管理 2 普通用户
+        session("realname", $user['realname']);
         go("Index/index");
     }
 

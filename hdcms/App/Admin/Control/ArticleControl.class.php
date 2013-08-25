@@ -13,7 +13,7 @@ class ArticleControl extends RbacControl
      */
     public function index()
     {
-        $this->showIndex("Article/index");
+        $this->showIndex();
     }
 
     /**

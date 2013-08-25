@@ -4,7 +4,6 @@
     <tr>
         <td width="30">CID</td>
         <td>栏目名称</td>
-
         <td width="100">所属模型</td>
         <td width="50">访问</td>
         <td width="130">操作</td>
@@ -26,7 +25,7 @@
             <td>
                 <a href="{|U:'add',array('pid'=>$c['cid'])}">添加子栏目</a> |
                 <a href="{|U:'edit',array('cid'=>$c['cid'])}">修改</a> |
-                <a href="{|U:'del',array('cid'=>$c['cid'])}" class="del_category" cat_name="{$c.cat_name}">删除</a>
+                <a href="{|U:'del',array('cid'=>$c['cid'])}" class="del_category" cat_name="{$c.catname}">删除</a>
                 <!--<a href="{|U:'move',array('cid'=>$c['cid'])}">移动</a>-->
             </td>
         </tr>

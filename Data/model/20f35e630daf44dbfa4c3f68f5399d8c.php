@@ -9,6 +9,7 @@ return array (
     'description' => '',
     'control' => 'Article',
     'type' => '1',
+    'is_submit' => '1',
   ),
   1 => 
   array (
@@ -18,7 +19,8 @@ return array (
     'enable' => '1',
     'description' => '',
     'control' => 'Article',
-    'type' => '2',
+    'type' => '1',
+    'is_submit' => '1',
   ),
   2 => 
   array (
@@ -29,6 +31,7 @@ return array (
     'description' => '',
     'control' => 'Article',
     'type' => '2',
+    'is_submit' => '0',
   ),
   3 => 
   array (
@@ -39,6 +42,18 @@ return array (
     'description' => '',
     'control' => 'Article',
     'type' => '2',
+    'is_submit' => '0',
+  ),
+  4 => 
+  array (
+    'mid' => '8',
+    'model_name' => '学习日志',
+    'tablename' => 'stu_notice',
+    'enable' => '1',
+    'description' => '',
+    'control' => 'Article',
+    'type' => '2',
+    'is_submit' => '1',
   ),
 );
 ?>

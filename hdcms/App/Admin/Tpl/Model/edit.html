@@ -41,6 +41,13 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>允许前台投稿</th>
+                            <td>
+                                <input type="radio" name="is_submit" value="1" <if value="{$field.is_submit}==1">checked="checked"</if>/> 允许
+                                <input type="radio" name="is_submit" value="0" <if value="{$field.is_submit}==0">checked="checked"</if>/> 不允许
+                            </td>
+                        </tr>
+                        <tr>
                             <th>模型描述</th>
                             <td>
                                 <input type="text" name="description" class="w200" value="{$field.description}"/>
@@ -50,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <input type="submit" class="btn" value="添加模型" style="margin-top:20px;"/>
+        <input type="submit" class="btn" value="确定" style="margin-top:20px;"/>
     </form>
 </div>
 </body>

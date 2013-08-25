@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>角色管理</title>
+    <jquery/>
+    <jsconst/>
+    <hdui/>
+</head>
+<body>
+<div class="right_content" style="padding: 10px;">
+    <div class="menu">
+        <a href="#">添加会员组</a>
+    </div>
+    <form action="{|U:'groupEdit'}" method="post">
+        <input type="hidden" name="rid" value="{$field.rid}"/>
+        <table class="table">
+            <tr>
+                <th class="w100">会员组名称</th>
+                <td>
+                    <input type="text" name="rname" value="{$field.rname}"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">描述</th>
+                <td>
+                    <input type="text" name="title" class="w300" value="{$field.title}"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">用户权限</th>
+                <td>
+                    <input type="checkbox" name="send" value="1" <if value="$field.send">checked="checked"</if>/> 允许发表文章
+                    <input type="checkbox" name="reply" value="1" <if value="$field.reply">checked="checked"</if>/> 允许回复
+                </td>
+            </tr>
+        </table>
+        <div style="margin-top:20px;">
+            <input type="submit" class="btn" value="确定"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

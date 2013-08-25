@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="right_content">
-    <form action="{|U:update_form}" method="post">
+    <form action="{|U:updateForm}" method="post">
         <div class="nav">
             <div class="tab">
                 <ul class="tab_menu">
@@ -97,6 +97,22 @@
                                     </td>
                                 </tr>
                             </list>
+                            <tr>
+                                <th width="200">默认会员组</th>
+                                <td width="300">
+                                    <select name="member_group">
+                                        <list from="$role" name="r">
+                                            <option value="{$r.rid}"
+                                            <if value="$r.rid==$default_rid.value">selected="selected"</if>
+                                            >{$r.rname}</option>
+                                        </list>
+                                    </select>
+                                </td>
+                                <td class="info">
+                                    <?php echo "{\$hd.member_group}";?>
+                                </td>
+                            </tr>
+
                         </table>
                     </div>
                 </div>

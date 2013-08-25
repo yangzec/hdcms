@@ -8,13 +8,15 @@ class SystemControl extends RbacControl
         $this->assign("base", $db->all("groupid=2"));
         $this->assign("upload", $db->all("groupid=3"));
         $this->assign("member", $db->all("groupid=5"));
+        $this->assign("role", M("role")->where("type=2")->all()); //前台会员组
+        $this->assign("default_rid",$db->find("name='member_group'"));
         $this->display();
     }
 
     /**
      * 修改配置
      */
-    public function update_form()
+    public function updateForm()
     {
         $data = $_POST;
         $db = M("system");
@@ -28,7 +30,7 @@ class SystemControl extends RbacControl
             $cacheData[$c['name']] = $c['value'];
         }
         $this->save($config_file, $cacheData);
-        $this->success("修改配置成功", "water_show");
+        $this->success("修改配置成功", "index",1);
     }
 
     /**

@@ -20,6 +20,7 @@
   'verify' => '1',
   'reg_show_code' => '1',
   'reg_email' => '0',
-  'reg_ interval' => '0',
+  'reg_interval' => '0',
+  'member_group' => '4',
 );
 ?>

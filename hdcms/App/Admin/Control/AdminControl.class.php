@@ -6,7 +6,7 @@ class AdminControl extends RbacControl
     {
         $db = M();
         $rid = $this->_get("rid", "intval");
-        $where = $rid ? " WHERE r.rid=$rid AND r.type=2 " : " WHERE r.type=1";
+        $where = $rid ? " WHERE r.rid=$rid AND r.type=1 " : " WHERE r.type=1";
         $pre = C("DB_PREFIX");
         $sql = "SELECT u.uid,username,rname,ip,email,realname,email,r.rid FROM " . $pre . "user AS u JOIN " . $pre . "user_role AS ur ";
         $sql .= " JOIN " . $pre . "role AS r ON u.uid=ur.uid and ur.rid =r.rid " . $where;

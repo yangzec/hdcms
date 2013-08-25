@@ -4,6 +4,6 @@
   'CODE_BG_COLOR' => '#CCE8CF',
   'CODE_LEN' => '6',
   'CODE_FONT_SIZE' => '16',
-  'CODE_FONT_COLOR' => '#f00000',
+  'CODE_FONT_COLOR' => '',
 );
 ?>

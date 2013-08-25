@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>角色管理</title>
+    <jquery/>
+    <jsconst/>
+    <hdui/>
+    <script>
+        $(function () {
+            $("form").validation({
+                "password": {
+                    rule: {
+                        minlen: 6
+                    },
+                    error: {
+                        minlen: "密码不能小于6位"
+                    }
+                },
+                "password2": {
+                    rule: {
+                        confirm: "password"
+                    },
+                    error: {
+                        confirm: "两次密码不一致"
+                    }
+                },
+                "email": {
+                    rule: {
+                        email: true
+                    },
+                    error: {
+                        email: "邮箱格式不正确"
+                    }
+                },
+                "qq": {
+                    rule: {
+                        qq: true
+                    },
+                    error: {
+                        qq: "qq输入错误"
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="right_content" style="padding: 10px;">
+    <div class="menu">
+        <a href="#">修改会员</a>
+    </div>
+    <form action="{|U:'userEdit'}" method="post">
+        <input type="hidden" name="uid" value="{$field.uid}"/>
+        <table class="table">
+            <tr>
+                <th class="w100">会员名</th>
+                <td>
+                    {$field.username}
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">会员组</th>
+                <td>
+                    <select name="rid">
+                        <list from="$role" name="r">
+                            <option value="{$r.rid}"
+                            <if value="$r.rid==$field.rid">selected="selected"</if>
+                            >{$r.rname}</option>
+                        </list>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">密码</th>
+                <td>
+                    <input type="password" name="password" class="w200"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">确认密码</th>
+                <td>
+                    <input type="password" name="password2" class="w200"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">呢称</th>
+                <td>
+                    <input type="text" name="realname" class="w200" value="{$field.realname}"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">QQ号</th>
+                <td>
+                    <input type="text" name="qq" class="w200" value="{$field.qq}"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">邮箱</th>
+                <td>
+                    <input type="text" name="email" class="w200" value="{$field.email}"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">状态</th>
+                <td>
+                    <input type="radio" name="status" value="1"
+                    <if value="$field.status==1">checked="checked"</if>
+                    /> 正常
+                    <input type="radio" name="status" value="0"
+                    <if value="$field.status==0">checked="checked"</if>
+                    /> 锁定
+                </td>
+            </tr>
+            <tr>
+                <th class="w100">性别</th>
+                <td>
+                    <input type="radio" name="sex" value="1"
+                    <if value="$field.sex==1">checked="checked"</if>
+                    /> 男
+                    <input type="radio" name="sex" value="2"
+                    <if value="$field.sex==2">checked="checked"</if>
+                    /> 女
+                </td>
+            </tr>
+        </table>
+        <div style="margin-top:20px;">
+            <input type="submit" class="btn" value="确定"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

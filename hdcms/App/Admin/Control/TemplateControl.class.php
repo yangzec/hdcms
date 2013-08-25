@@ -34,7 +34,14 @@ class TemplateControl extends SystemControl
             }
             $tpl[$k]['pic'] = empty($tpl[$k]['pic']) ? __ROOT__ . "/data/img/tpl_thumb.png" : $tpl[$k]['pic'];
         }
-        $this->assign("tpl", $tpl);
+        //移除plus目录
+        $data = array();
+        foreach ($tpl as $v) {
+            if ($v['name'] != 'plus') {
+                $data[] = $v;
+            }
+        }
+        $this->assign("tpl", $data);
         //分配当前配置表中的风格
         $conf = M("system")->find("name='style'");
         $this->assign("conf", $conf);
@@ -54,6 +61,6 @@ class TemplateControl extends SystemControl
         }
         $config_file = "./data/config/base.inc.php";
         $this->save($config_file, $cacheData);
-        $this->success("模板风格更新成功", "index",1);
+        $this->success("模板风格更新成功", "index", 1);
     }
 }

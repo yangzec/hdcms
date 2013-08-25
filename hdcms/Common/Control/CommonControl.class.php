@@ -268,7 +268,7 @@ class CommonControl extends Control
         if (!empty($_POST['flag'])) {
             $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
         }
-        $this->success("添加文章成功", U("index", "mid=$mid}"), 1);
+        $this->success("添加文章成功", U("index", "mid=$mid"), 1);
     }
 
     /**

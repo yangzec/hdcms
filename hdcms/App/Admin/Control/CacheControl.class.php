@@ -32,7 +32,7 @@ class CacheControl extends RbacControl
                 "on" => "category.mid=model.mid", //关联条件
             )
         );
-        $data = Data::channel($db->all(), $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
+        $data = Data::channel($db->order("cid asc")->all(), $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
         return F("category", $data, './data/category');
     }
 
