@@ -13,7 +13,6 @@ class BackupControl extends RbacControl
     public function index()
     {
         $dir = Dir::tree("./data/backup");
-//        p($dir);
         $this->assign("dir", $dir);
         $this->display();
     }
@@ -66,7 +65,7 @@ class BackupControl extends RbacControl
     public function recoverySuccess()
     {
         O("CacheControl", "all", array("type" => false));
-        $this->success("数据还原成功", "index");
+        $this->success("数据还原成功", "index",1);
     }
 
     /**
@@ -74,7 +73,7 @@ class BackupControl extends RbacControl
      */
     public function backupSuccess()
     {
-        $this->success("备份成功", "index");
+        $this->success("备份成功", "index",1);
     }
 
     /**
@@ -89,7 +88,7 @@ class BackupControl extends RbacControl
             $table = $_POST['table'];
         }
         M()->optimize($table);
-        $this->success("表优化完成");
+        $this->success("表优化完成","backup",1);
     }
 
     /**
@@ -104,7 +103,7 @@ class BackupControl extends RbacControl
             $table = $_POST['table'];
         }
         M()->repair($table);
-        $this->success("表修复完成");
+        $this->success("表修复完成","backup",1);
     }
 
     /**
@@ -121,7 +120,7 @@ class BackupControl extends RbacControl
                 $this->error("删除目录失败，请修改./data/backup目录权限");
             }
         }
-        $this->success("删除目录成功", "index");
+        $this->success("删除目录成功", "index",1);
     }
 }
 

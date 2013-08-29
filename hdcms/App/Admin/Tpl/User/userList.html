@@ -12,7 +12,8 @@
 <body>
 <div class="right_content">
     <div class="menu">
-        <a href="#">会员列表</a>
+        <a href="__APP__&c=User&m=userList" class="action">用户列表</a>
+        <a href="__APP__&c=User&m=userAdd">添加用户</a>
     </div>
     <div class="content">
         <table class="table table-title">
@@ -28,24 +29,19 @@
             </tr>
             </thead>
             <tbody>
-            <list from="$data" name="d">
+            <list from="$user" name="u">
                 <tr>
-                    <td>{$d.uid}</td>
-                    <td>{$d.username}</td>
-                    <td><?php
-                        foreach($role as $r){
-                            if($r['rid']==$d['rid']){
-                                echo $r['rname'];
-                            }
-                        }
-                    ?></td>
-                    <td>{$d.realname}</td>
-                    <td>{$d.qq}</td>
-                    <td>{$d.email}</td>
+                    <td>{$u.uid}</td>
+                    <td>{$u.username}</td>
                     <td>
-                        <a href="{|U:'userEdit',array('uid'=>$d['uid'])}">修改</a> |
-                        <a href="{|U:'userDel',array('uid'=>$d['uid'])}">删除</a> |
-                        <a href="{|U:'lock',array('uid'=>$d['uid'])}">锁定</a>
+                        <a href="{|U:'userList',array('rid'=>$u['rid'])}">{$u.rname}</a></td>
+                    <td>{$u.realname}</td>
+                    <td>{$u.qq}</td>
+                    <td>{$u.email}</td>
+                    <td>
+                        <a href="{|U:'userEdit',array('uid'=>$u['uid'])}">修改</a> |
+                        <a href="{|U:'userDel',array('uid'=>$u['uid'])}" onclick="return confirm('确定删除用户【{$u.username}】吗？')">删除</a> |
+                        <a href="{|U:'lock',array('uid'=>$u['uid'])}">锁定</a>
                     </td>
                 </tr>
             </list>

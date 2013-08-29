@@ -90,7 +90,7 @@ class FieldModel extends Model
     public function updateCache($mid)
     {
         //获得当前模型所有表单信息
-        $field = M("model_field")->all("mid=$mid");
+        $field = M("model_field")->order("fieldsort ASC")->all("mid=$mid");
         if (empty($field)) {
             return F($mid, NULL, './data/field/');
         }
@@ -109,6 +109,7 @@ class FieldModel extends Model
      */
     private function getHtml($f)
     {
+
         $html = '';
         //表单name值
         $name = $f['is_main_table'] == 1 ? $f['field_name'] : $f['table_name'] . "[{$f['field_name']}]";
@@ -133,7 +134,7 @@ class FieldModel extends Model
                 $html = "<tr>
                 <th>{$f['title']}</th>
                 <td><textarea onblur=\"$validation\" onfocus=\"checkFieldMsg(this,'{$f['message']}')\" name='$name' style=\"width:{$f['set']['width']}px;height:{$f['set']['height']}px;\"
-                 css='{$f['css']}'/>{FIELD_VALUE}</textarea><span class='validation'>{$f['message']}</span>
+                 css='{$f['css']}' style='width:{$f['set']['width']}px;height:{$f['set']['height']}px;'/>{FIELD_VALUE}</textarea><span class='validation'>{$f['message']}</span>
                  </td></tr>";
                 break;
             case "num":
@@ -150,7 +151,7 @@ class FieldModel extends Model
                 $html .= "<script>
                         $(function(){
                         var dateFormat = {
-                        dateFormat: 'yy-mm-dd'
+                        dateFormat: '{$f['set']['type']}'
                         ,monthNames: [ '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月' ]
                         ,dayNamesMin: [ '日', '一', '二', '三', '四', '五', '六' ]
                         };
@@ -182,7 +183,7 @@ class FieldModel extends Model
                     }
                 }
                 if ($f['set']['type'] == 'select') {
-                    $html = "<select name='$name'><option value=''>===选择===</option>" . $html . "</select>";
+                    $html = "<select name='$name'>" . $html . "</select>";
                 }
                 $html = "<tr><th>{$f['title']}</th><td>" . $html;
                 $html .= "<span class='validation'>{$f['message']}</span></td></tr>";
@@ -216,22 +217,15 @@ str;
      */
     public function replaceValue($field, $value = null)
     {
-        //默认值
-        $_replaceValue = $value == null ? $field['set']['default'] : $value;
         $html = '';
         switch ($field['show_type']) {
-            case "input":
-            case "textarea":
-            case "num":
-            case "editor":
-            case "datetime":
             case "image":
-                if ($_replaceValue) {
-                    $html = str_replace(10,80,$field['html']);
-                    $html = str_replace("{FIELD_VALUE}", $_replaceValue, $html);
-                }else{
-                    $html = preg_replace('@src="{FIELD_VALUE}"@',__ROOT__."/data/img/upload_img_default.png",$field['html']);
-                    $html = str_replace("{FIELD_VALUE}",'' ,$html);
+                if ($value) {
+                    $html = str_replace(10, 80, $field['html']);
+                    $html = str_replace("{FIELD_VALUE}", $value, $html);
+                } else {
+                    $html = preg_replace('@src="{FIELD_VALUE}"@', __ROOT__ . "/data/img/upload_img_default.png", $field['html']);
+                    $html = str_replace("{FIELD_VALUE}", '', $html);
                 }
                 break;
             case "select":
@@ -239,18 +233,32 @@ str;
                     switch ($field['set']['type']) {
                         case "radio":
                         case "checkbox":
-                            $field['html'] = str_replace('checked="checked"', '', $field['html']);
-                            $field['html'] = str_replace('value="' . $value . '"', 'value="' . $value . '" checked="checked"', $field['html']);
+                            $html = str_replace('checked="checked"', '', $field['html']);
+                            $html = str_replace("value='" . $value . "'", "value='" . $value . "' checked='checked'", $html);
                             break;
                         case "select":
-                            $field['html'] = str_replace('selected="selected"', '', $field['html']);
-                            $field['html'] = str_replace('value="' . $value . '"', 'value="' . $value . '" selected="selected"', $field['html']);
+                            $html = str_replace('selected="selected"', '', $field['html']);
+                            $html = str_replace("value='" . $value . "'", "value='" . $value . "' selected='selected'", $html);
+
                             break;
                     }
                 } else {
                     $html = $field['html'];
                 }
+                break;
+            case "input":
+            case "textarea":
+            case "num":
+            case "editor":
+            case "datetime":
+                if ($value) {
+                    $html = str_replace("{FIELD_VALUE}", $value, $field['html']);
+                } else {
+                    $html = str_replace("{FIELD_VALUE}", '', $field['html']);
+                }
+                break;
         }
+
         return $html;
     }
 }

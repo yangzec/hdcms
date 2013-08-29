@@ -82,9 +82,7 @@
 </div>
 <div class="right_content">
     <div class="menu">
-        <a href="{|U:index,array('tablename'=>$_GET['tablename'])}"
-        <if value='METHOD==index'>class='action'</if>
-        >内容列表</a> <span>|</span>
+        <a href="#" class="action">内容列表</a> <span>|</span>
         <a href="{|U:add,array('mid'=>$_GET['mid'])}<if value='$hd.get.cid'>&cid={$hd.get.cid}</if>"
         <if value='METHOD=="add"'>class='action'</if>
         >添加文章</a>
@@ -96,6 +94,7 @@
                 <td width="30"><input type="checkbox" name="select_all"/></td>
                 <td width="30">id</td>
                 <td>标题</td>
+                <td width="80">学生</td>
                 <td width="100">所属栏目</td>
                 <td width="150">更新时间</td>
                 <td width="60">点击</td>
@@ -123,6 +122,9 @@
                         ?>
                         </span>
                     </td>
+                    <td width="80">
+                        <a href="{|U:'index',array('mid'=>$_GET['mid'],'stu_uid'=>$c['stu_uid'])}">{|getStuName:$c['stu_uid']}</a>
+                    </td>
                     <td>
                         <a href="{|U:'index',array('cid'=>$c['cid'],'mid'=>$c['mid'])}">
                             {$c.catname}
@@ -146,12 +148,12 @@
         </table>
     </div>
     <?php if(!empty($content)):?>
-    <div style="float:left; margin-top:20px;">
-        <input type="button" class="btn1" onclick="return confirm('确定删除文章吗？')?delArticle():false;" value="删除"/>
-    </div>
-    <div class="page1">
-        {$page}
-    </div>
+        <div style="float:left; margin-top:20px;">
+            <input type="button" class="btn1" onclick="return confirm('确定删除文章吗？')?delArticle():false;" value="删除"/>
+        </div>
+        <div class="page1">
+            {$page}
+        </div>
     <?php endif;?>
 </div>
 </body>

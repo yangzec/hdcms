@@ -6,10 +6,8 @@
 
 </script>
 <form action="{|U:edit}" method="post">
-    <input type="hidden" name="mid" value="{$field.mid}"/>
     <input type="hidden" name="pid" value="{$field.pid}"/>
     <input type="hidden" name="cid" value="{$field.cid}"/>
-
     <div class="tab">
         <ul class="tab_menu">
             <li lab="base"><a href="#">基本设置</a></li>
@@ -24,6 +22,18 @@
                         <th>栏目名称</th>
                         <td>
                             <input type="text" name="catname" value="{$field.catname}" class="w200"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>内容模型</th>
+                        <td>
+                            <select name="mid">
+                                <list from="$model" name="m">
+                                    <option value="{$m.mid}" <if value="$m.mid==$field.mid">selected="selected"</if>>
+                                    {$m.model_name}
+                                    </option>
+                                </list>
+                            </select>
                         </td>
                     </tr>
                     <tr>

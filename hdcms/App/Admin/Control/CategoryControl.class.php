@@ -24,6 +24,14 @@ class CategoryControl extends RbacControl
     }
 
     /**
+     * 验证静态文件目录是否被占用
+     */
+    public function checkHtmlDir(){
+        $htmlDir = $this->_post("html_dir");
+        echo M("category")->find("html_dir='{$htmlDir}'")?0:1;
+        exit;
+    }
+    /**
      * 添加栏目到表
      */
     public function add()
@@ -98,7 +106,7 @@ class CategoryControl extends RbacControl
     public function updateCache()
     {
         O("CacheControl", "category");
-        $this->success("更新栏目缓存成功", "index", 1);
+        $this->success("缓存更新成功", "index", 1);
 
     }
 

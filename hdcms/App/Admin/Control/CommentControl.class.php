@@ -45,7 +45,8 @@ class CommentControl extends Control
             foreach($comment_id as $m){
                 M("comment")->del($m);
             }
-            $this->_ajax(1);
+            $url = U("index");
+            $this->_ajax(array("stat"=>1,"url"=>$url));
         }
     }
 }

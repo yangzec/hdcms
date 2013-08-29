@@ -23,7 +23,6 @@ class ModelControl extends RbacControl
             }
         }
     }
-
     /**
      * 删除模型
      */
@@ -34,7 +33,7 @@ class ModelControl extends RbacControl
             $this->error("非法请求");
         }
         if (M("category")->find("mid=$mid")) {
-            $this->error("请先删除模型的栏目");
+            $this->_ajax(0);
         }
         $db = M("model");
         $model = $db->find($mid);
@@ -62,8 +61,9 @@ class ModelControl extends RbacControl
     {
         if (isset($_POST['model_name'])) {
             $db = M("model");
+            $_POST['control'] = $this->_post("control","ucfirst");
             $db->save();
-            $this->success("模型修改成功","index",1);
+            $this->_ajax("1","text");
         } else {
             $mid = $this->_get("mid");
             $db = M("model");
@@ -82,7 +82,7 @@ class ModelControl extends RbacControl
             $db = M("model");
             $_POST['tablename'] = $this->_post('tablename', 'strtolower');
             $table = strtolower($_POST['tablename']);
-            $_POST['control'] = ucfirst(preg_replace('@\.class\.php|' . C("CONTROL_FIX") . '@i', '', $_POST['control']));
+            $_POST['control'] = $this->_post("control","ucfirst");
             //Model表中添加记录
 
             if ($mid = $db->add()) {

@@ -1,43 +1,29 @@
 <load file="__CONTROL_TPL__/header.html"/>
 <script>
     /**
-     * 添加栏目验证
+     * 验证
      */
     $(function () {
         $("form").validation({
-            //验证规则
-            rules: {
-                catname: {//验证id为email的表单
-                    message: {default: "栏目名称（可以输入中文）", "success": "输入正确", "error": "栏目名称不能为空"},
-                    rule: {required: true}
+            catname: {
+                rule: {
+                    required: true
                 },
-                html_dir: {//静态目录
-                    message: {"error": "目录已经使用或目录名输入错误"},
-                    rule: {required: true, regexp: /^[a-z_0-9]+$/i}
+                error: {
+                    required: "栏目名称不能为空"
                 },
-                arc_dir: {//验证id为email的表单
-                    message: { "error": "输入错误"},
-                    rule: {required: true}
+                success: "输入正确"
+            },
+            html_dir: {
+                rule: {
+                    ajax: "{|U:'checkHtmlDir'}"
                 },
-                list_tpl: {//验证id为email的表单
-                    message: {"error": "输入错误"},
-                    rule: {required: true}
+                error: {
+                    ajax: "目录已经使用"
                 },
-                arc_tpl: {//验证id为email的表单
-                    message: { "error": "输入错误"},
-                    rule: {required: true}
-                },
-                list_html_url: {//验证id为email的表单
-                    message: { "error": "不能为空"},
-                    rule: {required: true}
-                },
-                arc_html_url: {//验证id为email的表单
-                    message: {  "error": "不能为空"},
-                    rule: {required: true}
-                }
-
+                success: "输入正确"
             }
-        });
+        })
     })
 </script>
 <form action="{|U:add}" method="post">
@@ -64,8 +50,8 @@
                         <td>
                             <select name="mid">
                                 <list from="$model" name="m">
-                                    <option value="{$m.mid}">
-                                        {$m.model_name}
+                                    <option value="{$m.mid}" <if value="$m.mid==$hd.get.mid">selected="selected"</if>>
+                                    {$m.model_name}
                                     </option>
                                 </list>
                             </select>
@@ -75,14 +61,13 @@
                         <th>静态目录</th>
                         <td>
                             <input type="text" name="html_dir" id="html_dir" class="w200"/>
-                            <span class="validation">静态文件存放目录</span>
                         </td>
                     </tr>
                     <tr>
                         <th>生成静态</th>
                         <td>
                             <input type="radio" name="urltype" value="1" checked="checked"/> 静态访问
-                            <input type="radio" name="urltype"  value="2"/> 动态访问
+                            <input type="radio" name="urltype" value="2"/> 动态访问
                         </td>
                     </tr>
                     <tr>
@@ -202,8 +187,10 @@
                                 <list from="$member" name="m">
                                     <tr>
                                         <td>{$m.rname}</td>
-                                        <td><input type="checkbox" name="category_member_access[{$m.rid}][isshow]" value="1"/></td>
-                                        <td><input type="checkbox" name="category_member_access[{$m.rid}][issend]" value="1"/></td>
+                                        <td><input type="checkbox" name="category_member_access[{$m.rid}][isshow]"
+                                                   value="1"/></td>
+                                        <td><input type="checkbox" name="category_member_access[{$m.rid}][issend]"
+                                                   value="1"/></td>
                                     </tr>
                                 </list>
                                 </tbody>

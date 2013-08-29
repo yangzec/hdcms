@@ -36,6 +36,7 @@
                 $.post("__CONTROL__&m=del", comment_ids, function (data) {
                     if (data) {
                         alert("文章删除成功");
+                        location.href=data.url;
                     } else {
                         alert("文章删除失败");
                     }

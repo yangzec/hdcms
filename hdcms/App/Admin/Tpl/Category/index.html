@@ -23,7 +23,7 @@
             </td>
             <td><a href="{|U:'index/index/category',array('cid'=>$c['cid'],'mid'=>$c['mid'])}" target="_blank">访问</a></td>
             <td>
-                <a href="{|U:'add',array('pid'=>$c['cid'])}">添加子栏目</a> |
+                <a href="{|U:'add',array('pid'=>$c['cid'],'mid'=>$c['mid'])}">添加子栏目</a> |
                 <a href="{|U:'edit',array('cid'=>$c['cid'])}">修改</a> |
                 <a href="{|U:'del',array('cid'=>$c['cid'])}" class="del_category" cat_name="{$c.catname}">删除</a>
                 <!--<a href="{|U:'move',array('cid'=>$c['cid'])}">移动</a>-->

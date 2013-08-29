@@ -24,4 +24,12 @@ div.thumbpic {
     margin-left: 20px;
     font-size: 12px;
 }
-div.tab_content div.con{border:none;}
+
+div.tab_content div.con {
+    border: none;
+}
+
+table.table td table td {
+    border: none;
+    padding: 0;
+}

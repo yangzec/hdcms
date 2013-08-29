@@ -18,7 +18,7 @@
         <a href="{|U:index}"
         <if value='METHOD==index'>class='action'</if>
         >栏目列表</a> <span>|</span>
-        <a href="{|U:'add'}"
+        <a href="{|U:'add',array('mid'=>1)}"
         <if value='METHOD==add && $hd.get.pid==0'>class='action'</if>
         >添加顶级栏目</a> <span>|</span>
         <a href="{|U:'updateCache'}">更新栏目缓存</a>

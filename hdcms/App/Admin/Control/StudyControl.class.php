@@ -5,7 +5,7 @@
  * @category admin
  * @author hdxj
  */
-class ArticleControl extends RbacControl
+class StudyControl extends RbacControl
 {
 
     /**
@@ -26,8 +26,29 @@ class ArticleControl extends RbacControl
             $this->addContent();
         } else {
             //添加正文视图
+            $role = M("role")->where("rname like '%班%'")->all();
+            $this->assign("role", $role);
             $this->addView();
         }
+    }
+
+    /**
+     * 级联学生列表获取 ajax
+     */
+    public function getStudyList()
+    {
+        $rid = $this->_post("rid", "intval");
+        $db = V("user");
+        $db->view = array(
+            "user_role" => array(
+                "on" => "user.uid=user_role.uid"
+            ),
+            "role" => array(
+                "on" => "user_role.rid=role.rid"
+            )
+        );
+        $user = $db->field("user.uid", "username")->where("role.rid=$rid")->all();
+        $this->_ajax($user);
     }
 
     /**

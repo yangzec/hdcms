@@ -16,7 +16,7 @@ class CacheControl extends RbacControl
             $this->error("缓存目录./data/category不可写，请修改权限");
         }
         if ($type)
-            $this->success("缓存更新成功",'',1);
+            $this->success("缓存更新成功", '', 1);
         return true;
     }
 
@@ -32,7 +32,7 @@ class CacheControl extends RbacControl
                 "on" => "category.mid=model.mid", //关联条件
             )
         );
-        $data = Data::channel($db->order("cid asc")->all(), $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
+        $data = Data::channelList($db->order("cid asc")->all(), 0, '─');
         return F("category", $data, './data/category');
     }
 

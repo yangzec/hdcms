@@ -24,20 +24,59 @@ class UserControl extends RbacControl
         );
         $db->where("type=2");
         if ($rid) {
-            $db->where("rid=$rid");
+            $db->where("role.rid=$rid");
         }
-        $page = new Page($db->count());
-        if ($rid) {
-            $db->where("rid=$rid");
-        }
-        $db->where("type=2");
-        $data = $db->limit($page->limit())->all();
+        $db->group("hd_user.uid");
+        $page = new Page(count($db->field()->count()));
+        $optOld = $db->db->optOld;
+        $limit =$page->limit();
+        $field = C("DB_PREFIX").str_replace("`uid","user.`uid",$optOld['field']).',rname';
+        $sql =" SELECT ".$field." FROM ".$optOld["from_table"].$optOld["where"].$optOld["group"]." LIMIT ".$limit['limit'];
+        $user = $db->query($sql);
         $this->assign("role", M("role")->all("type=2"));
-        $this->assign('data', $data);
+        $this->assign('user', $user);
         $this->assign("page", $page->show());
         $this->display();
     }
 
+    /**
+     * 添加用户
+     */
+    public function UserAdd()
+    {
+        if (isset($_POST['username'])) {
+            $db = M("user");
+            $this->_post("password","md5");
+            if ($uid = $db->add()) {
+                $db->table("user_role")->add(array(
+                    "uid" => $uid,
+                    "rid" => $_POST['rid']
+                ));
+                $this->success("添加用户成功", "userList", 1);
+            }
+        } else {
+            $this->assign("role", M("role")->where("type=2")->all());
+            $this->display();
+        }
+    }
+
+    /**
+     * 验证用户名
+     */
+    public function checkUser()
+    {
+        $username = $this->_post("username");
+        if (M("user")->where("username='$username'")->find()) {
+            echo 0;
+        } else {
+            echo 1;
+        }
+        exit;
+    }
+
+    /**
+     * 删除用户
+     */
     public function userDel()
     {
         $db = M("user");
@@ -47,16 +86,26 @@ class UserControl extends RbacControl
         $this->success("删除成功", "userList", 1);
     }
 
+    /**
+     * 编辑用户
+     */
     public function userEdit()
     {
         $uid = $this->_post("uid");
         if ($uid) {
+            //没有编辑缩略图时，删除缩略图POST空值
+            if (isset($_POST['favicon']) && empty($_POST['favicon'])) {
+                unset($_POST['favicon']);
+            }
             $db = M("user");
-            if (isset($_POST['password2'])&& !empty($_POST['password2'])) {
+            //密码处理
+            if (isset($_POST['password2']) && !empty($_POST['password2'])) {
                 if ($_POST['password2'] != $_POST['password']) {
                     $this->error("两次密码不一致");
                 }
                 $this->_post("password", "md5");
+            }else if(isset($_POST['password'])){
+                unset($_POST['password']);
             }
             $db->save(); //修改用户信息
             $db->table("user_role")->where("uid=$uid")->save();
@@ -72,7 +121,8 @@ class UserControl extends RbacControl
             );
             $table = C("DB_PREFIX") . "user";
             $field = $db->find($table . '.uid=' . $uid);
-            $this->assign("role", M("role")->all("type=2"));
+            $role = M("role")->all("type=2");
+            $this->assign("role",$role );
             $this->assign("field", $field);
             $this->display();
         }
@@ -171,6 +221,8 @@ class UserControl extends RbacControl
         $db->table("member_access")->del("rid=$rid"); //前台会员权限表
         $this->success("删除成功", "groupList", 1);
     }
+
+
 }
 
 

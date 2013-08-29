@@ -9,23 +9,7 @@
     <jsconst/>
     <hdui/>
 <script>
-    $(function () {
-        //表单验证
-        $("form").validation({
-            //验证规则
-            rules: {
-                model_name: {
-                    message: {default: "模型名称(必须为中文)", empty: "模型名不能为空", "error": "模型名称必须为中文"},
-                    rule: {required: true}
-                },
-                tablename: {
-                    message: {default: "模型主表名(不可以输入中文)", empty: "表名不能为空", "error": "表名已经存在"},
-                    rule: {regexp: /^[a-z]\w+$/i, ajax: "{|U:check_model}"}
-                }
-            }
-        });
 
-    })
 
     //Ajax提交
     $(function () {
@@ -80,8 +64,8 @@
                         <tr>
                             <th>允许前台投稿</th>
                             <td>
-                                <input type="radio" name="is_submit" value="1" checked="checked"/> 允许
-                                <input type="radio" name="is_submit" value="0"/> 不允许
+                                <input type="radio" name="is_submit" value="1"/> 允许
+                                <input type="radio" name="is_submit" value="0" checked="checked"/> 不允许
                             </td>
                         </tr>
                         <tr>
@@ -93,8 +77,7 @@
                         <tr>
                             <th>处理程序</th>
                             <td>
-                                <input type="text" name="control" value="Article{$hd.config.CONTROL_FIX}.class.php"
-                                       class="w200"/>
+                                <input type="text" name="control" value="Article" class="w200"/>
                                 <span class="validation">如果自定义了处理程序，具体方法名称参考Article{$hd.config.CONTROL_FIX}.class.php文件</span>
                             </td>
                         </tr>

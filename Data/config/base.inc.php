@@ -1,7 +1,7 @@
 <?php if (!defined("HDPHP_PATH"))exit;return array (
   'webname' => '中国顶尖php培训机构-后盾网',
   'icp' => '京ICP备12048441号-3',
-  'htmldir' => 'h',
+  'htmldir' => 'html',
   'copyright' => 'Copyright © 2012-2013 HDCMS 后盾网 版权所有',
   'keywords' => 'php培训,php实训,后盾网',
   'description' => 'php顶尖培训--后盾网',

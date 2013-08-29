@@ -31,8 +31,9 @@ class IndexControl extends Control
             $user = $pre . "user";
             $role = $pre . 'role';
             $user_role = $pre . 'user_role';
-            $sql = "SELECT {$role}.type,{$role}.rid,{$role}.rname,{$user}.uid,username,password,status FROM $role JOIN $user_role JOIN $user
-             ON {$role}.rid = {$user_role}.rid AND {$user_role}.uid = {$user}.uid WHERE {$user}.uid = {$user_role}.uid";
+            $sql = "SELECT {$role}.type,{$role}.rid,{$role}.rname,{$user}.uid,username,realname,password,status FROM $role JOIN $user_role JOIN $user
+             ON {$role}.rid = {$user_role}.rid AND {$user_role}.uid = {$user}.uid WHERE {$user}.uid = {$user_role}.uid AND username='$username'";
+
             $user = M()->query($sql);
             if (!$user) {
                 $this->error("用户不存在", '', 1);
@@ -42,9 +43,11 @@ class IndexControl extends Control
                 $this->error("密码错误", '', 1);
                 go("login");
             }
+
             session("uid", $user[0]['uid']);
             session("username", $user[0]['username']);
-            session("rname", $user[0]['rname']);
+            session("realname", $user[0]['realname']);
+            session("rname", $user[0]['rname']);//角色名
             session("type", $user[0]['type']);// 1 后台管理员  2 前台会员
             session("rid", $user[0]['rid']);
 

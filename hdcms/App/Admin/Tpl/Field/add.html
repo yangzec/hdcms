@@ -118,17 +118,21 @@
 <body>
 <div class="right_content">
 <div class="menu">
-    <a href="{|U:add,array('mid'=>$_GET['mid'])}"
-    <if value='METHOD==add'>class='action'</if>
-    >添加字段</a> <span>|</span>
-    <a href="{|U:'index',array('mid'=>$_GET['mid'])}"
-    <if value='METHOD==index'>class='action'</if>
-    >字段列表</a>
+    <a href="javascript:;" class="action">添加字段</a>
+    <a href="{|U:'Field/index',array('mid'=>$_GET['mid'])}">字段管理</a>
 </div>
 <div class="content">
 <form action="{|U:'add'}" method="post">
 <input type="hidden" name="mid" value="{$model.mid}"/>
 <table class="table">
+    <tr>
+        <td style="text-align:right;width:300px;">
+            模型名称
+        </td>
+        <td>
+            <input type="text" disabled="disabled" value="{$model.model_name}"/>
+        </td>
+    </tr>
     <tr>
         <td style="text-align:right;width:300px;">字段类型</td>
         <td>
@@ -284,11 +288,11 @@
             <table>
                 <tr>
                     <td style="width:100px;">宽度</td>
-                    <td><input type="text" name="set[width]" class="w100" value="400"/> px</td>
+                    <td><input type="text" name="set[width]" class="w100" value="500"/> px</td>
                 </tr>
                 <tr>
                     <td style="width:100px;">高度</td>
-                    <td><input type="text" name="set[height]" class="w100" value="80"/> px</td>
+                    <td><input type="text" name="set[height]" class="w100" value="100"/> px</td>
                 </tr>
                 <tr>
                     <td style="width:100px;">默认值</td>
@@ -450,9 +454,10 @@
                 <tr>
                     <td style="width:100px;">格式设置</td>
                     <td>
-                        <input type="radio" name="field_type" value="date"/> 日期 (2013-6-18)<br/>
-                        <input type="radio" name="field_type" value="datetime"/> 日期+时间 (2013-6-18 16:22:28)<br/>
-                        <input type="radio" name="field_type" value="int"/> 数字 (2013-6-18 16:22:28)
+                        <input type="radio" name="set[type]" value="yy-mm-dd"/> 日期 (2013-6-18)<br/>
+                        <input type="radio" name="set[type]" value="yy-mm-dd hh:ii:ss" /> 日期+时间 (2013-6-18 16:22:28)<br/>
+                        <input type="hidden" name="set[default]" value=""/>
+                        <input type="hidden" name="field_type" value="int"/>
                     </td>
                 </tr>
                 <tr>

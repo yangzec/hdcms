@@ -1,9 +1,9 @@
-$(function(){
-    $("input,textarea").focus(function(){
-        $(this).css({"border":"solid 1px #60940E"});
-    }).blur(function(){
-            $(this).css({"border":"solid 1px #dadada"});
-    })
+$(function () {
+    $("input,textarea").focus(function () {
+        $(this).css({"border": "solid 1px #60940E"});
+    }).blur(function () {
+            $(this).css({"border": "solid 1px #dadada"});
+        })
 })
 /**
  * 缩略图上传
@@ -15,14 +15,15 @@ $(function(){
  */
 function thumbUpload(obj, action, target, _input, picdiv) {
     var form = $(obj).parents("form");//表单
+    form.removeAttr("enctype").attr("enctype", "multipart/form-data");
     $action = form.attr("action");//原action
     form.attr("action", action + "&name=" + _input + "&div=" + picdiv);
     form.attr("target", target);//更改上传地址为，iframe
-    form.submit();//上传
+    form.trigger("submit",["",true]);
     form.attr("action", $action);//将原来的action还原回来
     form.removeAttr("target");//清除target
     var _div = $("." + picdiv);//放置图片的div
-    _div.append('图片上传中...');
+    _div.html("图片上传中...");
 }
 /**
  * 选择颜色
@@ -62,7 +63,8 @@ function selectImage(obj) {
 function updateImageInput(obj) {
     var path = $(obj).attr("path");
     var inputLab = $(obj).attr("inputlab");
-    $(opener.document).find("#"+inputLab).attr("src", ROOT + "/" + path).css({width: 80, height: 80});
+    $(opener.document).find("input[lab='" + inputLab + "']").val(path);
+    $(opener.document).find("#" + inputLab).attr("src", ROOT + "/" + path).css({width: 80, height: 80});
     window.close();
 
 }
@@ -76,7 +78,7 @@ $(function () {
         var _div = "<div id='upload_field_thumb' style='position: absolute;'><img src='" + _src + "' width='260' height='260'/></div>";
         $("body").append(_div);
         var _offset = $(this).offset();
-        $("#upload_field_thumb").css({top: _offset.top-50,left: _offset.left+90,"z-index":100});
+        $("#upload_field_thumb").css({top: _offset.top - 50, left: _offset.left + 90, "z-index": 100});
     })
     $("img[lab='upload_field_img']").mouseout(function (event) {
         $("#upload_field_thumb").remove();

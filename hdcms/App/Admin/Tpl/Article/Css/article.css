@@ -1,0 +1,22 @@
+div.search{
+    position: absolute;
+    right:10px;
+    top:12px;
+    font-size:12px;
+}
+div.search ul li{
+    float:left;
+    margin-right:10px;
+}
+div.search select{
+    font-size:12px;
+    padding:0px;
+    border: 1px solid #999999;
+    height:25px;
+    vertical-align: middle;
+}
+div.search input{
+    padding:0px 8px;
+    height:25px;
+    vertical-align: middle;
+}

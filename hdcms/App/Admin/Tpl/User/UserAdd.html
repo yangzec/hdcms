@@ -13,6 +13,17 @@
     <script>
         $(function () {
             $("form").validation({
+                username: {
+                    rule: {
+                        required: true,
+                        ajax: "{|U:'checkUser'}"
+                    },
+                    error: {
+                        required: "用户名不能为空",
+                        ajax: "用户已经存在"
+                    },
+                    success: "输入正确"
+                },
                 rid: {
                     rule: {
                         required: true
@@ -22,12 +33,23 @@
                     },
                     success: "输入正确"
                 },
-                password2: {
+                password: {
                     rule: {
-                        confirm: "password"
+                        required: true
                     },
                     error: {
-                        confirm: "两次密码不一致"
+                        required: "确认密码不能为空"
+                    },
+                    success: "输入正确"
+                },
+                password2: {
+                    rule: {
+                        confirm: "password",
+                        required: true
+                    },
+                    error: {
+                        confirm: "两次密码不一致",
+                        required: "密码不能为空"
                     },
                     success: "输入正确"
                 },
@@ -56,17 +78,15 @@
 <body>
 <div class="right_content" style="padding: 10px;">
     <div class="menu">
-        <a href="#" class="action" class="action">编辑用户</a>
-        <a href="__APP__&c=User&m=userAdd">添加用户</a>
+        <a href="#" class="action">添加用户</a>
         <a href="__APP__&c=User&m=userList">用户列表</a>
     </div>
-    <form action="{|U:'userEdit'}" method="post">
-        <input type="hidden" name="uid" value="{$field.uid}"/>
+    <form action="{|U:'userAdd'}" method="post">
         <table class="table">
             <tr>
                 <th class="w100">用户名</th>
                 <td>
-                    {$field.username}
+                    <input type="text" name="username" class="w200"/>
                 </td>
             </tr>
             <tr>
@@ -75,9 +95,7 @@
                     <select name="rid">
                         <option value="">===选择===</option>
                         <list from="$role" name="r">
-                            <option value="{$r.rid}"
-                            <if value="$field.rid==$r.rid">selected="selected"</if>
-                            >{$r.rname}</option>
+                            <option value="{$r.rid}">{$r.rname}</option>
                         </list>
                     </select>
                 </td>
@@ -108,11 +126,7 @@
                                 <iframe name="img_target" style="display:none;"></iframe>
                             </td>
                             <td>
-                                <div class="faviconpic">
-                                    <if value="{$field.favicon}">
-                                        <img src="__ROOT__/{$field.favicon}" width="130" height="110"/>
-                                    </if>
-                                </div>
+                                <div class="faviconpic"></div>
                             </td>
                         </tr>
                     </table>
@@ -121,24 +135,21 @@
             <tr>
                 <th class="w100">email</th>
                 <td>
-                    <input type="text" name="email" class="w200" value="{$field.email}"/>
+                    <input type="text" name="email" class="w200"/>
                 </td>
             </tr>
             <tr>
                 <th class="w100">QQ</th>
                 <td>
-                    <input type="text" name="qq" class="w200" value="{$field.qq}"/>
+                    <input type="text" name="qq" class="w200"/>
                 </td>
             </tr>
             <tr>
                 <th class="w100">性别</th>
                 <td>
-                    <input type="radio" name="sex" value="1"
-                    <if value="{$field.sex}==1">checked="checked"</if>
-                    /> 男
-                    <input type="radio" name="sex" value="2"
-                    <if value="{$field.sex}==2">checked="checked"</if>
-                    /> 女
+                    <input type="radio" name="sex" value="1" checked="checked"/> 男
+                    <input type="radio" name="sex" value="2"/> 女
+                    <span id="hd_sex"></span>
                 </td>
             </tr>
         </table>

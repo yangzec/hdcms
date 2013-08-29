@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>{$field.catname}-{$hd.config.webname}</title>
+    <link href="__TPL__/static/css/project.css" rel="stylesheet" type="text/css"/>
+    <hdui/>
+</head>
+<body>
+<div id="top_line">
+    顶部线
+</div>
+<div id="top">
+    <a class="logo" href="http://www.houdunwang.com" alt="进入首页"> 后盾网首页 </a>
+
+    <div class="top_right">
+        <div class="tel">
+            <span class="msg">咨询电话:</span><span class="number"> 010-6482 5057 </span>
+        </div>
+        <div class="weibo">
+            <a class="sina" href="http://weibo.com/houdunwangxj"> 新浪微博 </a><a class="qq"
+                                                                              href="http://weibo.com/houdunwangxj">
+            腾讯微博 </a>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div id="menu">
+    <load file="__TPL__/block/top_links.html"/>
+</div>
+<!--导航-->
+<!---不分组--->
+<div class="no_group">
+
+</div>
+<!---不分组--->
+<!---左侧块--->
+<div id="project_body">
+    <div class="project_left">
+        <pagelist row="6">
+            <div class="work">
+                <h2>
+                    {$hd_field.title}<span style="padding-left:10px;">[实体班学生独立开发]</span>
+                </h2>
+                <ul class="introduce">
+                    <li>
+                        <strong>项目名称：</strong>
+                        <span>{$hd_field.title}</span>
+                    </li>
+                    <li>
+                        <strong>学生名称：</strong>
+                        <span>{$hd_field.pro_stu_name}</span>
+                    </li>
+                    <li>
+                        <strong>开发系统：</strong>
+                        <span>{$hd_field.pro_system}</span>
+                    </li>
+                    <li>
+                        <strong>开发语言：</strong>
+                        <span>{$hd_field.pro_software}</span>
+                    </li>
+                    <li>
+                        <strong>版本控制：</strong>
+                        <span>DIV+CSS&HTML&Jquery&HDJS</span>
+                    </li>
+                    <if value="$hd_field.pro_download">
+                        <li>
+                            <strong>下载项目：</strong>
+                    <span>
+                       <a href="{$hd_field.pro_download}" alt="下载项目">下载项目</a>
+                    </span>
+                        </li>
+                    </if>
+                </ul>
+                <div class="preview_pic">
+                    <h3>
+                        <span class='en'>Preview</span>
+                        <span class='ch'>项目图片预览</span>
+                    </h3>
+                    <ul>
+                        <li class="project_pic">
+                            <img src="{$hd_field.pro_pic1}"/>
+                        </li>
+                        <li class="project_pic">
+                            <img src="{$hd_field.pro_pic2}"/>
+                        </li>
+                    </ul>
+                    <h3>
+                        <span class='en'>Video</span>
+                        <span class='ch'>项目视频演示</span>
+                    </h3>
+                    <ul>
+                        <li class="project_video">
+                            <embed width="700" height="575" type="application/x-shockwave-flash" allowfullscreen="true"
+                                   wmode="transparent" bgcolor="#ffffff" quality="high" src="{$hd_field.video}"
+                                   allowscriptaccess="never" allownetworking="internal">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block-line"></div>
+        </pagelist>
+        <!--分页-->
+        <div class="page1">
+            <pageshow/>
+        </div>
+        <!--分页-->
+    </div>
+    <!--右侧-->
+    <div class="project_right">
+        <!--开班信息-->
+        <div class="course_info course_info_red r w290">
+            <dl>
+                <dt>
+                    <span>开班信息</span>
+                </dt>
+                <dd>
+                    <ul>
+                        <?php $class=array('PHP就业班','PHP高级班','PHP远程班');?>
+                        <arclist cid="66" row="6">
+                            <li>
+                                <a href="#" class="title"><?php echo $class[$hd_field['class_type']]?></a>
+                                <a href="#" class="date">{$hd_field.updatetime|date:"m月d日",@@}</a>
+                                <a href="#" class="state">
+                                    <?php if($hd_field['updatetime']>time()){?>
+                                    <span style="color:#666">报名已结束</span>
+                                    <?php }else if($hd_field['updatetime']+(3600*24*10)>time()){?>
+                                    <span style="color:#f00">报名即将截止</span>
+                                    <?php }else{?>
+                                    <span style="color:#f00">火热报名中</span>
+                                    <?php };?>
+                                </a>
+                            </li>
+                        </arclist>
+                    </ul>
+                </dd>
+            </dl>
+            <div class="butterfly"></div>
+        </div>
+        <!--开班信息-->
+    </div>
+    <!--文章TABS-->
+    <!---Tab列表-->
+    <div class="tab_news r">
+        <div class="tab_menu">
+            <h3>后盾网最新视频</h3>
+        </div>
+        <div class="tab1 tab_content" style="width:280px;">
+            <ul>
+                <arclist cid="40" row="15" type="hot">
+
+                    <li>
+                        <span class="id">{$hd_field.arclist_id}</span>
+                    <span class="title">
+                        <a href="#">{$hd_field.title|mb_substr:0,15,'utf-8'}</a>
+                    </span>
+                        <span class="clock">{$hd_field.updatetime|date:"Y-m-d",@@}</span>
+                    </li>
+                </arclist>
+            </ul>
+        </div>
+    </div>
+</div>
+<!---右侧块--->
+
+<!--学员就业企业-->
+<div class="enterprise">
+    <h3>学员就业企业</h3>
+</div>
+<!--学员就业企业-->
+<!--声明--->
+<div class="project_solemn">
+    学员项目声明
+</div>
+<!--声明--->
+<!--copyright-->
+<div class="copyright">
+    <div class="introduce">
+        <div class="info">
+            <dl>
+                <dt>houdunwang</dt>
+                <dd>
+                    <a href="#">后盾论坛</a>
+                </dd>
+                <dd>
+                    <a href="#">后盾教育</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>who's houdunwang</dt>
+                <dd>
+                    <a href="#">关于我们</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>OUR service</dt>
+                <dd>
+                    <a href="#">教育培训</a>
+                </dd>
+                <dd>
+                    <a href="#">HDPHP开源框架</a>
+                </dd>
+                <dd>
+                    <a href="#">公益培训</a>
+                </dd>
+                <dd>
+                    <a href="#">IT自学平台</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="copy_contact">
+        <div class="info">
+            <div class="logo"></div>
+            <div class="icp">
+                版权所有：©2008-2010 <a href="#">北京后盾网计算机培训有限公司</a> 京ICP备京ICP备10027771号-1<br/>
+                All rights reserved, houdunwang.com services for Beijing 2008-2010
+            </div>
+        </div>
+    </div>
+</div>
+<!--copyright-->
+</body>
+</html>

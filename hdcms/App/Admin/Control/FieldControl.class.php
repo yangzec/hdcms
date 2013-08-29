@@ -14,11 +14,33 @@ class FieldControl extends RbacControl
         if (!$mid) {
             $this->error("非法操作");
         }
-        $field = M("model_field")->order("fieldsort ASC")->all("mid=$mid");
+        $db =V("model_field");
+        $db->view=array(
+            "model"=>array(
+                "on"=>"model_field.mid=model.mid"
+            )
+        );
+        $field = $db->order("fieldsort ASC")->all(C("db_prefix")."model.mid=$mid");
         $this->assign("fields", $field);
         $this->display();
     }
 
+    /**
+     * 更新字段排序
+     */
+    public function updateFieldSort()
+    {
+
+        if (isset($_POST['fieldsort'])) {
+            $db = K("Field");
+            $fields = $_POST['fieldsort'];
+            foreach ($fields as $k => $v) {
+                $db->save(array("fid" => $k, "fieldsort" => $v));
+            }
+            $db->updateCache(intval($_GET['mid']));
+            $this->_ajax(1, "text");
+        }
+    }
 
     /**
      * 添加字段
@@ -77,22 +99,24 @@ class FieldControl extends RbacControl
     {
         if ($this->_post("title")) {
             //检测字段是否存在
-            $db = M("model_field");
-            $field_name = $this->_post("field_name"); //字段名
-            $fid = $this->_post("fid", "intval"); //字段fid
-            if ($db->where("field_name='$field_name' AND fid<>$fid")->find()) {
-                $this->_ajax(array('stat' => 0, "msg" => "字段已经存在"));
-            }
+//            $db = M("model_field");
+//            $field_name = $this->_post("field_name"); //字段名
+//            $fid = $this->_post("fid", "intval"); //字段fid
+//            if ($db->where("field_name='$field_name' AND fid<>$fid")->find()) {
+//                $this->_ajax(array('stat' => 0, "msg" => "字段已经存在"));
+//            }
             //修改字段
             $db = k("Field");
             $db->editField($_POST);
             $this->_ajax(array("stat" => 1));
         } else {
             $fid = $this->_get("fid");
-            $field = M("model_field")->find($fid);
+            $db = M("model_field");
+            $field = $db->find($fid);
             if ($field) {
                 eval('$field["set"]=' . $field['set'] . ';');
                 $this->assign("field", $field);
+                $this->assign("model",$db->table("model")->find($field['mid']));
                 $this->display();
             } else {
                 $this->error("你要修改的字段不存在");

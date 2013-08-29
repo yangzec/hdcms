@@ -13,8 +13,9 @@
     var _div = $(top_document).find("div.{$hd.get.div}");
     if ({$stat}) {
         $(input).val("{$img_path}");
-        _div.html("<img src='__ROOT__/{$img_path}' style='width:160px;height:100px;'/>");
+        _div.html("<img src='__ROOT__/{$img_path}' style='width:130px;height:110px;'/>");
     } else {
+        _div.html("");
         alert("上传失败");
     }
 </script>

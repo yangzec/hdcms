@@ -27,7 +27,7 @@ class CommonControl extends Control
             $allCategory = M("category")->all();
             $modelCategory = M("category")->where("mid=$mid")->all();
             foreach ($modelCategory as $v) {
-                $data = array_merge($data, Data::channel($allCategory, $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = $v['cid'], $type = 3, '─'));
+                $data = array_merge($data, Data::parentChannel($allCategory, $v['cid'], '─'));
             }
             $category = array();
             foreach ($data as $v) {
@@ -36,7 +36,7 @@ class CommonControl extends Control
         } else {
             $category = M("category")->all();
         }
-        return Data::channel($category, $fieldPri = 'cid', $fieldPid = 'pid', $pid = 0, $sid = null, $type = 2, '─');
+        return Data::channelList($category, 0, '─', $fieldPri = 'cid', $fieldPid = 'pid');
     }
 
     /**
@@ -101,7 +101,7 @@ class CommonControl extends Control
         $cid = $this->_post("cid", 'intval'); //栏目cid
         if (!$cid) $this->error("栏目不能为空");
         $model = $this->getModel($mid);
-        $_POST['updatetime'] = strtotime($_POST['updatetime']);
+        $_POST['updatetime'] = strtotime($_POST['updatetime'] . " " . date("h:i:s"));
         $tablename = $model['tablename']; //主表名
         //描述为空时，取正文内容
         if (empty($_POST[$tablename . '_data']['description']) && $model['type'] == 1) {
@@ -168,30 +168,69 @@ class CommonControl extends Control
     {
         $mid = $this->_get("mid", 'intval');
         if (!$mid) $this->error("模型mid为空，非法提交");
-        //如果参数中有栏目cid则做条件使用
-        $cid = $this->_get("cid", "intval");
         $model = M("model")->find($mid);
         if ($model) {
             //主表模型
-            $db = M($model['tablename']);
+            $db = V($model['tablename']);
+            $category = $db->table("category")->all();
+            //属性 必须放在cid,order等条件前，因为取lastSql
+            $fid = $this->_post("fid", "intval");
+            if ($fid) {
+                $aids = $db->table("flag_relation")->field("aid")->where("mid=$mid and fid=$fid")->all();
+                $db->in(intval($aids));
+            }
+            //如果参数中有栏目cid则做条件使用
+            $cid = $this->_get("cid", "intval");
+            if (!$cid) {
+                $cid = $this->_post("cid");
+            }
+            if($stu_uid=$this->_get("stu_uid","intval")){
+                $db->where("stu_uid=$stu_uid");
+            }
             //统计所有记录数
             if ($cid) {
-                $db->where("cid=$cid");
+                $cats = Data::channelList($category, $cid);
+                $catIds = array($cid);
+                if (!empty($cats)) {
+                    foreach ($cats as $c) {
+                        $catIds[] = $c['cid'];
+                    }
+                }
+                $db->where("cid in(" . implode(",", $catIds) . ")");
             }
+
+            //排序
+            $order = " ";
+            if (isset($_POST['order'])) {
+                switch ($_POST['order']) {
+                    case "updatetime":
+                        $db->order("updatetime desc");
+                        break;
+                    case "click":
+                        $db->order("ORDER BY click desc");
+                        break;
+                }
+            }
+            //作者
+            $author = $this->_get("author");
             if ($author) {
-                $db->where("username='$author'");
+                $db->where("author like '%{$author}%'");
+            }
+            if (!$author && $author = $this->_post("author")) {
+                $db->where("author like '%{$author}%'");
             }
             $count = $db->count();
-            //设置分布
-            $page = new Page($count);
+            //上条sql语句
+            $optOld = $db->db->optOld;
+            //设置分页
+            $page = new Page($count,12);
             //查询当前页文章
-            $where = $cid ? " WHERE a.cid=$cid" : "";
-            if ($author) {
-                $where = $where . ($where ? " AND username='$author'" : " WHERE username='$author'");
-            }
+            $where = $cid ? " WHERE a.cid in(" . implode(",", $catIds) . ")" : "";
             $fix = C("DB_PREFIX");
-            $sql = "SELECT title,a.cid,username,catname,a.mid,click,aid,updatetime FROM " . $fix . $model['tablename'] . " AS a JOIN " . $fix . "category AS c ON a.cid=c.cid
-             " . $where . " ORDER BY a.aid DESC LIMIT " . current($page->limit());
+            $sql = "SELECT * FROM " . $fix . $model['tablename'] . " AS a JOIN " . $fix . "category AS c ON a.cid=c.cid
+             " . str_replace("cid in", "a.cid in", $optOld['where']) . $optOld['order'] . " LIMIT " . current($page->limit());
+            $this->assign("flag", $db->table("flag")->all());
+            $this->assign("category", $db->table("category")->where("mid=$mid")->all());
             $this->assign("page", $page->show());
             $this->assign("content", $db->query($sql));
             $this->display();
@@ -239,7 +278,7 @@ class CommonControl extends Control
         if (!$cid) $this->error("栏目不能为空");
         $model = $this->getModel($mid);
         $_POST['addtime'] = time();
-        $_POST['updatetime'] = isset($_POST['updatetime'])?strtotime($_POST['updatetime']):time();
+        $_POST['updatetime'] = isset($_POST['updatetime']) ? strtotime($_POST['updatetime'] . " " . date("h:i:s")) : time();
         $_POST['username'] = $_SESSION["username"];
         $tablename = $model['tablename']; //主表名
         //描述为空时，取正文内容
@@ -268,7 +307,7 @@ class CommonControl extends Control
         if (!empty($_POST['flag'])) {
             $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
         }
-        $this->success("添加文章成功", U("index", "mid=$mid"), 1);
+        $this->success("添加文章成功", U("index", "mid=$mid&cid=$cid"), 1);
     }
 
     /**
