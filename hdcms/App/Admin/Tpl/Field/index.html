@@ -11,16 +11,14 @@
     <script>
         //删除字段
         function del_field(fid) {
-            if (confirm("你确定删除字段吗？")) {
-                $.get("{|U:'del'}", {"fid": fid}, function (data) {
-                    if (data.stat == 'success') {
-                        alert(data.message)
-                        location.reload(true);
-                    } else {
-                        alert(data.message);
-                    }
-                }, "json");
-            }
+            $.get("{|U:'del'}", {"fid": fid}, function (data) {
+                if (data.stat == 'success') {
+                    alert(data.message)
+                    location.reload(true);
+                } else {
+                    alert(data.message);
+                }
+            }, "json");
         }
         //字段排序
         $(function () {
@@ -29,7 +27,7 @@
                 $.post("{|U:'updateFieldSort',array('mid'=>$_GET['mid'])}", data, function (data) {
                     if (data == 1) {
                         location.reload(true);
-                    }else{
+                    } else {
                         alert("排序失败");
                     }
                 })

@@ -8,11 +8,11 @@
     <jquery/>
     <jsconst/>
     <hdui/>
-<script>
-    //验证
-    $(function () {
-        //表单验证
-        $("form").validation({
+    <script>
+        //验证
+        $(function () {
+            //表单验证
+            $("form").validation({
 //            //验证规则
 //            rules: {
 //                title: {
@@ -23,50 +23,50 @@
 //                    message: {default: "模型描述(可以输入中文)"}
 //                }
 //            }
-        });
-    })
-    //验证select选择器
-    $(function () {
-        $(".validation_select").change(function () {
-            var reg = $(this).val();
-            $(this).prev().val(reg);
-        })
-    })
-    //添加字段发送表单
-    $(function () {
-        $("form").submit(function () {
-            var _data = $("form").serialize();
-            $.ajax({
-                url: "",
-                data: _data,
-                async: false,
-                type: "POST",
-                dataType: "JSON",
-                success: function (data) {
-                    if (data.stat == 1) {
-                        alert("字段修改成功");
-                        location.href = '{|U:"index",array("mid"=>$field['mid'])}';
-                    } else {
-                        alert(data.msg);
-                        $("#field_set_table").append($("#recycle table.recycle"));
-                    }
-                }
             });
-            return false;
         })
-    })
-</script>
-<style type="text/css">
-    table.fieldParam {
-        border: none;
-        display: none;
-        width: 100%;
-    }
+        //验证select选择器
+        $(function () {
+            $(".validation_select").change(function () {
+                var reg = $(this).val();
+                $(this).prev().val(reg);
+            })
+        })
+        //添加字段发送表单
+        $(function () {
+            $("form").submit(function () {
+                var _data = $("form").serialize();
+                $.ajax({
+                    url: "",
+                    data: _data,
+                    async: false,
+                    type: "POST",
+                    dataType: "JSON",
+                    success: function (data) {
+                        if (data.stat == 1) {
+                            alert("字段修改成功");
+                            location.href = '{|U:"index",array("mid"=>$field["mid"])}';
+                        } else {
+                            alert(data.msg);
+                            $("#field_set_table").append($("#recycle table.recycle"));
+                        }
+                    }
+                });
+                return false;
+            })
+        })
+    </script>
+    <style type="text/css">
+        table.fieldParam {
+            border: none;
+            display: none;
+            width: 100%;
+        }
 
-    table.fieldParam.action {
-        display: block;
-    }
-</style>
+        table.fieldParam.action {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <div class="right_content">
@@ -119,6 +119,7 @@
     </tr>
 </table>
 <input type="hidden" name="table_name" value="{$field.table_name}"/>
+
 <div id="field_set_table">
 <!------------------------input------------------------>
 <if value="$field.show_type==input">
@@ -132,8 +133,12 @@
                     <tr>
                         <td style="width:100px;">字段类型</td>
                         <td>
-                            <input type="radio" name="field_type" value="char" <if value="$field.field_type=='char'">checked="checked"</if>/> char
-                            <input type="radio" name="field_type" value="varchar" <if value="$field.field_type=='varchar'">checked="checked"</if>/> varchar
+                            <input type="radio" name="field_type" value="char"
+                            <if value="$field.field_type=='char'">checked="checked"</if>
+                            /> char
+                            <input type="radio" name="field_type" value="varchar"
+                            <if value="$field.field_type=='varchar'">checked="checked"</if>
+                            /> varchar
                         </td>
                     </tr>
                     <tr>
@@ -152,8 +157,12 @@
                     </tr>
                     <tr>
                         <td style="width:100px;">是否为密码</td>
-                        <td><input type="radio" name="set[ispasswd]" value="1" <if value="$field.set.ispasswd==1">checked="checked"</if>/>是
-                            <input type="radio" name="set[ispasswd]" value="0" <if value="$field.set.ispasswd==0">checked="checked"</if>/>否
+                        <td><input type="radio" name="set[ispasswd]" value="1"
+                            <if value="$field.set.ispasswd==1">checked="checked"</if>
+                            />是
+                            <input type="radio" name="set[ispasswd]" value="0"
+                            <if value="$field.set.ispasswd==0">checked="checked"</if>
+                            />否
                         </td>
                     </tr>
                 </table>
@@ -196,8 +205,12 @@
                 必须输入
             </td>
             <td>
-                <input type="radio" name="required" value="1" <if value="$field.required==1">checked="checked"</if>/> 是
-                <input type="radio" name="required" value="0" <if value="$field.required==0">checked="checked"</if>/> 否
+                <input type="radio" name="required" value="1"
+                <if value="$field.required==1">checked="checked"</if>
+                /> 是
+                <input type="radio" name="required" value="0"
+                <if value="$field.required==0">checked="checked"</if>
+                /> 否
             </td>
         </tr>
         <tr>
@@ -236,9 +249,15 @@
                     <tr>
                         <td style="width:100px;">字段类型</td>
                         <td>
-                            <input type="radio" name="field_type" value="char" <if value="$field.field_type=='char'">checked="checked"</if>/> char
-                            <input type="radio" name="field_type" value="varchar" <if value="$field.field_type=='varchar'">checked="checked"</if>/> varchar
-                            <input type="radio" name="field_type" value="text" <if value="$field.field_type=='text'">checked="checked"</if>/> text
+                            <input type="radio" name="field_type" value="char"
+                            <if value="$field.field_type=='char'">checked="checked"</if>
+                            /> char
+                            <input type="radio" name="field_type" value="varchar"
+                            <if value="$field.field_type=='varchar'">checked="checked"</if>
+                            /> varchar
+                            <input type="radio" name="field_type" value="text"
+                            <if value="$field.field_type=='text'">checked="checked"</if>
+                            /> text
                         </td>
                     </tr>
                 </table>
@@ -281,8 +300,12 @@
                 必须输入
             </td>
             <td>
-                <input type="radio" name="required" value="1" <if value="$field.required==1">checked="checked"</if>/> 是
-                <input type="radio" name="required" value="0" <if value="$field.required==0">checked="checked"</if>/> 否
+                <input type="radio" name="required" value="1"
+                <if value="$field.required==1">checked="checked"</if>
+                /> 是
+                <input type="radio" name="required" value="0"
+                <if value="$field.required==0">checked="checked"</if>
+                /> 否
             </td>
         </tr>
         <tr>
@@ -308,7 +331,8 @@
                 <table>
                     <tr>
                         <td style="width:100px;">整数位</td>
-                        <td><input type="text" name="set[integer]" class="w100" value="5" value="{$field.set.integer}"/></td>
+                        <td><input type="text" name="set[integer]" class="w100" value="5" value="{$field.set.integer}"/>
+                        </td>
                     </tr>
                     <tr>
                         <td style="width:100px;">小数位</td>
@@ -323,7 +347,8 @@
                     </tr>
                     <tr>
                         <td style="width:100px;">文本框长度</td>
-                        <td><input type="text" name="set[size]" class="w100" value="30"  value="{$field.set.size}"/> px</td>
+                        <td><input type="text" name="set[size]" class="w100" value="30" value="{$field.set.size}"/> px
+                        </td>
                     </tr>
                 </table>
             </td>
@@ -365,8 +390,12 @@
                 必须输入
             </td>
             <td>
-                <input type="radio" name="required" value="1" <if value="$field.required==1">checked="checked"</if>/> 是
-                <input type="radio" name="required" value="0" <if value="$field.required==0">checked="checked"</if>/> 否
+                <input type="radio" name="required" value="1"
+                <if value="$field.required==1">checked="checked"</if>
+                /> 是
+                <input type="radio" name="required" value="0"
+                <if value="$field.required==0">checked="checked"</if>
+                /> 否
             </td>
         </tr>
         <tr>
@@ -393,15 +422,20 @@
                     <tr>
                         <td style="width:100px;">格式设置</td>
                         <td>
-                            <input type="radio" name="set[type]" value="yy-mm-dd" <if value="$field.set.type=='yy-mm-dd'">checked='checked'</if>/> 日期 (2013-6-18)<br/>
-                            <input type="radio" name="set[type]" value="yy-mm-dd hh:ii:ss" <if value="$field.set.type=='yy-mm-dd hh:ii:ss'">checked='checked'</if>/> 日期+时间 (2013-6-18 16:22:28)<br/>
+                            <input type="radio" name="set[type]" value="yy-mm-dd"
+                            <if value="$field.set.type=='yy-mm-dd'">checked='checked'</if>
+                            /> 日期 (2013-6-18)<br/>
+                            <input type="radio" name="set[type]" value="yy-mm-dd hh:ii:ss"
+                            <if value="$field.set.type=='yy-mm-dd hh:ii:ss'">checked='checked'</if>
+                            /> 日期+时间 (2013-6-18 16:22:28)<br/>
                             <input type="hidden" name="set[default]" value=""/>
-                            <input type="hidden" name="field_type" value="int"/>
+                            <input type="hidden" name="field_type" value="char"/>
+                            <input type="hidden" name="field_size" value="30"/>
                         </td>
                     </tr>
                     <tr>
                         <td style="width:100px;">文本框长度</td>
-                        <td><input type="text" name="set[size]" class="w100" value="{$field.set.size}"/> px
+                        <td><input type="text" name="set[size]" class="w100" value="{$field.set.size}"/> px</td>
                     </tr>
                 </table>
             </td>
@@ -422,9 +456,15 @@
                     <tr>
                         <td style="width:100px;">选项类型</td>
                         <td>
-                            <input type="radio" name="set[type]" <if value="$field.set.type=='radio'">checked='checked'</if> value="radio"/> 单选框
-                            <input type="radio" name="set[type]" <if value="$field.set.type=='checkbox'">checked='checked'</if> value="checkbox"/> 多选框
-                            <input type="radio" name="set[type]" <if value="$field.set.type=='select'">checked='checked'</if> value="select"/> 下拉列表
+                            <input type="radio" name="set[type]"
+                            <if value="$field.set.type=='radio'">checked='checked'</if>
+                            value="radio"/> 单选框
+                            <input type="radio" name="set[type]"
+                            <if value="$field.set.type=='checkbox'">checked='checked'</if>
+                            value="checkbox"/> 多选框
+                            <input type="radio" name="set[type]"
+                            <if value="$field.set.type=='select'">checked='checked'</if>
+                            value="select"/> 下拉列表
                         </td>
                     </tr>
                     <tr>

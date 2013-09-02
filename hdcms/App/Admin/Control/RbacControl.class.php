@@ -5,6 +5,7 @@ class RbacControl extends CommonControl
     public function __init()
     {
         $this->checkAccess();
+        header("Cache-Control: no-cache, must-revalidate");
         header("Cache-control: private");
     }
 
@@ -15,7 +16,7 @@ class RbacControl extends CommonControl
     {
 
         if(!isset($_SESSION['uid']) || !isset($_SESSION['RBAC'])){
-            go(U("Login/index"));
+            go(U("Login/out"));
         }
         //不需要验证的方法
         $noAuth=array(

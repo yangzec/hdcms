@@ -26,7 +26,7 @@ class StudyControl extends RbacControl
             $this->addContent();
         } else {
             //添加正文视图
-            $role = M("role")->where("rname like '%班%'")->all();
+            $role = M("role")->where("rname like '%班%'")->order("rid desc")->all();
             $this->assign("role", $role);
             $this->addView();
         }
@@ -77,10 +77,16 @@ class StudyControl extends RbacControl
             //添加内容
             $this->editContent();
         } else {
+            $dbUser = K(COMMON_MODEL_PATH . 'ArticleView', "user");
+            $stu = $dbUser->join("user_role")->where("user_role.rid=" . $_GET['rid'])->all();
+            $role = $dbUser->table("role")->join()->where("rname like '%班%'")->all(); //班级
+            $this->assign("stu", $stu);
+            $this->assign("role", $role);
             //添加正文
             $this->editView();
         }
     }
 }
+
 
 ?>

@@ -145,8 +145,9 @@ class FieldModel extends Model
                  </td></tr>";
                 break;
             case "datetime":
+                $htmlId = preg_replace('@\[|\]@','',$name);
                 $html = "<tr><th>{$f['title']}</th>
-                <td><input name='$name' id='date_$name' value='{FIELD_VALUE}' size='{$f['set']['size']}'
+                <td><input name='$name' id='date_$htmlId' value='{FIELD_VALUE}' readonly='readonly' size='{$f['set']['size']}'
                  css='{$f['css']}'/><span class='validation'>{$f['message']}</span>";
                 $html .= "<script>
                         $(function(){
@@ -155,7 +156,7 @@ class FieldModel extends Model
                         ,monthNames: [ '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月' ]
                         ,dayNamesMin: [ '日', '一', '二', '三', '四', '五', '六' ]
                         };
-                        $('#date_$name').datepicker(dateFormat);
+                        $('#date_$htmlId').datepicker(dateFormat);
                         });
                         </script>";
                 $html .= "</td></tr>";
@@ -217,6 +218,10 @@ str;
      */
     public function replaceValue($field, $value = null)
     {
+//        p($field);
+//        p($value);
+//        $value = isset($value) && !empty($value)?$value:$field['set']['value'];
+        $replaceValue = $value ? $value : $field['set']['default'];
         $html = '';
         switch ($field['show_type']) {
             case "image":
@@ -234,12 +239,11 @@ str;
                         case "radio":
                         case "checkbox":
                             $html = str_replace('checked="checked"', '', $field['html']);
-                            $html = str_replace("value='" . $value . "'", "value='" . $value . "' checked='checked'", $html);
+                            $html = str_replace("value='" . $replaceValue . "'", "value='" . $replaceValue . "' checked='checked'", $html);
                             break;
                         case "select":
                             $html = str_replace('selected="selected"', '', $field['html']);
-                            $html = str_replace("value='" . $value . "'", "value='" . $value . "' selected='selected'", $html);
-
+                            $html = str_replace("value='" . $replaceValue . "'", "value='" . $replaceValue . "' selected='selected'", $html);
                             break;
                     }
                 } else {
@@ -251,11 +255,7 @@ str;
             case "num":
             case "editor":
             case "datetime":
-                if ($value) {
-                    $html = str_replace("{FIELD_VALUE}", $value, $field['html']);
-                } else {
-                    $html = str_replace("{FIELD_VALUE}", '', $field['html']);
-                }
+                $html = str_replace("{FIELD_VALUE}", $replaceValue, $field['html']);
                 break;
         }
 

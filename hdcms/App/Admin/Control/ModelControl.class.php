@@ -125,9 +125,11 @@ CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
   `author` CHAR(45) NOT NULL default '' COMMENT '作者' ,
   `addtime` INT(10) NOT NULL default 0 COMMENT '添加时间' ,
   `updatetime` INT(10) NOT NULL default 0 COMMENT '发布时间 ' ,
-  `color` CHAR(7) NOT NULL default '' COMMENT '标题颜色\n' ,
-  `template` varchar(255) NOT NULL default '' COMMENT '模板\n' ,
+  `color` CHAR(7) NOT NULL default '' COMMENT '标题颜色' ,
+  `template` varchar(255) NOT NULL default '' COMMENT '模板' ,
   `ishtml` TINYINT(1) NOT NULL DEFAULT 1 ,
+  `isshow` TINYINT(1) NOT NULL DEFAULT 1  COMMENT '显示' ,
+  `arc_sort` int(10) UNSIGNED NOT NULL DEFAULT 0  COMMENT '排序' ,
   `username` CHAR(20) NOT NULL default '',
   PRIMARY KEY (`aid`) ,
   INDEX `cid` (`cid` ASC))

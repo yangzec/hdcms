@@ -15,7 +15,6 @@
 <div id="top">
     <div class="top_menu">
         <ul class="nav">
-            <li><a href="#" lab="study">学生</a></li>
             <li><a href="#" lab="con">内容</a></li>
             <!--<li><a href="#" lab="html">生成</a></li>-->
             <!--<li><a href="#" lab="collect">采集</a></li>-->
@@ -51,31 +50,26 @@
 <!--顶部导航-->
 <!--左侧导航-->
 <div id="left">
-    <!--学生-->
-    <div id="study" class="menu_block action">
+    <!--内容-->
+    <div id="con" class="menu_block action">
         <h2>内容管理</h2>
         <ul class="menu">
             <?php foreach($model as $m):
-                $allowMid =array(6,7,9,12);
-                if(!in_array($m['mid'],$allowMid)){
+                $denyMid =array(6,7,9,12,18,19,20);
+                if(in_array($m['mid'],$denyMid)){
                     continue;
                 }
             ?>
             <?php if($m["enable"]):?>
-            <li <?php if($m['mid']==6) echo "class='action'";?>>
-                <a href="<?php echo U($m['control'].'/index',array('mid'=>$m['mid']))?>" >{$m.model_name}</a></li>
+            <li><a href="<?php echo U($m['control'].'/index',array('mid'=>$m['mid']))?>">{$m.model_name}</a></li>
             <?php endif;?>
             <?php endforeach;?>
         </ul>
-    </div>
-    <!--学生-->
-    <!--内容-->
-    <div id="con" class="menu_block">
-        <h2>内容管理</h2>
+        <h2>培训</h2>
         <ul class="menu">
             <?php foreach($model as $m):
-                $denyMid =array(6,7,9,12);
-                if(in_array($m['mid'],$denyMid)){
+                $denyMid =array(6,7,9,12,18,19,20);
+                if(!in_array($m['mid'],$denyMid)){
                     continue;
                 }
             ?>

@@ -44,14 +44,14 @@
                 var _table = $("table[lab='" + fieldType + "']");//当前select选择的类型表格
                 _table.appendTo("div#field_set_table");//将选中的添加到div中
                 //所有input第一个默认选中
-                $("td table td",_table).each(function(i){
-                    if($(this).find("input").length){
-                        $("input[type='radio']",this).eq(0).attr("checked","checked");
+                $("td table td", _table).each(function (i) {
+                    if ($(this).find("input").length) {
+                        $("input[type='radio']", this).eq(0).attr("checked", "checked");
                     }
                 })
                 //是否必须添写的表单
-                if($("input[name='required']",_table).length){
-                    $("input[name='required']",_table).eq(1).attr("checked","checked");
+                if ($("input[name='required']", _table).length) {
+                    $("input[name='required']", _table).eq(1).attr("checked", "checked");
                 }
 //                $("table.fieldParam").removeClass("action").addClass("recycle");
 //                var _table = $("table[lab='" + fieldType + "']");//表格
@@ -99,7 +99,7 @@
                     success: function (data) {
                         if (data.stat == 1) {
                             alert("字段添加成功");
-                            location.href = '{|U:"index",array("mid"=>$model['mid'])}';
+                            location.href = "{|U:'index',array('mid'=>$model['mid'])}";
                         } else {
                             alert(data.msg);
                             $("#field_set_table").append($("#recycle table.recycle"));
@@ -111,8 +111,13 @@
         })
     </script>
     <style type="text/css">
-        div#recycle{display:none;}
-        table.fieldParam{border-top:none;}
+        div#recycle {
+            display: none;
+        }
+
+        table.fieldParam {
+            border-top: none;
+        }
     </style>
 </head>
 <body>
@@ -455,14 +460,19 @@
                     <td style="width:100px;">格式设置</td>
                     <td>
                         <input type="radio" name="set[type]" value="yy-mm-dd"/> 日期 (2013-6-18)<br/>
-                        <input type="radio" name="set[type]" value="yy-mm-dd hh:ii:ss" /> 日期+时间 (2013-6-18 16:22:28)<br/>
+                        <input type="radio" name="set[type]" value="yy-mm-dd hh:ii:ss"/> 日期+时间 (2013-6-18 16:22:28)<br/>
                         <input type="hidden" name="set[default]" value=""/>
-                        <input type="hidden" name="field_type" value="int"/>
+                        <input type="hidden" name="field_type" value="char"/>
+                        <input type="hidden" name="field_size" value="30"/>
                     </td>
                 </tr>
                 <tr>
                     <td style="width:100px;">文本框长度</td>
-                    <td><input type="text" name="set[size]" class="w100" value="30"/> px
+                    <td>
+                        <input type="text" name="set[size]" class="w100" value="30"/> px
+                        <input type="hidden" name="validation" value="/^.+$/"/>
+                        <input type="hidden" name="error" value="不能为空"/>
+                    </td>
                 </tr>
             </table>
         </td>

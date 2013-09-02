@@ -8,6 +8,9 @@ class LoginControl extends Control
      */
     public function index()
     {
+        if(isset($_SESSION['uid']) && isset($_SESSION['RBAC'])){
+            go("index/index");
+        }
         $this->display();
     }
 
@@ -65,6 +68,8 @@ class LoginControl extends Control
     {
         //清空SESSION
         session(NULL);
-        go("index");
+        echo "<script>
+            window.top.location.href='".U("index")."';
+        </script>";
     }
 }

@@ -43,6 +43,12 @@ class IndexControl extends Control
         }
         $tpl = $field['template'] ? $field['template'] : $field['arc_tpl'];
         $field['url'] = getArticleUrl($field);
+        //分配操作系统等变量  当模型为学生项目时
+        if($mid=6){
+            $this->assign("pro_system",array("","window","Ubuntu","Fedora"));
+            $this->assign("pro_memory",array("","Mysql","Mysql+Memcache","Mysql+Redis"));
+            $this->assign("pro_language",array("","PHP+JavaScript+DivCss+Jquery+Html","JavaScript+DivCss+Jquery+Html"));
+        }
         $this->assign("field", $field);
         $arc_html = './template/' . str_replace("{style}", C("style"), $tpl);
         $this->display($arc_html);
@@ -63,6 +69,11 @@ class IndexControl extends Control
             $tpl = './template/' . str_replace("{style}", C("style"), $category['index_tpl']);
         } else {
             $tpl = './template/' . str_replace("{style}", C("style"), $category['list_tpl']);
+        }
+        if($mid=6){
+            $this->assign("pro_system",array("","window","Ubuntu","Fedora"));
+            $this->assign("pro_memory",array("","Mysql","Mysql+Memcache","Mysql+Redis"));
+            $this->assign("pro_language",array("","PHP+JavaScript+DivCss+Jquery+Html","JavaScript+DivCss+Jquery+Html"));
         }
         $this->assign("field", $category);
         $this->display($tpl);

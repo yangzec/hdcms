@@ -18,6 +18,25 @@ class CommonControl extends Control
     }
 
     /**
+     * 更改文章排序
+     */
+    public function setArcSort()
+    {
+        $arc_sort = $_POST['arc_sort'];
+        $mid = $this->_post("mid", "intval");
+        $db = M("model");
+        $model = $db->find($mid);
+        $dbArticle = M($model['tablename']);
+        foreach ($arc_sort as $aid => $sortId) {
+            $dbArticle->save(array(
+                "aid" => $aid,
+                "arc_sort" => $sortId
+            ));
+        }
+        echo 1;
+    }
+
+    /**
      * 获得栏目
      */
     protected function getCategory($mid = null)
@@ -50,31 +69,25 @@ class CommonControl extends Control
         if (!$mid) $this->error("模型mid为空，非法提交");
         $aid = $this->_get("aid", 'intval');
         if (!$aid) $this->error("文章aid为空，非法提交");
-        $db = M("model");
-        $model = $db->find($mid);
-        //获得主表数据
-        $field = $db->table($model['tablename'])->find($aid);
+        $model = M("model")->find(intval($_GET['mid']));
+        $db = K(COMMON_MODEL_PATH . 'ArticleView', $model['tablename'], array("dataTable" => true));
+        $field = $db->where($model['tablename'] . '.aid=' . intval($_GET['aid']))->find();
         //获得文章属性
         $field['flag'] = array();
-        $flag = $db->table("flag_relation")->all("aid=$aid");
+        $flag = $db->table("flag_relation")->join()->all("aid=$aid");
         if ($flag) {
             foreach ($flag as $f) {
                 $field['flag'][] = $f['fid'];
             }
         }
-        //获得附表数据
-        if ($model['type'] == 1) {
-            $sField = $db->table($model['tablename'] . '_data')->find('aid=' . $aid);
-            $field = array_merge($field, $sField);
-        }
         //用户自定义字段处理
-        $user_field = F($mid, false, './data/field');
+        $userField = F($mid, false, './data/field');
         //设置用户自定义字段
-        if ($user_field) {
-            foreach ($user_field as $k => $f) {
-                $user_field[$k]['html'] = O("FieldModel", "replaceValue", array("field" => $f, "value" => $field[$f['field_name']]));
+        if ($userField) {
+            foreach ($userField as $k => $f) {
+                $userField[$k]['html'] = O("FieldModel", "replaceValue", array("field" => $f, "value" => $field[$f['field_name']]));
             }
-            $this->assign("user_field", $user_field);
+            $this->assign("user_field", $userField);
         }
         //分配属性FLAG表单
         $this->assign("flag", M("flag")->all());
@@ -83,7 +96,7 @@ class CommonControl extends Control
         //分配栏目
         $this->assign("category", $this->getCategory($mid));
         //分配属性
-        $this->assign("flag", $db->table("flag")->all());
+        $this->assign("flag", $db->table("flag")->join()->all());
         $this->display();
     }
 
@@ -127,7 +140,7 @@ class CommonControl extends Control
         $this->setThumbImage($db, $aid, $cid, $mid, $model['type'] == 1 ? $tablename . '_data' : null);
         //添加属性
         $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
-        $this->success("文章编辑成功", U("index", "mid=$mid&cid={$_POST['cid']}"), 1);
+        $this->success("文章编辑成功", U("index", "mid=$mid"), 1);
     }
 
     /**
@@ -164,77 +177,57 @@ class CommonControl extends Control
     /**
      * 显示列表首页
      */
-    protected function showIndex($author = null)
+    protected function showIndex()
     {
         $mid = $this->_get("mid", 'intval');
         if (!$mid) $this->error("模型mid为空，非法提交");
         $model = M("model")->find($mid);
-        if ($model) {
-            //主表模型
-            $db = V($model['tablename']);
-            $category = $db->table("category")->all();
-            //属性 必须放在cid,order等条件前，因为取lastSql
-            $fid = $this->_post("fid", "intval");
-            if ($fid) {
-                $aids = $db->table("flag_relation")->field("aid")->where("mid=$mid and fid=$fid")->all();
-                $db->in(intval($aids));
-            }
-            //如果参数中有栏目cid则做条件使用
-            $cid = $this->_get("cid", "intval");
-            if (!$cid) {
-                $cid = $this->_post("cid");
-            }
-            if($stu_uid=$this->_get("stu_uid","intval")){
-                $db->where("stu_uid=$stu_uid");
-            }
-            //统计所有记录数
-            if ($cid) {
-                $cats = Data::channelList($category, $cid);
-                $catIds = array($cid);
-                if (!empty($cats)) {
-                    foreach ($cats as $c) {
-                        $catIds[] = $c['cid'];
-                    }
-                }
-                $db->where("cid in(" . implode(",", $catIds) . ")");
-            }
-
-            //排序
-            $order = " ";
-            if (isset($_POST['order'])) {
-                switch ($_POST['order']) {
-                    case "updatetime":
-                        $db->order("updatetime desc");
-                        break;
-                    case "click":
-                        $db->order("ORDER BY click desc");
-                        break;
-                }
-            }
-            //作者
-            $author = $this->_get("author");
-            if ($author) {
-                $db->where("author like '%{$author}%'");
-            }
-            if (!$author && $author = $this->_post("author")) {
-                $db->where("author like '%{$author}%'");
-            }
-            $count = $db->count();
-            //上条sql语句
-            $optOld = $db->db->optOld;
-            //设置分页
-            $page = new Page($count,12);
-            //查询当前页文章
-            $where = $cid ? " WHERE a.cid in(" . implode(",", $catIds) . ")" : "";
-            $fix = C("DB_PREFIX");
-            $sql = "SELECT * FROM " . $fix . $model['tablename'] . " AS a JOIN " . $fix . "category AS c ON a.cid=c.cid
-             " . str_replace("cid in", "a.cid in", $optOld['where']) . $optOld['order'] . " LIMIT " . current($page->limit());
-            $this->assign("flag", $db->table("flag")->all());
-            $this->assign("category", $db->table("category")->where("mid=$mid")->all());
-            $this->assign("page", $page->show());
-            $this->assign("content", $db->query($sql));
-            $this->display();
+        $table = $model['tablename'];
+        $pre= C("DB_PREFIX");
+        $db = K(COMMON_MODEL_PATH . "ArticleView", $table, array(
+            "dataTable" => false, //不关联数据表
+            "flag" => true //关联属性表
+        ));
+        $where = $order = "";
+        //查找指定栏目
+        if ($cid = $this->_get("cid")) {
+            $where = "category.cid=$cid";
         }
+        //查找用户
+        if ($username = $this->_get("username")) {
+            $where = $table . ".username like '%$username%'";
+        }
+        //查找角色
+        if ($rid = $this->_get("rid")) {
+            $where = "role.rid='$rid'";
+        }
+        //属性
+        if ($fid = $this->_get("fid")) {
+            $where = "flag_relation.fid=$fid";
+        }
+        //排序
+        $order = $this->_get("order");
+        switch ($order) {
+            case "updatetime":
+                $order = "updatetime desc";
+                break;
+            case "click":
+                $order = "click desc";
+                break;
+            default:
+                $order = "arc_sort desc,hd_{$table}.aid desc ";
+        }
+        //设置分页
+        $total = $db->where($where)->order($order)->field("count(distinct hd_{$table}.aid)", true)->count();
+        $page = new Page($total, 12);
+        $this->assign("flag", $db->table("flag")->join()->all());
+        $this->assign("category", $db->table("category")->join()->where("mid=$mid")->all());
+        $data = $db->where($where)->order($order)->limit($page->limit())->group("{$table}.aid")->all();
+        $this->assign("data", $data);
+        $this->assign("role", $db->table("role")->join()->all());
+        $this->assign("page", $page->show());
+        session("historyUrl", __URL__);
+        $this->display();
     }
 
     /**
@@ -279,7 +272,7 @@ class CommonControl extends Control
         $model = $this->getModel($mid);
         $_POST['addtime'] = time();
         $_POST['updatetime'] = isset($_POST['updatetime']) ? strtotime($_POST['updatetime'] . " " . date("h:i:s")) : time();
-        $_POST['username'] = $_SESSION["username"];
+        $_POST['username'] = isset($_POST['username']) ? $_POST['username'] : $_SESSION["username"];
         $tablename = $model['tablename']; //主表名
         //描述为空时，取正文内容
         if (empty($_POST[$tablename . '_data']['description']) && $model['type'] == 1) {
@@ -307,7 +300,7 @@ class CommonControl extends Control
         if (!empty($_POST['flag'])) {
             $this->updateFlag($mid, $cid, $aid, $_POST['flag']);
         }
-        $this->success("添加文章成功", U("index", "mid=$mid&cid=$cid"), 1);
+        $this->success("添加文章成功", U("index", "mid=$mid"), 1);
     }
 
     /**

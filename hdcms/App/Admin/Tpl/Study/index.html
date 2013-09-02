@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <css file="__STATIC__/Css/common.css"/>
-    <css file="__CONTROL_TPL__/Css/article.css"/>
+    <css file="__TPL__/Article/Css/article.css"/>
     <title>文章列表</title>
     <jquery/>
     <jsconst/>
@@ -40,23 +40,56 @@
             })
             return false;
         }
+        //搜索
+        $(function () {
+            $("#searchForm").submit(function () {
+                var url = "{|U:'index',array('mid'=>$_GET['mid'])}";
+                $(this).find("[name]").each(function (i) {
+                    var val = $(this).val();
+                    if (val) {
+                        url += "&" + $(this).serialize();
+                    }
+                })
+                location.href = url;
+                return false;
+            })
+        })
+        //更改排序
+        function setArcSort() {
+            var data = $("[name^=arc_sort]").serialize();
+            data+= "&mid={$hd.get.mid}";
+            $.post("{|U:'setArcSort'}", data, function (data) {
+                if (data == 1) {
+                    window.location.reload(true);
+                }
+            })
+        }
     </script>
 </head>
 <body>
 <div class="search">
-    <form action="{|U:'index',array('mid'=>$_GET['mid'])}" method="post">
-
+    <form action="{|U:'index',array('mid'=>$_GET['mid'])}" id="searchForm">
         <ul>
             <li>
                 <select name="cid">
-                    <option value="">==选择栏目==</option>
-                    <list from="$category" name="c">
-                        <option value="{$c.cid}">{$c.catname}</option>
+                    <option value="">==栏目==</option>
+                    <list from="$category" name="d">
+                        <option value="{$d.cid}">{$d.catname}</option>
                     </list>
                 </select>
             </li>
             <li>
-                作者: <input type="text" name="author" class="w80"/>
+                <select name="rid">
+                    <option value="">==班级==</option>
+                    <list from="$role" name="r">
+                        <if value="strstr($r['rname'],'班')">
+                            <option value="{$r.rid}">{$r.rname}</option>
+                        </if>
+                    </list>
+                </select>
+            </li>
+            <li>
+                作者: <input type="text" name="username" class="w80"/>
             </li>
             <li>
                 <select name="order">
@@ -82,10 +115,8 @@
 </div>
 <div class="right_content">
     <div class="menu">
-        <a href="#" class="action">内容列表</a> <span>|</span>
-        <a href="{|U:add,array('mid'=>$_GET['mid'])}<if value='$hd.get.cid'>&cid={$hd.get.cid}</if>"
-        <if value='METHOD=="add"'>class='action'</if>
-        >添加文章</a>
+        <a href="{|U:'index',array('mid'=>$_GET['mid'])}" class="action">全部内容</a> <span>|</span>
+        <a href="{|U:add,array('mid'=>$_GET['mid'])}">添加文章</a>
     </div>
     <div class="content">
         <table class="table table-title">
@@ -93,67 +124,62 @@
             <tr>
                 <td width="30"><input type="checkbox" name="select_all"/></td>
                 <td width="30">id</td>
+                <td width="30">排序</td>
                 <td>标题</td>
-                <td width="80">学生</td>
-                <td width="100">所属栏目</td>
-                <td width="150">更新时间</td>
-                <td width="60">点击</td>
-                <td width="80">发布人</td>
+                <td width="120">所属栏目</td>
+                <td width="120">更新时间</td>
+                <td width="50">点击</td>
+                <td width="120">发布人</td>
                 <td width="100">操作</td>
             </tr>
             </thead>
             <tbody>
-            <list from="$content" name="c">
+            <list from="$data" name="d">
                 <tr>
-                    <td><input type="checkbox" name="aids[]" value="{$c.aid}"/></td>
-                    <td>{$c.aid}</td>
+                    <td><input type="checkbox" name="aids[]" value="{$d.aid}"/></td>
+                    <td>{$d.aid}</td>
                     <td>
-                        <a href="{|U:'Index/Index/article',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}"
-                           target="_blank">{$c.title|mb_substr:0,26,"utf8"}</a>
+                        <input type="text" name="arc_sort[{$d.aid}]" value="{$d.arc_sort}"
+                               style="width:30px;padding:0px 3px;"/>
+                    </td>
+                    <td>
+                        <a href="{|U:'Index/Index/article',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'])}"
+                           target="_blank">{$d.title|mb_substr:0,20,"utf-8"}</a>
                         <span>
-                            <?php $flag=getArticleFlag($c['aid'],$c['cid'],$c['mid']);
-                            if($flag){
-                                $_flag_show='[<span style="color:#a40000;">';
-                                foreach($flag as $f){
-                                    $_flag_show.=$f["flagname"].',';
-                                }
-                                echo rtrim($_flag_show,',').'</span>]';
-                        }
-                        ?>
+                            {|getArticleFlag:$d['aid'],$d['cid'],$d['mid']}
                         </span>
                     </td>
-                    <td width="80">
-                        <a href="{|U:'index',array('mid'=>$_GET['mid'],'stu_uid'=>$c['stu_uid'])}">{|getStuName:$c['stu_uid']}</a>
-                    </td>
                     <td>
-                        <a href="{|U:'index',array('cid'=>$c['cid'],'mid'=>$c['mid'])}">
-                            {$c.catname}
+                        <a href="{|U:'index',array('cid'=>$d['cid'],'mid'=>$d['mid'])}">
+                            {$d.catname}
                         </a>
                     </td>
-                    <td>{$c.updatetime|date:"Y-m-d h:i",@@}</td>
-                    <td>{$c.click}</td>
+                    <td>{$d.updatetime|date:"Y-m-d h:i",@@}</td>
+                    <td>{$d.click}</td>
                     <td>
-                        <a href="{|U:'index',array('author'=>$c['username'])}">{$c.username}</a>
+                        <a href="{|U:'index',array('author'=>$d['username'],'mid'=>$d['mid'],'username'=>$d['username'])}">{$d.username}</a>
+                        <a href="{|U:'index',array('rid'=>$d['rid'],'mid'=>$d['mid'])}">({$d.rname})</a>
                     </td>
                     <td>
-                        <a href="{|U:'Index/Index/article',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}"
+                        <a href="{|U:'Index/Index/article',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'])}"
                            target="_blank">预览</a> |
-                        <a href="{|U:'edit',array('aid'=>$c['aid'],'mid'=>$c['mid'],'cid'=>$c['cid'])}">修改</a> |
+                        <a href="{|U:'edit',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'],'rid'=>$d['rid'])}">修改</a> |
                         <a href="javascript:;"
-                           onclick="return confirm('确定删除文章【{$c.title}】吗？')?delArticle({$c.aid}):false">删除</a>
+                           onclick="return confirm('确定删除文章【{$d.title}】吗？')?delArticle({$d.aid}):false">删除</a>
                     </td>
                 </tr>
             </list>
             </tbody>
         </table>
     </div>
-    <?php if(!empty($content)):?>
-        <div style="float:left; margin-top:20px;">
-            <input type="button" class="btn1" onclick="return confirm('确定删除文章吗？')?delArticle():false;" value="删除"/>
-        </div>
-        <div class="page1">
-            {$page}
-        </div>
+    <?php if(!empty($data)):?>
+    <div style="float:left; margin-top:20px;">
+        <input type="button" class="btn1" onclick="return confirm('确定删除文章吗？')?delArticle():false;" value="删除"/>
+        <input type="button" class="btn1" onclick="setArcSort()" value="排序"/>
+    </div>
+    <div class="page1">
+        {$page}
+    </div>
     <?php endif;?>
 </div>
 </body>

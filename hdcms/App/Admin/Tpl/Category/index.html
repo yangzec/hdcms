@@ -4,7 +4,7 @@
     <tr>
         <td width="30">CID</td>
         <td>栏目名称</td>
-        <td width="100">所属模型</td>
+        <td width="180">所属模型</td>
         <td width="50">访问</td>
         <td width="130">操作</td>
     </tr>
@@ -15,11 +15,11 @@
             <td>{$c.cid}</td>
             <td>
                 <a href="{|U:'showContentList',array('cid'=>$c['cid'])}">
-                    <if value="$c.pid!=0">└</if>{$c.html}{$c.catname}</a>
+                    <if value="$c.pid!=0">└</if>{$c.html}{$c.catname}({|getArticleCount:$c['cid'],$c['mid']})</a>
             </td>
 
             <td>
-                <a href="{|U:$c['control'].'/index','mid='.$c['mid']}">{$c.model_name}({|getArticleCount:$c['cid'],$c['mid']})</a>
+                <a href="{|U:$c['control'].'/index','mid='.$c['mid']}">{$c.model_name}</a>
             </td>
             <td><a href="{|U:'index/index/category',array('cid'=>$c['cid'],'mid'=>$c['mid'])}" target="_blank">访问</a></td>
             <td>

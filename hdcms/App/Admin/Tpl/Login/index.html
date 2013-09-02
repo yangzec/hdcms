@@ -8,6 +8,13 @@
     <css file="__CONTROL_TPL__/Css/login.css"/>
     <js file="__CONTROL_TPL__/Js/js.js"/>
     <script>
+        $(function(){
+            if ($(window.top.document).find("iframe").length) {
+                window.top.location.reload(true);
+            }
+        })
+    </script>
+    <script>
         $(function () {
             $("form").validation({
                 //=================修改个人资料=================

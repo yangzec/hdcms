@@ -15,14 +15,39 @@ function categoryMemberAccess($action, $rid, $access)
     }
 }
 
-function getArticleFlag($aid, $cid, $mid)
+/**
+ * 获得文章属性
+ * @param $aid 文章aid
+ * @param $cid 栏目cid
+ * @param $mid 模型mid
+ * @param $type 1| 字符串  2|数组
+ * @return mixed
+ */
+function getArticleFlag($aid, $cid, $mid, $type = 1)
 {
     $db = M();
     $pre = C("DB_PREFIX");
-    $sql = "SELECT distinct(flagname) from {$pre}flag as f JOIN {$pre}flag_relation as fr ";
+    $sql = "SELECT f.fid,flagname from {$pre}flag as f JOIN {$pre}flag_relation as fr";
     $sql .= " ON f.fid=fr.fid ";
     $sql .= " WHERE fr.aid=$aid AND fr.cid=$cid AND fr.mid=$mid";
-    return $db->query($sql);
+    $sql .= " GROUP BY f.fid";
+    $data = $db->query($sql);
+    if ($data) {
+        switch ($type) {
+            case 1:
+                $str = "<span class='flag'>[";
+                $url = U("index", array("aid" => $aid, "cid" => $cid, "mid" => $mid));
+                foreach ($data as $d) {
+                    $str .= "<a href='{$url}&fid=" . $d["fid"] . "' >" . $d['flagname'] . "</a>&nbsp;";
+                }
+                return substr($str, 0, -6) . ']</span>';
+                break;
+            default:
+                return $data;
+        }
+    } else {
+        return '';
+    }
 }
 
 /**
@@ -38,7 +63,8 @@ function getArticleCount($cid, $mid)
         $db = M("model");
     }
     $model = $db->find($mid);
-    return $db->table($model['tablename'])->where("cid=$cid")->count();
+    $c= $db->table($model['tablename'])->where("cid=$cid")->count();
+    return $c;
 }
 
 /**
