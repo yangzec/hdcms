@@ -1,0 +1,97 @@
+div.work h3 {
+    color: #444;
+    font-weight: bold;
+}
+
+div.work p {
+    color: #666;
+    font-size: 12px;
+    line-height: 2em;
+    text-indent: 2em;
+    margin-bottom: 10px;
+}
+
+div.work h4 {
+    font-size: 18px;
+    background: #fcfcfc;
+    color: #d6d6d6;
+    padding: 2px 8px;
+    margin-bottom: 35px;
+}
+
+ul.class_table li {
+    margin-bottom: 20px;
+    border: solid 8px #ececec;
+    padding:10px;
+}
+
+ul.class_table li div.title {
+
+    padding: 8px 10px;
+    height: 35px;
+
+    margin-bottom: 10px;
+}
+
+ul.class_table li div.title h5 {
+    float: left;
+    width: 180px;
+}
+
+ul.class_table li div.title h5 a {
+    color: #444;
+    font-size: 38px;
+}
+
+ul.class_table li div.title h5 a:hover {
+    color: #950000;
+}
+
+ul.class_table li div.title h6 {
+    float: right;
+    height: 35px;
+    width: 520px;
+    font-size: 18px;
+    color: #950000;
+    line-height: 60px;
+}
+ul.class_table li div.title h6 a{
+    color: #950000;
+}
+ul.class_table li div.title h6 a:hover{
+    text-decoration: underline;
+}
+
+ul.class_table li p {
+    color: #444;
+    font-size: 12px;
+}
+ul.class_table li p a{
+    color: #444;
+}
+
+ul.class_table li a.link {
+    color: #00a4d5;
+    font-size: 12px;
+    float: right;padding-right:15px;
+}
+ul.class_table li a.link:hover{
+    color:#f00f00;
+}
+/****课程表*****/
+div.lesson{
+
+}
+div.lesson table{
+    border-collapse: collapse;
+    border:solid 1px #333;
+    width:100%;
+    line-height: 20px;
+}
+div.lesson table th{
+    background:#dadada;color:#333;
+}
+div.lesson table td{
+    padding:5px;
+    font-size:12px;
+}

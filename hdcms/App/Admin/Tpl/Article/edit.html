@@ -18,7 +18,7 @@
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
         <else>
-            <?php foreach($user_field as $f):?>
+            <?php foreach($userField as $f):?>
             <?php if($f['show_type']=='editor'):?>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
@@ -108,7 +108,7 @@
             <tr>
                 <th>跳转地址</th>
                 <td>
-                    <input type="text" name="redirecturl" class="w300" value="{$field.redirecturl}"/>
+                    <input type="text" name="redirecturl" class="w400" value="{$field.redirecturl}"/>
                     <span></span>
                 </td>
 
@@ -226,7 +226,7 @@
                     <input type="text" name="click" class="w100" value="{$field.click}"/> 次
                 </td>
             </tr>
-            <list from="$user_field" name="f">
+            <list from="$userField" name="f">
                 {$f.html}
             </list>
             <tr>

@@ -21,7 +21,7 @@
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
         <else>
-            <?php foreach($user_field as $f):?>
+            <?php foreach($userField as $f):?>
             <?php if($f['show_type']=='editor'):?>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
@@ -95,8 +95,7 @@
                                         <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>
                                         <if value="$cat['cid']==$field['cid']">selected="selected"</if>
                                         >
-                                        <if value="$cat.pid!=0">└</if>
-                                        {$cat.html}{$cat.catname}
+                                        <if value="$cat.pid!=0">└</if>{$cat.html}{$cat.catname}
                                         <if value="$cat['cattype']==2">(频道封面)</if>
                                         </option>
                                     </list>
@@ -107,7 +106,7 @@
                         <tr>
                             <th>跳转地址</th>
                             <td>
-                                <input type="text" name="redirecturl" class="w300"/>
+                                <input type="text" name="redirecturl" class="w400" value="{$field.redirecturl}"/>
                                 <span></span>
                             </td>
                         </tr>
@@ -128,7 +127,7 @@
                             </td>
                         </tr>
                         <?php endif;?>
-                        <list from="$user_field" name="f">
+                        <list from="$userField" name="f">
                             {$f.html}
                         </list>
                         <tr>

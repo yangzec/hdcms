@@ -7,6 +7,7 @@
  */
 class IndexControl extends RbacControl
 {
+
     function index()
     {
         $this->assign("model", M("model")->all());

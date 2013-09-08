@@ -58,7 +58,7 @@
         //更改排序
         function setArcSort() {
             var data = $("[name^=arc_sort]").serialize();
-            data+= "&mid={$hd.get.mid}";
+            data += "&mid={$hd.get.mid}";
             $.post("{|U:'setArcSort'}", data, function (data) {
                 if (data == 1) {
                     window.location.reload(true);
@@ -72,7 +72,7 @@
     <form action="{|U:'index',array('mid'=>$_GET['mid'])}" id="searchForm">
         <ul>
             <li>
-                <select name="cid">
+                <select name="search[cid]">
                     <option value="">==栏目==</option>
                     <list from="$category" name="d">
                         <option value="{$d.cid}">{$d.catname}</option>
@@ -80,7 +80,10 @@
                 </select>
             </li>
             <li>
-                <select name="rid">
+                标题: <input type="text" name="search[title]" class="w100"/>
+            </li>
+            <li>
+                <select name="search[rid]">
                     <option value="">==角色==</option>
                     <list from="$role" name="r">
                         <option value="{$r.rid}">{$r.rname}</option>
@@ -92,15 +95,15 @@
             </li>
             <li>
                 <select name="order">
-                    <option value="">==排序==</option>
-                    <option value="updatetime">更新时间</option>
+                    <option value="">===排序===</option>
+                    <option value="updatetime">修改时间</option>
                     <option value="click">点击次数</option>
                 </select>
             </li>
             <li>
                 属性:
-                <select name="fid">
-                    <option value="">==属性==</option>
+                <select name="search[fid]">
+                    <option value="">===属性===</option>
                     <list from="$flag" name="f">
                         <option value="{$f.fid}">{$f.flagname}</option>
                     </list>
@@ -149,7 +152,7 @@
                         </span>
                     </td>
                     <td>
-                        <a href="{|U:'index',array('cid'=>$d['cid'],'mid'=>$d['mid'])}">
+                        <a href="{|U:'index',array('search[cid]'=>$d['cid'],'mid'=>$d['mid'])}">
                             {$d.catname}
                         </a>
                     </td>
@@ -157,12 +160,13 @@
                     <td>{$d.click}</td>
                     <td>
                         <a href="{|U:'index',array('author'=>$d['username'],'mid'=>$d['mid'],'username'=>$d['username'])}">{$d.username}</a>
-                        <a href="{|U:'index',array('rid'=>$d['rid'],'mid'=>$d['mid'])}">({$d.rname})</a>
+                        <a href="{|U:'index',array('search[rid]'=>$d['rid'],'mid'=>$d['mid'])}">({$d.rname})</a>
                     </td>
                     <td>
                         <a href="{|U:'Index/Index/article',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'])}"
                            target="_blank">预览</a> |
-                        <a href="{|U:'edit',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'])}">修改</a> |
+                        <a href="{|U:'edit',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'],'rid'=>$d['rid'])}">修改</a>
+                        |
                         <a href="javascript:;"
                            onclick="return confirm('确定删除文章【{$d.title}】吗？')?delArticle({$d.aid}):false">删除</a>
                     </td>

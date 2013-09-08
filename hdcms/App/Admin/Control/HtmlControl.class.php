@@ -6,7 +6,9 @@
  */
 class HtmlControl extends Control
 {
-
+    public function abc($a){
+        echo $a;
+    }
     /**
      * 生成首页
      */

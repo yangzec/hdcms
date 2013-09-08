@@ -25,48 +25,26 @@ return array (
   2 => 
   array (
     'mid' => '6',
-    'model_name' => '学生项目展示',
+    'model_name' => '项目展示',
     'tablename' => 'project',
     'enable' => '1',
     'description' => '',
-    'control' => 'ff',
+    'control' => 'Study',
     'type' => '2',
-    'is_submit' => '1',
+    'is_submit' => '0',
   ),
   3 => 
   array (
     'mid' => '7',
-    'model_name' => '开学典礼',
+    'model_name' => '就业达人',
     'tablename' => 'ofschool',
     'enable' => '1',
     'description' => '',
-    'control' => 'Article',
+    'control' => 'Study',
     'type' => '2',
-    'is_submit' => '0',
-  ),
-  4 => 
-  array (
-    'mid' => '11',
-    'model_name' => '学习日志',
-    'tablename' => 'stu_notice',
-    'enable' => '1',
-    'description' => '',
-    'control' => 'Article',
-    'type' => '1',
     'is_submit' => '1',
   ),
-  5 => 
-  array (
-    'mid' => '9',
-    'model_name' => '就业达人',
-    'tablename' => 'jiuye',
-    'enable' => '1',
-    'description' => '就业达人',
-    'control' => 'Article',
-    'type' => '2',
-    'is_submit' => '0',
-  ),
-  6 => 
+  4 => 
   array (
     'mid' => '10',
     'model_name' => '盾友感想',
@@ -77,38 +55,49 @@ return array (
     'type' => '2',
     'is_submit' => '0',
   ),
-  7 => 
+  5 => 
   array (
     'mid' => '12',
     'model_name' => '开课信息',
     'tablename' => 'course',
     'enable' => '1',
     'description' => '',
+    'control' => 'Study',
+    'type' => '2',
+    'is_submit' => '0',
+  ),
+  6 => 
+  array (
+    'mid' => '20',
+    'model_name' => '课程表',
+    'tablename' => 'lesson_table',
+    'enable' => '1',
+    'description' => '',
     'control' => 'Article',
     'type' => '2',
     'is_submit' => '0',
   ),
-  8 => 
+  7 => 
   array (
-    'mid' => '13',
-    'model_name' => 'dsf',
-    'tablename' => 'sdf',
+    'mid' => '19',
+    'model_name' => '开学典礼',
+    'tablename' => 'kaixue',
     'enable' => '1',
     'description' => '',
-    'control' => 'Ds',
-    'type' => '1',
-    'is_submit' => '0',
+    'control' => 'Study',
+    'type' => '2',
+    'is_submit' => '1',
   ),
-  9 => 
+  8 => 
   array (
-    'mid' => '14',
-    'model_name' => 'asdf',
-    'tablename' => 'sdfsdf',
+    'mid' => '18',
+    'model_name' => '学习日记',
+    'tablename' => 'stu_notice',
     'enable' => '1',
-    'description' => 'sdf',
-    'control' => 'Article',
-    'type' => '1',
-    'is_submit' => '0',
+    'description' => '',
+    'control' => 'Study',
+    'type' => '2',
+    'is_submit' => '1',
   ),
 );
 ?>

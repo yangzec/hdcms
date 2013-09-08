@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>{$field.catname}-{$hd.config.webname}</title>
+    <hdui/>
+    <link href="__TPL__/static/css/here.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top_line">
+    顶部线
+</div>
+<div id="top">
+    <a class="logo" href="__ROOT__" alt="进入首页"> 后盾网首页 </a>
+
+    <div class="top_right">
+        <div class="tel">
+            <span class="msg">咨询电话:</span><span class="number"> 010-6482 5057 </span>
+        </div>
+        <div class="weibo">
+            <a class="sina" href="http://weibo.com/houdunwangxj"> 新浪微博 </a><a class="qq"
+                                                                              href="http://weibo.com/houdunwangxj">
+            腾讯微博 </a>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div id="menu">
+    <load file="__TPL__/block/top_links.html"/>
+</div>
+<!--导航-->
+<!---不分组--->
+<div class="no_group">
+
+</div>
+<!---不分组--->
+<!---左侧块--->
+<div id="here_body">
+    <div class="here_left">
+        <!--分类标题-->
+        <div class="category">
+            <ul>
+                <li class="l">
+                    <a href="#">
+                        <img src="__TPL__/static/images/here_ceremony.gif"/>
+                    </a>
+                </li>
+                <li class="r">
+                    <a href="#">
+                        <img src="__TPL__/static/images/here_diary.gif"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--分类标题-->
+        <!--文章列表-->
+        <div class="logs">
+            <ul>
+                <pagelist row="10">
+                    <li>
+                        <h3>
+                            <a href="{$hd_field.url}" target="_blank">
+                                {$hd_field.title|mb_substr:0,26,"utf-8"}
+                            </a>
+                        </h3>
+
+                    </li>
+                </pagelist>
+            </ul>
+            <div class="page1">
+                <pageshow>
+            </div>
+        </div>
+        <!--文章列表-->
+    </div>
+    <!--右侧-->
+    <div class="here_right">
+        <!--开班信息-->
+        <div class="course_info course_info_red r w290">
+            <dl>
+                <dt>
+                    <span>开班信息</span>
+                </dt>
+                <dd>
+                    <load file="__TPL__/block/lesson_list.html"/>
+                </dd>
+            </dl>
+            <div class="butterfly"></div>
+        </div>
+        <!--开班信息-->
+    </div>
+    <!--最新PHP视频-->
+    <div class="tab_news r">
+        <div class="tab_menu">
+            <h3>后盾网最新视频</h3>
+        </div>
+        <div class="tab1 tab_content w290">
+            <ul>
+                <arclist cid="40" row="20">
+
+                    <li>
+                        <span class="id">{$hd_field.arclist_id}</span>
+                    <span class="title">
+                        <a href="{$hd_field.url}">{$hd_field.title|mb_substr:0,16,'utf-8'}</a>
+                    </span>
+                        <span class="clock">{$hd_field.updatetime|date:"Y-m-d",@@}</span>
+                    </li>
+                </arclist>
+            </ul>
+        </div>
+    </div>
+    <!--最新PHP视频-->
+</div>
+<!---右侧块--->
+
+<!--学员就业企业-->
+<div class="enterprise">
+    <h3>学员就业企业</h3>
+</div>
+<!--学员就业企业-->
+<!--声明--->
+<div class="project_solemn">
+    学员项目声明
+</div>
+<!--声明--->
+<load file="__TPL__/block/footer.html"/>
+</body>
+</html>

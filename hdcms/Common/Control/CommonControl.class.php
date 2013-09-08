@@ -87,7 +87,7 @@ class CommonControl extends Control
             foreach ($userField as $k => $f) {
                 $userField[$k]['html'] = O("FieldModel", "replaceValue", array("field" => $f, "value" => $field[$f['field_name']]));
             }
-            $this->assign("user_field", $userField);
+            $this->assign("userField", $userField);
         }
         //分配属性FLAG表单
         $this->assign("flag", M("flag")->all());
@@ -183,27 +183,26 @@ class CommonControl extends Control
         if (!$mid) $this->error("模型mid为空，非法提交");
         $model = M("model")->find($mid);
         $table = $model['tablename'];
-        $pre= C("DB_PREFIX");
         $db = K(COMMON_MODEL_PATH . "ArticleView", $table, array(
             "dataTable" => false, //不关联数据表
             "flag" => true //关联属性表
         ));
         $where = $order = "";
-        //查找指定栏目
-        if ($cid = $this->_get("cid")) {
-            $where = "category.cid=$cid";
-        }
-        //查找用户
-        if ($username = $this->_get("username")) {
-            $where = $table . ".username like '%$username%'";
-        }
-        //查找角色
-        if ($rid = $this->_get("rid")) {
-            $where = "role.rid='$rid'";
-        }
-        //属性
-        if ($fid = $this->_get("fid")) {
-            $where = "flag_relation.fid=$fid";
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            foreach ($_GET["search"] as $fieldName => $value) {
+                if ($fieldName == 'rid') {
+                    $where .= "role.rid='$value' AND ";
+                } else if ($fieldName == 'fid') {
+                    $where .= "flag_relation.fid='$value' AND ";
+                } else if ($fieldName == 'title') {
+                    $where .= "{$table}.title like '%{$value}%' AND ";
+                } else if ($fieldName == 'username') {
+                    $where .= "{$table}.username like '%{$value}%' AND ";
+                } else {
+                    $where .= $table . '.' . $fieldName . '=' . $value . ' AND ';
+                }
+            }
+            $where = substr($where, 0, -4);
         }
         //排序
         $order = $this->_get("order");
@@ -225,7 +224,7 @@ class CommonControl extends Control
         $data = $db->where($where)->order($order)->limit($page->limit())->group("{$table}.aid")->all();
         $this->assign("data", $data);
         $this->assign("role", $db->table("role")->join()->all());
-        $this->assign("page", $page->show());
+        $this->assign("page", $page->show(3));
         session("historyUrl", __URL__);
         $this->display();
     }
@@ -245,7 +244,7 @@ class CommonControl extends Control
             foreach ($user_field as $k => $f) {
                 $user_field[$k]['html'] = O("FieldModel", "replaceValue", array("field" => $f));
             }
-            $this->assign("user_field", $user_field);
+            $this->assign("userField", $user_field);
         }
         //分配属性FLAG表单
         $this->assign("flag", M("flag")->all());
@@ -375,6 +374,23 @@ class CommonControl extends Control
                 $_POST['flag'][] = 4;
             }
         }
+    }
+
+    public function delUploadFieldImg()
+    {
+        $path = $this->_post("path");
+        $name = $this->_post("name");
+        $mid = $this->_post("mid", "intval");
+        $aid = $this->_post("aid", "intval");
+        if ($mid) {
+            $db = M("model");
+            $model = $db->find($mid);
+            $db->table($model['tablename'])->save(array("aid" => $aid, $name => ""));
+        }
+        //删除upload表
+        $db->table("upload")->where("path='{$path}'")->del();
+        echo 1;
+        exit;
     }
 
     /**

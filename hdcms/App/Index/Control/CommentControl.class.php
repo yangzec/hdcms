@@ -7,6 +7,7 @@ class CommentControl extends Control
 {
     public function index()
     {
+        echo 333;exit;
         $aid = $this->_get("aid");
         $db = M("comment");
         $count = $db->where("aid=$aid")->count();

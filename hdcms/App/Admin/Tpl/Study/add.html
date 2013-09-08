@@ -21,7 +21,7 @@
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
         <else>
-            <?php foreach($user_field as $f):?>
+            <?php foreach($userField as $f):?>
             <?php if($f['show_type']=='editor'):?>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
@@ -87,10 +87,7 @@
                                         <option value="{$cat.cid}"
                                         <if value="$hd.get.cid && $cat['cid']==$_GET['cid']">selected="selected"</if>
                                         cattype="{$cat.cattype}"
-                                        <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>
-                                        >
-                                        <if value="$cat.pid!=0">└</if>
-                                        {$cat.html}{$cat.catname}
+                                        <if value="$cat['cattype']==2">style="background:#dadada;color:#333;"</if>><if value="$cat.pid!=0">└</if>{$cat.html}{$cat.catname}
                                         <if value="$cat['cattype']==2">(频道封面)</if>
                                         </option>
                                     </list>
@@ -118,7 +115,7 @@
                             </td>
                         </tr>
                         <?php endif;?>
-                        <list from="$user_field" name="f">
+                        <list from="$userField" name="f">
                             {$f.html}
                         </list>
                     </table>

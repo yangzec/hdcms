@@ -10,6 +10,7 @@
     <jsconst/>
     <hdui/>
     <script>
+        //全选或反选
         $(function () {
             $("input[name='select_all']").click(function () {
                 if ($(this).attr("checked")) {
@@ -71,36 +72,37 @@
     <form action="{|U:'index',array('mid'=>$_GET['mid'])}" id="searchForm">
         <ul>
             <li>
-                <select name="cid">
-                    <option value="">==栏目==</option>
+                <select name="search[cid]">
+                    <option value="">===栏目===</option>
                     <list from="$category" name="d">
                         <option value="{$d.cid}">{$d.catname}</option>
                     </list>
                 </select>
             </li>
             <li>
-                <select name="rid">
-                    <option value="">==班级==</option>
+                标题: <input type="text" name="search[title]" class="w100"/>
+            </li>
+            <li>
+                <select name="search[rid]">
+                    <option value="">===角色===</option>
                     <list from="$role" name="r">
-                        <if value="strstr($r['rname'],'班')">
-                            <option value="{$r.rid}">{$r.rname}</option>
-                        </if>
+                        <option value="{$r.rid}">{$r.rname}</option>
                     </list>
                 </select>
             </li>
             <li>
-                作者: <input type="text" name="username" class="w80"/>
+                作者: <input type="text" name="search[username]" class="w80"/>
             </li>
             <li>
                 <select name="order">
                     <option value="">==排序==</option>
-                    <option value="updatetime">更新时间</option>
+                    <option value="updatetime">修改时间</option>
                     <option value="click">点击次数</option>
                 </select>
             </li>
             <li>
                 属性:
-                <select name="fid">
+                <select name="search[fid]">
                     <option value="">==属性==</option>
                     <list from="$flag" name="f">
                         <option value="{$f.fid}">{$f.flagname}</option>
@@ -150,7 +152,7 @@
                         </span>
                     </td>
                     <td>
-                        <a href="{|U:'index',array('cid'=>$d['cid'],'mid'=>$d['mid'])}">
+                        <a href="{|U:'index',array('search[cid]'=>$d['cid'],'mid'=>$d['mid'])}">
                             {$d.catname}
                         </a>
                     </td>
@@ -158,7 +160,7 @@
                     <td>{$d.click}</td>
                     <td>
                         <a href="{|U:'index',array('author'=>$d['username'],'mid'=>$d['mid'],'username'=>$d['username'])}">{$d.username}</a>
-                        <a href="{|U:'index',array('rid'=>$d['rid'],'mid'=>$d['mid'])}">({$d.rname})</a>
+                        <a href="{|U:'index',array('search[rid]'=>$d['rid'],'mid'=>$d['mid'])}">({$d.rname})</a>
                     </td>
                     <td>
                         <a href="{|U:'Index/Index/article',array('aid'=>$d['aid'],'mid'=>$d['mid'],'cid'=>$d['cid'])}"

@@ -37,3 +37,46 @@ $(function () {
         }
     })
 })
+//自定义上传图片字段，当鼠标移动到上面时，显示放大图片，移出图片时放大图片隐藏
+$(function () {
+    $("img[lab='upload_field_img']").mouseover(function (event) {
+        var _top = $(window).height() - 450;
+        var _src = $(this).attr("src");
+        var _div = "<div id='upload_field_thumb' style='position: absolute;'><img src='" + _src + "' width='260' height='260'/></div>";
+        $("body").append(_div);
+        var _offset = $(this).offset();
+        $("#upload_field_thumb").css({top: _offset.top - 50, left: _offset.left + 90, "z-index": 100});
+    })
+    $("img[lab='upload_field_img']").mouseleave(function (event) {
+        $("#upload_field_thumb").remove();
+    });
+})
+//删除图片
+$(function () {
+    //移到图片上显示删除按钮
+    $("span.upload_field_img").mouseenter(function () {
+        $(this).find("a").show();
+    }).mouseleave(function () {
+            $(this).find("a").hide();
+        })
+
+})
+//删除图片
+function delUploadFieldImg(obj,name) {
+    var data = {
+        path: $("[name='" + name + "']").val(),
+        name: name
+    };
+    var aid = $("[name='aid']").val();
+    var mid = $("[name='mid']").val();
+    if (aid) {
+        data.aid = aid;
+        data.mid = mid;
+    }
+    $.post(CONTROL + "&m=delUploadFieldImg", data, function (data) {
+        if (data == 1) {
+            $("[name='" + name + "']").val("");
+            $(obj).parent().remove();
+        }
+    })
+}

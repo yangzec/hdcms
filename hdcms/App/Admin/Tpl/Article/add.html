@@ -18,7 +18,7 @@
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
         <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
         <else>
-            <?php foreach($user_field as $f):?>
+            <?php foreach($userField as $f):?>
             <?php if($f['show_type']=='editor'):?>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.all.min.js"/>
             <js file="__HDPHP__/Extend/Org/Editor/Ueditor/ueditor.config.js"/>
@@ -246,7 +246,7 @@
     </td>
 </tr>
 
-<list from="$user_field" name="f">
+<list from="$userField" name="f">
     {$f.html}
 </list>
 <tr>

@@ -61,13 +61,17 @@ class FieldModel extends Model
                 if (!isset($field['field_size']) || $field['field_size']) {
                     $field['field_size'] = 255;
                 }
-                $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['field_size'] . ")";
+                $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['field_size'] . ") NOT NULL DEFAULT ''";
                 break;
             case "text":
                 $_field = $field['field_name'] . " " . $field['field_type'];
                 break;
             case "decimal":
                 $_field = $field['field_name'] . " " . $field['field_type'] . "(" . $field['set']['integer'] . "," . $field['set']['decimal'] . ")";
+                break;
+            case "int":
+            case "tinyint":
+                $_field = $field['field_name'] . " " . $field['field_type'] . " NOT NULL DEFAULT 0";
                 break;
             default:
                 $_field = $field['field_name'] . " " . $field['field_type'];
@@ -127,7 +131,10 @@ class FieldModel extends Model
                 <th>{$f['title']}</th>
                 <td><input name='$name' readonly='readonly' lab='pic_{$f['field_name']}' style='width:300px' value='{FIELD_VALUE}'/>
                  <input class='inputbut' type='button' onclick='selectImage(this)' value='浏览...'>
+                 <span class='upload_field_img' style='position: relative;display:inline-block;'>
                  <img lab='upload_field_img' align='middle' id='pic_{$f['field_name']}' width='10' height='10' src='{FIELD_VALUE}'/>
+                 <a href='javascript:;' title='删除图片' onclick='return delUploadFieldImg(this,\"{$f['field_name']}\")'style='position:absolute;display:none;top:0px;right:0px;width:20px;height:18px;text-align:center;overflow:hidden;background:#f00;color:#fff;'>X</a>
+                 </span>
                  </td></tr>";
                 break;
             case "textarea":
@@ -145,7 +152,7 @@ class FieldModel extends Model
                  </td></tr>";
                 break;
             case "datetime":
-                $htmlId = preg_replace('@\[|\]@','',$name);
+                $htmlId = preg_replace('@\[|\]@', '', $name);
                 $html = "<tr><th>{$f['title']}</th>
                 <td><input name='$name' id='date_$htmlId' value='{FIELD_VALUE}' readonly='readonly' size='{$f['set']['size']}'
                  css='{$f['css']}'/><span class='validation'>{$f['message']}</span>";
@@ -221,6 +228,7 @@ str;
 //        p($field);
 //        p($value);
 //        $value = isset($value) && !empty($value)?$value:$field['set']['value'];
+
         $replaceValue = $value ? $value : $field['set']['default'];
         $html = '';
         switch ($field['show_type']) {
@@ -258,7 +266,6 @@ str;
                 $html = str_replace("{FIELD_VALUE}", $replaceValue, $field['html']);
                 break;
         }
-
         return $html;
     }
 }

@@ -38,7 +38,7 @@ function getArticleFlag($aid, $cid, $mid, $type = 1)
                 $str = "<span class='flag'>[";
                 $url = U("index", array("aid" => $aid, "cid" => $cid, "mid" => $mid));
                 foreach ($data as $d) {
-                    $str .= "<a href='{$url}&fid=" . $d["fid"] . "' >" . $d['flagname'] . "</a>&nbsp;";
+                    $str .= "<a href='{$url}&search[fid]=" . $d["fid"] . "' >" . $d['flagname'] . "</a>&nbsp;";
                 }
                 return substr($str, 0, -6) . ']</span>';
                 break;

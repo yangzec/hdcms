@@ -35,7 +35,8 @@ class Tag
      */
     public function _pageshow($attr, $content)
     {
-        return '<?php echo $page->show();?>';
+        $style = isset($attr['style']) ? $attr['style'] : 2;
+        return '<?php echo $page->show(' . $style . ');?>';
     }
 
     public function _arclist($attr, $content)
@@ -60,19 +61,19 @@ class Tag
         } else {
             $php .= '$cid=preg_split("@\s*,\s*@", ' . $cid . ');';
         }
-        $php.='$category = M("category")->find(current($cid));';
-        $php.='$model = M("model")->find($category["mid"]);';
-        $php.='$db=K(COMMON_MODEL_PATH."ArticleView",$model["tablename"]);';
-        $php .= 'if ("'.$cid.'") {$db->where("category.cid in(\''.$cid.'\')");}';
-        $php.='$db->field("'.$field.'");';
-        $php.='$db->order("'.$orderSql.'");';
-        $php.='$db->limit('.$row.');';
-        $php.='$result = $db->all();';
+        $php .= '$category = M("category")->find(current($cid));';
+        $php .= '$model = M("model")->find($category["mid"]);';
+        $php .= '$db=K(COMMON_MODEL_PATH."ArticleView",$model["tablename"]);';
+        $php .= 'if ("' . $cid . '") {$db->where("category.cid in(\'' . $cid . '\')");}';
+        $php .= '$db->field("' . $field . '");';
+        $php .= '$db->order("' . $orderSql . '");';
+        $php .= '$db->limit(' . $row . ');';
+        $php .= '$result = $db->all();';
         $php .= 'foreach ($result as $id=>$hd_field):';
         $php .= '$hd_field["arclist_id"]=$id+1;';
         $php .= '$hd_field["url"]=getArticleUrl($hd_field);'; //链接
         $php .= '$target = $hd_field["new_window"]?" target=\'_blank\'":"";'; //新窗口打开
-        $php .= '$hd_field["title"]=$hd_field["color"]?"<font color=\'".$hd_field["color"]."\'>".mb_substr($hd_field["title"],0,'.$titlelen.',"utf-8")."</font>":mb_substr($hd_field["title"],0,'.$titlelen.',"utf-8");';
+        $php .= '$hd_field["title"]=$hd_field["color"]?"<font color=\'".$hd_field["color"]."\'>".mb_substr($hd_field["title"],0,' . $titlelen . ',"utf-8")."</font>":mb_substr($hd_field["title"],0,' . $titlelen . ',"utf-8");';
         $php .= '$hd_field["link"]="<a href=\'".$hd_field["url"]."\' $target>".$hd_field["title"]."</a>";?>';
         $php .= $content;
         $php .= '<?php endforeach;?>';
@@ -102,18 +103,21 @@ class Tag
         $php .= '<?php endforeach;?>';
         return $php;
     }
+
     //就业达人
-    public function _jiuye($attr,$content){
+    public function _jiuye($attr, $content)
+    {
         $row = isset($attr['row']) ? $attr['row'] : 10;
-        $where = $attr["where"];//工资
-        $php='';
-        $php.='<?php $db = K(COMMON_MODEL_PATH."ArticleView","ofschool");';
-        $php.='$result= $db->where("'. $where.'")->order("xinzi desc")->limit('.$row.')->all();';
-        $php.='foreach($result as $hd_field):?>';
-        $php.=$content;
-        $php.='<?php endforeach;?>';
+        $where = $attr["where"]; //工资
+        $php = '';
+        $php .= '<?php $db = K(COMMON_MODEL_PATH."ArticleView","ofschool");';
+        $php .= '$result= $db->where("' . $where . '")->order("xinzi desc")->limit(' . $row . ')->all();';
+        $php .= 'foreach($result as $hd_field):?>';
+        $php .= $content;
+        $php .= '<?php endforeach;?>';
         return $php;
     }
+
     //开学学生介绍视频
     public function _kaixue($attr, $content)
     {

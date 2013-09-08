@@ -1,0 +1,19 @@
+<ul>
+    <?php $class=array('PHP就业班','PHP高级班','PHP远程班');?>
+    <arclist cid="66" row="6">
+        <li>
+            <a href="__ROOT__?a=index&c=index&m=category&cid=73&mid=20" class="state">
+                <?php if(time()>strtotime($hd_field['lesson_time'])){?>
+                <span style="color:#666">报名已结束</span>
+                <?php }else if(time()>(strtotime($hd_field['lesson_time'])-3600*24*10)){?>
+                <span style="color:#f00">报名即将截止</span>
+                <?php }else{?>
+                <span style="color:#f00">火热报名中</span>
+                <?php };?>
+            </a>
+            <a href="__ROOT__?a=index&c=index&m=category&cid=73&mid=20" class="title"><?php echo $class[$hd_field['class_type']]?></a>
+            <a href="__ROOT__?a=index&c=index&m=category&cid=73&mid=20" class="date">{$hd_field.lesson_time|strtotime|date:"m月d日",@@}</a>
+
+        </li>
+    </arclist>
+</ul>
