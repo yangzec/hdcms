@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" afterPath="$PROJECT_DIR$/data/category/c4ef352f74e502ef5e7bc98e6f4e493d.php" />
+    <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="完成会员中心注册表单">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378684892796" ignored="false" />
+    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378685417227" ignored="false" />
     <file path="/thumb_upload.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1377783854256" ignored="false" />
     <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378034254326" ignored="false" />
     <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1377696430535" ignored="false" />
@@ -181,6 +181,7 @@
     <file path="/divcss.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378232473479" ignored="false" />
     <file path="/lesson_list.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378370718094" ignored="false" />
     <file path="/teacher.css" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378682901403" ignored="false" />
+    <file path="/README.md" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378685635170" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,22 +277,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="5" column="51" selection-start="199" selection-end="199" vertical-scroll-proportion="-3.548387">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/hdedu/teacher.html">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="4" selection-start="4857" selection-end="5565" vertical-scroll-proportion="-2.096774">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#2;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="5" column="47" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1943463">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -314,7 +313,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/template/hdedu/static/css/index.css" />
         <option value="$PROJECT_DIR$/template/hdedu/class_table_list.html" />
         <option value="$PROJECT_DIR$/template/hdedu/news_article.html" />
         <option value="$PROJECT_DIR$/template/hdedu/ofschool_list.html" />
@@ -330,6 +328,7 @@
         <option value="$PROJECT_DIR$/template/hdedu/index.html" />
         <option value="$PROJECT_DIR$/template/hdedu/static/css/library.css" />
         <option value="$PROJECT_DIR$/hdcms/App/Index/Config/config.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -380,6 +379,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -534,7 +547,11 @@
       <created>1378684895690</created>
       <updated>1378684895690</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="完成会员中心注册表单">
+      <created>1378684994339</created>
+      <updated>1378684994339</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -640,13 +657,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/template/hdedu/static/css/project.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="93" selection-end="118" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/hdedu/class_table_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="52" selection-start="410" selection-end="410" vertical-scroll-proportion="-4.967742">
@@ -760,7 +770,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="5" column="51" selection-start="199" selection-end="199" vertical-scroll-proportion="-3.548387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="47" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1943463">
           <folding />
         </state>
       </provider>
