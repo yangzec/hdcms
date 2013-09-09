@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" name="Default" comment="完成会员中心注册表单">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378685417227" ignored="false" />
+    <file path="/Dummy.txt" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378685910937" ignored="false" />
     <file path="/thumb_upload.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1377783854256" ignored="false" />
     <file path="/add.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378034254326" ignored="false" />
     <file path="/header.html" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1377696430535" ignored="false" />
@@ -89,7 +88,7 @@
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Extend/Tool/Dir.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1375724584804" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/Model/Model.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378054084142" ignored="false" />
     <file path="/Model.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378028494923" ignored="false" />
-    <file path="$PROJECT_DIR$/../hdphp/hdphp/hdphp.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378285872780" ignored="false" />
+    <file path="$PROJECT_DIR$/../hdphp/hdphp/hdphp.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1378685674359" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Hd/HdBaseTag.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376126399947" ignored="false" />
     <file path="/HdBaseTag.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376126363337" ignored="false" />
     <file path="$PROJECT_DIR$/../hdphp/hdphp/Lib/Driver/View/Driver/HdView.class.php" changelist="3adb50b6-1267-4c43-b8c7-0ab55c8b62c8" time="1376130412912" ignored="false" />
@@ -289,7 +288,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="47" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1943463">
+            <state line="5" column="7" selection-start="50" selection-end="50" vertical-scroll-proportion="0.1943463">
               <folding />
             </state>
           </provider>
@@ -551,7 +550,11 @@
       <created>1378684994339</created>
       <updated>1378684994339</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="完成会员中心注册表单">
+      <created>1378685644530</created>
+      <updated>1378685644530</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -563,7 +566,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18566775" sideWeight="0.49832216" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2679153" sideWeight="0.67157584" order="0" side_tool="false" content_ui="combo" x="507" y="69" width="265" height="596" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2679153" sideWeight="0.67157584" order="0" side_tool="false" content_ui="combo" x="507" y="69" width="265" height="596" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968154" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21579805" sideWeight="0.38758388" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32550335" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -777,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="47" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1943463">
+        <state line="5" column="7" selection-start="50" selection-end="50" vertical-scroll-proportion="0.1943463">
           <folding />
         </state>
       </provider>
