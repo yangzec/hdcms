@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{$hd.config.webname}</title>
+    <link rel="stylesheet" href="__TEMPLATE__/css/style.css"/>
+    <script type="text/javascript" src="__TEMPLATE__/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__TEMPLATE__/js/js.js"></script>
+</head>
+
+<body>
+<!-- 顶部100%灰色区域 -->
+<div id="top_dark_box">
+
+    <!-- 中间1200px宽度区域 -->
+    <div id="top_dark">
+        <img src="__TEMPLATE__/images/others/logo.png" id="logo"/>
+        <!-- 导航菜单 -->
+        <ul id="menu">
+            <li>
+                <a href="__ROOT__" class="cur">首页</a>
+            </li>
+            <li>
+                <channel type='self' cid="1">
+                    <a href="{$field.url}">{$field.catname}</a>
+                </channel>
+                <ul class="second">
+                    <channel type='son' cid="1" row='10'>
+                        <li><a href="{$field.url}">{$field.catname}</a></li>
+                    </channel>
+                </ul>
+            </li>
+        </ul>
+        <!-- 导航菜单结束 -->
+        <!-- 用户登录 -->
+        <a href="__WEB__?a=Member&c=Login&m=login" class="top_login">用户登录</a>
+
+    </div>
+    <!-- 中间1200px宽度区域结束 -->
+</div>
+<!-- 顶部灰色100%区域结束 -->
+<!-- 顶部最新消息区域 -->
+<div id="latest_news_box">
+    <div id="latest_news">
+        <p><span class="title">最新消息：</span>
+            <arclist row="1" cid="4">{$field.title}</arclist>
+        </p>
+    </div>
+</div>
+<!-- 顶部最新消息区域结束 -->
+
+<!-- 主体区域 -->
+<div id="main">
+    <!-- 左侧区域 -->
+    <div class="left">
+        <ul class="arc_list">
+            <arclist row="8" mid="1" flag="4">
+                <li>
+                    <div class="pic"><img src="{$field.thumb}" width="140" height="98" alt=""/></div>
+                    <h3><a href="{$field.url}">{$field.title}</a></h3>
+                    <span class="date">{$field.updatetime|date:"m-d",@@}</span>
+                    <a href="" class="comment">3人评论</a>
+                    <span class="browse_number">{$field.click}次浏览</span>
+
+                    <p class="description">携程技术研发中心框架研发部，浩子现在效力的部门，部门主要负责携程前后端框架的开发维护及支持。 此职位将于我在一个小组，就是前端框架组...</p>
+                </li>
+            </arclist>
+        </ul>
+
+
+    </div>
+    <!-- 左侧区域结束 -->
+
+    <!-- 中间区域 -->
+    <div class="center">
+        <p class="title">站长推荐</p>
+        <ul class="title_list">
+            <arclist row="8" mid="1" flag="3">
+                <li>
+                    <a href="{$field.url}">{$field.title}</a>
+                </li>
+            </arclist>
+        </ul>
+        <p class="title">置顶推荐</p>
+        <ul class="title_list">
+            <arclist row="8" flag="2">
+                <li>
+                    <a href="{$field.url}">{$field.title}</a>
+                </li>
+            </arclist>
+        </ul>
+    </div>
+    <!-- 中间区域结束 -->
+
+    <!-- 右侧区域 -->
+    <div class="right">
+
+
+        <p class="title">最新评论</p>
+        <ul class="new_comments">
+            <comment row="10">
+                <li>
+                    <a href="{$field.url}">
+                        <img src="__TEMPLATE__/images/others/touxiang.png" alt=""/>
+                        <span class="name">{$field.realname}</span>
+                        <p class="content">{$field.comment}</p>
+                        <span class="arrows">></span>
+                    </a>
+                </li>
+            </comment>
+        </ul>
+
+        <p class="title">技巧资源</p>
+        <ul class="title_list">
+            <arclist row="4" cid="2,3,4,5">
+                <li>
+                    <a href="{$field.url}">{$field.title}</a>
+                </li>
+            </arclist>
+        </ul>
+
+
+    </div>
+    <!-- 右侧区域结束 -->
+
+</div>
+<!-- 主体区域结束 -->
+
+
+<!-- 底部浅灰色导航区域结束 -->
+
+<!-- 底部版权区域 -->
+<div id="bottom_copyright_box">
+    <div class="bottom_copyright">
+        版权所有，保留一切权利！ © 2013 <a href="__ROOT__">{$hd.config.webname}</a>　
+    </div>
+</div>
+<!-- 底部版权区域结束 -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+@import "../../../hdcms/static/css/common.css";
+
+div.close_member {
+    margin: 0px auto;
+    width:400px;
+    padding: 30px;
+    margin-top:100px;
+    text-align: center;
+    font-size: 18px;
+    border: solid 5px #dcdcdc;
+    background: #fff;
+    box-shadow: 0px 3px 26px #999;
+}

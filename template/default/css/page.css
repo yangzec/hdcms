@@ -1,0 +1,335 @@
+@charset "utf-8";
+
+/*文章内容页单独css页面*/
+
+#page_main{
+	width: 1200px;
+	/*height: 100px;*/
+	margin: 0 auto;
+	overflow: hidden;
+	/*border-bottom: 3px solid orange;*/
+	position: relative;
+}
+/*左侧*/
+#page_main .left{
+	/*float: left;*/
+	margin-right: 320px;
+	/*height: 400px;*/
+	/*border: 3px solid blue;*/
+	/*border-top: none;*/
+	/*border-left: none;*/
+	/*border-right: 1px solid blue;*/
+	/*background: red;*/
+	/*overflow: hidden;*/
+	padding-bottom: 20px;
+	/*float: left;*/
+}
+#page_main .left h1{
+	padding-top: 5px;
+	/*background: red;*/
+}
+#page_main .left h1 a{
+	font-size: 20px;
+	color: #2A5E8E;
+	line-height: 50px;
+}
+/*文章信息*/
+#page_main .left .article_info_box{
+	width: 100%;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 10px;
+	/*background: blue;*/
+}
+#page_main .left .article_info_box .article_info{
+	line-height: 20px;
+	height: 20px;
+	color: #999;
+}
+#page_main .left .article_info_box .article_info .padding_right{
+	padding-right: 15px;
+}
+#page_main .left .article_info_box .article_info a{
+	color: #0088DB;
+}
+#page_main .left .article_info_box .article_info a.comment{
+	padding-left: 21px;
+	background: url(../images/sprite.png) no-repeat -17px -75px;
+	/*border: 1px solid blue;*/
+}
+/*文章信息结束*/
+/*文章内容*/
+#page_main .left .article_content{
+	width: 100%;
+	overflow: hidden;
+	line-height: 1.5em;
+}
+#page_main .left .article_content p{
+	font-size: 14px;
+	line-height: 1.8em;
+	margin-bottom: 10px;
+}
+/*文章内容结束*/
+#page_main .left .position{
+	width: 100%;
+	border-top: 1px solid #EEEEEE;
+	line-height: 35px;
+	margin-top: 10px;
+}
+#page_main .left .position a{
+	color: #0088DB;
+	font-size: 14px;
+}
+#page_main .left .position a:hover{
+	color: #2A5E8E;
+}
+/*文章标签*/
+#page_main .left .tags{
+	height: 22px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+#page_main .left .tags a{
+	padding: 2px 8px;
+	border: 1px solid #DDDDDD;
+	box-shadow: 1px 1px 0 #F6F6F6;
+	border-radius: 3px;
+	margin: 0 2px;
+}
+/*文章标签结束*/
+/*作者区域*/
+#page_main .left .author_info{
+	width: 100%;
+	height: 75px;
+	background: #FBFBFB;
+	border: 1px solid #E2E2E2;
+	border-left: 4px solid #DDDDDD;
+	position: relative;
+	margin:20px 0;
+}
+#page_main .left .author_info img{
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	border: 1px solid #CCCCCC;
+	box-shadow: 1px 1px 1px #EEEEEE;
+}
+#page_main .left .author_info .author_name{
+	font-weight: 700;
+	color: #333;
+	position: absolute;
+	top: 18px;
+	left: 68px;
+}
+#page_main .left .author_info .author_name a{
+	color: #2A5E8E;
+	text-decoration: underline;
+}
+#page_main .left .author_info .description{
+	color: #888;
+	position: absolute;
+	left: 68px;
+	top: 40px;
+}
+#page_main .left p.title{
+	height: 28px;
+	line-height: 28px;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 14px;
+	color: #333;
+	font-weight: 700;
+}
+/*作者区域结束*/
+
+/*相关文章*/
+#page_main .left .related_articles{
+	width: 100%;
+	overflow: hidden;
+	padding-top: 15px;
+}
+#page_main .left .related_articles li{
+	width: 146px;
+	height: 170px;
+	float: left;
+	margin-right: 35px;
+}
+#page_main .left .related_articles li.last{
+	margin-right: 0px;
+}
+#page_main .left .related_articles li .pic{
+	display: block;
+	padding: 2px;
+	border: 1px solid #CCCCCC;
+}
+#page_main .left .related_articles li .title{
+	color: #0088DB;
+	line-height: 1.5em;
+	padding-top: 5px;
+	display: block;
+	/*background: red;*/
+}
+/*相关文章结束*/
+
+
+/*发表我的评论*/
+#page_main .left .editor{
+	width: 100%;
+	background: #FBFBFB;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	font-weight: 800;
+	font-size: 40px;
+	color: #ccc;
+}
+#page_main .left .msg_box{
+	height: 105px;
+	width: 600px;
+	/*background: red;*/
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/*border: 3px solid blue;*/
+}
+#page_main .left .msg_box .remind_word{
+	font-weight: 800;
+	line-height: 105px;
+	width: 256px;
+	height: 105px;
+	border-right: 1px dotted #CCCCCC;
+	text-align: right;
+	/*margin-top: 10px;*/
+	float: left;
+}
+#page_main .left .msg_box .login_info{
+	height: 105px;
+	float: right;
+}
+#page_main .left .msg_box .login_info li{
+	width: 300px;
+	height: 31px;
+	margin-bottom: 6px;
+}
+#page_main .left .msg_box .login_info li.last{
+	margin-bottom: 0px;
+}
+#page_main .left .msg_box .login_info li span{
+	line-height: 31px;
+}
+#page_main .left .msg_box .login_info li input{
+	width: 193px;
+	height: 29px;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+}
+#page_main .left .msg_box .login_info li span.required{
+	color: #bbb;
+}
+#page_main .left .msg_box .login_info li input.url{
+	width: 262px;
+}
+#page_main .left p.title span{
+	color: #FF6600;
+}
+#page_main .left .msg_list{
+	width: 100%;
+}
+#page_main .left .msg_list li{
+	padding-top: 16px;
+	border-bottom: 1px solid #EEEEEE;
+	overflow: hidden;
+}
+#page_main .left .msg_list li img{
+	float: left;
+}
+#page_main .left .msg_list li .msg_content{
+	margin-left: 48px;
+	margin-right: 55px;
+	/*background: red;*/
+	line-height: 1.5em;
+}
+#page_main .left .msg_list li .storey{
+	font-size: 18px;
+	color: #ddd;
+	float: right;
+}
+#page_main .left .msg_list li .msg_info{
+	line-height: 30px;
+	margin-left: 48px;
+	color: #999;
+}
+#page_main .left .msg_list li .msg_info .name{
+	color: #0088DB;
+	padding-right: 10px;
+}
+#page_main .left .msg_list li .msg_info .reply{
+	color: #0088DB;
+	padding-left: 10px;
+}
+#page_main .left .msg_list li .reply_box{
+	margin-left: 48px;
+	margin-right: 10px;
+	border-left: 2px solid #E6E6E6;
+	margin-bottom: 5px;
+	background: #F6F6F6;
+	padding: 10px;
+	padding-right: 0px;
+}
+#page_main .left .msg_list li .reply_box .msg_content{
+	margin-right: 10px;
+}
+/*发表我的评论结束*/
+
+/*左侧结束*/
+
+
+/*右侧*/
+#page_main .right{
+	width: 300px;
+	/*height: 600px;*/
+	/*border: 3px solid green;*/
+	float: right;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+#page_main .right p.title{
+	height: 28px;
+	line-height: 28px;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 14px;
+	color: #333;
+	font-weight: 700;
+}
+#page_main .right .right_list{
+	width:300px;
+	overflow: hidden;
+}
+#page_main .right .right_list ul{
+	width: 320px;
+	overflow: hidden;
+}
+#page_main .right .right_list ul li{
+	/*border: 1px solid #DDDDDD;*/
+	/*padding: 2px;*/
+	float: left;
+	margin-right: 8px;
+	margin-bottom: 10px;
+	height: 155px;
+	width: 146px;
+	/*background: #ccc;*/
+	/*border-bottom: 2px solid blue;*/
+}
+#page_main .right .right_list ul li .pic{
+	padding: 2px;
+	border: 1px solid #ddd;
+}
+#page_main .right .right_list ul li a{
+	display: block;
+	width: 146px;
+	color: #777;
+	line-height: 1.5em;
+	/*background: #ccc;*/
+	padding-top: 5px;
+}
+
+/*右侧结束*/

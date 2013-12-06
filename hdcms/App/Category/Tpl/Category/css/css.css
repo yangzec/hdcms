@@ -1,0 +1,27 @@
+@import "../../../../../static/css/common.css";
+/*******添加栏目*********/
+div.send {
+    margin-top: 20px;
+}
+
+/*子栏目默认隐藏*/
+tr.son_category {
+    display: none;
+}
+
+table.table-title a.show_category {
+    display: inline-block;
+    overflow: hidden;
+    width: 12px;
+    height: 12px;
+    border: solid 1px #dadada;
+    line-height: 10px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+table.table-title a.show_category:hover {
+    background: #60940e;
+    color: #fff;
+}

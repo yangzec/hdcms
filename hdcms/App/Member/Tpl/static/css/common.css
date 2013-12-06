@@ -1,0 +1,187 @@
+@import "../../../../../static/css/common.css";
+
+body {
+    font: 500 14px/1.8 Hiragino Sans GB, arial, simsum, WenQuanYi Micro Hei, sans-serif;
+    background: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+table {
+    background: #F8F8F8;
+}
+
+div.topbar {
+    height: 45px;
+    background: #0784A2;
+    color: #fff;
+    border-bottom: solid 3px #999;
+
+}
+
+div.topbar a {
+    color: #fff;
+}
+
+div.topbar div.container {
+    background: url("../img/logo.jpg") no-repeat;
+    margin: 0px auto;
+    width: 980px;
+    height: 60px;
+}
+
+div.content {
+    border-right: solid 1px #dcdcdc;
+    height: auto;
+    overflow: hidden;
+}
+
+div.container {
+    width: 980px;
+    margin: 0px auto;
+    margin-top: 10px;
+    height: auto;
+    overflow: hidden;
+
+}
+
+div.container div.user_info {
+    float: right;
+    padding-top: 16px;
+    font-size: 14px;
+}
+
+div.container div.menu {
+    border-bottom: solid 3px #0784A2;
+    overflow: hidden;
+    padding: 0px;
+}
+
+div.container div.menu a {
+    display: inline-block;
+    padding: 3px 15px;
+    margin: 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.container div.menu a.action {
+    background: #0784A2;
+}
+
+div.container div.menu a:hover {
+    background: #0784A2;
+}
+
+div.container div.grid {
+    width: 180px;
+    float: left;
+    margin-right: 10px;
+    background: #fff;
+}
+
+div.container div.grid .profile {
+    background: #fcfcfc;
+    border-bottom: 2px solid #0784A2;
+    padding: 15px;
+    color: #AAAAAA;
+}
+
+div.container div.grid ul.list {
+    background: #fcfcfc;
+    color: #333333;
+    margin-top: 10px;
+}
+
+div.container div.grid ul.list li.list-item {
+    margin-bottom: 10px;
+}
+
+div.container div.grid ul.list li.list-item a {
+    color: #333333;
+    display: block;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+div.container div.grid ul.list li.list-item a:hover {
+    color: #0784A2;
+}
+
+div.container div.grid ul.list li.list-item a.active {
+    background: #0784A2;
+    color: #fff;
+}
+
+div.container div.main {
+    float: right;
+    width: 780px;
+}
+
+div#con {
+    font-size: 12px;
+}
+
+div#l-con {
+    width: 550px;
+    float: left;
+    height: auto;
+    overflow: hidden;
+}
+
+div#r-con {
+    width: 230px;
+    float: left;
+    height: auto;
+    overflow: hidden;
+}
+/*头像*/
+img#favicon {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    border:solid 6px #dcdcdc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+@import "../../../../../static/css/common.css";
+body {
+    background: #fff;
+}
+
+div.uploadify_upload_files {
+    padding: 10px;
+    border: solid 1px #ccc;
+    margin-top: 10px;
+    height: 235px;
+}
+
+li.upload_thumb {
+    cursor: pointer;
+}
+
+/*图片列表*/
+div.site_pic {
+    height: auto;
+    overflow: hidden;
+}
+
+div.site_pic ul li {
+    border: 2px solid #DCDCDC;
+    float: left;
+    margin: 3px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}

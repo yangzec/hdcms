@@ -1,0 +1,38 @@
+@import "../../../../../static/css/common.css";
+
+div.node ul.level2, div.node ul.level3, div.node ul.level4 {
+    /*display: none;*/
+}
+
+div.node ul.level2 {
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+div.node ul.level2 {
+    text-indent: 20px;
+    padding-bottom: 20px;
+}
+
+div.node ul.level3 {
+    text-indent: 60px;
+}
+
+div.node ul li {
+    line-height: 2em;
+    border-bottom: solid 1px #ececec;
+    color: #666;
+}
+
+div.node span.add {
+    cursor: pointer;
+    color:#333;
+}
+
+div.title1 {
+    display: block;
+    background: #e0e0e0;
+    padding: 3px 5px;
+}

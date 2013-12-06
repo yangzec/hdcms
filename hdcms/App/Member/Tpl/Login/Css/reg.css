@@ -1,0 +1,102 @@
+body {
+    background: #EBECE6;
+}
+
+div.header {
+    height: 80px;
+    margin: 35px auto 5px;
+    position: relative;
+    width: 1030px;
+    border-bottom: solid 5px #dcdcdc;
+    background: url("../img/logo.png") #fff 20px no-repeat;
+}
+
+div.header div.links {
+    font-family: Arial, Tahoma, "hiragino sans gb", Helvetica;
+    float: right;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: #666666;
+    margin-top: 30px;
+    padding-right: 20px;
+}
+
+div.header div.links a {
+    color: #666666;
+    margin: 0 5px;
+}
+
+div.header div.links a:hover {
+    color: #000;
+}
+
+div.main {
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 70px;
+    width: 1030px;
+}
+
+/*会员注册*/
+div.send span.reg a {
+    font-size: 14px;
+    color: #03565E;
+}
+
+div.reg {
+    border: solid 1px #ccc;
+    padding: 20px;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+}
+
+div.reg div.title {
+    text-indent: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+div.reg div.title span {
+    font-size: 25px;
+    border-bottom: solid 3px #FFA00A;
+}
+
+div.form {
+    width: 700px;
+    border-right: solid 1px #ddd;
+    float: left;
+}
+
+div.reg td {
+    padding: 6px 10px;
+}
+
+img.code {
+    vertical-align: middle;
+}
+
+input.btn2 {
+    background: url("../img/icon_3.png") no-repeat scroll 0 -90px rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    width: 115px;
+}
+
+div.login {
+    float: right;
+    width: 260px;
+}
+
+div.login a, td a {
+    color: #03565E;
+}
+
+a:hover {
+    color: #004499;
+}
