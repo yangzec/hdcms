@@ -31,4 +31,4 @@ if (!file_exists('install/lock.php')) {
     exit;
 }
 ###INSTALL_END
-require "../hdphp/hdphp/hdphp.php";
+require "../hdphp/hdphp.php";
