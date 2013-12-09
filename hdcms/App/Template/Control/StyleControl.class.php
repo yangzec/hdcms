@@ -1,4 +1,5 @@
 <?php
+//模板管理模块
 class StyleControl extends AuthControl
 {
     public function __init()
@@ -61,7 +62,7 @@ class StyleControl extends AuthControl
     {
 
         $dir_name = Q("get.dir_name", "./template/" . C("WEB_STYLE"), "urldecode");
-        $dirs = Dir::tree($dir_name,'html');
+        $dirs = Dir::tree($dir_name, 'html');
         $this->assign("dirs", $dirs);
         $this->display();
     }

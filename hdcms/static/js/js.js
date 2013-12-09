@@ -1,11 +1,3 @@
-//文本框获得焦点改变样式
-$(function () {
-//    $("input,textarea").live("focus",function () {
-//        $(this).css({"border": "solid 1px #60940E"});
-//    }).live("blur", function () {
-//            $(this).css({"border": "solid 1px #dadada"});
-//        })
-})
 //提交按钮底部固定
 $(function () {
     //底部位置

@@ -86,15 +86,9 @@ switch ($s) {
             break;
         }
     case "create_database": //创建数据库
-//        @mysql_connect($_POST['DB_HOST'], $_POST['DB_USER'], $_POST['DB_PASSWORD']);
-//        if (mysql_query("DROP DATABASE " . $_POST['DB_DATABASE'])) {
-//            mysql_query("CREATE DATABASE " . $_POST['DB_DATABASE'] . " CHARSET UTF8");
         create_install_config();
         echo 1;
         exit;
-//        }
-//        echo 0;
-//        exit;
         break;
     case "install": //开始安装
         $config = require "config.inc.php";
@@ -121,10 +115,6 @@ switch ($s) {
         $core = preg_replace('@(WEB_MASTER.*?)\w+?(?=[\'"])@i', '\1' . $d['ADMIN'], $core);
         file_put_contents("../data/config/core.inc.php", $core);
         copy("config.inc.php", "../data/config/db.inc.php");
-        //修改网站主入口文件
-        $index = file_get_contents("../index.php");
-        $index = preg_replace("@(?<=###INSTALL_START)(.*?)(?=###INSTALL_END)@s", "\n/*\\1*/\n", $index);
-        file_put_contents("../index.php", $index);
         return_msg("创建完毕!<script>setTimeout(function(){parent.location.href='?step=7'},0);</script>");
         break;
 }
@@ -199,5 +189,5 @@ function return_msg($msg)
 {
     $h = "<span style='color:#555;font-weight: normal;font-size:14px;'>{$msg}<br/>";
     $h .= "<script>window.scrollTo(0,9000)</script>";
-    echo $h;
+    echo $h;exit;
 }

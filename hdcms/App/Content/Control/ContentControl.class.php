@@ -224,7 +224,7 @@ class ContentControl extends AuthControl
         }
     }
 
-    //回收站内删除文件
+    //删回收站内除文件
     public function direct_del()
     {
         $this->del(true);

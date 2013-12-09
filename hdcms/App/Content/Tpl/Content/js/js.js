@@ -156,12 +156,6 @@ function selectColor(obj, _input) {
     })
 }
 
-//选择模板
-$(function () {
-    $("#template").focus(function () {
-        select_tpl('template');
-    })
-})
 //关闭窗口
 $(function () {
     $("input.close_window").click(function () {

@@ -20,6 +20,8 @@ return array (
     'urltype' => '1',
     'cat_redirecturl' => '',
     'catorder' => '0',
+    'cat_show' => '2',
+    'path' => NULL,
     'disabled' => '',
   ),
   3 => 
@@ -42,6 +44,8 @@ return array (
     'urltype' => '1',
     'cat_redirecturl' => '',
     'catorder' => '0',
+    'cat_show' => '1',
+    'path' => NULL,
     'disabled' => '',
   ),
   2 => 
@@ -64,6 +68,8 @@ return array (
     'urltype' => '1',
     'cat_redirecturl' => '',
     'catorder' => '0',
+    'cat_show' => '1',
+    'path' => NULL,
     'disabled' => '',
   ),
   1 => 
@@ -86,6 +92,8 @@ return array (
     'urltype' => '1',
     'cat_redirecturl' => '',
     'catorder' => '0',
+    'cat_show' => '1',
+    'path' => NULL,
     'disabled' => '',
   ),
 );
