@@ -111,6 +111,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <th class="w80">SEO标题</th>
+                    <td>
+                      <input type="text" name="seo_title" class="w500"/>
+                    </td>
+                </tr>
+                <tr>
                     <th>属性</th>
                     <td>
                         <list from="$flag" name="f">

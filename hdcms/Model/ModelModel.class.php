@@ -32,7 +32,8 @@ class ModelModel extends CommonModel
                     CREATE  TABLE IF NOT EXISTS `{$masterTable}` (
                       `aid` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
                       `cid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '栏目cid' ,
-                      `title` char(60) NOT NULL DEFAULT '' COMMENT '标题' ,
+                      `title` char(100) NOT NULL DEFAULT '' COMMENT '标题' ,
+                      `seo_title` char(100) NOT NULL DEFAULT '' COMMENT '标题' ,
                       `thumb` CHAR(200) NOT NULL DEFAULT '' COMMENT '缩略图' ,
                       `click` MEDIUMINT NOT NULL DEFAULT 0 COMMENT '点击次数' ,
                       `source` CHAR(30) NOT NULL DEFAULT '' COMMENT '来源' ,
