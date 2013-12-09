@@ -2,9 +2,169 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fdfeb72-05e7-437b-b747-905afa58d1a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" afterPath="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/default/index.html" afterPath="$PROJECT_DIR$/template/default/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index.html_8c930.php" afterPath="$PROJECT_DIR$/temp/compile/index.html_8c930.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms.12.6.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms12.04.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms_model.mwb.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/list_6_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/2013/1210/80.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/list_8_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/34.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/35.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/38.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/39.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/40.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/41.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/42.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/43.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/44.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/45.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/46.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/47.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/48.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/49.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/50.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/51.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/52.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/53.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/54.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/55.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/56.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/57.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/58.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/59.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/60.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/61.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/62.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/63.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/64.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/65.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/66.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/67.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/68.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/69.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/70.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/71.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/72.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/73.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/74.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/75.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/76.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/77.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/78.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/79.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/19.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/20.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/21.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/22.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/23.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/24.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/25.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/26.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/27.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/28.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/29.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/30.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/10451386121177.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/12841386121195.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/12881386121123.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/13701386121172.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/1421386121122.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/14481386121367.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/14651386121177.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/16681386121339.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/17881386121259.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/17921386121367.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/1931386121150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/20281386121124.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/21491386121101.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/22971386121260.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/22991386121310.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/23131386121124.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/24661386121147.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/25001386120714.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/26011386121174.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/26241386121200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/26991386120672.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/27221386121340.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28091386120655.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28101386120624.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28541386121261.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28571386121173.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/29691386121343.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/30491386121364.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/31761386121344.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/32091386121258.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/35211386121366.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/3581386121264.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/36941386121368.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/37611386121340.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/3891386121258.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/3891386121261.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/39481386121146.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/40301386121284.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/40491386121309.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/41451386121313.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/41811386121195.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/43081386121264.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/43121386121178.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/45241386121149.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/4531386121286.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/48221386121122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/48271386121263.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50001386121123.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50001386121341.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50251386121126.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50351386121197.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/51351386121199.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/51501386121311.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/52441386121196.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/52641386121290.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/53581386121370.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/54451386121201.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/58111386121147.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/60121386120687.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/61601386121291.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/61981386121262.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/62191386120715.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/63861386121258.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/6441386121178.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/67781386121121.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/68611386120673.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/68961386121344.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/69841386121180.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/70391386121101.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/70851386121316.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/7311386121176.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/73281386121341.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/74181386121315.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/74881386121196.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/77801386121198.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/79071386121342.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/79131386121312.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/81791386120655.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/82461386121200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/83981386121261.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/84121386121262.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/86191386121175.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/89281386121174.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/89341386121146.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/89491386121198.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/9271386121260.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/93371386120624.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/93911386121370.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/96131386121179.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/96231386121365.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/96481386121149.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/97921386121290.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/97971386121259.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/981386121148.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/98621386120686.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/98961386121195.jpg" afterPath="" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,7 +217,7 @@
       <file leaf-file-name="ContentTag.class.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="12" selection-start="866" selection-end="866" vertical-scroll-proportion="0.45275268" vertical-offset="0" max-vertical-offset="3800">
+            <state line="49" column="40" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.7649959" vertical-offset="0" max-vertical-offset="3800">
               <folding />
             </state>
           </provider>
@@ -659,7 +819,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="12" selection-start="866" selection-end="866" vertical-scroll-proportion="0.45275268" vertical-offset="0" max-vertical-offset="3800">
+        <state line="49" column="40" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.7649959" vertical-offset="0" max-vertical-offset="3800">
           <folding />
         </state>
       </provider>
