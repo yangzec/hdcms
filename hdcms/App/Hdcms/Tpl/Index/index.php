@@ -23,7 +23,7 @@
     <!--头部右侧导航-->
     <div class="r_menu">
         {$hd.session.rname} : admin <a href="{|U:'Login/out'}" target="_self">[退出]</a><span>|</span>
-        <a href="__ROOT__" target="_blank">前台首页</a><span>|</span>
+        <a href="__WEB__" target="_blank">前台首页</a><span>|</span>
         <a href="{|U:'Member/Index/index'}" target="_blank">会员中心</a></a>
 <!--        <span>|</span>-->
 <!--        <a href="__ROOT__" target="_blank">后台地图</a><span>|</span>-->

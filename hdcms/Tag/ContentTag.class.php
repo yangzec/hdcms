@@ -82,6 +82,7 @@ str;
     public function _arclist($attr, $content)
     {
         $cid = isset($attr['cid']) ? $attr['cid'] : "";
+        $listtype = isset($attr['listtype']) ? $attr['listtype'] : "";
         $aid = isset($attr['aid']) ? $attr['aid'] : "";
         $mid = isset($attr['mid']) ? $attr['mid'] : 1;
         $row = isset($attr['row']) ? intval($attr['row']) : 10;
@@ -89,38 +90,47 @@ str;
         $flag = isset($attr['flag']) ? intval($attr['flag']) : "";
         $php = "";
         $php .= <<<str
-        <?php \$mid="$mid";\$cid ="$cid";\$flag='$flag';\$aid='$aid';
+        <?php \$mid="$mid";\$cid ="$cid";\$listtype ="$listtype";\$flag='$flag';\$aid='$aid';
             \$_GET['mid']="$mid";
             if(empty(\$cid)){
                 \$cid= isset(\$_GET['cid'])?intval(\$_GET['cid']):null;
             }
             \$db = new ContentViewModel();
             if(\$db->table){
-            if(!empty(\$flag)){
-                \$db->in(array("fid" => \$flag));
-            }else{
-                \$db->join("content_data,category");
-            }
-            if (\$cid) {
-                \$db->in(array("category.cid" => \$cid));
-            }
-            if (\$aid) {
-                \$db->in(array("content.aid" => \$aid));
-            }
-            \$db->where="status=1";
-            \$db->group="content.aid";
-            \$db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
-            \$db->limit($row);
-            \$result = \$db->order("aid DESC")->all();
-            foreach(\$result as \$field):
-                \$field['caturl']=U('category',array('cid'=>\$field['cid']));
-                \$field['url']="__ROOT__/".\$field['url'];
-                \$field['thumb']='__ROOT__'.'/'.\$field['thumb'];
-                \$field['description']=mb_substr(\$field['description'],0,$infolen,'utf-8');
-                ?>
+                //主表
+                \$table=\$db->table;
+                if(!empty(\$flag)){
+                    \$db->in(array("fid" => \$flag));
+                }
+                if (\$cid) {
+                    //查找栏目与子栏目
+                    if(\$listtype=='all'){
+                        \$tmp =M("category")->field("cid")->where("path like '%".\$cid."_%' or cid=\$cid")->all();
+                        \$cid=array();
+                        foreach(\$tmp as \$t){
+                            \$cid[]=\$t['cid'];
+                        }
+                    }
+                    \$db->in(array("category.cid" => \$cid));
+                }
+                if (\$aid) {
+                    \$db->where=\$table.".aid=".\$aid;
+                }
+                \$db->where="status=1";
+                \$db->group=\$table.".aid";
+                \$db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                \$db->limit($row);
+                \$result = \$db->order("aid DESC")->all();
+                foreach(\$result as \$field):
+                    \$field['caturl']=U('category',array('cid'=>\$field['cid']));
+                    \$field['url']="__ROOT__/".\$field['url'];
+                    \$field['thumb']='__ROOT__'.'/'.\$field['thumb'];
+                    \$field['description']=mb_substr(\$field['description'],0,$infolen,'utf-8');
+                    ?>
 str;
         $php .= $content;
-        $php .= '<?php endforeach;}?>';
+        $php .= '<?php endforeach;';
+        $php .= '}?>';
         return $php;
     }
 

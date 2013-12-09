@@ -57,7 +57,7 @@ endif;?>
     <!--头部右侧导航-->
     <div class="r_menu">
         <?php echo $_SESSION['rname'];?> : admin <a href="<?php echo U('Login/out');?>" target="_self">[退出]</a><span>|</span>
-        <a href="http://localhost/hdcms" target="_blank">前台首页</a><span>|</span>
+        <a href="http://localhost/hdcms/index.php" target="_blank">前台首页</a><span>|</span>
         <a href="<?php echo U('Member/Index/index');?>" target="_blank">会员中心</a></a>
 <!--        <span>|</span>-->
 <!--        <a href="http://localhost/hdcms" target="_blank">后台地图</a><span>|</span>-->
