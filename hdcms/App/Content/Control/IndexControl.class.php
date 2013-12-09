@@ -20,7 +20,7 @@ class IndexControl extends CommonControl
         parent::__init();
         $this->check_web_stat();
         $this->model = F("model", false, MODEL_CACHE_PATH);
-        $this->category = F("model", false, CATEGORY_CACHE_PATH);
+        $this->category = F("category", false, CATEGORY_CACHE_PATH);
         //模板风格路径
         $this->tpl_path = ROOT_PATH . "template/" . C("WEB_STYLE") . '/';
         //模板风格url
@@ -29,7 +29,6 @@ class IndexControl extends CommonControl
         define("__TEMPLATE__", $this->tpl_url);
         $this->cid = Q("get.cid", null, "intval");
         $this->aid = Q("get.aid", null, "intval");
-
         $this->table = $this->model[$this->category[$this->cid]['mid']]['tablename'];
     }
 
@@ -42,9 +41,7 @@ class IndexControl extends CommonControl
         }
     }
 
-    /**
-     * 网站首页
-     */
+    //网站首页
     public function index()
     {
         $this->display($this->tpl_path . 'index.html');
@@ -67,19 +64,17 @@ class IndexControl extends CommonControl
         }
     }
 
-    /**
-     * 显示栏目列表
-     */
+    //显示栏目列表
     public function category()
     {
-        $db = M('category');
-        $this->assign("hdcms", $db->find($this->cid));
-        $this->display($this->tpl_path . '/article_list.html');
+        if ($this->cid) {
+            $cat = get_category_tpl($this->cid);
+            $this->assign("hdcms", $db->find($this->cid));
+            $this->display($this->tpl_path . '/article_list.html');
+        }
     }
 
-    /**
-     * 修改文章点击次数
-     */
+    //修改文章点击次数
     public function updateClick()
     {
         $model = M("model")->find($this->_get("mid", "intval"));

@@ -8,8 +8,6 @@ define("CACHE_PATH", "./temp/cache/");
 define("LOG_PATH", "./temp/log/");
 //模型目录
 define("MODEL_PATH", GROUP_PATH . 'Model/');
-//函数库目录
-define("FUNCTION_PATH", GROUP_PATH . 'Function/');
 //标签目录
 define("TAG_PATH", GROUP_PATH . 'Tag/');
 //配置目录
