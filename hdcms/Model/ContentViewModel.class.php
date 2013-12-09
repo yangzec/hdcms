@@ -11,16 +11,15 @@ class ContentViewModel extends ViewModel
     protected $category;
 
     //获得内容
-    public function __construct($mid = null, $cid = null)
+    public function __construct()
     {
-        $this->cid = is_null($cid) ? Q("request.cid", null, "intval") : intval($cid);
+        $this->cid = intval(Q("get.cid") ? Q("get.cid") : Q("post.cid"));
         $this->category = F("category", false, CATEGORY_CACHE_PATH);
         $this->model = F("model", false, MODEL_CACHE_PATH);
-        if (!is_null($mid)) {
-            $this->mid = $mid;
-        } else if (!is_null($this->cid)) {
-            $this->mid = $this->category[$this->cid]['mid'];
+        if (!$this->cid) {
+            error("ContentViewModel没有可操作的cid");
         }
+        $this->mid = $this->category[$this->cid]['mid'];
         if ($this->mid) {
             //模型表
             $this->table = $this->model[$this->mid]['tablename'];
@@ -46,12 +45,4 @@ class ContentViewModel extends ViewModel
             $this->run($this->table);
         }
     }
-
-    //获得栏目路径 首页 » 栏目
-    public function get_category_path($cid)
-    {
-        $cat = Data::parentChannel($this->category, $cid);
-    }
-
-
 }

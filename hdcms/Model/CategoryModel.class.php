@@ -40,11 +40,12 @@ class CategoryModel extends RelationModel
         parent::__construct();
         $this->category = F("category", false, CATEGORY_CACHE_PATH);
         $this->model = F("model", false, MODEL_CACHE_PATH);
-        $this->cid = Q("request.cid");
-        if ($this->cid) {
-            //当前栏目数据主表
-            $this->content_table = $this->model[$this->category[$this->cid]['mid']]['tablename'];
+        $this->cid = intval(Q("get.cid") ? Q("get.cid") : Q("post.cid"));
+        if (!$this->cid) {
+            error("CategoryModel没有可操作的cid");
         }
+        //当前栏目数据主表
+        $this->content_table = $this->model[$this->category[$this->cid]['mid']]['tablename'];
     }
 
     //更新栏目缓存

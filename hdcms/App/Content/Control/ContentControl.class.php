@@ -81,6 +81,7 @@ class ContentControl extends AuthControl
         $this->assign("content", $data['content']);
         $this->display();
     }
+
     //显示回收站文章
     public function recycle()
     {
@@ -89,6 +90,7 @@ class ContentControl extends AuthControl
         $this->assign("content", $data['content']);
         $this->display();
     }
+
     //更新排序
     public function update_order()
     {
@@ -109,10 +111,9 @@ class ContentControl extends AuthControl
     public function add()
     {
         if (IS_POST) {
-            if ($this->db->create() && $res = $this->db->add()) {
+            if ($this->db->create() && $this->db->add()) {
                 $this->_ajax(1);
             }
-            //添加内容
         } else {
             //分配属性
             $flag = $this->db->table("flag")->join(NULL)->all();
@@ -198,7 +199,6 @@ class ContentControl extends AuthControl
     }
 
 
-
     /**
      * 批量删除文章 支持id=1  或id=array(1,2,3)两种形式
      * @param bool $model true 直接删除文件   false 放入回收站
@@ -211,7 +211,7 @@ class ContentControl extends AuthControl
                 $aid = array($aid);
             }
             //直接删除文件
-            if ($model || C("DEL_CONTENT_MODEL")==1) {
+            if ($model || C("DEL_CONTENT_MODEL") == 1) {
                 if ($this->db->del($aid)) {
                     $this->ajax_return(1, "删除文章成功");
                 }

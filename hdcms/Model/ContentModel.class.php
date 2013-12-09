@@ -90,7 +90,7 @@ class ContentModel extends RelationModel
         $count = $this->where($where)->where("status=$status")->count();
         $page = new Page($count, $row, 10);
         //获得内容
-        $field ="aid,title,addtime,updatetime,username,status,cid";
+        $field = "aid,title,addtime,updatetime,username,status,cid";
         $content = $this->field($field)->where($where)->order("arc_sort DESC,aid DESC")
             ->where("status=$status")->limit($page->limit())->all();
         if (!empty($content)) {
@@ -145,11 +145,13 @@ class ContentModel extends RelationModel
     //移除没有选中的flag
     private function format_flag()
     {
-        $flag = $this->data['content_flag'];
-        $this->data['content_flag'] = array();
-        foreach ($flag as $f) {
-            if (isset($f['fid'])) {
-                $this->data['content_flag'][] = $f;
+        if (isset($this->data['content_flag'])) {
+            $flag = $this->data['content_flag'];
+            $this->data['content_flag'] = array();
+            foreach ($flag as $f) {
+                if (isset($f['fid'])) {
+                    $this->data['content_flag'][] = $f;
+                }
             }
         }
     }
@@ -367,7 +369,7 @@ class ContentModel extends RelationModel
             $arc_html_url = str_replace($s, $_r[$n], $arc_html_url);
         }
         $url = rtrim(C("HTMLDIR"), '/\\') . '/' . $arc_html_url;
-        $this->join(NULL)->save(array("aid" => $aid, "url" => $url));
+        $this->trigger()->join(NULL)->save(array("aid" => $aid, "url" => $url));
         //生成静态
         return array("url" => $url, "aid" => $aid);
     }

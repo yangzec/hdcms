@@ -1,4 +1,4 @@
-<?php if(!defined("HDPHP_PATH"))exit;C("DEBUG_SHOW",false);?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+33<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -9,7 +9,7 @@
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
 		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=add&cid=7';
+		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=add';
 		HDPHP = 'http://localhost/hdphp/hdphp';
 		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
 		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';
@@ -23,6 +23,7 @@
 		STATIC = 'http://localhost/hdcms/hdcms/App/Content/Tpl/Static';
 		PUBLIC = 'http://localhost/hdcms/hdcms/App/Content/Tpl/Public';
 		COMMON = 'http://localhost/hdcms/Common';
+		TEMPLATE = 'http://localhost/hdcms/template/default/';
 </script>
     <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/static/js/js.js"></script>
@@ -30,7 +31,7 @@
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/css/css.css"/>
 </head>
 <body>
-<form action="<?php echo U(add);?>" method="post" onsubmit="return false;">
+<form action="http://localhost/hdcms/index.php?a=Content&c=Content&m=add" method="post" onsubmit="return false;">
     <div class="wrap">
         <!--右侧缩略图区域-->
         <div class="content_right">
@@ -53,7 +54,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" id="updatetime" name="updatetime" value="<?php echo date('Y/m/d h:i:s');?>"
+                        <input type="text" id="updatetime" name="updatetime" value="2013/12/10 12:26:45"
                                class="w150"/>
                         <script>
                             $('#updatetime').calendar({format: 'yyyy/MM/dd HH:mm:ss'});
@@ -108,7 +109,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="username" class="w150" value="<?php echo $_SESSION['username'];?>"/>
+                        <input type="text" name="username" class="w150" value="admin"/>
                     </td>
                 </tr>
             </table>
@@ -131,71 +132,17 @@
                 <tr>
                     <th>属性</th>
                     <td>
-                        <?php $hd["list"]["f"]["total"]=0;if(isset($flag) && !empty($flag)):$_id_f=0;$_index_f=0;$lastf=min(1000,count($flag));
-$hd["list"]["f"]["first"]=true;
-$hd["list"]["f"]["last"]=false;
-$_total_f=ceil($lastf/1);$hd["list"]["f"]["total"]=$_total_f;
-$_data_f = array_slice($flag,0,$lastf);
-if(count($_data_f)==0):echo "";
-else:
-foreach($_data_f as $key=>$f):
-if(($_id_f)%1==0):$_id_f++;else:$_id_f++;continue;endif;
-$hd["list"]["f"]["index"]=++$_index_f;
-if($_index_f>=$_total_f):$hd["list"]["f"]["last"]=true;endif;?>
-
-                            <label>
-                                <input type="hidden" name="content_flag[<?php echo $f['fid'];?>][cid]" value="<?php echo $category['cid'];?>"/>
-                              <label><input type="checkbox" name="content_flag[<?php echo $f['fid'];?>][fid]" value="<?php echo $f['fid'];?>"/> <?php echo $f['flagname'];?></label>
-                            </label>
-                        <?php $hd["list"]["f"]["first"]=false;
-endforeach;
-endif;
-else:
-echo "";
-endif;?>
-                    </td>
+                                            </td>
                 </tr>
                 <tr>
                     <th>栏目</th>
                     <td>
-                        <input type="hidden" name="cid" value="<?php echo $category['cid'];?>"/>
-                        <?php echo $category['catname'];?>
-                    </td>
+                        <input type="hidden" name="cid" value=""/>
+                                            </td>
                 </tr>
                 <!--标准模型显示正文字段-->
-                <?php if($model['type']==1){?>
-                    <tr>
-                        <th>关键字</th>
-                        <td>
-                            <input type="text" name="<?php echo $model['tablename'];?>_data[keywords]" class="w400"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>摘要</th>
-                        <td>
-                            <textarea name="<?php echo $model['tablename'];?>_data[description]" class="w450 h80"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>内容</th>
-                        <td>
-                            <span class="star">*</span>
-                            <?php echo tag("ueditor",array("name"=>$model['tablename']."_data[content]"));?>
-                            <div class="editor_set">
-                                <label><input type="checkbox" name="down_remote_pic" value="1" checked="checked"/>下载远程图片</label>
-                                <label><input type="checkbox" name="auto_desc" value="1" checked="checked"/>是否截取内容</label>
-                                <input type="text" size="3" value="200" name="auto_desc_length">
-                                字符至内容摘要
-                                <label><input type="checkbox" name="auto_thumb" value="1" checked="checked"/>否获取内容第</label>
-                                <input type="text" size="2" value="1" name="auto_thumb_num">
-                                张图片作为缩略图
-                            </div>
-                        </td>
-                    </tr>
-                <?php }?>
-                <!--自定义字段-->
-                <?php echo $custom_field;?>
-                <!--自定义字段-->
+                                <!--自定义字段-->
+                                <!--自定义字段-->
                 <tr>
                     <th>模板</th>
                     <td>

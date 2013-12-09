@@ -48,28 +48,26 @@ class IndexControl extends CommonControl
     }
 
     //内容页
-    public function content($aid = null)
+    public function content()
     {
-        $aid = intval($aid) ? intval($aid) : $this->aid;
-        if ($aid) {
-            $db = new ContentViewModel(null, $this->cid);
-            $field = $db->where("content.aid=" . $aid)->find();
+        if ($this->aid) {
+            $db = new ContentViewModel();
+            $field = $db->where("content.aid=" . $this->aid)->find();
             if ($field) {
                 $field['caturl'] = U("category", array("cid" => $field['cid']));
-                //获得栏目路径
-                $db->get_category_path($field['cid']);
                 $this->assign("hdcms", $field);
-                $this->display($this->tpl_path . 'article_default.html');
+                $tpl = get_content_tpl($this->aid);
+                $this->display($tpl);
             }
         }
     }
 
     //显示栏目列表
-    public function category()
+    public function category($cid = null)
     {
         if ($this->cid) {
-            $tpl = get_category_tpl($this->cid);
             $this->assign("hdcms", M("category")->find($this->cid));
+            $tpl = get_category_tpl($this->cid);
             $this->display($tpl);
         }
     }

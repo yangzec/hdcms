@@ -41,13 +41,13 @@ $(function () {
 
                         })
                     } else {
-                        $.dialog({
-                            msg: "操作失败",
-                            type: "error",
-                            close_handler: function () {
-                                location.href = URL;
-                            }
-                        });
+//                        $.dialog({
+//                            msg: "操作失败",
+//                            type: "error",
+//                            close_handler: function () {
+//                                location.href = URL;
+//                            }
+//                        });
                     }
                 }
             })
