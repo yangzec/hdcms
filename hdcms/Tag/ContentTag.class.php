@@ -36,31 +36,35 @@ str;
     //栏目标签
     public function _channel($attr, $content)
     {
-        //类型  top 顶级 son 下级 self同级
+        //类型  top 顶级 son 下级 self同级 current 指定的栏目
         $type = isset($attr['type']) ? $attr['type'] : "self";
         $row = isset($attr['row']) ? $attr['row'] : 10;
         $cid = isset($attr['cid']) ? $attr['cid'] : NULL;
         $php = <<<str
         <?php
-        \$where = '';\$type='$type';\$cid=$cid;\$row=$row;
+        \$where = '';\$type='$type';\$cid="$cid";\$row=$row;
 
         \$db = M("category");
         if (\$type == "top") {
             \$where .= " pid=0 ";
-        }
-        if (!empty(\$cid)) {
-            \$cat = \$db->find(\$cid);
-            if(\$cat){
-                switch (\$type) {
-                    case "son":
-                        \$where = " pid=".\$cat['cid'];
-                        break;
-                    case "self":
-                        \$where = " pid=".\$cat['pid'];
-                        break;
-                    case "one":
-                        \$where = " cid=".\$cat['cid'];
-                        break;
+        }else if (!empty(\$cid)) {
+            if(\$type=='current'){
+                 \$where = " cid in(".\$cid.")";
+            }else{
+                \$cid=intval(\$cid);
+                \$cat = \$db->find(\$cid);
+                if(\$cat){
+                    switch (\$type) {
+                        case "son":
+                                \$where = " pid=".\$cat['cid'];
+                                break;
+                        case "self":
+                                \$where = " pid=".\$cat['pid'];
+                                break;
+                        case "one":
+                                \$where = " cid=".\$cat['cid'];
+                                break;
+                    }
                 }
             }
         }

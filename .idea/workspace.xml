@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7fdfeb72-05e7-437b-b747-905afa58d1a4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" afterPath="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/content_94f44.php" afterPath="$PROJECT_DIR$/temp/compile/content_94f44.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/default/index.html" afterPath="$PROJECT_DIR$/template/default/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index.html_8c930.php" afterPath="$PROJECT_DIR$/temp/compile/index.html_8c930.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_260b1.php" afterPath="$PROJECT_DIR$/temp/compile/index_260b1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_4cb44.php" afterPath="$PROJECT_DIR$/temp/compile/index_4cb44.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_b96a9.php" afterPath="$PROJECT_DIR$/temp/compile/index_b96a9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +57,7 @@
       <file leaf-file-name="ContentTag.class.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="58" selection-start="4413" selection-end="4413" vertical-scroll-proportion="0.70090383" vertical-offset="1465" max-vertical-offset="3477">
+            <state line="38" column="48" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.21939194" vertical-offset="455" max-vertical-offset="3553">
               <folding />
             </state>
           </provider>
@@ -72,10 +66,8 @@
       <file leaf-file-name="index.html_8c930.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="17" selection-start="1345" selection-end="1345" vertical-scroll-proportion="-14.25" vertical-offset="152" max-vertical-offset="874">
-              <folding>
-                <marker date="1386612805000" expanded="true" signature="602:1955" placeholder="..." />
-              </folding>
+            <state line="31" column="13" selection-start="1243" selection-end="1243" vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="741">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,7 +84,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/default/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="25" selection-start="17" selection-end="25" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="190">
+            <state line="1" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="-0.35185185" vertical-offset="0" max-vertical-offset="152">
               <folding />
             </state>
           </provider>
@@ -644,6 +636,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="13" selection-start="1243" selection-end="1243" vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="741">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/default/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="-0.35185185" vertical-offset="0" max-vertical-offset="152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="24" selection-start="180" selection-end="180" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="1064">
@@ -651,25 +657,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/default/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="25" selection-start="17" selection-end="25" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="1345" selection-end="1345" vertical-scroll-proportion="-14.25" vertical-offset="152" max-vertical-offset="874">
-          <folding>
-            <marker date="1386612805000" expanded="true" signature="602:1955" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="58" selection-start="4413" selection-end="4413" vertical-scroll-proportion="0.70090383" vertical-offset="1465" max-vertical-offset="3477">
+        <state line="38" column="48" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.21939194" vertical-offset="455" max-vertical-offset="3553">
           <folding />
         </state>
       </provider>
