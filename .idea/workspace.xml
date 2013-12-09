@@ -2,169 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fdfeb72-05e7-437b-b747-905afa58d1a4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms.12.6.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms12.04.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms_model.mwb.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/list_6_1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/2013/1210/80.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/list_8_1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/34.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/35.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/38.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/39.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/40.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/41.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/42.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/43.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/44.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/45.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/46.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/47.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/48.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/49.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/50.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/51.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/52.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/53.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/54.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/55.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/56.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/57.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/58.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/59.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/60.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/61.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/62.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/63.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/64.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/65.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/66.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/67.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/68.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/69.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/70.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/71.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/72.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/73.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/74.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/75.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/76.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/77.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/78.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/1210/79.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/19.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/20.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/21.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/22.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/23.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/24.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/25.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/26.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/27.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/28.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/29.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/2013/129/30.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/10451386121177.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/12841386121195.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/12881386121123.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/13701386121172.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/1421386121122.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/14481386121367.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/14651386121177.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/16681386121339.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/17881386121259.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/17921386121367.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/1931386121150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/20281386121124.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/21491386121101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/22971386121260.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/22991386121310.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/23131386121124.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/24661386121147.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/25001386120714.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/26011386121174.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/26241386121200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/26991386120672.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/27221386121340.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28091386120655.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28101386120624.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28541386121261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/28571386121173.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/29691386121343.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/30491386121364.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/31761386121344.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/32091386121258.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/35211386121366.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/3581386121264.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/36941386121368.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/37611386121340.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/3891386121258.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/3891386121261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/39481386121146.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/40301386121284.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/40491386121309.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/41451386121313.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/41811386121195.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/43081386121264.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/43121386121178.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/45241386121149.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/4531386121286.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/48221386121122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/48271386121263.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50001386121123.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50001386121341.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50251386121126.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/50351386121197.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/51351386121199.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/51501386121311.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/52441386121196.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/52641386121290.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/53581386121370.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/54451386121201.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/58111386121147.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/60121386120687.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/61601386121291.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/61981386121262.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/62191386120715.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/63861386121258.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/6441386121178.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/67781386121121.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/68611386120673.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/68961386121344.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/69841386121180.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/70391386121101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/70851386121316.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/7311386121176.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/73281386121341.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/74181386121315.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/74881386121196.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/77801386121198.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/79071386121342.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/79131386121312.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/81791386120655.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/82461386121200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/83981386121261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/84121386121262.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/86191386121175.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/89281386121174.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/89341386121146.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/89491386121198.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/9271386121260.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/93371386120624.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/93911386121370.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/96131386121179.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/96231386121365.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/96481386121149.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/97921386121290.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/97971386121259.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/981386121148.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/98621386120686.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/Content/2013/12/04/98961386121195.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/NodeModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/NodeModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -186,71 +25,7 @@
     <favorites_list name="hdcms" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ModelModel.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/Model/ModelModel.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="32" selection-start="1263" selection-end="1272" vertical-scroll-proportion="-12.892858" vertical-offset="304" max-vertical-offset="2185">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="16" selection-start="4362" selection-end="4559" vertical-scroll-proportion="-23.964285" vertical-offset="1457" max-vertical-offset="3648">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="74" selection-start="4902" selection-end="4902" vertical-scroll-proportion="-25.107143" vertical-offset="1482" max-vertical-offset="3591">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContentTag.class.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="40" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.7649959" vertical-offset="0" max-vertical-offset="3800">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html_8c930.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/default/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ab.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/default/ab.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -268,8 +43,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/template/default/f.html" />
-        <option value="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/Tag/IndexTag.class.php" />
         <option value="$PROJECT_DIR$/hdcms/Common/Config/config.php" />
@@ -284,6 +57,8 @@
         <option value="$PROJECT_DIR$/template/default/index.html" />
         <option value="$PROJECT_DIR$/template/default/ab.html" />
         <option value="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/NodeControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/Model/NodeModel.class.php" />
       </list>
     </option>
   </component>
@@ -643,6 +418,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hdphp" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -676,14 +452,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1554" height="1406" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21153846" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21153846" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -710,32 +486,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hdcms/Common/Config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="319" selection-end="326" vertical-scroll-proportion="-4.2222223" vertical-offset="0" max-vertical-offset="627">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="39" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-6.648148" vertical-offset="819" max-vertical-offset="6232">
-          <folding>
-            <marker date="1386607398000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Template/Control/TagControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="48" selection-end="48" vertical-scroll-proportion="0.07723577" vertical-offset="0" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="16" selection-start="4362" selection-end="4559" vertical-scroll-proportion="-23.964285" vertical-offset="1457" max-vertical-offset="3648">
+        <state line="112" column="16" selection-start="4362" selection-end="4559" vertical-scroll-proportion="0.5513558" vertical-offset="1457" max-vertical-offset="3648">
           <folding />
         </state>
       </provider>
@@ -770,14 +523,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Model/ModelModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="32" selection-start="1263" selection-end="1272" vertical-scroll-proportion="-12.892858" vertical-offset="304" max-vertical-offset="2185">
+        <state line="35" column="32" selection-start="1263" selection-end="1272" vertical-scroll-proportion="0.29349592" vertical-offset="304" max-vertical-offset="2185">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="74" selection-start="4902" selection-end="4902" vertical-scroll-proportion="-25.107143" vertical-offset="1482" max-vertical-offset="3591">
+        <state line="115" column="74" selection-start="4902" selection-end="4902" vertical-scroll-proportion="0.57764995" vertical-offset="1482" max-vertical-offset="3591">
           <folding />
         </state>
       </provider>
@@ -803,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/default/ab.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
@@ -817,9 +563,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/Model/NodeModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="116" selection-end="116" vertical-scroll-proportion="0.047224525" vertical-offset="0" max-vertical-offset="2641">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Control/NodeControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="300" selection-end="300" vertical-scroll-proportion="0.14167356" vertical-offset="171" max-vertical-offset="2869">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Control/MenuControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="6" selection-start="91" selection-end="91" vertical-scroll-proportion="0.111390285" vertical-offset="0" max-vertical-offset="1463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="40" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.7649959" vertical-offset="0" max-vertical-offset="3800">
+        <state line="17" column="12" selection-start="502" selection-end="502" vertical-scroll-proportion="0.26540673" vertical-offset="0" max-vertical-offset="3800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/default/ab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
           <folding />
         </state>
       </provider>

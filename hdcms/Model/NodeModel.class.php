@@ -5,7 +5,7 @@
  * @author hdxj <houdunwangxj@gmail.com>
  */
 
-class NodeModel extends CommonModel
+class NodeModel extends ViewModel
 {
     public $table = "node";
     //节点缓存
