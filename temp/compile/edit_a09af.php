@@ -1,5 +1,5 @@
 <?php if(!defined("HDPHP_PATH"))exit;C("DEBUG_SHOW",false);?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
@@ -9,14 +9,14 @@
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
 		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Category&c=Category&m=add&pid=7&mid=1';
+		URL = 'http://localhost/hdcms/index.php?a=Category&c=Category&m=edit&cid=8';
 		HDPHP = 'http://localhost/hdphp/hdphp';
 		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
 		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';
 		HDPHPEXTEND = 'http://localhost/hdphp/hdphp/Extend';
 		APP = 'http://localhost/hdcms/index.php?a=Category';
 		CONTROL = 'http://localhost/hdcms/index.php?a=Category&c=Category';
-		METH = 'http://localhost/hdcms/index.php?a=Category&c=Category&m=add';
+		METH = 'http://localhost/hdcms/index.php?a=Category&c=Category&m=edit';
 		GROUP = 'http://localhost/hdcms/hdcms';
 		TPL = 'http://localhost/hdcms/hdcms/App/Category/Tpl';
 		CONTROLTPL = 'http://localhost/hdcms/hdcms/App/Category/Tpl/Category';
@@ -30,7 +30,8 @@
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Category/Tpl/Category/css/css.css"/>
 </head>
 <body>
-<form action="<?php echo U(add);?>" method="post">
+<form action="<?php echo U(edit);?>" method="post">
+    <input type="hidden" value="<?php echo $field['cid'];?>" name="cid"/>
 <div class="wrap">
     <div class="menu_list">
         <ul>
@@ -66,7 +67,7 @@ if(($_id_m)%1==0):$_id_m++;else:$_id_m++;continue;endif;
 $hd["list"]["m"]["index"]=++$_index_m;
 if($_index_m>=$_total_m):$hd["list"]["m"]["last"]=true;endif;?>
 
-                                    <option value="<?php echo $m['mid'];?>">
+                                    <option value="<?php echo $m['mid'];?>" <?php echo $m['selected'];?>>
                                         <?php echo $m['model_name'];?>
                                     </option>
                                 <?php $hd["list"]["m"]["first"]=false;
@@ -95,7 +96,7 @@ if(($_id_c)%1==0):$_id_c++;else:$_id_c++;continue;endif;
 $hd["list"]["c"]["index"]=++$_index_c;
 if($_index_c>=$_total_c):$hd["list"]["c"]["last"]=true;endif;?>
 
-                                    <option value="<?php echo $c['cid'];?>" <?php echo $c['disabled'];?> <?php echo $c['selected'];?>>
+                                    <option value="<?php echo $c['cid'];?>" <?php echo $c['selected'];?> <?php echo $c['disabled'];?>>
                                     <?php echo $c['catname'];?>
                                     </option>
                                 <?php $hd["list"]["c"]["first"]=false;
@@ -110,55 +111,55 @@ endif;?>
                     <tr>
                         <td>栏目名称</td>
                         <td>
-                            <input type="text" name="catname" class="w200"/>
+                            <input type="text" name="catname" value="<?php echo $field['catname'];?>" class="w200"/>
                         </td>
                     </tr>
 
                     <tr>
                         <td>静态目录</td>
                         <td>
-                            <input type="text" name="catdir" class="w200"/>
+                            <input type="text" name="catdir" value="<?php echo $field['catdir'];?>"  class="w200"/>
                         </td>
                     </tr>
                     <tr>
                         <td>生成静态</td>
                         <td>
-                            <label><input type="radio" name="urltype" value="1" checked="checked"/> 静态访问</label>
-                            <label><input type="radio" name="urltype" value="2"/> 动态访问</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>栏目类型</td>
-                        <td>
-                            <label><input type="radio" name="cattype" checked="checked" value="1"/> 普通栏目</label>
-                            <label><input type="radio" name="cattype" value="2"/> 频道封面</label>
-                            <label><input type="radio" name="cattype" value="3"/> 外部链接(在跳转Url处填写网址)</label>
+                            <label><input type="radio" name="urltype" value="1" <?php if($field['urltype']==1){?>checked="checked"<?php }?>/> 静态访问</label>
+                            <label><input type="radio" name="urltype" value="2" <?php if($field['urltype']==2){?>checked="checked"<?php }?>/> 动态访问</label>
                         </td>
                     </tr>
                     <tr>
                         <td>前台显示</td>
                         <td>
-                            <label><input type="radio" name="cat_show" value="1" checked="checked"/> 显示</label>
-                            <label><input type="radio" name="cat_show" value="0"/> 不显示</label>
+                            <label><input type="radio" name="cattype" value="1" <?php if($field['cattype']==1){?>checked="checked"<?php }?>/> 普通栏目</label>
+                            <label><input type="radio" name="cattype" value="2" <?php if($field['cattype']==2){?>checked="checked"<?php }?>/> 频道封面</label>
+                            <label><input type="radio" name="cattype" value="3" <?php if($field['cattype']==3){?>checked="checked"<?php }?>/> 外部链接(在跳转Url处填写网址)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>生成静态</td>
+                        <td>
+                            <label><input type="radio" name="cat_show" value="1" <?php if($field['cat_show']==1){?>checked="checked"<?php }?>/> 显示</label>
+                            <label><input type="radio" name="cat_show" value="2" <?php if($field['cat_show']==0){?>checked="checked"<?php }?>/> 不显示</label>
                         </td>
                     </tr>
                     <tr>
                         <td>跳转Url</td>
                         <td>
-                            <input type="text" name="cat_redirecturl" class="w300"/>
+                            <input type="text" name="cat_redirecturl" value="<?php echo $field['cat_redirecturl'];?>" class="w300"/>
                         </td>
                     </tr>
                     <tr>
                         <td>栏目关键字</td>
                         <td>
-                            <input type="text" name="keyworks" class="w300"/>
+                            <input type="text" name="keyworks" value="<?php echo $field['keyworks'];?>"  class="w300"/>
                             <span class="label">SEO关键字</span>
                         </td>
                     </tr>
                     <tr>
                         <td>栏目描述</td>
                         <td>
-                            <textarea name="description" class="w350 h80"></textarea>
+                            <textarea name="description" value="<?php echo $field['description'];?>" class="w350 h80"><?php echo $field['description'];?></textarea>
                             <span class="label">不能超过100字</span>
                         </td>
                     </tr>
@@ -170,7 +171,7 @@ endif;?>
                         <td class="w100">封面模板</td>
                         <td>
                             <input type="text" name="index_tpl" class="w200" id="index_tpl"
-                                   value="{style}/article_index.html"/>
+                                   value="<?php echo $field['index_tpl'];?>" onclick="select_tpl('index_tpl')"/>
                             <button type="button" onclick="select_tpl('index_tpl')">选择列表模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -178,7 +179,7 @@ endif;?>
                     <tr>
                         <td>列表页模板</td>
                         <td>
-                            <input type="text" name="list_tpl" id="list_tpl" class="w200" value="{style}/article_list.html"/>
+                            <input type="text" name="list_tpl" id="list_tpl" class="w200" value="<?php echo $field['list_tpl'];?>" onclick="select_tpl('list_tpl')"/>
                             <button type="button" onclick="select_tpl('list_tpl')">选择列表模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -186,7 +187,7 @@ endif;?>
                     <tr>
                         <td>内容页模板</td>
                         <td>
-                            <input type="text" name="arc_tpl" id="arc_tpl" class="w200" value="{style}/article_default.html"/>
+                            <input type="text" name="arc_tpl" id="arc_tpl" class="w200" value="<?php echo $field['arc_tpl'];?>" onclick="select_tpl('arc_tpl')"/>
                             <button type="button" onclick="select_tpl('arc_tpl')">选择内容页模板</button>
                             <span class="validation">{style}指模板风格</span>
                         </td>
@@ -199,23 +200,23 @@ endif;?>
                         <td class="w100">栏目生成Html</td>
                         <td>
                             <label><input type="radio" class="radio" name="is_cat_html" value="1"
-                                          checked="checked"/> 是</label>
-                            <label><input type="radio" class="radio" name="is_cat_html" value="0"/> 否</label>
+                                <?php if($field['is_cat_html']==1){?>checked="checked"<?php }?>/> 是</label>
+                            <label><input type="radio" class="radio" name="is_cat_html" value="0" <?php if($field['is_cat_html']==0){?>checked="checked"<?php }?>/> 否</label>
                         </td>
                     </tr>
                     <tr>
                         <td>内容页生成Html</td>
                         <td>
                             <label><input type="radio" class="radio" name="is_arc_html" value="1"
-                                          checked="checked"/> 是</label>
-                            <label><input type="radio" class="radio" name="is_arc_html" value="0"/> 否</label>
+                                <?php if($field['is_arc_html']==1){?>checked="checked"<?php }?>/> 是</label>
+                            <label><input type="radio" class="radio" name="is_arc_html" value="0" <?php if($field['is_arc_html']==0){?>checked="checked"<?php }?>/> 否</label>
                         </td>
                     </tr>
                     <tr>
                         <td>栏目页URL规则</td>
                         <td>
                             <input type="text" name="list_html_url" class="w200"
-                                   value="{catdir}/list_{cid}_{page}.html"/>
+                                   value="<?php echo $field['list_html_url'];?>"/>
                         <span class="validation">
                         {cid} 栏目ID,
                         {catdir} 栏目目录,
@@ -227,7 +228,7 @@ endif;?>
                         <td>内容页URL规则</td>
                         <td>
                             <input type="text" name="arc_html_url" class="w200"
-                                   value="{catdir}/{y}/{m}{d}/{aid}.html"/>
+                                   value="<?php echo $field['arc_html_url'];?>"/>
                         <span class="validation">
                         {y}、{m}、{d} 年月日,
                         {timestamp}UNIX时间戳,

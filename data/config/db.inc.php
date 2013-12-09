@@ -9,4 +9,7 @@ return array(
     "DB_DATABASE"                   => "hdcms",//数据库名称
     "DB_PREFIX"                     => "hd_",//表前缀
     "INSERT_TEST_DATA"                => "1",//安装测试数据
+    "NAME" => "HDCMS 简体中文 UTF8 版",
+    "VERSION" => "2013.11 Beta1",
+    "TIME" => "2013年11月18日"
 );

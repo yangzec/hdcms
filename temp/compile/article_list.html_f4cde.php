@@ -140,7 +140,7 @@
         <!-- 列表页介绍结束 -->
 
         <ul class="arc_list">
-                    <?php $cid='5';$flag='';
+                    <?php $cid='8';$flag='';
         $db = new ContentViewModel(null,$cid);
         if($flag){
             $count = $db->table("content_flag")->where("cid=$cid")->count();
@@ -149,7 +149,7 @@
         }
         $hd_page= new Page($count,10);
         $field ="aid,category.cid,thumb,click,source,author,addtime,updatetime,username,url,catname,title";
-        $result= $db->join("category")->field($field)->where($where_flag)->where("status=1")->where("category.cid=5")
+        $result= $db->join("category")->field($field)->where($where_flag)->where("status=1")->where("category.cid=8")
         ->group("aid")->limit($hd_page->limit())->all();
 //        p($db->getallsql());exit;
         foreach($result as $field):

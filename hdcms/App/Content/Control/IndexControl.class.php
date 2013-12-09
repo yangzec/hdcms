@@ -68,9 +68,9 @@ class IndexControl extends CommonControl
     public function category()
     {
         if ($this->cid) {
-            $cat = get_category_tpl($this->cid);
-            $this->assign("hdcms", $db->find($this->cid));
-            $this->display($this->tpl_path . '/article_list.html');
+            $tpl = get_category_tpl($this->cid);
+            $this->assign("hdcms", M("category")->find($this->cid));
+            $this->display($tpl);
         }
     }
 

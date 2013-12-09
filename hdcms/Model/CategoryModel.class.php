@@ -16,8 +16,23 @@ class CategoryModel extends RelationModel
     protected $model;
     //栏目缓存
     protected $category;
-    public $auto = array();
+    public $auto = array(
+        array("path", "_path", 2, 3, "method")
+    );
 
+    //path字段自动完成
+    public function _path()
+    {
+        //父pid
+        $pid = Q("post.pid", 0, 'intval');
+        if ($pid) {
+            return $this->category[$pid]['path'] . '_' . $pid;
+        } else {
+            return 0;
+        }
+
+
+    }
 
     //构造函数
     public function __construct()
@@ -84,6 +99,11 @@ class CategoryModel extends RelationModel
     }
 
     public function __after_add()
+    {
+        $this->update_cache();
+    }
+
+    public function __after_update()
     {
         $this->update_cache();
     }

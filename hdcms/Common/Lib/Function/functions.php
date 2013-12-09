@@ -1,6 +1,5 @@
 <?php
-if (!defined("HDPHP_PATH"))
-    exit('No direct script access allowed');
+if (!defined("HDPHP_PATH")) exit;
 //获得栏目url
 function get_category_url($cid)
 {
@@ -12,6 +11,5 @@ function get_category_url($cid)
 function get_category_tpl($cid)
 {
     $category = F("category", false, CATEGORY_CACHE_PATH);
-    $cat = $category[$cid];
-    p($cat);
+    return str_replace('{style}', './template/' . C("WEB_STYLE"), $category[$cid]['list_tpl']);
 }

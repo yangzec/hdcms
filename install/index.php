@@ -111,7 +111,8 @@ switch ($s) {
         $db->exe("UPDATE {$db_prefix}config SET value='{$d['EMAIL']}' WHERE name='email'");
         $db->exe("UPDATE {$db_prefix}user SET username='{$d['ADMIN']}',email='{$d['EMAIL']}',password='" . md5($d['PASSWORD']) . "' WHERE username='admin'");
         //修改配置文件
-        $core = file_get_contents("../data/config/core.inc.php");
+        $config = require("config.inc.php");
+        $config['WEB_MASTER']=$d['ADMIN'];
         $core = preg_replace('@(WEB_MASTER.*?)\w+?(?=[\'"])@i', '\1' . $d['ADMIN'], $core);
         file_put_contents("../data/config/core.inc.php", $core);
         copy("config.inc.php", "../data/config/db.inc.php");
