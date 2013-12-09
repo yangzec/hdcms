@@ -56,16 +56,16 @@ class HtmlControl extends AuthControl
             $config['url'] = $url;
             $_cid = array();
             $db = M("category");
-            foreach ($cid as $c) {
-                $cat = $db->field("cid,catname,list_html_url,catdir,cattype")->where("cattype<3 and cid={$c['cid']}")->find();
+            foreach ($cid as $cid) {
+                $cat = $db->field("cid,catname,list_html_url,catdir,cattype")->where("cattype<3 and cid={$cid}")->find();
                 if ($cat) {
                     $cat['list_html_url'] = C("HTMLDIR") . '/' . preg_replace(array('@\{catdir\}@i', '@\{cid\}@i'), array($cat['catdir'], $cat['cid']), $cat['list_html_url']);
-                    $_cid[$c['cid']] = $cat;
+                    $_cid[$cid] = $cat;
                     $html_dir = C("HTMLDIR") . '/' . $cat['catdir'];
-                    $_cid[$c['cid']]['index_html'] = $html_dir . '/index.html';
-                    $_cid[$c['cid']]['html_dir'] = $html_dir;
-                    $_cid[$c['cid']]['total_page'] = 1;
-                    $_cid[$c['cid']]['has_index'] = false;
+                    $_cid[$cid]['index_html'] = $html_dir . '/index.html';
+                    $_cid[$cid]['html_dir'] = $html_dir;
+                    $_cid[$cid]['total_page'] = 1;
+                    $_cid[$cid]['has_index'] = false;
                 }
             }
             $_SESSION['html_category'] = array('step_row' => $step_row, 'url' => $url, 'cid' => $_cid);

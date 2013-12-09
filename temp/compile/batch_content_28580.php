@@ -9,7 +9,7 @@
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
 		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Html&c=Html&m=batch_content&_=0.7427808646266518&_0.9458183941236488';
+		URL = 'http://localhost/hdcms/index.php?a=Html&c=Html&m=batch_content&_=0.5075714602253434&_0.9325322429242201&_0.8365219410989296&_0.8068309982085717';
 		HDPHP = 'http://localhost/hdphp/hdphp';
 		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
 		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';

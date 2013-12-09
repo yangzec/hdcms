@@ -22,14 +22,16 @@ class IndexControl extends CommonControl
         $this->model = F("model", false, MODEL_CACHE_PATH);
         $this->category = F("category", false, CATEGORY_CACHE_PATH);
         //模板风格路径
-        $this->tpl_path = ROOT_PATH . "template/" . C("WEB_STYLE") . '/';
+        $this->tpl_path = "./template/" . C("WEB_STYLE") . '/';
         //模板风格url
         $this->tpl_url = __ROOT__ . "/template/" . C("WEB_STYLE") . '/';
         //分配模板目录
         define("__TEMPLATE__", $this->tpl_url);
         $this->cid = Q("get.cid", null, "intval");
         $this->aid = Q("get.aid", null, "intval");
-        $this->table = $this->model[$this->category[$this->cid]['mid']]['tablename'];
+        if ($this->cid) {
+            $this->table = $this->model[$this->category[$this->cid]['mid']]['tablename'];
+        }
     }
 
     //网站是否关闭

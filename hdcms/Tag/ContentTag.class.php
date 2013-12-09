@@ -48,18 +48,20 @@ str;
         if (\$type == "top") {
             \$where .= " pid=0 ";
         }
-        if (!is_null(\$cid)) {
-            \$cat = \$db->find($cid);
-            switch (\$type) {
-                case "son":
-                    \$where = " pid=".\$cat['cid'];
-                    break;
-                case "self":
-                    \$where = " pid=".\$cat['pid'];
-                    break;
-                case "one":
-                    \$where = " cid=".\$cat['cid'];
-                    break;
+        if (!empty(\$cid)) {
+            \$cat = \$db->find(\$cid);
+            if(\$cat){
+                switch (\$type) {
+                    case "son":
+                        \$where = " pid=".\$cat['cid'];
+                        break;
+                    case "self":
+                        \$where = " pid=".\$cat['pid'];
+                        break;
+                    case "one":
+                        \$where = " cid=".\$cat['cid'];
+                        break;
+                }
             }
         }
         \$result = \$db->where(\$where)->where("cat_show=1")->order()->where(\$where)->order("catorder DESC")->limit(\$row)->all();
@@ -87,11 +89,12 @@ str;
         $flag = isset($attr['flag']) ? intval($attr['flag']) : "";
         $php = "";
         $php .= <<<str
-        <?php \$cid ="$cid";\$flag='$flag';\$aid='$aid';
+        <?php \$mid="$mid";\$cid ="$cid";\$flag='$flag';\$aid='$aid';
+            \$_GET['mid']="$mid";
             if(empty(\$cid)){
                 \$cid= isset(\$_GET['cid'])?intval(\$_GET['cid']):null;
             }
-            \$db = new ContentViewModel($mid,\$cid);
+            \$db = new ContentViewModel();
             if(\$db->table){
             if(!empty(\$flag)){
                 \$db->in(array("fid" => \$flag));

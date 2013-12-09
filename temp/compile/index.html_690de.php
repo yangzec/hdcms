@@ -29,18 +29,20 @@
         if ($type == "top") {
             $where .= " pid=0 ";
         }
-        if (!is_null($cid)) {
-            $cat = $db->find(1);
-            switch ($type) {
-                case "son":
-                    $where = " pid=".$cat['cid'];
-                    break;
-                case "self":
-                    $where = " pid=".$cat['pid'];
-                    break;
-                case "one":
-                    $where = " cid=".$cat['cid'];
-                    break;
+        if (!empty($cid)) {
+            $cat = $db->find($cid);
+            if($cat){
+                switch ($type) {
+                    case "son":
+                        $where = " pid=".$cat['cid'];
+                        break;
+                    case "self":
+                        $where = " pid=".$cat['pid'];
+                        break;
+                    case "one":
+                        $where = " cid=".$cat['cid'];
+                        break;
+                }
             }
         }
         $result = $db->where($where)->where("cat_show=1")->order()->where($where)->order("catorder DESC")->limit($row)->all();
@@ -58,18 +60,20 @@
         if ($type == "top") {
             $where .= " pid=0 ";
         }
-        if (!is_null($cid)) {
-            $cat = $db->find(1);
-            switch ($type) {
-                case "son":
-                    $where = " pid=".$cat['cid'];
-                    break;
-                case "self":
-                    $where = " pid=".$cat['pid'];
-                    break;
-                case "one":
-                    $where = " cid=".$cat['cid'];
-                    break;
+        if (!empty($cid)) {
+            $cat = $db->find($cid);
+            if($cat){
+                switch ($type) {
+                    case "son":
+                        $where = " pid=".$cat['cid'];
+                        break;
+                    case "self":
+                        $where = " pid=".$cat['pid'];
+                        break;
+                    case "one":
+                        $where = " cid=".$cat['cid'];
+                        break;
+                }
             }
         }
         $result = $db->where($where)->where("cat_show=1")->order()->where($where)->order("catorder DESC")->limit($row)->all();
@@ -94,11 +98,12 @@
 <div id="latest_news_box">
     <div id="latest_news">
         <p><span class="title">最新消息：</span>
-                    <?php $cid ="4";$flag='';$aid='';
+                    <?php $mid="1";$cid ="4";$flag='';$aid='';
+            $_GET['mid']="1";
             if(empty($cid)){
                 $cid= isset($_GET['cid'])?intval($_GET['cid']):null;
             }
-            $db = new ContentViewModel(1,$cid);
+            $db = new ContentViewModel();
             if($db->table){
             if(!empty($flag)){
                 $db->in(array("fid" => $flag));
@@ -132,11 +137,12 @@
     <!-- 左侧区域 -->
     <div class="left">
         <ul class="arc_list">
-                    <?php $cid ="";$flag='4';$aid='';
+                    <?php $mid="1";$cid ="";$flag='4';$aid='';
+            $_GET['mid']="1";
             if(empty($cid)){
                 $cid= isset($_GET['cid'])?intval($_GET['cid']):null;
             }
-            $db = new ContentViewModel(1,$cid);
+            $db = new ContentViewModel();
             if($db->table){
             if(!empty($flag)){
                 $db->in(array("fid" => $flag));
@@ -180,11 +186,12 @@
     <div class="center">
         <p class="title">站长推荐</p>
         <ul class="title_list">
-                    <?php $cid ="";$flag='3';$aid='';
+                    <?php $mid="1";$cid ="";$flag='3';$aid='';
+            $_GET['mid']="1";
             if(empty($cid)){
                 $cid= isset($_GET['cid'])?intval($_GET['cid']):null;
             }
-            $db = new ContentViewModel(1,$cid);
+            $db = new ContentViewModel();
             if($db->table){
             if(!empty($flag)){
                 $db->in(array("fid" => $flag));
@@ -215,11 +222,12 @@
         </ul>
         <p class="title">置顶推荐</p>
         <ul class="title_list">
-                    <?php $cid ="";$flag='2';$aid='';
+                    <?php $mid="1";$cid ="";$flag='2';$aid='';
+            $_GET['mid']="1";
             if(empty($cid)){
                 $cid= isset($_GET['cid'])?intval($_GET['cid']):null;
             }
-            $db = new ContentViewModel(1,$cid);
+            $db = new ContentViewModel();
             if($db->table){
             if(!empty($flag)){
                 $db->in(array("fid" => $flag));
@@ -276,11 +284,12 @@
 
         <p class="title">技巧资源</p>
         <ul class="title_list">
-                    <?php $cid ="2,3,4,5";$flag='';$aid='';
+                    <?php $mid="1";$cid ="2,3,4,5";$flag='';$aid='';
+            $_GET['mid']="1";
             if(empty($cid)){
                 $cid= isset($_GET['cid'])?intval($_GET['cid']):null;
             }
-            $db = new ContentViewModel(1,$cid);
+            $db = new ContentViewModel();
             if($db->table){
             if(!empty($flag)){
                 $db->in(array("fid" => $flag));

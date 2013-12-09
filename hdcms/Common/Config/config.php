@@ -9,6 +9,8 @@ return array_merge(
     array(
         //显示debug信息
         "DEBUG_SHOW" => 1,
+        //不显示"页面找不到"错误
+        "404_TPL" => "",
         //session处理
         "SESSION_ENGINE" => "mysql",
         //伪静态后缀

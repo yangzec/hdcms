@@ -148,11 +148,11 @@
                             <span class="star">*</span>
                             {|tag:"ueditor",array("name"=>$model['tablename']."_data[content]")}
                             <div class="editor_set">
-                                <label><input type="checkbox" name="down_remote_pic" value="1" checked="checked"/>下载远程图片</label>
-                                <label><input type="checkbox" name="auto_desc" value="1" checked="checked"/>是否截取内容</label>
+                                <label><input type="checkbox" name="down_remote_pic" value="1" <if value="$hd.config.down_remote_pic==1">checked="checked"</if>/>下载远程图片</label>
+                                <label><input type="checkbox" name="auto_desc" value="1" <if value="$hd.config.auto_desc==1">checked="checked"</if>/>是否截取内容</label>
                                 <input type="text" size="3" value="200" name="auto_desc_length">
                                 字符至内容摘要
-                                <label><input type="checkbox" name="auto_thumb" value="1" checked="checked"/>否获取内容第</label>
+                                <label><input type="checkbox" name="auto_thumb" value="1" <if value="$hd.config.auto_thumb==1">checked="checked"</if>/>否获取内容第</label>
                                 <input type="text" size="2" value="1" name="auto_thumb_num">
                                 张图片作为缩略图
                             </div>

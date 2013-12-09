@@ -1,5 +1,4 @@
 <?php
-echo 33;
 /**
  * 前台应用标签库
  * Class IndexTag

@@ -14,12 +14,15 @@ class ContentViewModel extends ViewModel
     public function __construct()
     {
         $this->cid = intval(Q("get.cid") ? Q("get.cid") : Q("post.cid"));
+        $this->mid = intval(Q("get.mid") ? Q("get.mid") : Q("post.mid"));
         $this->category = F("category", false, CATEGORY_CACHE_PATH);
         $this->model = F("model", false, MODEL_CACHE_PATH);
-        if (!$this->cid) {
+        if (!$this->cid && !$this->mid) {
             error("ContentViewModel没有可操作的cid");
         }
-        $this->mid = $this->category[$this->cid]['mid'];
+        if ($this->cid) {
+            $this->mid = $this->category[$this->cid]['mid'];
+        }
         if ($this->mid) {
             //模型表
             $this->table = $this->model[$this->mid]['tablename'];

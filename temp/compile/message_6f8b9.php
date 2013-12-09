@@ -23,6 +23,7 @@
 		STATIC = 'http://localhost/hdcms/hdcms/App/Html/Tpl/Static';
 		PUBLIC = 'http://localhost/hdcms/hdcms/App/Html/Tpl/Public';
 		COMMON = 'http://localhost/hdcms/Common';
+		TEMPLATE = 'http://localhost/hdcms/template/default/';
 </script>
     <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/static/js/js.js"></script>
