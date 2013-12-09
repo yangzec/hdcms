@@ -57,7 +57,7 @@
       <file leaf-file-name="ContentTag.class.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="48" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.21939194" vertical-offset="455" max-vertical-offset="3553">
+            <state line="29" column="12" selection-start="866" selection-end="866" vertical-scroll-proportion="0.45275268" vertical-offset="0" max-vertical-offset="3800">
               <folding />
             </state>
           </provider>
@@ -66,16 +66,7 @@
       <file leaf-file-name="index.html_8c930.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="13" selection-start="1243" selection-end="1243" vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="741">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContentViewModel.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="24" selection-start="180" selection-end="180" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="1064">
+            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
               <folding />
             </state>
           </provider>
@@ -84,7 +75,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/default/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="-0.35185185" vertical-offset="0" max-vertical-offset="152">
+            <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ab.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/default/ab.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
               <folding />
             </state>
           </provider>
@@ -108,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hdcms/Common/Lib/Function/functions.php" />
         <option value="$PROJECT_DIR$/template/default/f.html" />
         <option value="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" />
@@ -123,6 +122,7 @@
         <option value="$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php" />
         <option value="$PROJECT_DIR$/temp/compile/index.html_8c930.php" />
         <option value="$PROJECT_DIR$/template/default/index.html" />
+        <option value="$PROJECT_DIR$/template/default/ab.html" />
         <option value="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" />
       </list>
     </option>
@@ -550,20 +550,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hdcms/Model/TemplateTagModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="54" selection-end="54" vertical-scroll-proportion="0.07723577" vertical-offset="0" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="9" selection-start="941" selection-end="941" vertical-scroll-proportion="-14.928572" vertical-offset="209" max-vertical-offset="2109">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Common/Config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="16" selection-start="319" selection-end="326" vertical-scroll-proportion="-4.2222223" vertical-offset="0" max-vertical-offset="627">
@@ -636,30 +622,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1243" selection-end="1243" vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="741">
+        <state line="10" column="24" selection-start="180" selection-end="180" vertical-scroll-proportion="0.15447155" vertical-offset="0" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/config/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="12" selection-start="636" selection-end="645" vertical-scroll-proportion="0.2810189" vertical-offset="0" max-vertical-offset="1217">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/default/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="-0.35185185" vertical-offset="0" max-vertical-offset="152">
+        <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php">
+    <entry file="file://$PROJECT_DIR$/template/default/ab.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="24" selection-start="180" selection-end="180" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="1064">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/compile/index.html_8c930.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="114">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="48" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.21939194" vertical-offset="455" max-vertical-offset="3553">
+        <state line="29" column="12" selection-start="866" selection-end="866" vertical-scroll-proportion="0.45275268" vertical-offset="0" max-vertical-offset="3800">
           <folding />
         </state>
       </provider>

@@ -12,9 +12,22 @@ class ContentTag
         'arclist' => array('block' => 1, 'level' => 4),
         'comment' => array('block' => 1, 'level' => 4),
         'pagelist' => array('block' => 1, 'level' => 4),
-        'pageshow' => array('block' => 0)
+        'pageshow' => array('block' => 0),
+        'include' => array('block' => 0)
     );
-
+    //加载模板标签
+    public function _include($attr, $content)
+    {
+        if (!empty($attr['file'])) {
+            $file = "template/" . C("WEB_STYLE") . "/" . $attr['file'];
+            if (is_file($file)) {
+                $view = new HdView();
+                $view->fetch($file);
+                return $view->getCompileContent();
+            }
+        }
+    }
+    //评论显示标签
     public function _comment($attr, $content)
     {
         $row = isset($attr['row']) ? $attr['row'] : 10;
