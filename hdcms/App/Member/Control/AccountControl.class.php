@@ -1,4 +1,5 @@
 <?php
+//用户资料修改
 class AccountControl extends MemberAuthControl
 {
     protected $db;

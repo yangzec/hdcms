@@ -22,5 +22,7 @@ return array_merge(
         "TPL_FIX" => ".php",
         //公共函数库
         "AUTO_LOAD_FILE" => array(COMMON_LIB_PATH . 'Function/functions.php'),
+        "TPL_ERROR"                     => "./data/Template/error.html",          //错误页面
+        "TPL_SUCCESS"                   => "./data/Template/success.html",          //正确页面
     )
 );
