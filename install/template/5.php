@@ -90,7 +90,7 @@
                     </tr>
                     <tr>
                         <td>站长邮箱</td>
-                        <td><input type="text" class="input" name="EMAIL" value="" mast_required="1" error="站长邮箱不能为空"/>
+                        <td><input type="text" class="input" name="EMAIL" value="" error="站长邮箱不能为空"/>
                             <span class="message"></span></td>
                     </tr>
                 </table>

@@ -19,16 +19,12 @@ define("COMPILE_PATH", './temp/compile/');
 //模型缓存路径
 define("MODEL_CACHE_PATH", DATA_PATH . 'model/');
 //表字段缓存
-//模型缓存路径
 define("FIELD_CACHE_PATH", DATA_PATH . 'field/');
 //栏目缓存路径
 define("CATEGORY_CACHE_PATH", DATA_PATH . 'category/');
 //菜单缓存路径
 define("NODE_CACHE_PATH", DATA_PATH . 'node/');
 ###INSTALL_START
-if (!file_exists('install/lock.php')) {
-    header("Location: install/");
-    exit;
-}
+
 ###INSTALL_END
-require "../hdphp/hdphp.php";
+require "../hdphp/hdphp/hdphp.php";

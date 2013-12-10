@@ -6,7 +6,8 @@ return array(
     "DB_PORT"                       => 3306,//数据库连接端口
     "DB_USER"                       => "root",//数据库用户名
     "DB_PASSWORD"                   => "admin888",//数据库密码
-    "DB_DATABASE"                   => "dsf",//数据库名称
+    "DB_DATABASE"                   => "a1",//数据库名称
     "DB_PREFIX"                     => "hd_",//表前缀
-    "INSERT_TEST_DATA"                => "1",//安装测试数据
+    "WEB_MASTER"                    => "abc",//站长
+    "INSERT_TEST_DATA"              => "1",//安装测试数据
 );

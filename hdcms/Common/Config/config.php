@@ -1,6 +1,5 @@
 <?php
 if (!defined("HDPHP_PATH")) exit('No direct script access allowed');
-//更多配置请查看hdphp/Config/config.php
 return array_merge(
 //网站配置
     require "./data/config/config.inc.php",
@@ -25,4 +24,3 @@ return array_merge(
         "AUTO_LOAD_FILE" => array(COMMON_LIB_PATH . 'Function/functions.php'),
     )
 );
-?>

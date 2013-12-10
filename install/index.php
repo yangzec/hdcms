@@ -14,7 +14,7 @@ if (is_file("./lock.php")) {
     exit;
 }
 define("HDPHP_PATH", "../../hdphp/hdphp/hdphp.php");
-$version = require "../../hdcms/data/config/version.php";
+$version = require "./version.php";
 define("VERSION", $version['NAME'] . " " . $version['VERSION']);
 define("INSTALL_DIR", dirname(dirname(str_replace('\\', '/', __FILE__))));
 $step = array(
@@ -111,10 +111,6 @@ switch ($s) {
         $db->exe("UPDATE {$db_prefix}config SET value='{$d['EMAIL']}' WHERE name='email'");
         $db->exe("UPDATE {$db_prefix}user SET username='{$d['ADMIN']}',email='{$d['EMAIL']}',password='" . md5($d['PASSWORD']) . "' WHERE username='admin'");
         //修改配置文件
-        $config = require("config.inc.php");
-        $config['WEB_MASTER']=$d['ADMIN'];
-        $core = preg_replace('@(WEB_MASTER.*?)\w+?(?=[\'"])@i', '\1' . $d['ADMIN'], $core);
-        file_put_contents("../data/config/core.inc.php", $core);
         copy("config.inc.php", "../data/config/db.inc.php");
         return_msg("创建完毕!<script>setTimeout(function(){parent.location.href='?step=7'},0);</script>");
         break;
@@ -132,7 +128,8 @@ return array(
     "DB_PASSWORD"                   => "{$_POST['DB_PASSWORD']}",//数据库密码
     "DB_DATABASE"                   => "{$_POST['DB_DATABASE']}",//数据库名称
     "DB_PREFIX"                     => "{$_POST['DB_PREFIX']}",//表前缀
-    "INSERT_TEST_DATA"                => "{$_POST['INSERT_TEST_DATA']}",//安装测试数据
+    "WEB_MASTER"                    => "{$_POST['ADMIN']}",//站长
+    "INSERT_TEST_DATA"              => "{$_POST['INSERT_TEST_DATA']}",//安装测试数据
 );
 str;
     file_put_contents("config.inc.php", $config);
@@ -190,5 +187,5 @@ function return_msg($msg)
 {
     $h = "<span style='color:#555;font-weight: normal;font-size:14px;'>{$msg}<br/>";
     $h .= "<script>window.scrollTo(0,9000)</script>";
-    echo $h;exit;
+    echo $h;
 }

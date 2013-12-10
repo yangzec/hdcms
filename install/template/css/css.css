@@ -17,38 +17,46 @@ ul, ol {
 a {
     text-decoration: none;
 }
-span.dir_error{
+
+span.dir_error {
     background: url("../img/ico.gif") 0px -153px no-repeat;
     padding-left: 18px;
 }
-span.dir_success{
+
+span.dir_success {
     background: url("../img/ico.gif") 0px -103px no-repeat;
     padding-left: 18px;
 }
-span.desc{
+
+span.desc {
     font-size: 12px;
     color: #666;
     padding-left: 0px;
     margin-left: 5px;
 }
-span.message{
+
+span.message {
     font-size: 12px;
     color: #666;
     padding-left: 20px;
     margin-left: 5px;
 }
-span.error{
+
+span.error {
     background: url("../img/error.jpg") 0px no-repeat;
 }
+
 table th, table td {
     text-align: left;
     border-bottom: solid 1px #dcdcdc;
     padding: 5px;
 }
-.input{
+
+.input {
     padding: 3px 10px;
     width: 200px;
 }
+
 table th {
     color: #1F5C9D;
 }
@@ -56,12 +64,14 @@ table th {
 div#wrap {
     padding: 0px;
     margin: 0px;
+    height: auto;
+    overflow: hidden;
 }
 
 div.btn {
     text-align: center;
     width: 800px;
-    height:35px;
+    height: 35px;
 }
 
 div.btn a {
@@ -83,12 +93,12 @@ div.btn a:hover {
 div.step {
     width: 800px;
     margin: 0px auto;
-    top:60px;
+    top: 30px;
     position: relative;
     box-shadow: 0 0 20px #aaa;
-    border-bottom:solid 2px #000;
+    border-bottom: solid 2px #000;
     background: #f00;
-    padding-top:45px;
+    padding-top: 45px;
 }
 
 div.step1 {
@@ -99,6 +109,21 @@ div.step2 {
     background: url("../img/2.jpg") -12px -14px no-repeat;
 }
 
+div.step2_info {
+    padding-top: 85px;
+    width:400px;
+    margin:0 auto;
+}
+
+div.step2_info li {
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color:#333;
+    list-style: circle;
+    border-bottom: 1px solid #DCDCDC;
+}
+
 div.step3 {
     background: url("../img/bg.jpg") -12px -14px no-repeat;
 }
@@ -106,17 +131,19 @@ div.step3 {
 div.step4 {
     background: url("../img/bg.jpg") -12px -14px no-repeat;
 }
-div.title{
+
+div.title {
     font-size: 35px;
-    width:800px;
+    width: 800px;
     text-align: center;
     color: #1F5C9D;
     margin-bottom: 30px;
 }
+
 div.version {
     font-size: 12px;
     position: absolute;
-    top:3px;
+    top: 3px;
     right: 30px;
 }
 
@@ -125,7 +152,7 @@ div.license {
     height: 450px;
     margin: 0px auto;
     border: solid 1px #999;
-    margin-top:10px;
+    margin-top: 10px;
     overflow-y: auto;
     font-size: 12px;
     line-height: 1.8em;
@@ -147,9 +174,9 @@ div.copyright p {
 div.install {
     width: 730px;
     margin-left: 30px;
-    margin-top:20px;
-    overflow:hidden;
-    height:auto;
+    margin-top: 20px;
+    overflow: hidden;
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -157,13 +184,15 @@ div.set {
     height: auto;
     padding: 10px 20px;
 }
-div.set h3{
+
+div.set h3 {
     color: #1F5C9D;
 }
+
 div.process {
     margin: 0 auto;
-    width:750px;
-    height:auto;
+    width: 750px;
+    height: auto;
     overflow: hidden;
 }
 
@@ -180,6 +209,7 @@ div.process ul li {
 div.process ul li.current {
     color: #1F5C9D;
 }
+
 /*step 6*/
 div.create_table {
     margin: 30px;
@@ -211,9 +241,10 @@ div.success div.link a:hover {
     text-decoration: underline;
     color: #1F5B9D;
 }
-iframe#insert_data{
-    border:none;
-    width:100%;
+
+iframe#insert_data {
+    border: none;
+    width: 100%;
     height: 350px;
 }
 
