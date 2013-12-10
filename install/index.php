@@ -7,7 +7,7 @@ if (is_file("./lock.php")) {
             <title>HDCMS提示</title>
             </head>
             <body>
-                <div>你已经安装过HDCMS,请先删除Install目录下的Lock.php文件后安装。</div>
+                <div style="background:#FFD896;padding:20px;">你已经安装过HDCMS,请先删除Install目录下的lock.php文件后安装。</div>
             </body>
        </html>
     ';

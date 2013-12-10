@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fdfeb72-05e7-437b-b747-905afa58d1a4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/install/version.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_category.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_comment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_content.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_content_data.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_content_flag.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/table/hd_flag.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/install/lock.php" afterPath="$PROJECT_DIR$/hdcms/Common/Config/event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/template/img/2.jpg" afterPath="$PROJECT_DIR$/install/template/img/2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/template/2.php" afterPath="$PROJECT_DIR$/install/template/2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/template/5.php" afterPath="$PROJECT_DIR$/install/template/5.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/admin.inc.php" afterPath="$PROJECT_DIR$/install/admin.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/config.inc.php" afterPath="$PROJECT_DIR$/install/config.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Bug/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Bug/Config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/Common/Config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/template/css/css.css" afterPath="$PROJECT_DIR$/install/template/css/css.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/config/db.inc.php" afterPath="$PROJECT_DIR$/data/config/db.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/index.php" afterPath="$PROJECT_DIR$/install/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,30 +29,22 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="60" selection-start="4572" selection-end="4572" vertical-scroll-proportion="-16.857143" vertical-offset="1998" max-vertical-offset="3724">
+            <state line="9" column="90" selection-start="292" selection-end="292" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="3724">
               <folding>
-                <marker date="1386690747000" expanded="true" signature="107:304" placeholder="..." />
-                <marker date="1386690747000" expanded="true" signature="126:181" placeholder="..." />
-                <marker date="1386690747000" expanded="true" signature="200:289" placeholder="..." />
-                <marker date="1386690747000" expanded="false" signature="6068:6114" placeholder="..." />
+                <marker date="1386691020000" expanded="true" signature="107:345" placeholder="..." />
+                <marker date="1386691020000" expanded="true" signature="126:181" placeholder="..." />
+                <marker date="1386691020000" expanded="true" signature="200:330" placeholder="..." />
+                <marker date="1386691020000" expanded="true" signature="230:262" placeholder="..." />
+                <marker date="1386691020000" expanded="false" signature="6109:6155" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install/template/2.php">
+      <file leaf-file-name="db.inc.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/config/db.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="38" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-20.357143" vertical-offset="0" max-vertical-offset="874">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="css.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/install/template/css/css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="10" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.7319838" vertical-offset="901" max-vertical-offset="5320">
+            <state line="8" column="45" selection-start="417" selection-end="417" vertical-scroll-proportion="0.12357724" vertical-offset="0" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -152,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/template/default/ab.html" />
         <option value="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/NodeControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/Model/NodeModel.class.php" />
@@ -168,6 +137,7 @@
         <option value="$PROJECT_DIR$/install/template/2.php" />
         <option value="$PROJECT_DIR$/install/template/css/css.css" />
         <option value="$PROJECT_DIR$/install/index.php" />
+        <option value="$PROJECT_DIR$/data/config/db.inc.php" />
       </list>
     </option>
   </component>
@@ -534,7 +504,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -638,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install/template/2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="38" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-20.357143" vertical-offset="0" max-vertical-offset="874">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/install/config.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
@@ -652,28 +615,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/install/template/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="10" selection-start="1335" selection-end="1335" vertical-scroll-proportion="1.4615384" vertical-offset="0" max-vertical-offset="5320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/template/2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="38" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.46341464" vertical-offset="0" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/install/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="60" selection-start="4572" selection-end="4572" vertical-scroll-proportion="-16.857143" vertical-offset="1998" max-vertical-offset="3724">
+        <state line="9" column="90" selection-start="292" selection-end="292" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="3724">
           <folding>
-            <marker date="1386690747000" expanded="true" signature="107:304" placeholder="..." />
-            <marker date="1386690747000" expanded="true" signature="126:181" placeholder="..." />
-            <marker date="1386690747000" expanded="true" signature="200:289" placeholder="..." />
-            <marker date="1386690747000" expanded="false" signature="6068:6114" placeholder="..." />
+            <marker date="1386691020000" expanded="true" signature="107:345" placeholder="..." />
+            <marker date="1386691020000" expanded="true" signature="126:181" placeholder="..." />
+            <marker date="1386691020000" expanded="true" signature="200:330" placeholder="..." />
+            <marker date="1386691020000" expanded="true" signature="230:262" placeholder="..." />
+            <marker date="1386691020000" expanded="false" signature="6109:6155" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/config/db.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="507" selection-end="507" vertical-scroll-proportion="0.15741508" vertical-offset="0" max-vertical-offset="1207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/template/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="10" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.7319838" vertical-offset="901" max-vertical-offset="5320">
+        <state line="8" column="45" selection-start="417" selection-end="417" vertical-scroll-proportion="0.12357724" vertical-offset="0" max-vertical-offset="1230">
           <folding />
         </state>
       </provider>
