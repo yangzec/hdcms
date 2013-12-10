@@ -2,8 +2,6 @@
 $(function () {
     //点击+图标，添加文章
     $("span.file").live("click", function () {
-//        $("[name='content']").attr("src", $(this).find("a").attr("href"));
-//        $(this).find("a").eq(0).trigger("click");
         window.open($(this).find("a").attr("href"));
     })
     //收缩
@@ -58,7 +56,7 @@ $(function () {
             dataType: "JSON",
             cache: false,
             success: function (data) {
-                var h = "<li class='cat_tree_top'><div class='tree_top'></div>";
+                var h = "<li><a href='javascript:window.location.reload(true);' target='_self'>刷新栏目列表</a></li><li class='cat_tree_top'><div class='tree_top'></div>";
                 h += "<a href='javascript:;'>展开收缩</a></li>";
                 h += set_category_tree(data);
                 $("#browser").html(h);

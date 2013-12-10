@@ -48,7 +48,8 @@ function show_iframe(nid) {
     $("div.content iframe").hide();
     if (menu_cache.iframe[nid]) {
         var frm = $("iframe[nid='" + nid + "']");
-        frm.attr("src", frm.attr("src") + "&_" + Math.random()).show();
+//        var url = $("a[nid="+nid+"]").attr("url");
+        frm.show();
     } else {
         var obj = $(".left_menu a[nid='" + nid + "']");
         var url = $(obj).attr("url");

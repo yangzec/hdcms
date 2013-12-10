@@ -51,7 +51,7 @@ class HtmlControl extends AuthControl
     public function get_category_config($cid, $step_row = 10, $url = null)
     {
         if (!is_null($cid)) {
-            $_SESSION['html_history']=__URL__;
+            $_SESSION['html_history'] = __URL__;
             $config['step_row'] = $step_row;
             $config['url'] = $url;
             $_cid = array();
@@ -80,7 +80,7 @@ class HtmlControl extends AuthControl
         $config =& $_SESSION['html_category'];
         if (empty($config['cid'])) {
             $message = "全部栏目更新完成!";
-            $this->assign("message",$message);
+            $this->assign("message", $message);
             $this->assign("success_url", $_SESSION['html_history']);
             $this->display("message");
             unset($_SESSION['html_category']);
@@ -105,24 +105,26 @@ class HtmlControl extends AuthControl
                 file_put_contents($cat['index_html'], $con);
                 $total = Page::$staticTotalPage;
                 $config['cid'][$cat['cid']]['has_index'] = true;
-            }
-            $list_html_url = str_replace('{page}', $_GET['page'], $cat['list_html_url']);
-            file_put_contents($list_html_url, $con);
-            //生成页数减少
-            $total--;
-            if ($total <= 0) {
-                break;
+
+            } else {
+                $list_html_url = str_replace('{page}', $_GET['page'], $cat['list_html_url']);
+                file_put_contents($list_html_url, $con);
+                //生成页数减少
+                $total--;
+                if ($total <= 0) {
+                    break;
+                }
             }
         }
         if ($total > 0) {
             $config['cid'][$cat['cid']]['total_page'] = $total;
-            $message = "继续生成" . $cat['catname'] . "栏目的下{$total}条记录...";
+            $message = "继续生成" . $cat['catname'] . "的第{$total}页...";
         } else {
             unset($config['cid'][$cat['cid']]);
             $message = "栏目" . $cat['catname'] . "生成完成!";
         }
-        $message.=" <script>
-                    window.setTimeout(function(){location.href='" . U("create_category") . "'},500)</script>";
+        $message .= " <script>
+                    window.setTimeout(function(){location.href='" . U("create_category") . "'},3500)</script>";
         $this->assign("message", $message);
         $this->display("message");
     }
@@ -162,28 +164,27 @@ class HtmlControl extends AuthControl
     //生成内容页静态
     public function create_content()
     {
-        $config = &$_SESSION["create_html_config"];
+        $config = & $_SESSION["create_html_config"];
         //生成静态
         $cid = current($config['cid']);
-        $_GET['cid']=$cid;
+        $_GET['cid'] = $cid;
         if (empty($cid)) {
             $message = "全部内容更新完毕!";
             $this->assign("message", $message);
         } else {
             import("Content.Control.IndexControl");
             $ob = new IndexControl();
-            $model = new ContentViewModel(NULL, $cid);
+            $model = new ContentViewModel();
             $where = array();
             $where['where'] = $config['where'];
             $where['order'] = $config['order'];
-            $_GET['cid'] = $cid;
             $model->join(null)->where($where)->where("cid=$cid")->all();
             $con = $model->join("category")->where($where)->where("category.cid=$cid")->
                 limit(array($config['current'], $config['step_row']))->field("catname,aid,category.cid,url,ishtml")->all();
             $count = $model->where($where)->where("cid=$cid")->count();
             if (count($con) == 0) {
                 $cid = array_shift($config['cid']);
-                $config['current']=0;
+                $config['current'] = 0;
                 $cat = M("category")->find($cid);
                 $message = "栏目 <font color='red'>{$cat['catname']} </font> 更新完成...
                         <script>window.setTimeout(function(){location.href='" . __METH__ . "'},500)</script>
@@ -194,7 +195,7 @@ class HtmlControl extends AuthControl
                 is_dir($dir) or dir_create($dir, 0755);
                 foreach ($con as $c) {
                     if (empty($c['url'])) continue;
-                    $_GET['aid']=$c['aid'];
+                    $_GET['aid'] = $c['aid'];
                     ob_start();
                     $ob->content($c['aid']);
                     $html = ob_get_clean();
