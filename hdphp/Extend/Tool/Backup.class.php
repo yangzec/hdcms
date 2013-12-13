@@ -130,7 +130,8 @@ final class Backup
             } while (true);
         }
         //更新配置文件
-        $html = "<div style='text-align:center;font-size:14px;margin-top: 50px;'>完成所有数据备份!</div>";
+        $html = "<div style='text-align:center;font-size:14px;margin-top: 50px;'>完成所有数据备份!
+        <a href='javascript:parent.location.href=\"" . __CONTROL__ ."\"' class='btn'>返回备份列表</a></div>";
         self::success($html);
     }
 

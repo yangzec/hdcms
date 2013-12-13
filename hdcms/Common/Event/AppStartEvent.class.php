@@ -10,7 +10,9 @@ class AppStartEvent extends Event
     public function install()
     {
         if (!file_exists('install/lock.php')) {
-            header("Location: install/");
+            echo "<script>
+                top.location.href='install/';
+            </script>";
             exit;
         }
     }

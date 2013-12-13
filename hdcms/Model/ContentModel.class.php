@@ -41,7 +41,7 @@ class ContentModel extends RelationModel
         $this->category = F("category", false, CATEGORY_CACHE_PATH);
         $this->model = F("model", false, MODEL_CACHE_PATH);
         $this->cid = Q("request.cid", null, "intval");
-        $mid = Q("mid", NULL, "intval");
+        $mid = Q("request.mid", NULL, "intval");
         $this->mid = $mid ? $mid : $this->category[$this->cid]['mid'];
         //模型表
         $this->table = $this->model[$this->mid]['tablename'];
@@ -80,39 +80,39 @@ class ContentModel extends RelationModel
      * @param $row 显示列表行数
      * @return array
      */
-    public function get_list($status = 1, $row = 10)
-    {
-        $where = "";
-        if ($this->cid) {
-            $where = "cid=" . $this->cid;
-        }
-        //统计
-        $count = $this->where($where)->where("status=$status")->count();
-        $page = new Page($count, $row, 10);
-        //获得内容
-        $field = "aid,title,addtime,updatetime,username,status,cid";
-        $content = $this->field($field)->where($where)->order("arc_sort DESC,aid DESC")
-            ->where("status=$status")->limit($page->limit())->all();
-        if (!empty($content)) {
-            foreach ($content as $n => $c) {
-                //获得文章属性
-                $flag = $this->join(NULL)->table("content_flag")->field("fid")->where("aid=" . $c['aid'] . " AND cid=" . $c['cid'])->all();
-                if ($flag) {
-                    $fid = array();
-                    foreach ($flag as $f) {
-                        $fid[] = $f['fid'];
-                    }
-                    $flag = $this->join(NULL)->table("flag")->field("flagname")->in($fid)->all();
-                    $s = "";
-                    foreach ($flag as $f) {
-                        $s .= "[" . $f['flagname'] . "] ";
-                    }
-                    $content[$n]['flagname'] = $s;
-                }
-            }
-        }
-        return array("page" => $page->show(), "content" => $content);
-    }
+//    public function get_list($status = 1, $row = 10)
+//    {
+//        $where = "";
+//        if ($this->cid) {
+//            $where = "cid=" . $this->cid;
+//        }
+//        //统计
+//        $count = $this->where($where)->where("status=$status")->count();
+//        $page = new Page($count, $row, 10);
+//        //获得内容
+//        $field = "aid,title,addtime,updatetime,username,status,cid";
+//        $content = $this->field($field)->where($where)->order("arc_sort DESC,aid DESC")
+//            ->where("status=$status")->limit($page->limit())->all();
+//        if (!empty($content)) {
+//            foreach ($content as $n => $c) {
+//                //获得文章属性
+//                $flag = $this->join(NULL)->table("content_flag")->field("fid")->where("aid=" . $c['aid'] . " AND cid=" . $c['cid'])->all();
+//                if ($flag) {
+//                    $fid = array();
+//                    foreach ($flag as $f) {
+//                        $fid[] = $f['fid'];
+//                    }
+//                    $flag = $this->join(NULL)->table("flag")->field("flagname")->in($fid)->all();
+//                    $s = "";
+//                    foreach ($flag as $f) {
+//                        $s .= "[" . $f['flagname'] . "] ";
+//                    }
+//                    $content[$n]['flagname'] = $s;
+//                }
+//            }
+//        }
+//        return array("page" => $page->show(), "content" => $content);
+//    }
 
     //下载远程图片
     protected function down_remote_pic()
@@ -123,17 +123,17 @@ class ContentModel extends RelationModel
         $php_ini = @ini_get("allow_url_fopen");
         if ($php_ini && isset($data['down_remote_pic'])) {
             if (isset($data['content_data']) && isset($data['content_data']['content'])) {
-                $content = & $data['content_data']['content'];
+                $content = & $data[$this->table .'_data']['content'];
                 //查找所有图片
                 preg_match_all("@<img.*?src=['\"](http://.*?[jpg|jpeg|png|gif])['\"].*?>@i", $content, $imgs);
-                if (!isset($imgs[1]) || empty($imgs[1])) {
+                if (empty($imgs[1])) {
                     return false;
                 }
                 import("Upload.Control.UploadControl");
                 $upload = new UploadControl();
                 foreach ($imgs[1] as $img) {
                     //本站图片不进行处理
-                    if (strstr($img, __ROOT__)) continue;
+                    if (strstr($img, __ROOT__)) continue;;
                     if ($d_img = $upload->down_remote_pic($img)) {
                         $content = preg_replace("@$img@", $d_img, $content);
                     }
@@ -150,7 +150,7 @@ class ContentModel extends RelationModel
             $this->data['content_flag'] = array();
             foreach ($flag as $f) {
                 if (isset($f['fid'])) {
-                    $this->data['content_flag'][] = $f;
+                    $this->data['content_flag'][$f['fid']] = $f;
                 }
             }
         }
@@ -235,13 +235,15 @@ class ContentModel extends RelationModel
     //提出第n张图为缩略图
     public function set_thumb_pic()
     {
+        //服务器是否允许远程下载
+        $php_ini = @ini_get("allow_url_fopen");
         //有正文时处理
-        if (isset($this->data['auto_thumb']) && $this->data['auto_thumb'] == 1 && empty($this->data['thumb'])) {
-            $content = $this->data['content_data']['content'];
+        if ($php_ini && isset($this->data['auto_thumb']) && $this->data['auto_thumb'] == 1 && empty($this->data['thumb'])) {
+            $content = $this->data[$this->table . '_data']['content'];
             //取得所有图片
             preg_match_all("@<img.*?src=['\"](http://.*?[jpg|jpeg|png|gif])['\"].*?>@i", $content, $imgs);
             //没有图片不进行缩略图自动处理
-            if (!isset($imgs[1]) || empty($imgs[1])) {
+            if (empty($imgs[1])) {
                 return false;
             }
             //取第几张图为缩略图
@@ -263,44 +265,39 @@ class ContentModel extends RelationModel
     //自动截取内容摘要
     public function set_description_field()
     {
-        if ($this->model[$this->mid]['type'] == 2) {
-            return;
+        if (isset($this->data['description'])) {
+            $table = $this->table . '_data';
+            $description = $this->data['description'];
+            $content = $this->data[$table]['content'];
+            if (empty($description) && $this->data['auto_desc'] == 1) {
+                //截取长度
+                $len = intval($this->data['auto_desc_length']) ? intval($this->data['auto_desc_length']) : 100;
+                $content = str_replace('&nbsp;','',@strip_tags($content));
+                $this->data['description'] = mb_substr(trim($content), 0, $len, "utf8");
+            }
         }
-        $table = $this->table . '_data';
-        $description = $this->data[$table]['description'];
-        $content = $this->data[$table]['content'];
-        if (empty($description) && $this->data['auto_desc'] == 1) {
-            //截取长度
-            $len = intval($this->data['auto_desc_length']) ? intval($this->data['auto_desc_length']) : 100;
-            $content = strip_tags($content);
-            $this->data[$table]['description'] = mb_substr($content, 0, $len, "utf8");
-        }
-
     }
 
     //关键字处理
     public function set_keywords_field()
     {
-        if ($this->model[$this->mid]['type'] == 2) {
-            return;
-        }
-        $table = $this->table . '_data';
-        $keywords = $this->data[$table]['keywords'];
-        $description = preg_replace("@[\s\w]@is", "", $this->data[$table]['description']);
-        if (empty($keywords)) {
-            $words = String::splitWord($description);
-            //没有分词不处理
-            if (empty($words)) return;
-            $i = 0;
-            $k = "";
-            foreach ($words as $w => $id) {
-                $k .= $w . ",";
-                $i++;
-                if ($i > 8) break;
+        if (isset($this->data['keywords'])) {
+            $keywords = $this->data['keywords'];
+            $description = preg_replace("@[\s\w]@is", "", $this->data['description']);
+            if (empty($keywords)) {
+                $words = String::splitWord($description);
+                //没有分词不处理
+                if (empty($words)) return;
+                $i = 0;
+                $k = "";
+                foreach ($words as $w => $id) {
+                    $k .= $w . ",";
+                    $i++;
+                    if ($i > 8) break;
+                }
+                $this->data['keywords'] = substr($k, 0, -1);
             }
-            $this->data[$table]['keywords'] = substr($k, 0, -1);
         }
-
     }
 
     //插入与编辑前执行的动作

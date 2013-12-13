@@ -1,12 +1,7 @@
 //预览
-function view(path) {
-    $.modal({
-        title: "预览",
-        width: 550,
-        height: 450,
-        button: true,
-        content: "<div style='height:360px;overflow: hidden;vertical-align: middle;'><img src='" + path + "' style='width:550px;'/></div>"
-    });
+function view(url) {
+    $("#view .modal-body").html("<img src='"+url+"'/>");
+    $("#view").modal();
 }
 //删除
 function del(id) {

@@ -20,10 +20,12 @@ $(function () {
         },
         content: {
             rule: {
-                required: true
+                required: true,
+                regexp: /^.{20,}$/
             },
             error: {
-                required: "内容不能为空"
+                required: "内容不能为空",
+                regexp: "内容描述不能少于20个字"
             }
         }
     })

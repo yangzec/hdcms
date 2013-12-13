@@ -128,14 +128,14 @@
                             $cid[]=$t['cid'];
                         }
                     }
-                    $db->in(array("category.cid" => $cid));
+                    $db->where = C("DB_PREFIX")."category.cid in($cid)";
                 }
                 if ($aid) {
                     $db->where=$table.".aid=".$aid;
                 }
                 $db->where="status=1";
                 $db->group=$table.".aid";
-                $db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                $db->field("url,username,category.cid,catname,{$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{$db->table}.redirecturl,author,color");
                 $db->limit(1);
                 $result = $db->order("aid DESC")->all();
                 foreach($result as $field):
@@ -161,7 +161,7 @@
         <!-- 列表页介绍结束 -->
 
         <ul class="arc_list">
-                    <?php $cid='9';$flag='';
+                    <?php $cid='1';$flag='';
         $db = new ContentViewModel(null,$cid);
         if($flag){
             $count = $db->table("content_flag")->where("cid=$cid")->count();
@@ -169,8 +169,8 @@
             $count = $db->join(NULL)->where("cid=$cid")->count();
         }
         $hd_page= new Page($count,10);
-        $field ="aid,category.cid,thumb,click,source,author,addtime,updatetime,username,url,catname,title";
-        $result= $db->join("category")->field($field)->where($where_flag)->where("status=1")->where("category.cid=9")
+        $field ="aid,category.cid,thumb,click,source,author,addtime,updatetime,username,url,catname,title,description";
+        $result= $db->join("category")->field($field)->where($where_flag)->where("status=1")->where("catid=1")
         ->group("aid")->limit($hd_page->limit())->all();
 //        p($db->getallsql());exit;
         foreach($result as $field):
@@ -191,7 +191,13 @@
                 </li>
             <?php endforeach;?>
         </ul>
-        <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+        <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
         <!-- 分页 -->
             <div class="page1">
                 <?php if(is_object($hd_page)){
@@ -227,14 +233,14 @@
                             $cid[]=$t['cid'];
                         }
                     }
-                    $db->in(array("category.cid" => $cid));
+                    $db->where = C("DB_PREFIX")."category.cid in($cid)";
                 }
                 if ($aid) {
                     $db->where=$table.".aid=".$aid;
                 }
                 $db->where="status=1";
                 $db->group=$table.".aid";
-                $db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                $db->field("url,username,category.cid,catname,{$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{$db->table}.redirecturl,author,color");
                 $db->limit(8);
                 $result = $db->order("aid DESC")->all();
                 foreach($result as $field):
@@ -271,14 +277,14 @@
                             $cid[]=$t['cid'];
                         }
                     }
-                    $db->in(array("category.cid" => $cid));
+                    $db->where = C("DB_PREFIX")."category.cid in($cid)";
                 }
                 if ($aid) {
                     $db->where=$table.".aid=".$aid;
                 }
                 $db->where="status=1";
                 $db->group=$table.".aid";
-                $db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                $db->field("url,username,category.cid,catname,{$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{$db->table}.redirecturl,author,color");
                 $db->limit(8);
                 $result = $db->order("aid DESC")->all();
                 foreach($result as $field):
@@ -341,14 +347,14 @@
                             $cid[]=$t['cid'];
                         }
                     }
-                    $db->in(array("category.cid" => $cid));
+                    $db->where = C("DB_PREFIX")."category.cid in($cid)";
                 }
                 if ($aid) {
                     $db->where=$table.".aid=".$aid;
                 }
                 $db->where="status=1";
                 $db->group=$table.".aid";
-                $db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                $db->field("url,username,category.cid,catname,{$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{$db->table}.redirecturl,author,color");
                 $db->limit(4);
                 $result = $db->order("aid DESC")->all();
                 foreach($result as $field):

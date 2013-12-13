@@ -24,7 +24,13 @@
 		PUBLIC = 'http://localhost/hdcms/hdcms/App/Upload/Tpl/Public';
 		COMMON = 'http://localhost/hdcms/Common';
 </script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/static/js/js.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Upload/Tpl/Upload/js/js.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Upload/Tpl/Upload/css/css.css"/>
@@ -33,7 +39,6 @@
     </script>
 </head>
 <body>
-<div class="wrap">
     <div class="tab">
         <ul class="tab_menu">
             <li lab="upload"><a href="#">上传文件</a></li>
@@ -52,10 +57,9 @@
             </div>
         </div>
     </div>
-</div>
-<div class="btn_wrap">
-    <input type="button" class="btn1" id="pic_selected" value="确定"/>
-    <input type="button" class="btn2 close_window" value="关闭" onclick="close_window();"/>
+<div style="position: absolute;bottom: 0px;">
+    <input type="button" class="btn btn-primary" id="pic_selected" value="确定"/>
+    <input type="button" class="btn close_window" value="关闭" onclick="close_window();"/>
 </div>
 </body>
 </html>

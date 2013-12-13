@@ -11,7 +11,7 @@
     <css file="__CONTROL_TPL__/css/css.css"/>
 </head>
 <body>
-<form method="post" action="__METH__">
+<form method="post" action="__METH__" class="form-inline">
     <div class="wrap">
         <div class="table_title">温馨提示</div>
         <div class="help">

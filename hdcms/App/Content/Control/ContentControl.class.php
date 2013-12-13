@@ -15,7 +15,7 @@ class ContentControl extends AuthControl
     protected $cid;
     //当前模型
     protected $db = null;
-    //当cid存在时创建mid
+    //模型mid
     protected $mid;
     //文章主表
     protected $table;
@@ -54,7 +54,7 @@ class ContentControl extends AuthControl
     //异步获得目录树，内容左侧目录列表
     public function ajax_category_tree()
     {
-        $data = Data::channelLevel(Data::channelList($this->category));
+        $data = Data::channelLevel($this->category);
         $data = $this->get_view_tree($data);
         $this->_ajax($data);
     }
@@ -63,7 +63,7 @@ class ContentControl extends AuthControl
     private function get_view_tree($data)
     {
         foreach ($data as $n => $d) {
-            $d['text'] = $d['catname'];
+            $d['text'] = $d['title'];
             if (!empty($d['data'])) {
                 $d["children"] = $this->get_view_tree($d['data']);
             }
@@ -72,22 +72,72 @@ class ContentControl extends AuthControl
         return $json;
     }
 
-    //显示内容页列表
-    public function content()
+    //待审核文章
+    public function audit()
     {
-        //获得列表数据
-        $data = $this->db->get_list(1, C("ADMIN_LIST_ROW"));
-        $this->assign("page", $data['page']);
-        $this->assign("content", $data['content']);
-        $this->display();
+        $_GET['status'] = 0;
+        $this->content();
     }
 
-    //显示回收站文章
-    public function recycle()
+    //已审核文章内容页列表
+    public function content()
     {
-        $data = $this->db->get_list(2);
-        $this->assign("page", $data['page']);
-        $this->assign("content", $data['content']);
+        $db = K("ContentView");
+        //获得列表数据
+        $where = array();
+        $pri = $db->table . ".aid";
+        if (!empty($_POST['search_begin_time'])) {
+            $where[] = "addtime>=" . strtotime($_POST['search_begin_time']);
+        }
+        if (!empty($_POST['search_end_time'])) {
+            $where[] = "addtime<=" . strtotime($_POST['search_end_time']);
+        }
+        if (!empty($_POST['search_flag'])) {
+            $where[] = C("DB_PREFIX") . "content_flag.fid=" . $_POST['search_flag'];
+        }
+        $search_type = Q("post.search_type");
+        $search_keyword = Q("post.search_keyword");
+        if (!empty($search_type) && !empty($search_keyword)) {
+            switch ($search_type) {
+                case 1:
+                    $where[] = $db->tableFull . ".title like '%{$search_keyword}%'";
+                    break;
+                case 2:
+                    $where[] = $db->tableFull . ".description like '%{$search_keyword}%'";
+                    break;
+                case 3:
+                    $where[] = $db->tableFull . ".username like '%{$search_keyword}%'";
+                    break;
+                case 4:
+                    $where[] = $db->tableFull . ".aid=" . intval($search_keyword);
+                    break;
+            }
+        }
+        //已审核或未审核
+        $where[] = "status=" . Q("get.status", 1, "intval");
+        $where[] = C("DB_PREFIX") . "category.cid=" . $this->cid;
+        //总条数
+        $count = $db->where($where)->group($pri)->count($pri);
+        $page = new Page($count, C("ADMIN_LIST_ROW"));
+        //字段集
+        $field = $db->table . ".aid,title,arc_sort,category.cid,catname,username,updatetime";
+        $data = $db->field($field)->where($where)->group($pri)->limit($page->limit())->all();
+        if (!empty($data)) {
+            $flag = K("ContentFlag");
+            foreach ($data as $n => $d) {
+                $f = $flag->field("flagname")->where(array("aid" => $d['aid'], 'cid' => $this->cid))->all();
+                if (!empty($f) && is_array($f)) {
+                    $s_flag = "[<font color='red'>";
+                    foreach ($f as $_f) {
+                        $s_flag .= $_f['flagname'] . "&nbsp;";
+                    }
+                    $data[$n]['flag'] = substr($s_flag, 0, -6) . "]</font>";
+                }
+            }
+        }
+        $this->assign("flag", $this->db->table("flag")->all());
+        $this->assign("page", $page->show());
+        $this->assign("content", $data);
         $this->display();
     }
 
@@ -122,8 +172,9 @@ class ContentControl extends AuthControl
             $this->assign("category", $this->category[$this->cid]);
             $this->assign("model", $this->model[$this->mid]);
             //自定义字段
-            $this->field = new FieldModel("Field", $this->mid);
-            $this->assign("custom_field", $this->field->field_view());
+            $_field = new FieldModel();
+            $_field->mid = $this->mid;
+            $this->assign("custom_field", $_field->field_view());
             //添加正文视图
             $this->display();
         }
@@ -143,16 +194,15 @@ class ContentControl extends AuthControl
             $aid = Q("request.aid", null, "intval");
             if ($aid) {
                 $field = $this->db->find($aid);
-                $field['cid'] = $field['cid'];
-                $field['catname'] = $field['catname'];
                 $this->assign("category", $this->category);
                 $this->assign("model", $this->model[$this->mid]);
                 $this->assign("flag", $this->get_content_flag($aid));
-                $field['thumb_src'] = empty($field['thumb']) ? __ROOT__ . '/hdcms/static/img/upload-pic.png' : __ROOT__ . '/' . $field['thumb'];
+                $field['thumb_img'] = empty($field['thumb']) ? __ROOT__ . '/hdcms/static/img/upload-pic.png' : __ROOT__ . '/' . $field['thumb'];
                 $this->assign("field", $field);
                 //自定义字段
-                $this->field = new FieldModel("field", $this->mid);
-                $custom_field = $this->field->field_view($field);
+                $_field = new FieldModel();
+                $_field->mid = $this->mid;
+                $custom_field = $_field->field_view($field);
                 $this->assign("custom_field", $custom_field);
                 $this->display();
             }
@@ -174,61 +224,121 @@ class ContentControl extends AuthControl
         }
         foreach ($flag as $n => $f) {
             $checked = isset($cur[$f['fid']]) ? "checked='checked'" : "";
-            $flag[$n]['status'] = isset($cur[$f['fid']]) ? true : false;
-            $flag[$n]['html'] = "
+            $flag[$f['fid']]['status'] = isset($cur[$f['fid']]) ? true : false;
+            $flag[$f['fid']]['html'] = "
             <input type='hidden' name='content_flag[{$f['fid']}][cid]' value='{$this->cid}'/>
-            <label><input type='checkbox' name='content_flag[{$f['fid']}][fid]'
-            value='{$f['fid']}' $checked/>" . $f['flagname'] . "</label>";
+            <label class='checkbox inline'><input type='checkbox' name='content_flag[{$f['fid']}][fid]'
+            value='{$f['fid']}' $checked/> " . $f['flagname'] . "</label>";
         }
         return $flag;
     }
 
-    //批量还原数据
-    public function recovery()
+
+    //删除文章
+    public function del()
     {
         $aid = Q("request.aid");
+        //彻底删除
+        $direct_del = Q("get.direct_del");
         if (!empty($aid)) {
             if (!is_array($aid)) {
                 $aid = array($aid);
             }
-            $this->db->join(NULL)->in($aid)->save(array(
-                "status" => 1
-            ));
-            $this->ajax_return(1, "还原文章成功!");
+            $this->db->del($aid);
+            $this->_ajax(1);
         }
     }
 
-
-    /**
-     * 批量删除文章 支持id=1  或id=array(1,2,3)两种形式
-     * @param bool $model true 直接删除文件   false 放入回收站
-     */
-    public function del($model = false)
+    //移动文章
+    public function move_content()
     {
-        $aid = Q("request.aid");
-        if (!empty($aid)) {
-            if (!is_array($aid)) {
-                $aid = array($aid);
+        if (IS_POST) {
+            //移动方式
+            $from_type = Q("post.from_type", NULL, "intval");
+            $to_cid = Q("post.to_cid", NULL, 'intval');
+            $from_cid = Q("post.from_cid", NULL);
+            switch ($from_type) {
+                //移动aid
+                case 1:
+                    $aid = Q("post.aid", NULL, "trim");
+                    $aid = explode("|", $aid);
+                    if ($aid) {
+                        foreach ($aid as $id) {
+                            $this->db->trigger()->join()->save(array("aid" => $id, "cid" => $to_cid));
+                        }
+                    }
+                    break;
+                //移动栏目
+                case 2:
+                    //移动栏目
+                    if ($from_cid) {
+                        foreach ($from_cid as $fcid) {
+                            $this->db->trigger()->join()->where("cid=$fcid")->save(array("cid" => $to_cid));
+                        }
+                    }
+                    break;
             }
-            //直接删除文件
-            if ($model || C("DEL_CONTENT_MODEL") == 1) {
-                if ($this->db->del($aid)) {
-                    $this->ajax_return(1, "删除文章成功");
+            $this->_ajax(1);
+        } else {
+            $category = $this->category;
+            foreach ($category as $n => $v) {
+                $category[$n]['selected'] = "";
+                if ($this->cid == $v['cid']) {
+                    $category[$n]['selected'] = "selected";
                 }
-            } else { //放入回收站
-                $this->db->join(NULL)->in($aid)->save(array(
-                    "status" => 2
-                ));
-                $this->ajax_return(1, "删除文章成功");
+                //非本栏目模型关闭
+                if ($this->mid != $v['mid']) {
+                    $category[$n]['disabled'] = 'disabled';
+                }
             }
+            $this->assign("mid", $this->mid);
+            $this->assign("category", $category);
+            $this->display();
         }
     }
-
-    //删回收站内除文件
-    public function direct_del()
-    {
-        $this->del(true);
+    //缩略图裁切
+    public function image_crop(){
+        $this->display();
     }
-
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

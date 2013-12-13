@@ -13,7 +13,7 @@
 // '-----------------------------------------------------------------------------------
 //去除超链接虚线
 $(function () {
-    $("a,select").click(function () {
+    $("a").click(function () {
         $(this).trigger("blur")
     });
 })
@@ -85,10 +85,10 @@ $.extend({
         //创建元素
         if ($("div.dialog").length == 0) {
             var div = '';
-            div += '<div class="dialog" style="z-index: 1000;">';
+            div += '<div class="dialog" style="z-index: 1000;position: absolute">';
             div += '<div class="close">';
             div += '<a href="#" title="关闭">×</a></div>';
-            div += '<h2>提示信息</h2>';
+            div += '<h2 id="dialog_title">提示信息</h2>';
             div += '<div class="con ' + opt.type + '"><strong>ico</strong>';
             div += opt.msg;
             div += '</div>';
@@ -163,7 +163,7 @@ $.extend({
         $("div.modal").remove();
         var div = '';
         var show = opt.show ? "" : ";display:none;"
-        div += '<div class="modal" style="width:' + opt['width'] + 'px;' + show + 'height:' + (opt['height'] ? opt['height'] : 'auto') + 'px;z-index:1000">';
+        div += '<div class="modal" style="position:absolute;left:50%;top:50%;margin-top:-'+(opt['height']/2+150)+'px;margin-left:-' + (opt['width']/2) + 'px;width:' + opt['width'] + 'px;' + show + 'height:' + opt['height'] + 'px;z-index:1000">';
         if (opt['title']) {
             div += '<div class="modal_title">' + opt['title'] + '</div>';
         }
@@ -177,15 +177,14 @@ $.extend({
         div += '</div>';
         if (opt.button) {
             div += '<div class="modal_footer" ' + (opt.message ? 'style="text-align:center"' : "") + '>';
-            div += '<a href="javascript:;" class="btn">' + opt.send_title + '</a>';
-            div += '<a href="javascript:;" class="btn2 close">' + opt.cancel_title + '</a>';
+            div += '<a href="javascript:;" class="btn btn-primary">' + opt.send_title + '</a>';
+            div += '<a href="javascript:;" class="btn close">' + opt.cancel_title + '</a>';
             div += '</div>';
         }
         div += '</div>';
         div += '<div class="modal_bg" style="background: #f3f3f3;position:absolute;left:0px;display:none;top:0px;z-index: 900;"></div>';
         $(div).appendTo("body");
         var pos = center_pos($(".modal"));
-        $("div.modal").css({left: pos[0], top: pos[1] - 50});
         //点击确定
         $("div.modal_footer a.btn").click(function () {
             if (opt.send) {

@@ -50,19 +50,24 @@ class CategoryModel extends RelationModel
     //更新栏目缓存
     public function update_cache()
     {
-        $category = $this->order("catorder DESC,cid DESC")->all();
-        $data = array();
+        $category = $this->join()->order("catorder DESC,cid DESC")->all();
         if (!empty($category)) {
             foreach ($category as $n => $v) {
                 $v["disabled"] = "";
-                if ($v["cattype"] == 2) {
+                if ($v["cattype"] >1) {
                     $v["disabled"] = 'disabled="disabled"';
                 }
-                $data[$v['cid']] = $v;
+                $category[$n] = $v;
+                $category[$n]['title'] = $v['catname'];
             }
         }
+        $category = Data::tree($category, "catname", "cid", "pid");
+        $data = array();
+        foreach ($category as $n => $v) {
+            $data[$v['cid']] = $v;
+        }
         F("category", $data, CATEGORY_CACHE_PATH);
-        return $data;
+        return true;
     }
 
     //删除栏目
@@ -82,15 +87,15 @@ class CategoryModel extends RelationModel
     }
 
     //获得菜单树状数据
-    public function get_tree()
-    {
-        $menu = F("category", false, CATEGORY_CACHE_PATH);
-        if (!$menu) {
-            $menu = $this->update_cache();
-        }
-        //树状格式化
-        return Data::tree($menu, "catname", "cid");
-    }
+//    public function get_tree()
+//    {
+//        $menu = F("category", false, CATEGORY_CACHE_PATH);
+//        if (!$menu) {
+//            $menu = $this->update_cache();
+//        }
+//        //树状格式化
+//        return Data::tree($menu, "catname", "cid");
+//    }
 
 
     public function __after_del()

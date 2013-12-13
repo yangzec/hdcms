@@ -13,11 +13,41 @@
 </head>
 <body>
 <div class="wrap">
+    <form action="__METH__&cid={$hd.get.cid}&status={$hd.get.status}" method="post">
+        <input type="hidden" name="cid" value="{$hd.get.cid}"/>
+        <div class="search">
+            添加时间：<input id="begin_time" readonly="readonly" class="w80" type="text" value="" name="search_begin_time">
+            <script>
+                $('#begin_time').calendar({format: 'yyyy-MM-dd'});
+            </script>
+            -
+            <input id="end_time" readonly="readonly" class="w80" type="text" value="" name="search_end_time">
+            <script>
+                $('#end_time').calendar({format: 'yyyy-MM-dd'});
+            </script>
+            &nbsp;&nbsp;&nbsp;
+            <select name="search_flag" class="w100">
+                <option selected="" value="">全部</option>
+                <list from="$flag" name="f">
+                    <option value="{$f.fid}">{$f.flagname}</option>
+                </list>
+            </select>&nbsp;&nbsp;&nbsp;
+            <select name="search_type" class="w100">
+                <option value="1">标题</option>
+                <option value="2">简介</option>
+                <option value="3">用户名</option>
+                <option value="4" selected="selected">ID</option>
+            </select>&nbsp;&nbsp;&nbsp;
+            关键字：
+            <input class="w200" type="text" placeholder="请输入关键字..." value="" name="search_keyword">
+            <button class="btn">搜索</button>
+        </div>
+    </form>
     <div class="menu_list">
         <ul>
-            <li><a href="javascript:;" class="action">内容列表</a></li>
-            <li><a href="{|U:'add',array('cid'=>$_GET['cid'])}" target="_blank">添加内容</a></li>
-            <li><a href="{|U:'recycle',array('cid'=>$_GET['cid'])}">回收站</a></li>
+            <li><a href="{|U:'content',array('cid'=>$_GET['cid'],'status'=>1)}" <if value="$hd.get.status==1">class="action"</if>>内容列表</a></li>
+            <li><a href="{|U:'content',array('cid'=>$_GET['cid'],'status'=>0)}" <if value="$hd.get.status==0">class="action"</if>>未审核文章</a></li>
+            <li><a href="javascript:;" onclick="window.open('{|U:'add',array('cid'=>$_GET['cid'],'status'=>0)}')">添加内容</a></li>
         </ul>
     </div>
     <table class="table2">
@@ -42,7 +72,9 @@
                 <td>
                     <input type="text" class="w30" value="{$c.arc_sort}" name="arc_order[{$c.aid}]"/>
                 </td>
-                <td>{$c.title} {$c.flagname}</td>
+                <td><a href="{|U:edit,array('aid'=>$c['aid'],'cid'=>$_GET['cid'])}" target="_blank">{$c.title}</a>
+                    {$c.flag}
+                </td>
                 <td>{$c.catname}</td>
                 <td>
                     {$c.username}
@@ -53,9 +85,9 @@
                 <td align="right">
                     <a href="{|U:'Content/Index/content',array('aid'=>$c['aid'],'cid'=>$_GET['cid'])}" target="_blank">访问</a><span
                         class="line">|</span>
-                    <a href="{|U:edit,array('aid'=>$c['aid'],'cid'=>$_GET['cid'])}" target="_blank">编辑</a><span
+                    <a href="javascript:;" onclick="window.open('{|U:edit,array('aid'=>$c['aid'],'cid'=>$_GET['cid'])}')">编辑</a><span
                         class="line">|</span>
-                    <a href="javascript:;" onclick="del('del',{$hd.get.cid},{$c.aid})">删除</a><span class="line">|</span>
+                    <a href="javascript:;" onclick="del({$hd.get.cid},{$c.aid})">删除</a><span class="line">|</span>
                     <a href="">评论</a>
                 </td>
             </tr>
@@ -67,10 +99,13 @@
 </div>
 
 <div class="btn_wrap">
-    <input type="button" class="btn s_all" value="全选"/>
-    <input type="button" class="btn r_select" value="反选"/>
-    <input type="button" class="btn" onclick="update_order({$hd.get.cid})" value="更改排序"/>
-    <input type="button" class="btn" onclick="del('del',{$hd.get.cid})" value="批量删除"/>
+    <input type="button" class="btn s_all btn-small" value="全选"/>
+    <input type="button" class="btn r_select btn-small" value="反选"/>
+    <input type="button" class="btn btn-small" onclick="update_order({$hd.get.cid})" value="更改排序"/>
+    <input type="button" class="btn btn-small" onclick="del({$hd.get.cid})" value="批量删除"/>
+    <input type="button" class="btn btn-small" onclick="update_order({$hd.get.cid})" value="审核"/>
+    <input type="button" class="btn btn-small" onclick="update_order('del',{$hd.get.cid})" value="取消审核"/>
+    <input type="button" class="btn btn-small" onclick="move({$hd.get.cid})" value="批量移动"/>
 </div>
 </body>
 </html>

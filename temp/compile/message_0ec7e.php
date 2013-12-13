@@ -25,7 +25,13 @@
 		COMMON = 'http://localhost/hdcms/Common';
 		TEMPLATE = 'http://localhost/hdcms/template/default/';
 </script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/static/js/js.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Html/Tpl/Html/js/js.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Html/Tpl/Html/css/css.css"/>
@@ -46,7 +52,7 @@
         <div class="modal_message">
             <strong class="success"></strong>
             <span><?php echo $message;?></span>
-            <input type="button" class="btn3" onclick="window.location.href='<?php echo $success_url;?>'" value="返回历史页面"/>
+            <input type="button" style="position: absolute;bottom: 10px;left: 50%;margin-left: -50px;" class="btn" onclick="window.location.href='<?php echo $success_url;?>'" value="返回历史页面"/>
         </div>
     </div>
 </div>

@@ -128,14 +128,14 @@ str;
                             \$cid[]=\$t['cid'];
                         }
                     }
-                    \$db->in(array("category.cid" => \$cid));
+                    \$db->where = C("DB_PREFIX")."category.cid in(\$cid)";
                 }
                 if (\$aid) {
                     \$db->where=\$table.".aid=".\$aid;
                 }
                 \$db->where="status=1";
                 \$db->group=\$table.".aid";
-                \$db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                \$db->field("url,username,category.cid,catname,{\$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{\$db->table}.redirecturl,author,color");
                 \$db->limit($row);
                 \$result = \$db->order("aid DESC")->all();
                 foreach(\$result as \$field):
@@ -169,8 +169,8 @@ str;
             \$count = \$db->join(NULL)->where("cid=\$cid")->count();
         }
         \$hd_page= new Page(\$count,$row);
-        \$field ="aid,category.cid,thumb,click,source,author,addtime,updatetime,username,url,catname,title";
-        \$result= \$db->join("category")->field(\$field)->where(\$where_flag)->where("status=1")->where("category.cid=$cid")
+        \$field ="aid,category.cid,thumb,click,source,author,addtime,updatetime,username,url,catname,title,description";
+        \$result= \$db->join("category")->field(\$field)->where(\$where_flag)->where("status=1")->where("catid=$cid")
         ->group("aid")->limit(\$hd_page->limit())->all();
 //        p(\$db->getallsql());exit;
         foreach(\$result as \$field):

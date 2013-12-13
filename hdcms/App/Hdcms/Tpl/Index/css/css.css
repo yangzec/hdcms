@@ -6,10 +6,17 @@ html {
 body {
     background: #EBECE6;
 }
+iframe{
+    border:none;
 
+}
 div.nav {
     background: #03565E;
     height: 40px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    right: 0px;
 }
 
 div.nav div.top_menu {
@@ -93,6 +100,7 @@ div.main div.left_menu dl dt {
 
 div.main div.left_menu dl dd {
     padding-left: 10px;
+    margin:0px;
 }
 
 div.main div.left_menu dl dd a {
@@ -218,11 +226,10 @@ div.main div.menu_nav ul li a.close:hover {
     background: #03565E;
 }
 
-div.main div.content {
+div.main div.top_content {
     position: absolute;
     top: 30px;
     right: 0px;
-    bottom: 0px;
     left: 141px;
     background: #F3F3F3;
 }

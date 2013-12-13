@@ -1,5 +1,5 @@
 <?php
-define("DEBUG", true);
+//define("DEBUG", true);
 //应用组目录
 define("GROUP_PATH", './hdcms/');
 //缓存目录
@@ -27,4 +27,4 @@ define("NODE_CACHE_PATH", DATA_PATH . 'node/');
 ###INSTALL_START
 
 ###INSTALL_END
-require "../hdphp/hdphp/hdphp.php";
+require "./hdphp/hdphp.php";

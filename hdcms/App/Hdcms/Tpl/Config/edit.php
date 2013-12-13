@@ -12,7 +12,7 @@
     <css file="__CONTROL_TPL__/css/css.css"/>
 </head>
 <body>
-<form action="{|U:edit}" method="post">
+<form action="{|U:edit}" method="post" class="form-inline">
     <div class="wrap">
         <div class="table_title">温馨提示</div>
         <div class="help">

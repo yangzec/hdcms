@@ -22,18 +22,18 @@ class FieldControl extends AuthControl
     {
         parent::__init();
         //模型mid
-        $this->mid      = Q("request.mid", null, "intval");
+        $this->mid = Q("request.mid", null, "intval");
         //验证模型mid
         if (!$this->mid) {
             $this->error("模型不存在！");
         }
         //当前字段模型缓存
-        $this->model    = F("model", false, MODEL_CACHE_PATH);
+        $this->model = F("model", false, MODEL_CACHE_PATH);
         //字段缓存
-        $this->field    = F($this->mid, false, FIELD_CACHE_PATH);
+        $this->field = F($this->mid, false, FIELD_CACHE_PATH);
         //字段fid
-        $this->fid      = Q("request.fid", null, "intval");
-        $this->db       = K("Field");
+        $this->fid = Q("request.fid", null, "intval");
+        $this->db = K("Field");
         //分配mid，全局使用
         $this->assign("mid", $this->mid);
     }
@@ -69,9 +69,8 @@ class FieldControl extends AuthControl
     public function add()
     {
         if (IS_POST) {
-            if ($this->db->create()) {
-                $this->db->add_field();
-                $this->ajax_return(1, "添加字段成功");
+            if ($this->db->alter_table_field() && $this->db->create() && $this->db->add()) {
+                $this->_ajax(1);
             }
         } else {
             $this->assign("model", $this->model[$this->mid]);
@@ -127,9 +126,8 @@ class FieldControl extends AuthControl
     public function edit()
     {
         if (IS_POST) {
-            if ($this->db->create()) {
-                $this->db->edit_field();
-                $this->ajax_return(1, "修改字段成功");
+            if ($this->db->create() && $this->db->save()) {
+                $this->_ajax(1);
             }
         } else {
             if ($this->fid) {
@@ -139,8 +137,7 @@ class FieldControl extends AuthControl
                  * 在js的field_check表单验证函数中validation不能为空,所以validation不能为空
                  * 在编辑时如果validation=="''"时，表单显示空
                  */
-                $field['set']['validation'] = $field['set']['validation'] == "false" ?
-                                                "" : $field['set']['validation'];
+                $field['set']['validation'] = $field['set']['validation'] == "false" ? "" : $field['set']['validation'];
                 $this->assign("field", $field);
                 $this->assign("model", $this->model[$this->mid]);
                 $this->display();
@@ -154,6 +151,6 @@ class FieldControl extends AuthControl
     public function update_cache()
     {
         $this->db->update_field_cache();
-        $this->ajax_return(1, "更新缓存成功");
+        $this->_ajax(1);
     }
 }

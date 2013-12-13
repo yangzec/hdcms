@@ -1,15 +1,15 @@
 //关闭
 function close_window() {
-    $(parent.document).find("div.modal,div.modal_bg").remove();
+    $(parent.document).find("[class*=modal]").remove();
 }
 //图片列表
 var pic_list = {};
 $(function () {
     $("li[lab='site']").click(function () {
-        get_pics(CONTROL + "&m=site", $("div#site"))
+        get_pics(ROOT+"/index.php?a=Upload&c=Upload&&m=site", $("div#site"))
     })
     $("li[lab='untreated']").click(function () {
-        get_pics(CONTROL + "&m=untreated", $("div#untreated"))
+        get_pics(ROOT+"/index.php?a=Upload&c=Upload&&m=site", $("div#untreated"))
     })
 })
 //点击分页
@@ -17,7 +17,7 @@ $("div.page1 a").live("click", function () {
     get_pics($(this).attr("href"), $(this).parents("div.hd_tab_content_div").eq(0));
     return false;
 })
-//异步获得图片列表，服务站内图片与未使用图片
+//异步获得图片列表，站内图片与未使用图片
 function get_pics(_url, _div) {
     if (pic_list[_url]) {
         _div.html(pic_list[_url]);

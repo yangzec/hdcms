@@ -116,7 +116,7 @@
                 </td>
             </tr>
         </table>
-        <input type="submit" value="提交" class="btn1"/>
+        <input type="submit" value="提交" class="btn btn-success"/>
     </form>
 </div>
 </body>

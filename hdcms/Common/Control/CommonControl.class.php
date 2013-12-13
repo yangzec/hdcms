@@ -6,10 +6,12 @@
  */
 class CommonControl extends Control
 {
+    //表前缀
+    protected $db_prefix;
 
     public function __init()
     {
-        session("history", __URL__);
+        session("history", Q("server.HTTP_REFERER"));
     }
 
     //ajax返回

@@ -44,9 +44,7 @@ class ModelControl extends AuthControl
     public function update_cache()
     {
         if ($this->db->update_cache()) {
-            $this->_ajax(array("stat" => 1, "msg" => "删除模型成功！"));
-        } else {
-            $this->_ajax(array("stat" => 0, "msg" => "删除模型失败！"));
+            $this->_ajax(1);
         }
     }
 
@@ -57,26 +55,19 @@ class ModelControl extends AuthControl
     {
         if ($this->mid) {
             if (M("category")->find("mid={$this->mid}")) {
-                $this->_ajax(array("stat" => 0, "msg" => "请先删除模型的栏目！"));
+                $this->_ajax(2);
             }
             $model = $this->db->find($this->mid);
             //删除主表与表字段缓存
-            if ($this->db->exe("DROP TABLE " . C("DB_PREFIX") . $model['tablename'])) {
+            if ($this->db->exe("DROP TABLE IF EXISTS " . C("DB_PREFIX") . $model['tablename'])) {
                 //删除附表与表字段缓存
                 if ($model['type'] == 1) {
-                    if ($this->db->exe("DROP TABLE " . C("DB_PREFIX") . $model['tablename'] . '_data')) {
-                        //删除表记录
-                        $this->db->del($this->mid);
-                        $this->db->table("field")->del($this->mid);
-                        //删除缓存  等待。。。。
-
-                        $this->_ajax(array("stat" => 1, "msg" => "删除模型成功！"));
-                    } else {
-                        $this->_ajax(array("stat" => 0, "msg" => "模型数据表删除失败！"));
-                    }
+                    $this->db->exe("DROP TABLE IF EXISTS " . C("DB_PREFIX") . $model['tablename'] . '_data');
                 }
-            } else {
-                $this->_ajax(array("stat" => 0, "msg" => "模型主表删除失败！"));
+                //删除表记录
+                $this->db->del($this->mid);
+                $this->db->table("field")->where("mid={$this->mid}")->del();
+                $this->_ajax(1);
             }
         }
     }
@@ -87,14 +78,9 @@ class ModelControl extends AuthControl
     public function add()
     {
         if (IS_POST) {
-            //插入模型记录
-            if ($this->db->add()) {
-                //创建模型表
-                if ($this->db->create_model_table()) {
-                    $this->_ajax(array("stat" => 1, "msg" => "添加模型成功!"));
-                }
-            } else {
-                $this->ajax(array("stat" => 0, "msg" => "添加模型失败!"));
+            //创建模型表
+            if ($this->db->create_model_table() && $this->db->add()) {
+                $this->_ajax(1);
             }
         } else {
             $this->display();
@@ -109,9 +95,7 @@ class ModelControl extends AuthControl
         if (IS_POST) {
             //异步提交返回信息
             if ($this->db->save()) {
-                $this->_ajax(array("stat" => 1, "msg" => "修改模型成功!"));
-            } else {
-                $this->_ajax(array("stat" => 0, "msg" => "修改模型失败!"));
+                $this->_ajax(1);
             }
         } else {
             $field = $this->db->find($this->mid);

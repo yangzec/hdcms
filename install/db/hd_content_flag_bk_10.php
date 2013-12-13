@@ -1,0 +1,10 @@
+<?php if(!defined('HDPHP_PATH'))EXIT;
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('4','4','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('4','3','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('16','4','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('17','4','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('29','4','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('29','3','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('28','1','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('28','2','2')");
+$db->exe("REPLACE INTO ".$db_prefix."content_flag (`aid`,`fid`,`cid`) VALUES('29','2','2')");

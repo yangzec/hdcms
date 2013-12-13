@@ -43,7 +43,7 @@
             <tr>
                 <th class="w100">问题摘要</th>
                 <td>
-                    <textarea disabled="disabled" class="w600 h200">{$field.content}</textarea>
+                    <textarea class="w600 h200">{$field.content}</textarea>
                 </td>
             </tr>
             <tr>

@@ -54,7 +54,7 @@ class IndexControl extends CommonControl
     {
         if ($this->aid) {
             $db = new ContentViewModel();
-            $field = $db->where("content.aid=" . $this->aid)->find();
+            $field = $db->where($db->tableFull . ".aid=" . $this->aid)->find();
             if ($field) {
                 $field['caturl'] = U("category", array("cid" => $field['cid']));
                 $this->assign("hdcms", $field);

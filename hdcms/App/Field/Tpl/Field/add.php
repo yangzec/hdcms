@@ -17,12 +17,12 @@
     </script>
 </head>
 <body>
-<form action="{|U:'add'}" method="post">
+<form action="{|U:'add'}" method="post" onsubmit="return false;">
     <div class="wrap">
         <div class="menu_list">
             <ul>
-                <li><a href="{|U:'Hdcms/Model/index'}">模型列表</a></li>
-                <li><a href="{|U('index',array('mid'=>$model['mid']))}">字段列表</a></li>
+                <li><a href="{|U:'Model/Model/index'}">模型列表</a></li>
+                <li><a href="{|U('index',array('mid'=>$_GET['mid']))}">字段列表</a></li>
                 <li><a href="javascript:;" class="action">添加字段</a></li>
             </ul>
         </div>
@@ -66,7 +66,7 @@
 
             <tr>
                 <td>
-                    <span class="star">*</span>字段别名
+                    字段别名<span class="star">*</span>
                 </td>
                 <td>
                     <input type="text" name="title" class="w200"/>
@@ -74,7 +74,7 @@
             </tr>
             <tr>
                 <td>
-                    <span class="star">*</span>字段名
+                    字段名<span class="star">*</span>
                 </td>
                 <td>
                     <input type="text" name="field_name" class="w200"/>

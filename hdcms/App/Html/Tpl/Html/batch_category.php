@@ -40,7 +40,7 @@
                         <option value="0" selected="selected">不限栏目</option>
                         <list from="$category" name="c" multiple="multiple">
                             <option value="{$c.cid}"
-                            {$c.opt}>{$c.catname}</option>
+                            {$c.opt}>{$c.title}</option>
                         </list>
                     </select>
                 </td>

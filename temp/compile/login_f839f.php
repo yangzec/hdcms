@@ -3,29 +3,35 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>HDCMS后台登录</title>
-    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://192.168.1.88/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script>
+    <script type='text/javascript' src='http://192.168.1.88/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://192.168.1.88/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://192.168.1.88/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://192.168.1.88/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://192.168.1.88/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://192.168.1.88/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://192.168.1.88/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://192.168.1.88/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://192.168.1.88/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://192.168.1.88/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <script type='text/javascript'>
-		HOST = 'http://localhost';
-		ROOT = 'http://localhost/hdcms';
-		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Hdcms&c=Login&m=login';
-		HDPHP = 'http://localhost/hdphp/hdphp';
-		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
-		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';
-		HDPHPEXTEND = 'http://localhost/hdphp/hdphp/Extend';
-		APP = 'http://localhost/hdcms/index.php?a=Hdcms';
-		CONTROL = 'http://localhost/hdcms/index.php?a=Hdcms&c=Login';
-		METH = 'http://localhost/hdcms/index.php?a=Hdcms&c=Login&m=login';
-		GROUP = 'http://localhost/hdcms/hdcms';
-		TPL = 'http://localhost/hdcms/hdcms/App/Hdcms/Tpl';
-		CONTROLTPL = 'http://localhost/hdcms/hdcms/App/Hdcms/Tpl/Login';
-		STATIC = 'http://localhost/hdcms/hdcms/App/Hdcms/Tpl/Static';
-		PUBLIC = 'http://localhost/hdcms/hdcms/App/Hdcms/Tpl/Public';
-		COMMON = 'http://localhost/hdcms/Common';
+		HOST = 'http://192.168.1.88';
+		ROOT = 'http://192.168.1.88/hdcms';
+		WEB = 'http://192.168.1.88/hdcms/index.php';
+		URL = 'http://192.168.1.88/hdcms/index.php?a=Hdcms&c=Login&m=login';
+		HDPHP = 'http://192.168.1.88/hdphp/hdphp';
+		HDPHPDATA = 'http://192.168.1.88/hdphp/hdphp/Data';
+		HDPHPTPL = 'http://192.168.1.88/hdphp/hdphp/Lib/Tpl';
+		HDPHPEXTEND = 'http://192.168.1.88/hdphp/hdphp/Extend';
+		APP = 'http://192.168.1.88/hdcms/index.php?a=Hdcms';
+		CONTROL = 'http://192.168.1.88/hdcms/index.php?a=Hdcms&c=Login';
+		METH = 'http://192.168.1.88/hdcms/index.php?a=Hdcms&c=Login&m=login';
+		GROUP = 'http://192.168.1.88/hdcms/hdcms';
+		TPL = 'http://192.168.1.88/hdcms/hdcms/App/Hdcms/Tpl';
+		CONTROLTPL = 'http://192.168.1.88/hdcms/hdcms/App/Hdcms/Tpl/Login';
+		STATIC = 'http://192.168.1.88/hdcms/hdcms/App/Hdcms/Tpl/Static';
+		PUBLIC = 'http://192.168.1.88/hdcms/hdcms/App/Hdcms/Tpl/Public';
+		COMMON = 'http://192.168.1.88/hdcms/Common';
 </script>
-    <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Hdcms/Tpl/Login/Css/css.css"/>
-    <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Hdcms/Tpl/Login/Js/js.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://192.168.1.88/hdcms/hdcms/App/Hdcms/Tpl/Login/Css/css.css"/>
+    <script type="text/javascript" src="http://192.168.1.88/hdcms/hdcms/App/Hdcms/Tpl/Login/Js/js.js"></script>
 </head>
 <body>
 <div class="header">

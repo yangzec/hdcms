@@ -15,7 +15,6 @@
     </script>
 </head>
 <body>
-<div class="wrap">
     <div class="tab">
         <ul class="tab_menu">
             <li lab="upload"><a href="#">上传文件</a></li>
@@ -34,10 +33,9 @@
             </div>
         </div>
     </div>
-</div>
-<div class="btn_wrap">
-    <input type="button" class="btn1" id="pic_selected" value="确定"/>
-    <input type="button" class="btn2 close_window" value="关闭" onclick="close_window();"/>
+<div style="position: absolute;bottom: 0px;">
+    <input type="button" class="btn btn-primary" id="pic_selected" value="确定"/>
+    <input type="button" class="btn close_window" value="关闭" onclick="close_window();"/>
 </div>
 </body>
 </html>

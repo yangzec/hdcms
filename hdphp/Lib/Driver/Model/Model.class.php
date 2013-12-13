@@ -681,14 +681,23 @@ class Model
         return false;
     }
 
-
+    /**
+     * 统计
+     */
+    public function count($args = array())
+    {
+        $result = call_user_func(array($this->db, __FUNCTION__), $args);
+        $this->init();
+        return $result;
+    }
     /**
      * 求最大值
      */
     public function max($args = array())
     {
+        $result = call_user_func(array($this->db, __FUNCTION__), $args);
         $this->init();
-        return call_user_func(array($this->db, __FUNCTION__), $args);
+        return $result;
     }
 
     /**
@@ -696,8 +705,9 @@ class Model
      */
     public function min($args = array())
     {
+        $result = call_user_func(array($this->db, __FUNCTION__), $args);
         $this->init();
-        return call_user_func(array($this->db, __FUNCTION__), $args);
+        return $result;
     }
 
     /**
@@ -705,8 +715,9 @@ class Model
      */
     public function avg($args = array())
     {
+        $result = call_user_func(array($this->db, __FUNCTION__), $args);
         $this->init();
-        return call_user_func(array($this->db, __FUNCTION__), $args);
+        return $result;
     }
 
     /**
@@ -714,18 +725,12 @@ class Model
      */
     public function sum($args = array())
     {
+        $result = call_user_func(array($this->db, __FUNCTION__), $args);
         $this->init();
-        return call_user_func(array($this->db, __FUNCTION__), $args);
+        return $result;
     }
 
-    /**
-     * 统计
-     */
-    public function count($args = array())
-    {
-        $this->init();
-        return call_user_func(array($this->db, __FUNCTION__), $args);
-    }
+
 
 
     /**

@@ -27,7 +27,7 @@
         <div class="modal_message">
             <strong class="success"></strong>
             <span>{$message}</span>
-            <input type="button" class="btn3" onclick="window.location.href='{$success_url}'" value="返回历史页面"/>
+            <input type="button" style="position: absolute;bottom: 10px;left: 50%;margin-left: -50px;" class="btn" onclick="window.location.href='{$success_url}'" value="返回历史页面"/>
         </div>
     </div>
 </div>

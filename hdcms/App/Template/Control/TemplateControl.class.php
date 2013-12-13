@@ -10,8 +10,7 @@ class TemplateControl extends AuthControl
     public function select_tpl()
     {
         $template_style = ROOT_PATH . 'template/' . C("WEB_STYLE");
-        $input_id = Q("get.input_id");
-        $dir = Q("get.path", $template_style, "", "base64_decode");
+        $dir = Q("get.path", $template_style, "base64_decode");
         $file = Dir::tree($dir, "html");
         foreach ($file as $n => $v) {
             if ($v['type'] == 'dir') {
@@ -20,7 +19,15 @@ class TemplateControl extends AuthControl
                 $file[$n]['path'] = str_replace($template_style, '{style}', $v['path']);
             }
         }
-        $this->assign("input_id", $input_id);
+        $history = "";
+        if (Q("get.path")) {
+            if ($dir == $template_style) {
+                $history = "";
+            } else {
+                $history = __METH__ . '&path=' . base64_encode(dirname($dir));
+            }
+        }
+        $this->assign("history", $history);
         $this->assign("file", $file);
         $this->display();
     }

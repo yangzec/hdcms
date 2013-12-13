@@ -28,7 +28,7 @@
                 <td>模型名称</td>
                 <td width="120">类型</td>
                 <td width="150">表名</td>
-                <td width="150">控制器</td>
+                <td width="150">应用名</td>
                 <td width="60">状态</td>
                 <td width="160">操作</td>
             </tr>
@@ -44,7 +44,7 @@
                         </if>
                     </td>
                     <td>{$m.tablename}</td>
-                    <td width="150">{$m.control}Control.Class.php</td>
+                    <td width="150">{$m.app_name}</td>
                     <td>
                         <if value="$m['enable']">开启
                             <else>关闭
@@ -52,9 +52,17 @@
                     </td>
                     <td>
                         <a href="{|U:'Field/Field/index',array('mid'=>$m['mid'])}">字段管理</a> |
-                        <a href="{|U:'edit',array('mid'=>$m['mid'])}">修改</a> |
+                        <if value="$m.is_system==1">
+                            修改
+                        <else>
+                        <a href="{|U:'edit',array('mid'=>$m['mid'])}">修改</a>
+                        </if> |
+                        <if value="$m.is_system==1">
+                            删除
+                            <else>
                         <a href="javascript:;"
                            onclick="return confirm('确定删除【{$m.model_name}】模型吗？')?delModel({$m['mid']}):false;">删除</a>
+                        </if>
                     </td>
                 </tr>
             </list>

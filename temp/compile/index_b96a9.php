@@ -9,7 +9,7 @@
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
 		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=index&nid=4&_=0.6028706658133874';
+		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=index&_=0.5641692505044341';
 		HDPHP = 'http://localhost/hdphp/hdphp';
 		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
 		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';
@@ -24,7 +24,13 @@
 		PUBLIC = 'http://localhost/hdcms/hdcms/App/Content/Tpl/Public';
 		COMMON = 'http://localhost/hdcms/Common';
 </script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/css/css.css"/>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/js/js.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/js/index.js"></script>
@@ -41,7 +47,7 @@
         </ul>
     </div>
     <div class="con">
-        <iframe src="<?php echo U('Hdcms/Index/welcome');?>" name="content"></iframe>
+        <iframe src="<?php echo U('Hdcms/Index/welcome');?>" name="content" scrolling="auto" frameborder="0" style="height:100%;width: 100%;position: absolute"></iframe>
     </div>
 </div>
 </body>

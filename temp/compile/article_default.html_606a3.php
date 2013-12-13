@@ -127,14 +127,14 @@
                             $cid[]=$t['cid'];
                         }
                     }
-                    $db->in(array("category.cid" => $cid));
+                    $db->where = C("DB_PREFIX")."category.cid in($cid)";
                 }
                 if ($aid) {
                     $db->where=$table.".aid=".$aid;
                 }
                 $db->where="status=1";
                 $db->group=$table.".aid";
-                $db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                $db->field("url,username,category.cid,catname,{$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{$db->table}.redirecturl,author,color");
                 $db->limit(1);
                 $result = $db->order("aid DESC")->all();
                 foreach($result as $field):
@@ -177,14 +177,14 @@
                             $cid[]=$t['cid'];
                         }
                     }
-                    $db->in(array("category.cid" => $cid));
+                    $db->where = C("DB_PREFIX")."category.cid in($cid)";
                 }
                 if ($aid) {
                     $db->where=$table.".aid=".$aid;
                 }
                 $db->where="status=1";
                 $db->group=$table.".aid";
-                $db->field("url,username,category.cid,catname,content.aid,title,new_window,thumb,source,addtime,click,content_data.description,content.redirecturl,author,color");
+                $db->field("url,username,category.cid,catname,{$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{$db->table}.redirecturl,author,color");
                 $db->limit(8);
                 $result = $db->order("aid DESC")->all();
                 foreach($result as $field):

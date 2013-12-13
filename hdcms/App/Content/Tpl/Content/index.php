@@ -23,7 +23,7 @@
         </ul>
     </div>
     <div class="con">
-        <iframe src="{|U:'Hdcms/Index/welcome'}" name="content"></iframe>
+        <iframe src="{|U:'Hdcms/Index/welcome'}" name="content" scrolling="auto" frameborder="0" style="height:100%;width: 100%;position: absolute"></iframe>
     </div>
 </div>
 </body>

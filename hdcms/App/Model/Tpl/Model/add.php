@@ -61,7 +61,7 @@
                 <tr>
                     <th>应用</th>
                     <td>
-                        <input type="text" name="control" value="Content" class="w200"/>
+                        <input type="text" name="app_name" value="Content" class="w200"/>
                         <span class="validation"></span>
                     </td>
                 </tr>

@@ -9,7 +9,7 @@
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
 		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=content&cid=10';
+		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=content&cid=4&status=0';
 		HDPHP = 'http://localhost/hdphp/hdphp';
 		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
 		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';
@@ -24,18 +24,70 @@
 		PUBLIC = 'http://localhost/hdcms/hdcms/App/Content/Tpl/Public';
 		COMMON = 'http://localhost/hdcms/Common';
 </script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/static/js/js.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/js/js.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/css/css.css"/>
 </head>
 <body>
 <div class="wrap">
+    <form action="http://localhost/hdcms/index.php?a=Content&c=Content&m=content&cid=<?php echo $_GET['cid'];?>&status=<?php echo $_GET['status'];?>" method="post">
+        <input type="hidden" name="cid" value="<?php echo $_GET['cid'];?>"/>
+        <div class="search">
+            添加时间：<input id="begin_time" readonly="readonly" class="w80" type="text" value="" name="search_begin_time">
+            <script>
+                $('#begin_time').calendar({format: 'yyyy-MM-dd'});
+            </script>
+            -
+            <input id="end_time" readonly="readonly" class="w80" type="text" value="" name="search_end_time">
+            <script>
+                $('#end_time').calendar({format: 'yyyy-MM-dd'});
+            </script>
+            &nbsp;&nbsp;&nbsp;
+            <select name="search_flag" class="w100">
+                <option selected="" value="">全部</option>
+                <?php $hd["list"]["f"]["total"]=0;if(isset($flag) && !empty($flag)):$_id_f=0;$_index_f=0;$lastf=min(1000,count($flag));
+$hd["list"]["f"]["first"]=true;
+$hd["list"]["f"]["last"]=false;
+$_total_f=ceil($lastf/1);$hd["list"]["f"]["total"]=$_total_f;
+$_data_f = array_slice($flag,0,$lastf);
+if(count($_data_f)==0):echo "";
+else:
+foreach($_data_f as $key=>$f):
+if(($_id_f)%1==0):$_id_f++;else:$_id_f++;continue;endif;
+$hd["list"]["f"]["index"]=++$_index_f;
+if($_index_f>=$_total_f):$hd["list"]["f"]["last"]=true;endif;?>
+
+                    <option value="<?php echo $f['fid'];?>"><?php echo $f['flagname'];?></option>
+                <?php $hd["list"]["f"]["first"]=false;
+endforeach;
+endif;
+else:
+echo "";
+endif;?>
+            </select>&nbsp;&nbsp;&nbsp;
+            <select name="search_type" class="w100">
+                <option value="1">标题</option>
+                <option value="2">简介</option>
+                <option value="3">用户名</option>
+                <option value="4" selected="selected">ID</option>
+            </select>&nbsp;&nbsp;&nbsp;
+            关键字：
+            <input class="w200" type="text" placeholder="请输入关键字..." value="" name="search_keyword">
+            <button class="btn">搜索</button>
+        </div>
+    </form>
     <div class="menu_list">
         <ul>
-            <li><a href="javascript:;" class="action">内容列表</a></li>
-            <li><a href="<?php echo U('add',array('cid'=>$_GET['cid']));?>" target="_blank">添加内容</a></li>
-            <li><a href="<?php echo U('recycle',array('cid'=>$_GET['cid']));?>">回收站</a></li>
+            <li><a href="<?php echo U('content',array('cid'=>$_GET['cid'],'status'=>1));?>" <?php if($_GET['status']==1){?>class="action"<?php }?>>内容列表</a></li>
+            <li><a href="<?php echo U('content',array('cid'=>$_GET['cid'],'status'=>0));?>" <?php if($_GET['status']==0){?>class="action"<?php }?>>未审核文章</a></li>
+            <li><a href="javascript:;" onclick="window.open('<?php echo U('add',array('cid'=>$_GET['cid'],'status'=>0));?>')">添加内容</a></li>
         </ul>
     </div>
     <table class="table2">
@@ -71,7 +123,9 @@ if($_index_c>=$_total_c):$hd["list"]["c"]["last"]=true;endif;?>
                 <td>
                     <input type="text" class="w30" value="<?php echo $c['arc_sort'];?>" name="arc_order[<?php echo $c['aid'];?>]"/>
                 </td>
-                <td><?php echo $c['title'];?> <?php echo $c['flagname'];?></td>
+                <td><a href="<?php echo U(edit,array('aid'=>$c['aid'],'cid'=>$_GET['cid']));?>" target="_blank"><?php echo $c['title'];?></a>
+                    <?php echo $c['flag'];?>
+                </td>
                 <td><?php echo $c['catname'];?></td>
                 <td>
                     <?php echo $c['username'];?>
@@ -82,9 +136,9 @@ if($_index_c>=$_total_c):$hd["list"]["c"]["last"]=true;endif;?>
                 <td align="right">
                     <a href="<?php echo U('Content/Index/content',array('aid'=>$c['aid'],'cid'=>$_GET['cid']));?>" target="_blank">访问</a><span
                         class="line">|</span>
-                    <a href="<?php echo U(edit,array('aid'=>$c['aid'],'cid'=>$_GET['cid']));?>" target="_blank">编辑</a><span
+                    <a href="javascript:;" onclick="window.open('<?php echo U(edit,array('aid'=>$c['aid'],'cid'=>$_GET['cid']));?>')">编辑</a><span
                         class="line">|</span>
-                    <a href="javascript:;" onclick="del('del',<?php echo $_GET['cid'];?>,<?php echo $c['aid'];?>)">删除</a><span class="line">|</span>
+                    <a href="javascript:;" onclick="del(<?php echo $_GET['cid'];?>,<?php echo $c['aid'];?>)">删除</a><span class="line">|</span>
                     <a href="">评论</a>
                 </td>
             </tr>
@@ -101,10 +155,14 @@ endif;?>
 </div>
 
 <div class="btn_wrap">
-    <input type="button" class="btn s_all" value="全选"/>
-    <input type="button" class="btn r_select" value="反选"/>
-    <input type="button" class="btn" onclick="update_order(<?php echo $_GET['cid'];?>)" value="更改排序"/>
-    <input type="button" class="btn" onclick="del('del',<?php echo $_GET['cid'];?>)" value="批量删除"/>
+    <input type="button" class="btn s_all btn-small" value="全选"/>
+    <input type="button" class="btn r_select btn-small" value="反选"/>
+    <input type="button" class="btn btn-small" onclick="update_order(<?php echo $_GET['cid'];?>)" value="更改排序"/>
+    <input type="button" class="btn btn-small" onclick="del(<?php echo $_GET['cid'];?>)" value="批量删除"/>
+    <input type="button" class="btn btn-small" onclick="update_order(<?php echo $_GET['cid'];?>)" value="审核"/>
+    <input type="button" class="btn btn-small" onclick="del('del',<?php echo $_GET['cid'];?>)" value="取消审核"/>
+    <input type="button" class="btn btn-small" onclick="move(<?php echo $_GET['cid'];?>)" value="批量移动"/>
+    <input type="button" class="btn btn-small" onclick="del('del',<?php echo $_GET['cid'];?>)" value="生成HTML"/>
 </div>
 </body>
 </html>

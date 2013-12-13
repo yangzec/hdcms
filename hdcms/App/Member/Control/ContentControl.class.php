@@ -89,7 +89,7 @@ class ContentControl extends MemberAuthControl
     public function add()
     {
         if (IS_POST) {
-            $_POST['status']=C("MEMBER_CONTENT_STATUS");
+            $_POST['status'] = C("MEMBER_CONTENT_STATUS");
             if ($this->db->create() && $res = $this->db->add()) {
                 $this->ajax_return(1, "添加文章成功");
             }
@@ -99,8 +99,10 @@ class ContentControl extends MemberAuthControl
             $this->assign("category", $this->category[$this->cid]);
             $this->assign("model", $this->model[$this->mid]);
             //自定义字段
-            $this->field = new FieldModel("Field", $this->mid);
-            $this->assign("custom_field", $this->field->field_view());
+            $_field = new FieldModel();
+            $_field->mod_id = $this->mod_id;
+            echo $this->mod_id;exit;
+            $this->assign("custom_field", $_field->field_view());
             //添加正文视图
             $this->display();
         }
@@ -126,7 +128,7 @@ class ContentControl extends MemberAuthControl
                 $field['thumb_src'] = empty($field['thumb']) ? __ROOT__ . '/hdcms/static/img/upload-pic.png' : __ROOT__ . '/' . $field['thumb'];
                 $this->assign("field", $field);
                 //自定义字段
-                $this->field = new FieldModel("field", $this->mid);
+                $this->field = new FieldModel();
                 $custom_field = $this->field->field_view($field);
                 $this->assign("custom_field", $custom_field);
                 $this->display();

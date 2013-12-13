@@ -1,5 +1,9 @@
 @import "../../../../../static/css/common.css";
 
+body {
+    background: #fff;
+}
+
 div.tpl-list ul li {
     float: left;
     margin-right: 50px;
@@ -7,7 +11,7 @@ div.tpl-list ul li {
     height: auto;
     overflow: hidden;
     background: #efefef;
-    border:solid 5px #dcdcdc;
+    border: solid 5px #dcdcdc;
     padding: 3px;
     cursor: pointer;
     position: relative;
@@ -17,12 +21,13 @@ div.tpl-list ul li img {
     width: 260px;
     height: 260px;
 }
-div.tpl-list ul li div.style_cur{
+
+div.tpl-list ul li div.style_cur {
     font-size: 35px;
-    color:#dcdcdc;
-    border-bottom:solid 2px #dcdcdc;
+    color: #dcdcdc;
+    border-bottom: solid 2px #dcdcdc;
     position: absolute;
-    top:0px;
+    top: 0px;
     right: 0px;
     left: 0px;
     text-align: center;
@@ -36,22 +41,26 @@ div.tpl-list ul li h4 {
     color: #333333;
     margin-bottom: 5px;
 }
-div.tpl-list ul li h4 strong{
+
+div.tpl-list ul li h4 strong {
     font-size: 12px;
-    color:#03565E;
+    color: #03565E;
     font-weight: normal;
 }
+
 div.tpl-list ul li p {
     font-size: 12px;
     padding-left: 10px;
 }
-div.tpl-list ul li div.link{
+
+div.tpl-list ul li div.link {
     padding-left: 10px;
     margin-top: 6px;
     padding-top: 5px;
 }
-div.tpl-list ul li div.link a{
+
+div.tpl-list ul li div.link a {
     font-size: 16px;
-    padding: 2px 8px ;
+    padding: 2px 8px;
     line-height: 25px;
 }

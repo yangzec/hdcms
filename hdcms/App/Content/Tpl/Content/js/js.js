@@ -1,8 +1,12 @@
 //添加或修改文章
 $(function () {
-    $("form").submit(function () {
+    $("form#add,form#edit").submit(function () {
+        //验证自定义字段
+        $("[onblur*='field_check']").each(function () {
+            $(this).trigger("blur");
+        })
         //验证标题
-        if (!$.trim($("[name='title']").val())) {
+        if ($("[name='title']").length == 1 && !$.trim($("[name='title']").val())) {
             alert('标题不能为空');
             return false;
         }
@@ -30,7 +34,7 @@ $(function () {
                             message: "操作成功!",
                             type: "success",
                             send: function () {
-                                window.location.reload();
+//                                window.location.reload();
                             },
                             cancel: function () {
                                 if (window.opener) {
@@ -41,13 +45,13 @@ $(function () {
 
                         })
                     } else {
-//                        $.dialog({
-//                            msg: "操作失败",
-//                            type: "error",
-//                            close_handler: function () {
-//                                location.href = URL;
-//                            }
-//                        });
+                        $.dialog({
+                            msg: "操作失败",
+                            type: "error",
+                            close_handler: function () {
+                                location.href = URL;
+                            }
+                        });
                     }
                 }
             })
@@ -97,27 +101,36 @@ function update_order(cid) {
     })
 }
 //删除文章
-function del(method, cid, aid) {
-    if (confirm("确定要删除文章吗?")) {
-        //单文章删除
-        if (aid) {
-            var ids = {aid: aid}
-        } else {//多文章删除
-            var ids = $("input:checked").serialize();
-        }
-        if (ids) {
+function del(cid, aid) {
+
+    //单文章删除
+    if (aid) {
+        var ids = {aid: aid}
+    } else {//多文章删除
+        var ids = $("input:checked").serialize();
+    }
+    if (ids) {
+        if (confirm("确定要删除文章吗?")) {
             $.ajax({
                 type: "POST",
-                url: CONTROL + "&m=" + method + "&cid=" + cid,
+                url: CONTROL + "&m=del" + "&cid=" + cid,
                 dataType: "JSON",
                 cache: false,
                 data: ids,
-                success: function (data) {
-                    if (data.stat == 1) {
+                success: function (stat) {
+                    if (stat == 1) {
                         $.dialog({
-                            msg: data.msg,
+                            msg: "删除文章成功",
                             type: "success",
                             timeout: 3,
+                            close_handler: function () {
+                                location.href = URL;
+                            }
+                        });
+                    } else {
+                        $.dialog({
+                            msg: "删除文章失败",
+                            type: "error",
                             close_handler: function () {
                                 location.href = URL;
                             }
@@ -126,6 +139,31 @@ function del(method, cid, aid) {
                 }
             })
         }
+    } else {
+        alert("请选择删除的文章");
+    }
+}
+//移动文章
+function move(cid, aid) {
+    var aid = "";
+    $("input[name*=aid]:checked").each(function (i) {
+        aid += $(this).val() + "|";
+    })
+    aid = aid.slice(0, -1);
+    if (aid) {
+        $.modal({
+            width: 600, height: 560, button: false,
+            title: '移动文章',
+            send_title: "确定",
+            cancel_title: "取消",
+            content: '<iframe style="width: 100%;height: 100%;" src="' + CONTROL + '&m=move_content&cid=' + cid + '&aid=' + aid + '" frameborder="0"></iframe>',
+            send: function () {
+                window.location.reload();
+            }
+
+        })
+    } else {
+        alert("请选择移动的文章");
     }
 }
 
@@ -164,7 +202,7 @@ $(function () {
         }
     })
 })
-
+//标题颜色
 function update_title_color() {
     var title = $("[name='title']").css({"color": $("[name='color']").val()});
 }
@@ -176,60 +214,22 @@ $(function () {
     })
     update_title_color();
 })
-//批量还原回收站内的文章
-function recovery(cid, aid) {
-    if (aid) {//还原一篇文章
-        var data = {aid: aid};
-    } else {//批量还原
-        var aid = $("[name*='aid']");
-        if (aid.length == 0) {
-            alert("请选择要还原的文章");
-            return false;
-        }
-        var data = aid.serialize();
+
+//图片裁切
+function imageCrop(url, size) {
+    var url = METH + "&m=image_crop";
+    //创建modal_file
+    if ($("#image_crop").length == 0) {
+        var html = '<div id="image_crop" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"\
+        aria-hidden="true" style="height: 550px;width: 600px;">\
+            <div class="modal-body" style="padding: 10px;height: 500px;">\
+            <iframe src="' + url + '" style="width:100%;height:500px;"></iframe>\
+            </div>\
+        </div>';
+        $("body").append(html);
     }
-    $.ajax({
-        type: "post",
-        url: CONTROL + "&m=recovery&cid=" + cid,
-        data: data,
-        dataType: "json",
-        success: function (data) {
-            if (data.stat == 1) {
-                $.dialog({
-                    msg: data.msg,
-                    type: "success",
-                    close_handler: function () {
-                        location.href = URL;
-                    }
-                });
-            } else {
-                $.dialog({
-                    msg: data.msg,
-                    type: "success"
-                });
-            }
-        }
-    })
+    $('#image_crop').modal()
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

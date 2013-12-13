@@ -5,7 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>HDCMS - 后台管理中心</title>
     <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <script type='text/javascript'>
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
@@ -57,8 +63,9 @@ endif;?>
     <!--头部右侧导航-->
     <div class="r_menu">
         <?php echo $_SESSION['rname'];?> : admin <a href="<?php echo U('Login/out');?>" target="_self">[退出]</a><span>|</span>
-        <a href="http://localhost/hdcms/index.php" target="_blank">前台首页</a><span>|</span>
-        <a href="<?php echo U('Member/Index/index');?>" target="_blank">会员中心</a></a>
+        <a href="http://localhost/hdcms/index.php" target="_blank">前台首页</a>
+<!--        <span>|</span>-->
+<!--        <a href="<?php echo U('Member/Index/index');?>" target="_blank">会员中心</a></a>-->
 <!--        <span>|</span>-->
 <!--        <a href="http://localhost/hdcms" target="_blank">后台地图</a><span>|</span>-->
 <!--        <a href="http://localhost/hdcms" target="_blank">更新缓存</a>-->
@@ -116,8 +123,8 @@ endif;?>
             </ul>
         </div>
     </div>
-    <div class="content">
-        <iframe src="<?php echo U('welcome');?>" nid="0"></iframe>
+    <div class="top_content">
+        <iframe src="<?php echo U('welcome');?>" nid="0"  scrolling="auto" frameborder="0" style="height: 100%;width: 100%;"></iframe>
     </div>
     <!--内容显示区域-->
 </div>

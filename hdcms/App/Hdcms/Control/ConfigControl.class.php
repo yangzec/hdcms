@@ -60,7 +60,7 @@ class ConfigControl extends AuthControl
                                        <select name="121">
 str;
                         foreach ($group as $g) {
-                            $checked= $c['value']==$g['gid']?"selected='selected'":"";
+                            $checked = $c['value'] == $g['gid'] ? "selected='selected'" : "";
                             $config[$n][$m]['html'] .= "<option value='{$g['gid']}' {$checked}>{$g['gname']}</option>";
                         }
                         $config[$n][$m]['html'] .= <<<str
@@ -112,12 +112,18 @@ str;
                             break;
                         //布尔
                         case '布尔(1/0)':
+                            $_no = $_yes = "";
+                            if ($c['value'] == 1) {
+                                $_yes = "checked='checked'";
+                            } else {
+                                $_no = "checked='checked'";
+                            }
                             $config[$n][$m]['html'] = <<<str
                                 <tr>
                                     <th class="w150">{$c['title']}</th>
                                     <td class="w250">
-                                        <label><input type="radio" name="{$c['id']}" value="1"/> 是</label>
-                                        <label><input type="radio" name="{$c['id']}" value="0"/> 否</label>
+                                        <label><input type="radio" name="{$c['id']}" value="1" $_yes/> 是</label>
+                                        <label><input type="radio" name="{$c['id']}" value="0" $_no/> 否</label>
                                     </td>
                                     <td>
                                         {$c['name']}

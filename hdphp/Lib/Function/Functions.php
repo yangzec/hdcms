@@ -426,6 +426,8 @@ function event($name, &$param = array())
     if (is_array($group)) {
         if ($event) {
             $event = array_merge($group, $event);
+        } else {
+            $event = $group;
         }
     }
     if (is_array($event)) {

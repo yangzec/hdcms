@@ -67,8 +67,8 @@
             </ul>
         </div>
     </div>
-    <div class="content">
-        <iframe src="{|U:'welcome'}" nid="0"></iframe>
+    <div class="top_content">
+        <iframe src="{|U:'welcome'}" nid="0"  scrolling="auto" frameborder="0" style="height: 100%;width: 100%;"></iframe>
     </div>
     <!--内容显示区域-->
 </div>

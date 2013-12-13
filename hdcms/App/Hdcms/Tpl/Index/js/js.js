@@ -1,4 +1,16 @@
-//菜单缓存  parent顶级菜单   iframe 历史iframe标签  link子菜单
+//content显示区
+function alter_content() {
+    var _h = $(window).height() - 70;
+    var _w = $(window).width() - 141;
+    $("div.top_content").css({top:30,left:141,height: _h, width: _w});
+}
+$(function () {
+    alter_content();
+    $(window).resize(function () {
+        alter_content();
+    })
+})
+
 var menu_cache = {parent: {}, iframe: {}, link: {}};
 //常用菜单缓存
 menu_cache.parent[0] = true;
@@ -45,7 +57,7 @@ function get_content(obj, nid) {
 //显示iframe显示内容
 function show_iframe(nid) {
     //隐藏所有iframe
-    $("div.content iframe").hide();
+    $("div.top_content iframe").hide();
     if (menu_cache.iframe[nid]) {
         var frm = $("iframe[nid='" + nid + "']");
 //        var url = $("a[nid="+nid+"]").attr("url");
@@ -53,8 +65,8 @@ function show_iframe(nid) {
     } else {
         var obj = $(".left_menu a[nid='" + nid + "']");
         var url = $(obj).attr("url");
-        var html = '<iframe nid="' + nid + '" src="' + url + "&_=" + Math.random() + '"></iframe>';
-        $("div.content").append(html);
+        var html = '<iframe nid="' + nid + '" src="' + url + "&_=" + Math.random() + '" scrolling="auto" frameborder="0" style="height: 100%;width: 100%;"></iframe>';
+        $("div.top_content").append(html);
         //压入缓存
         menu_cache.iframe[nid] = true;
     }

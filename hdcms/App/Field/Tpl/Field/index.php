@@ -14,7 +14,7 @@
 <div class="wrap">
     <div class="menu_list">
         <ul>
-            <li><a href="{|U:'Hdcms/Model/index'}">模型列表</a></li>
+            <li><a href="{|U:'Model/Model/index'}">模型列表</a></li>
             <li><a href="javascript:;" class="action">字段列表</a></li>
             <li><a href="{|U('add',array('mid'=>$_GET['mid']))}">添加字段</a></li>
             <li><a href="javascript:update_cache({$hd.get.mid})">更新字段缓存</a></li>

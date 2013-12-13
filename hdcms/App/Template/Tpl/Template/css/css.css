@@ -1,10 +1,4 @@
-@import "../../../../../static/css/common.css";
-
-table {
-    background: #fff;
-}
-
-div span {
+div span.sel_tp {
     height: 22px;
     width: 26px;
     display: inline-block;

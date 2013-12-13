@@ -54,7 +54,7 @@ $(function () {
 $(function () {
     $("form").submit(function () {
         //如果为生成静态，必须设置静态目录
-        if ($("[name='cattype']:checked").val() != 3) {
+        if ($("[name='cattype']:checked").val() == 1) {
             if (!$.trim($("[name='catdir']").val())) {
                 alert("请设置静态目录");
                 return false;
@@ -69,14 +69,19 @@ $(function () {
                 dataType: "JSON",
                 cache: false,
                 data: _post,
-                success: function (data) {
-                    if (data.stat == 1) {
+                success: function (stat) {
+                    if (stat == 1) {
                         $.dialog({
-                            msg: data.msg,
+                            msg: "操作成功",
                             type: "success",
                             close_handler: function () {
                                 location.href = CONTROL;
                             }
+                        });
+                    } else if (stat == 2) {
+                        $.dialog({
+                            msg: "操作失败",
+                            type: "error"
                         });
                     }
                 }
@@ -87,7 +92,7 @@ $(function () {
 })
 
 //删除栏目
-function del_category(cid) {
+function del(cid) {
     if (confirm("删除栏目会同时删除文章，确认删除吗？")) {
         $.ajax({
             type: "POST",
@@ -95,18 +100,18 @@ function del_category(cid) {
             dataType: "JSON",
             cache: false,
             data: {cid: cid},
-            success: function (data) {
-                if (data.stat == 1) {
+            success: function (stat) {
+                if (stat == 1) {
                     $.dialog({
-                        msg: data.msg,
+                        msg: "删除成功!",
                         type: "success",
                         close_handler: function () {
                             location.href = URL;
                         }
                     });
-                } else {
+                } else if (stat == 2) {
                     $.dialog({
-                        msg: data.msg,
+                        msg: "请先删除子栏目",
                         type: "error"
                     });
                 }
@@ -126,14 +131,19 @@ $(function () {
             dataType: "JSON",
             cache: false,
             data: post,
-            success: function (data) {
-                if (data.stat == 1) {
+            success: function (stat) {
+                if (stat == 1) {
                     $.dialog({
-                        msg: data.msg,
+                        msg: "排序修改成功",
                         type: "success",
                         close_handler: function () {
                             location.href = URL;
                         }
+                    });
+                } else {
+                    $.dialog({
+                        msg: "排序修改失败！",
+                        type: "error"
                     });
                 }
             }
@@ -144,14 +154,21 @@ $(function () {
 function update_cache() {
     $.ajax({
         url: CONTROL + "&m=update_cache",
-        success: function () {
-            $.dialog({
-                msg: "更新缓存成功！",
-                type: "success",
-                close_handler: function () {
-                    location.href = URL;
-                }
-            });
+        success: function (stat) {
+            if (stat == 1) {
+                $.dialog({
+                    msg: "更新缓存成功！",
+                    type: "success",
+                    close_handler: function () {
+                        location.href = URL;
+                    }
+                });
+            } else {
+                $.dialog({
+                    msg: "更新缓存失败！",
+                    type: "error"
+                });
+            }
         }
     })
 }

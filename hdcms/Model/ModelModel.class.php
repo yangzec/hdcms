@@ -33,6 +33,7 @@ class ModelModel extends CommonModel
                       `aid` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
                       `cid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '栏目cid' ,
                       `title` char(100) NOT NULL DEFAULT '' COMMENT '标题' ,
+                      `new_window` TINYINT(1) NOT NULL DEFAULT 0  COMMENT '新窗口打开' ,
                       `seo_title` char(100) NOT NULL DEFAULT '' COMMENT '标题' ,
                       `thumb` CHAR(200) NOT NULL DEFAULT '' COMMENT '缩略图' ,
                       `click` MEDIUMINT NOT NULL DEFAULT 0 COMMENT '点击次数' ,
@@ -50,6 +51,8 @@ class ModelModel extends CommonModel
                       `arc_sort` int(10) UNSIGNED NOT NULL DEFAULT 0  COMMENT '排序' ,
                       `username` CHAR(20) NOT NULL default '',
                       `status` TINYINT(1) NOT NULL default 1,
+                      `keywords` CHAR(100) NOT NULL DEFAULT '' COMMENT '关键字' ,
+                      `description` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '描述' ,
                       PRIMARY KEY (`aid`) ,
                       INDEX `cid` (`cid` ASC))
                     ENGINE = MyISAM;
@@ -64,11 +67,7 @@ str;
                 -- -----------------------------------------------------
                 CREATE  TABLE IF NOT EXISTS `{$slaveTable}`(
                   `aid` INT UNSIGNED NOT NULL default 0 COMMENT '文章主表ID' ,
-                  `cid` SMALLINT UNSIGNED NOT NULL default 0 COMMENT '栏目ID' ,
-                  `keywords` CHAR(45) NOT NULL DEFAULT '' COMMENT '关键字' ,
-                  `description` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '描述' ,
                   `content` text NULL COMMENT '正文' ,
-                  INDEX `cid` (`cid` ASC) ,
                   INDEX `aid` (`aid` ASC) )
                 ENGINE = MyISAM;
 str;

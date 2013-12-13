@@ -53,7 +53,7 @@
                 <tr>
                     <th>应用</th>
                     <td>
-                        <input type="text" name="control" value="{$field.control}" class="w200"/>
+                        <input type="text" name="app_name" value="{$field.control}" class="w200"/>
                     </td>
                 </tr>
             </table>

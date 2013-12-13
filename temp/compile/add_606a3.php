@@ -1,15 +1,13 @@
-<?php if(!defined("HDPHP_PATH"))exit;C("DEBUG_SHOW",false);?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<?php if(!defined("HDPHP_PATH"))exit;C("DEBUG_SHOW",false);?><!DOCTYPE html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>添加文章</title>
-    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script>
     <script type='text/javascript'>
 		HOST = 'http://localhost';
 		ROOT = 'http://localhost/hdcms';
 		WEB = 'http://localhost/hdcms/index.php';
-		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=add&cid=9';
+		URL = 'http://localhost/hdcms/index.php?a=Content&c=Content&m=add&cid=4&status=0';
 		HDPHP = 'http://localhost/hdphp/hdphp';
 		HDPHPDATA = 'http://localhost/hdphp/hdphp/Data';
 		HDPHPTPL = 'http://localhost/hdphp/hdphp/Lib/Tpl';
@@ -24,13 +22,19 @@
 		PUBLIC = 'http://localhost/hdcms/hdcms/App/Content/Tpl/Public';
 		COMMON = 'http://localhost/hdcms/Common';
 </script>
-    <link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script>
+    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js"></script>
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css">
+  <![endif]-->
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://localhost/hdphp/hdphp/Extend/Org/bootstrap/ie6/css/ie.css">
+  <![endif]--><link href="http://localhost/hdphp/hdphp/Extend/Org/hdui/css/hdui.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/hdui/js/hdui.js"></script><link href="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.css" rel="stylesheet" media="screen"><script src="http://localhost/hdphp/hdphp/Extend/Org/imageCrop/crop.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/static/js/js.js"></script>
     <script type="text/javascript" src="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/js/js.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost/hdcms/hdcms/App/Content/Tpl/Content/css/css.css"/>
 </head>
 <body>
-<form action="<?php echo U(add);?>" method="post" onsubmit="return false;">
+<form action="<?php echo U(add);?>" method="post" onsubmit="return false;" id="add" class="form-inline">
     <div class="wrap">
         <!--右侧缩略图区域-->
         <div class="content_right">
@@ -44,8 +48,9 @@
                              style="cursor: pointer;width:135px;height:113px;"
                              onclick="file_upload('thumb','thumb',1,'thumb')"/>
                         <input type="hidden" name="thumb"/>
-                        <button type="button" class="btn3" onclick="crop_image('thumb')">裁切图片</button>
-                        <button type="button" class="btn3" onclick="remove_thumb(this)">取消上传</button>
+<!--                        <button type="button" class="btn btn-small" onclick="imageCrop('thumb')">裁切图片</button>-->
+                        <button type="button" class="btn btn-small" onclick="file_upload('thumb','thumb',1,'thumb')">上传图片</button>
+                        <button type="button" class="btn btn-small" onclick="remove_thumb(this)">取消上传</button>
                     </td>
                 </tr>
                 <tr>
@@ -53,7 +58,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" id="updatetime" name="updatetime" value="<?php echo date('Y/m/d h:i:s');?>"
+                        <input type="text" readonly="readonly" id="updatetime" name="updatetime"
+                               value="<?php echo date('Y/m/d h:i:s');?>"
                                class="w150"/>
                         <script>
                             $('#updatetime').calendar({format: 'yyyy/MM/dd HH:mm:ss'});
@@ -112,26 +118,27 @@
                     </td>
                 </tr>
             </table>
-
         </div>
         <div class="content_left">
             <div class="table_title">添加文章</div>
             <table class="table1">
                 <tr>
-                    <th class="w80">标题</th>
+                    <th class="w80">标题<span class="star">*</span></th>
                     <td>
-                        <span class="star">*</span><input id="title" type="text" name="title" class="title w400"/>
-                        <label>
+                        <input id="title" type="text" name="title" class="title w400"/>
+                        <label class="checkbox inline">
                             标题颜色 <input type="text" name="color" class="w60"/>
                         </label>
-                        <button type="button" onclick="selectColor(this,'color')">选取颜色</button>
-                        <label><input type="checkbox" name="new_window" value="1"/> 新窗口打开</label>
+                        <button type="button" onclick="selectColor(this,'color')" class="btn">选取颜色</button>
+                        <label class="checkbox inline">
+                            <input type="checkbox" name="new_window" value="1"/> 新窗口打开
+                        </label>
                     </td>
                 </tr>
                 <tr>
                     <th class="w80">SEO标题</th>
                     <td>
-                      <input type="text" name="seo_title" class="w500"/>
+                        <input type="text" name="seo_title" class="w400"/>
                     </td>
                 </tr>
                 <tr>
@@ -149,9 +156,10 @@ if(($_id_f)%1==0):$_id_f++;else:$_id_f++;continue;endif;
 $hd["list"]["f"]["index"]=++$_index_f;
 if($_index_f>=$_total_f):$hd["list"]["f"]["last"]=true;endif;?>
 
-                            <label>
-                                <input type="hidden" name="content_flag[<?php echo $f['fid'];?>][cid]" value="<?php echo $category['cid'];?>"/>
-                              <label><input type="checkbox" name="content_flag[<?php echo $f['fid'];?>][fid]" value="<?php echo $f['fid'];?>"/> <?php echo $f['flagname'];?></label>
+                            <input type="hidden" name="content_flag[<?php echo $f['fid'];?>][cid]" value="<?php echo $category['cid'];?>"/>
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="content_flag[<?php echo $f['fid'];?>][fid]" value="<?php echo $f['fid'];?>"/>
+                                <?php echo $f['flagname'];?>
                             </label>
                         <?php $hd["list"]["f"]["first"]=false;
 endforeach;
@@ -165,7 +173,7 @@ endif;?>
                     <th>栏目</th>
                     <td>
                         <input type="hidden" name="cid" value="<?php echo $category['cid'];?>"/>
-                        <?php echo $category['catname'];?>
+                        <?php echo $category['title'];?>
                     </td>
                 </tr>
                 <!--标准模型显示正文字段-->
@@ -173,28 +181,42 @@ endif;?>
                     <tr>
                         <th>关键字</th>
                         <td>
-                            <input type="text" name="<?php echo $model['tablename'];?>_data[keywords]" class="w400"/>
+                            <input type="text" name="keywords" class="w400"/>
                         </td>
                     </tr>
                     <tr>
                         <th>摘要</th>
                         <td>
-                            <textarea name="<?php echo $model['tablename'];?>_data[description]" class="w450 h80"></textarea>
+                            <textarea name="description" class="w450 h80"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th>内容</th>
+                        <th>内容<span class="star">*</span></th>
                         <td>
-                            <span class="star">*</span>
                             <?php echo tag("ueditor",array("name"=>$model['tablename']."_data[content]"));?>
-                            <div class="editor_set">
-                                <label><input type="checkbox" name="down_remote_pic" value="1" <?php if(C("down_remote_pic")==1){?>checked="checked"<?php }?>/>下载远程图片</label>
-                                <label><input type="checkbox" name="auto_desc" value="1" <?php if(C("auto_desc")==1){?>checked="checked"<?php }?>/>是否截取内容</label>
-                                <input type="text" size="3" value="200" name="auto_desc_length">
-                                字符至内容摘要
-                                <label><input type="checkbox" name="auto_thumb" value="1" <?php if(C("auto_thumb")==1){?>checked="checked"<?php }?>/>否获取内容第</label>
-                                <input type="text" size="2" value="1" name="auto_thumb_num">
-                                张图片作为缩略图
+                            <div class="editor_set control-group">
+                                <label class="checkbox inline">
+                                    <input type="checkbox" name="down_remote_pic" value="1"
+                                    <?php if(C("down_remote_pic")==1){?>checked="checked"<?php }?>
+                                    />下载远程图片
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="checkbox" name="auto_desc" value="1"
+                                    <?php if(C("auto_desc")==1){?>checked="checked"<?php }?>
+                                    />是否截取内容
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="text" value="200" class="input-mini" name="auto_desc_length"> 字符至内容摘要
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="checkbox" name="auto_thumb" value="1"
+                                    <?php if(C("auto_thumb")==1){?>checked="checked"<?php }?>
+                                    />否获取内容第
+                                </label>
+                                <label class="checkbox inline">
+                                    <input type="text" class="input-mini" value="1" name="auto_thumb_num">
+                                     张图片作为缩略图
+                                </label>
                             </div>
                         </td>
                     </tr>
@@ -206,15 +228,15 @@ endif;?>
                     <th>模板</th>
                     <td>
                         <input class="w250" type="text" name="template" id="template">
-                        <button class="select_tpl" type="button" onclick="select_tpl('template')">选择模板</button>
+                        <button class="select_tpl btn" type="button" onclick="select_template('template');">选择模板</button>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
     <div class="btn_wrap">
-        <input type="submit" class="btn" value="确定"/>
-        <input type="button" class="btn2 close_window" value="关闭"/>
+        <input type="submit" class="btn btn-primary" value="确定"/>
+        <input type="button" class="btn close_window" value="关闭"/>
     </div>
 </form>
 </body>

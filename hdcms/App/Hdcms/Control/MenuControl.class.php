@@ -44,14 +44,17 @@ class MenuControl extends AuthControl
     public function set_favorite()
     {
         if (IS_POST) {
-            if (!empty($_POST['nid'])) {
-                $db = M("node");
+            $db = M("node");
+            if (empty($_POST['nid'])) {
+                $db->where("favorite=1")->save(array("favorite"=>0));
+            } else {
+
                 $db->where("1=1")->update(array("favorite" => 0));
                 foreach ($_POST['nid'] as $nid) {
                     $db->save(array("nid" => $nid, "favorite" => 1));
                 }
-                $this->_ajax(1);
             }
+            $this->_ajax(1);
         } else {
             //查找所有2级菜单
             $menu2 = $this->db->join(NULL)->where("level=2")->order("list_order DESC")->all();

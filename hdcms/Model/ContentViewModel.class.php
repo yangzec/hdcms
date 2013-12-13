@@ -33,18 +33,18 @@ class ContentViewModel extends ViewModel
                     "on" => $this->table . ".cid=category.cid"
                 )
             );
-            //属性表
-            $this->view['content_flag'] = array(
-                "type" => LEFT_JOIN,
-                "on" => $this->table . ".aid=content_flag.aid AND content_flag.cid=category.cid"
-            );
             //副表关联
             if ($this->model[$this->mid]['type'] == 1) {
                 $this->view [$this->table . '_data'] = array(
                     "type" => INNER_JOIN,
-                    "on" => $this->table . ".aid=" . $this->table . "_data.aid"
+                    "on" => $this->table.".aid={$this->table}_data.aid"
                 );
             }
+            //属性表
+            $this->view['content_flag'] = array(
+                "type" => LEFT_JOIN,
+                "on" => $this->table.".aid=content_flag.aid"
+            );
             $this->run($this->table);
         }
     }

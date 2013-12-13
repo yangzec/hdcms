@@ -1,5 +1,8 @@
-* {
-    padding: 0px;
+body {
+    font-size: 12px;
+}
+
+ul, ol {
     margin: 0px;
 }
 
@@ -8,7 +11,11 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+label {
+    font-size: 12px;
 }
 
 span.line {
@@ -21,10 +28,10 @@ span.line {
 
 body {
     background: none repeat scroll 0 0 #F3F3F3;
-    color: #333333;
-    font-family: "Century Gothic", "Microsoft yahei";
-    font-size: 12px;
-    line-height: 1.5;
+    /*color: #333333;*/
+    /*font-family: "Century Gothic", "Microsoft yahei";*/
+    /*font-size: 12px;*/
+    /*line-height: 1.5;*/
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -33,20 +40,6 @@ body {
 div.wrap {
     padding: 20px 20px 50px;
 }
-
-/*底部固定按钮*/
-div.btn_wrap {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 40px;
-    padding-top: 10px;
-    padding-left: 20px;
-    border: solid 1px #ddd;
-    background: #EBEBEB;
-}
-
 /*按钮固定到底部*/
 div.btn_wrap {
     height: 25px;
@@ -56,8 +49,11 @@ div.btn_wrap {
     padding: 8px 30px 5px;
     text-align: left;
     overflow: hidden;
-    position: absolute;
     z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    position: fixed;
 }
 
 div.btn_wrap input, div.hd_bottom a {
@@ -76,13 +72,15 @@ div.help {
     font-weight: normal;
 }
 
-div.help p{
-    height:20px;
+div.help p {
+    height: 20px;
 }
-div.help p a{
+
+div.help p a {
     /*color:#666;*/
 }
-div.help p a:hover{
+
+div.help p a:hover {
     text-decoration: underline;
 }
 

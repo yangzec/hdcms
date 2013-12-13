@@ -37,7 +37,39 @@ $(function () {
     })
 })
 
-//添加字段时，选择表单模板
+//===========================添加&修改模型==========================
+//Ajax提交
+$(function () {
+    $("form").submit(function () {
+        if ($(this).is_validation()) {
+            $.ajax({
+                type: "POST",
+                url: METH,
+                cache: false,
+                dataType: "JSON",
+                data: $(this).serialize(),
+                success: function (stat) {
+                    if (stat == 1) {
+                        $.dialog({
+                            msg: "操作成功!",
+                            type: "success",
+                            close_handler: function () {
+                                location.href = CONTROL+"&mid="+mid;
+                            }
+                        });
+                    } else {
+                        $.dialog({
+                            msg: "操作失败",
+                            type: "error"
+                        });
+                    }
+                }
+            });
+        }
+        return false;
+    })
+})
+//选择字段模板
 $(function () {
     //模板类型缓存
     var field_tpl = {};
@@ -76,10 +108,10 @@ function update_cache(mid) {
         url: CONTROL + "&m=update_cache",
         data: {mid: mid},
         dataType: "JSON",
-        success: function (data) {
-            if (data.stat == 1) {
+        success: function (stat) {
+            if (stat == 1) {
                 $.dialog({
-                    msg: data.msg,
+                    msg: "缓存更新成功",
                     type: "success",
                     timeout: 3,
                     close_handler: function () {
@@ -88,7 +120,7 @@ function update_cache(mid) {
                 });
             } else {
                 $.dialog({
-                    msg: data.msg,
+                    msg: "缓存更新失败",
                     type: "error",
                     timeout: 3
                 });
@@ -104,15 +136,21 @@ function del_field(mid, fid) {
         url: CONTROL + "&m=del_field",
         data: {fid: fid, mid: mid},
         dataType: "JSON",
-        success: function (data) {
-            if (data.stat == 1) {
+        success: function (stat) {
+            if (stat == 1) {
                 $.dialog({
-                    msg: data.msg,
+                    msg: "删除成功",
                     type: "success",
                     timeout: 3,
                     close_handler: function () {
                         location.href = URL;
                     }
+                });
+            }else {
+                $.dialog({
+                    msg: "删除失败",
+                    type: "error",
+                    timeout: 3
                 });
             }
         }

@@ -2,26 +2,883 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fdfeb72-05e7-437b-b747-905afa58d1a4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload/content/2013/12/11/10541386703378.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload/content/2013/12/11/18391386703365.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload/favicon/2013/12/11/42661386702404.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload/favicon/2013/12/11/55771386702311.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/add_83864.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/content_0db80.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/edit_5e487.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/index_125b3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/index_8bc5a.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/pic_list_1b709.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/pic_list_6c219.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/select_category_78a19.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/show_dir_2753f.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp/compile/success.html_5e487.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Member/Control/AccountControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Member/Control/AccountControl.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/Common/Config/config.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/Model/ContentFlagModel.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/image_crop.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/css/move_content.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/move_content.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/move_content.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_access_bk_1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_bug_bk_1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_category_access_bk_3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_category_bk_2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_comment_bk_4.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_config_bk_5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_content_bk_6.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_content_data_bk_7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_content_flag_bk_8.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_extcredits_bk_9.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_field_bk_10.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_flag_bk_11.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_member_group_bk_12.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_model_bk_13.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_node_bk_14.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_role_bk_15.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_session_bk_16.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_template_tag_bk_17.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_upload_bk_18.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/hd_user_bk_19.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131210024918/structure.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/10.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/12.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/18.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/19.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/20.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/21.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/6.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/field/86.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/recycle.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Config/event.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Data/Font/font.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Data/Image/water.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Data/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/auto-height.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/colorpicker.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/custom-plugin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/custom-theme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/default.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/dynamic-load.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/file-dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/file-manager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/filter-mode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/image-dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/js/jquery-ui-1.9.2.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery-ui/js/jquery-ui-1.9.2.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/multi-image-dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/multi-language.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/newline.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/node.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/paste-type.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/qqstyle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/readonly.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/simple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/uploadbutton.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/url-type.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/examples/word-count.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/kindeditor-all-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/kindeditor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/lang/zh_CN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/lang/zh_TW.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/license.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/php/JSON.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/php/demo.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/php/file_manager_json.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/php/upload_json.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/php/upload_json111111.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/anchor/anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/autoheight/autoheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/baidumap/baidumap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/baidumap/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/baidumap/map.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/clearhtml/clearhtml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/code/code.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/code/prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/code/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/emoticons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/10.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/100.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/101.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/102.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/103.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/104.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/105.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/106.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/107.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/108.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/109.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/11.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/110.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/111.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/112.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/113.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/114.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/115.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/116.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/117.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/118.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/119.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/12.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/120.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/121.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/122.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/123.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/124.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/125.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/126.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/127.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/128.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/129.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/13.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/130.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/131.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/132.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/133.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/134.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/14.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/15.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/16.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/17.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/18.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/19.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/20.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/21.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/22.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/23.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/24.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/25.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/26.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/27.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/28.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/29.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/30.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/31.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/32.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/33.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/34.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/35.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/36.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/37.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/38.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/39.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/4.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/40.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/41.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/42.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/43.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/44.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/45.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/46.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/47.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/48.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/49.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/5.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/50.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/51.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/52.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/53.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/54.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/55.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/56.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/57.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/58.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/59.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/6.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/60.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/61.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/62.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/63.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/64.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/65.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/66.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/67.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/68.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/69.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/7.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/70.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/71.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/72.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/73.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/74.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/75.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/76.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/77.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/78.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/79.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/8.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/80.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/81.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/82.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/83.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/84.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/85.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/86.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/87.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/88.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/89.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/9.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/90.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/91.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/92.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/93.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/94.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/95.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/96.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/97.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/98.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/99.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/emoticons/images/static.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/filemanager/filemanager.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/filemanager/images/file-16.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/filemanager/images/file-64.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/filemanager/images/folder-16.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/filemanager/images/folder-64.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/filemanager/images/go-up.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/flash/flash.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/image/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/image/images/align_left.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/image/images/align_right.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/image/images/align_top.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/image/images/refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/insertfile/insertfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/lineheight/lineheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/link/link.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/map/map.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/map/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/media/media.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/multiimage/images/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/multiimage/images/select-files-en.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/multiimage/images/select-files-zh_CN.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/multiimage/images/swfupload.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/multiimage/multiimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/pagebreak/pagebreak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/plainpaste/plainpaste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/preview/preview.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/quickformat/quickformat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/table/table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/template/html/1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/template/html/2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/template/html/3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/template/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/plugins/wordpaste/wordpaste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/common/anchor.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/common/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/common/flash.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/common/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/common/media.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/common/rm.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/default/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/default/default.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/default/default.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/qq/editor.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/qq/qq.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Keditor/themes/simple/simple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/anchor/anchor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/attachment.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/attachment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/callbacks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_default.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/attachment/fileTypeMaps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/background/background.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/background/background.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/background/background.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/emotion.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/emotion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/emotion.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/bface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/cface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/fface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/jxface2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/neweditor-tab-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/tface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/wface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/emotion/images/yface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/gmap/gmap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/help/help.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/help/help.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/help/help.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/highlightcode/highlightcode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/image.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/image.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/imageUploader.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/images/center_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/images/left_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/images/none_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/image/images/right_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/insertframe/insertframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/internal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/link/link.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/map/map.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/music/music.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/music/music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/music/music.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/addimg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/brush.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/delimg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/delimgH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/empty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/emptyH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/eraser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/redo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/redoH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/scale.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/scaleH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/size.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/undo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/images/undoH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/scrawl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/scrawl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/scrawl/scrawl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/searchreplace/searchreplace.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/searchreplace/searchreplace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/snapscreen/snapscreen.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/spechars/spechars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/spechars/spechars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/table/dragicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/table/edittable.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/table/edittable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/table/edittable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/table/edittd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/table/edittip.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/tangram.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/images/bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/images/pre0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/images/pre1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/images/pre2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/images/pre3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/images/pre4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/template.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/template.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/template/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/images/center_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/images/left_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/images/none_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/images/right_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/video.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/video.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/video/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/webapp/webapp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/wordimage/fClipboard_ueditor.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/wordimage/imageUploader.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/wordimage/wordimage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/dialogs/wordimage/wordimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/addimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/alldeletebtnhoverskin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/alldeletebtnupskin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/copy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/deletedisable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/deleteenable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/imglabel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/listbackground.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/localimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/music.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/rotateleftdisable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/rotateleftenable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/rotaterightdisable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/rotaterightenable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/en/images/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/zh-cn/images/copy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/zh-cn/images/imglabel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/zh-cn/images/localimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/zh-cn/images/music.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/zh-cn/images/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/lang/zh-cn/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/Uploader.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/fileUp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/getContent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/getMovie.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/getRemoteImage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/imageManager.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/imageUp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/scrawlUp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/ueditorCatcherUrl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/php/ueditor_upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/css/ueditor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/dialogbase.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/anchor.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/arrow_down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/arrow_up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/button-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/cancelbutton.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/cursor_h.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/cursor_h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/cursor_v.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/cursor_v.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/dialog-title-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/filescan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/highlighted.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/icons-all.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/lock.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/neweditor-tab-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/pagebreak.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/scale.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/spacer.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/sparator_v.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/table-cell-align.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/tangram-colorpicker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/toolbar_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/unhighlighted.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/videologo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/word.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/default/images/wordpaste.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/themes/iframe.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/SyntaxHighlighter/shCore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/codemirror/codemirror.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/codemirror/codemirror.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/snapscreen/UEditorSnapscreen.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/fileprogress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload.cookies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload.proxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload.queue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload.speed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/third-party/swfupload/swfupload_fp9.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/ueditor.all.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/ueditor.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Editor/Ueditor/ueditor.parse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Ip/Ip.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Ip/tinyipdata.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/animated-overlay.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_flat_0_eeeeee_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_flat_55_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-icons_0073ea_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-icons_666666_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-icons_ff0084_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/images/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/jquery-ui-1.10.3.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/css/flick/jquery-ui-1.10.3.custom.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/js/jquery-1.9.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/js/jquery-ui-1.10.3.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/JqueryUi/js/jquery-ui-1.10.3.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Jqzoom/css/jquery.jqzoom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Jqzoom/images/advertise.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Jqzoom/images/zoomloader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Jqzoom/js/jquery.jqzoom-core-pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Jqzoom/js/jquery.jqzoom-core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Mail/Class.phpmailer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Mail/Mail.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Mail/Tool.smtp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Mobile/Mobile.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Mobile/mobile.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/Config_File.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/Smarty.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/Smarty_Compiler.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/debug.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.assemble_plugin_filepath.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.assign_smarty_interface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.create_dir_structure.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.display_debug_console.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.get_include_path.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.get_microtime.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.get_php_resource.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.is_secure.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.is_trusted.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.load_plugins.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.load_resource_plugin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.process_cached_inserts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.process_compiled_include.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.read_cache_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.rm_auto.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.rmdir.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.run_insert_handler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.smarty_include_php.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.write_cache_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.write_compiled_include.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.write_compiled_resource.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/internals/core.write_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/block.textformat.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/compiler.assign.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.assign_debug_info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.config_load.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.counter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.cycle.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.debug.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.eval.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.fetch.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_checkboxes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_image.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_options.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_radios.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_select_date.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_select_time.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.html_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.mailto.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.math.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.popup.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/function.popup_init.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.capitalize.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.cat.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.count_characters.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.count_paragraphs.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.count_sentences.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.count_words.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.date_format.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.debug_print_var.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.default.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.escape.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.indent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.lower.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.nl2br.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.regex_replace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.replace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.spacify.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.string_format.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.strip.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.strip_tags.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.truncate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.upper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/modifier.wordwrap.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/outputfilter.trimwhitespace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/shared.escape_special_chars.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Smarty/plugins/shared.make_timestamp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/SplitWord/SplitWord.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/SplitWord/base_dic_full.dic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/SplitWord/base_dic_full.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/SplitWord/words_addons.dic" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/check-exists.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/default.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/hd_uploadify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/hd_uploadify.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/jquery.uploadify-3.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/jquery.uploadify.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/upload.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/upload2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/uploadify-cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/uploadify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/Uploadify/uploadify.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/css/bootstrap-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/css/bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/ie6/css/bootstrap-ie6.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/ie6/css/ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/crop.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/css/Jcrop.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/css/jquery.Jcrop.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/css/jquery.Jcrop.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/crop.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/demo_files/demos.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/demo_files/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/demo_files/pool.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/demo_files/sago.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/demo_files/sagomod.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/demo_files/sagomod.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/non-image.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/styling.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/tutorial1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/tutorial2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/tutorial3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/tutorial4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/demos/tutorial5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/js/jquery.Jcrop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/js/jquery.Jcrop.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/js/jquery.color.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/jcrop/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/crop_image/tpl/show.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/css/hdui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/img/ico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/img/ico_2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/img/ico_face.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/img/icon_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/img/tr_border.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/js/hdui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/js/lhgcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/js/skins/default/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/js/skins/default/default_s.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/js/skins/default/default_s2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Org/hdui/js/skins/lhgcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Backup.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Cart.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Code.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/ContentPage.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Data.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Date.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Dir.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Encry.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/FirePHP.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Html.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Image.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Json.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Page.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Rbac.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Session.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/String.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Token.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Upload.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Validate.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Extend/Tool/Xml.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/LICENSE.TXT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Alias.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/App.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Boot.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Control.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Debug.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Event.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/HDPHP.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/HdphpException.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Log.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Core/Route.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Cache/Cache.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Cache/CacheFactory.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Cache/CacheFile.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Cache/CacheMemcache.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Cache/CacheRedis.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Db/Db.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Db/DbFactory.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Db/DbInterface.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Db/DbMysql.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Db/DbMysqli.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Db/DbPdo.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Model/Model.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Model/RelationModel.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Model/ViewModel.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Session/SessionAbstract.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Session/SessionFactory.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Session/SessionFile.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Session/SessionMemcache.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Session/SessionMysql.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/Session/SessionRedis.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/View/Driver/HdView.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/View/Driver/SmartyView.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/View/Hd/Compile.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/View/Hd/HdBaseTag.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/View/View.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Driver/View/ViewFactory.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Function/Common.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Function/Functions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Language/zh.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/app_error.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/app_success.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/control_test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/debug.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/event.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/exception.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/halt.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/Lib/Tpl/notice.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/hdphp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdphp/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/2013/1211/593.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/2013/1211/609.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/2013/1211/81.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/list_6_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/list_9_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/list_9_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/a/list_9_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/list_8_.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/e/list_8_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/f/list_7_6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_access_bk_1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_bug_bk_1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_category_access_bk_3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_category_bk_2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_comment_bk_4.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_config_bk_5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_content_bk_6.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_content_data_bk_7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_content_flag_bk_8.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_extcredits_bk_9.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_field_bk_10.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_flag_bk_11.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_member_group_bk_12.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_model_bk_13.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_node_bk_14.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_role_bk_15.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_session_bk_16.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_template_tag_bk_17.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_upload_bk_18.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/db/hd_user_bk_19.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/lock.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/ab.html_8c930.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/add_83864.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/add_9be56.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/article_list.html_6f8b9.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/article_list.html_f4cde.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/content_0db80.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/edit_5e487.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/f.html_6f8b9.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/index.html_8c930.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/message_6f8b9.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/pic_list_1b709.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/select_category_78a19.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/compile/success.html_5e487.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/log/2013-12-10-9a325.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/temp/log/2013-12-11-9a325.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/content/2013/12/11/10541386703378.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/content/2013/12/11/18391386703365.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/favicon/2013/12/11/42661386702404.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/favicon/2013/12/11/55771386702311.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Category/Control/CategoryControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Category/Control/CategoryControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/CategoryModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/CategoryModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/ConfigControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/ConfigControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Member/Control/ContentControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Member/Control/ContentControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/ContentModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/ContentModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" afterPath="$PROJECT_DIR$/hdcms/Tag/ContentTag.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/ContentViewModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Field/Control/FieldControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Field/Control/FieldControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/FieldModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/FieldModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/MenuControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/MenuControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Model/Control/ModelControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Model/Control/ModelControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/ModelModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/ModelModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Control/TemplateControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Control/TemplateControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/default/ab.html" afterPath="$PROJECT_DIR$/template/default/ab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/add.php" afterPath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/add.php" afterPath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/add.php" afterPath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/add_606a3.php" afterPath="$PROJECT_DIR$/temp/compile/add_606a3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/add_74dc6.php" afterPath="$PROJECT_DIR$/temp/compile/add_74dc6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/article_default.html_606a3.php" afterPath="$PROJECT_DIR$/temp/compile/article_default.html_606a3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/article_list.html_0ec7e.php" afterPath="$PROJECT_DIR$/temp/compile/article_list.html_0ec7e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/auth_f839f.php" afterPath="$PROJECT_DIR$/temp/compile/auth_f839f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/batch_category.php" afterPath="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/batch_category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/batch_category_0ec7e.php" afterPath="$PROJECT_DIR$/temp/compile/batch_category_0ec7e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/batch_content_28580.php" afterPath="$PROJECT_DIR$/temp/compile/batch_content_28580.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/category/category.php" afterPath="$PROJECT_DIR$/data/category/category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/static/css/common.css" afterPath="$PROJECT_DIR$/hdcms/static/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/config/config.inc.php" afterPath="$PROJECT_DIR$/data/config/config.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Field/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Field/Config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/config.php" afterPath="$PROJECT_DIR$/install/db/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/content.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/content_94f44.php" afterPath="$PROJECT_DIR$/temp/compile/content_94f44.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/create_index.php" afterPath="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/create_index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/create_index_690de.php" afterPath="$PROJECT_DIR$/temp/compile/create_index_690de.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Template/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Template/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Upload/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Upload/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/edit_295e9.php" afterPath="$PROJECT_DIR$/temp/compile/edit_295e9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/edit_info_2cc01.php" afterPath="$PROJECT_DIR$/temp/compile/edit_info_2cc01.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/edit_password_2051d.php" afterPath="$PROJECT_DIR$/temp/compile/edit_password_2051d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Config/event.php" afterPath="$PROJECT_DIR$/hdcms/Common/Config/event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index.html" afterPath="$PROJECT_DIR$/temp/compile/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/index.js" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Upload/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Upload/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_125b3.php" afterPath="$PROJECT_DIR$/temp/compile/index_125b3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_1e832.php" afterPath="$PROJECT_DIR$/temp/compile/index_1e832.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_260b1.php" afterPath="$PROJECT_DIR$/temp/compile/index_260b1.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_46845.php" afterPath="$PROJECT_DIR$/temp/compile/index_46845.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_4cb44.php" afterPath="$PROJECT_DIR$/temp/compile/index_4cb44.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_5e47c.php" afterPath="$PROJECT_DIR$/temp/compile/index_5e47c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_897e2.php" afterPath="$PROJECT_DIR$/temp/compile/index_897e2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_8bc5a.php" afterPath="$PROJECT_DIR$/temp/compile/index_8bc5a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_a3c69.php" afterPath="$PROJECT_DIR$/temp/compile/index_a3c69.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_b96a9.php" afterPath="$PROJECT_DIR$/temp/compile/index_b96a9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/index_c7f63.php" afterPath="$PROJECT_DIR$/temp/compile/index_c7f63.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Category/Tpl/Category/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Field/Tpl/Field/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Model/Tpl/Model/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Template/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Template/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Upload/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Upload/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/static/js/js.js" afterPath="$PROJECT_DIR$/hdcms/static/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/login_f839f.php" afterPath="$PROJECT_DIR$/temp/compile/login_f839f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/message.php" afterPath="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/message_0ec7e.php" afterPath="$PROJECT_DIR$/temp/compile/message_0ec7e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/model/model.php" afterPath="$PROJECT_DIR$/data/model/model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/node/node.php" afterPath="$PROJECT_DIR$/data/node/node.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/pic_list_6c219.php" afterPath="$PROJECT_DIR$/temp/compile/pic_list_6c219.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Bug/Tpl/Index/resolve.php" afterPath="$PROJECT_DIR$/hdcms/App/Bug/Tpl/Index/resolve.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Template/select_tpl.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Template/select_tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/set_favorite_14046.php" afterPath="$PROJECT_DIR$/temp/compile/set_favorite_14046.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/show_dir_2753f.php" afterPath="$PROJECT_DIR$/temp/compile/show_dir_2753f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/structure.php" afterPath="$PROJECT_DIR$/install/db/structure.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/verify_b370c.php" afterPath="$PROJECT_DIR$/temp/compile/verify_b370c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/version.php" afterPath="$PROJECT_DIR$/install/version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/water.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/water.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/welcome.js" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/welcome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/welcome.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/welcome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/welcome_7fb1c.php" afterPath="$PROJECT_DIR$/temp/compile/welcome_7fb1c.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
@@ -45,55 +902,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="92" selection-start="386" selection-end="406" vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="3952">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="59" selection-start="538" selection-end="538" vertical-scroll-proportion="-9.5" vertical-offset="0" max-vertical-offset="1881">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppStartEvent.class.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="45" selection-start="283" selection-end="283" vertical-scroll-proportion="0.22112802" vertical-offset="0" max-vertical-offset="1117">
+              <folding>
+                <marker date="1386900524000" expanded="true" signature="236:304" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="js.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/js/js.js">
+        <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Tpl/Backup/js/js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="32" selection-start="493" selection-end="493" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="66" selection-start="2215" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="1349">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountControl.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Member/Control/AccountControl.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="40" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="1330">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberAuthControl.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Member/Control/MemberAuthControl.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="6" selection-start="59" selection-end="59" vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="494">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/Common/Config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="26" selection-start="253" selection-end="253" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="646">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="54" selection-start="990" selection-end="1062" vertical-scroll-proportion="0.24979457" vertical-offset="209" max-vertical-offset="1558">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1323" max-vertical-offset="2508">
               <folding />
             </state>
           </provider>
@@ -117,22 +958,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" />
-        <option value="$PROJECT_DIR$/install/version.php" />
-        <option value="$PROJECT_DIR$/install/template/5.php" />
-        <option value="$PROJECT_DIR$/install/template/2.php" />
-        <option value="$PROJECT_DIR$/install/template/css/css.css" />
-        <option value="$PROJECT_DIR$/install/index.php" />
-        <option value="$PROJECT_DIR$/data/config/db.inc.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/water.php" />
+        <option value="$PROJECT_DIR$/hdcms/static/css/common.css" />
+        <option value="$PROJECT_DIR$/hdcms/App/Bug/Tpl/Index/resolve.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/MenuControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/move_content.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/edit.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/js.js" />
+        <option value="$PROJECT_DIR$/hdcms/Model/ContentModel.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/content.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/js/js.js" />
+        <option value="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/index.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/message.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/create_index.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/ConfigControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/js.js" />
-        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/index.js" />
-        <option value="$PROJECT_DIR$/hdcms/App/Member/Control/AccountControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/Common/Config/config.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" />
+        <option value="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" />
       </list>
     </option>
   </component>
@@ -184,24 +1025,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,7 +1092,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
+              <option name="myItemId" value="Event" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -288,186 +1111,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Control" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,6 +1125,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hdcms/App/Image" />
+      <recent name="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/css" />
+      <recent name="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content" />
       <recent name="$PROJECT_DIR$/hdcms/App/Template/Tpl" />
     </key>
   </component>
@@ -514,12 +1160,12 @@
     <frame x="0" y="22" width="1554" height="1406" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08786936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2082228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628647" sideWeight="0.91213065" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -546,136 +1192,127 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/install/template/js/js.js">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/js/js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="6" selection-start="596" selection-end="596" vertical-scroll-proportion="0.30206677" vertical-offset="0" max-vertical-offset="1482">
+        <state line="2" column="14" selection-start="40" selection-end="40" vertical-scroll-proportion="0.033868093" vertical-offset="0" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Common/Config/event.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+        <state line="199" column="33" selection-start="6130" selection-end="6130" vertical-scroll-proportion="3.4976873" vertical-offset="0" max-vertical-offset="6650">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Upload/Config/config.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/Model/ContentModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="32" selection-start="107" selection-end="107" vertical-scroll-proportion="0.03089431" vertical-offset="0" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Control/ConfigControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="46" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.15612161" vertical-offset="988" max-vertical-offset="3667">
+        <state line="274" column="46" selection-start="9184" selection-end="9184" vertical-scroll-proportion="0.44549763" vertical-offset="3311" max-vertical-offset="6593">
           <folding>
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1386697506000" expanded="true" signature="-1:-1" placeholder="..." />
+            <element signature="n#format_flag#0;n#ContentModel#0;n#!!top" expanded="false" />
+            <element signature="n#get_field_value#0;n#ContentModel#0;n#!!top" expanded="false" />
+            <element signature="n#alter_post_name#0;n#ContentModel#0;n#!!top" expanded="false" />
+            <element signature="n#get_field_info#0;n#ContentModel#0;n#!!top" expanded="false" />
+            <element signature="n#remove_img_flag#0;n#ContentModel#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="27" selection-start="640" selection-end="640" vertical-scroll-proportion="0.27804878" vertical-offset="0" max-vertical-offset="1881">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/water.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="90" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.7878049" vertical-offset="0" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/default/article_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="20" selection-start="1973" selection-end="1973" vertical-scroll-proportion="0.20081301" vertical-offset="1007" max-vertical-offset="3002">
+        <state line="17" column="34" selection-start="735" selection-end="735" vertical-scroll-proportion="0.2952468" vertical-offset="0" max-vertical-offset="1197">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="35" selection-start="3031" selection-end="3031" vertical-scroll-proportion="0.23418242" vertical-offset="1444" max-vertical-offset="6251">
+        <state line="41" column="48" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.54486585" vertical-offset="190" max-vertical-offset="6251">
           <folding>
-            <marker date="1386699343000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1386865580000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/batch_category.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/create_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+        <state line="13" column="38" selection-start="478" selection-end="478" vertical-scroll-proportion="0.22112802" vertical-offset="0" max-vertical-offset="1117">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/js.js">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="14" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.6785714" vertical-offset="0" max-vertical-offset="3781">
+        <state line="23" column="49" selection-start="849" selection-end="849" vertical-scroll-proportion="0.39583334" vertical-offset="0" max-vertical-offset="1104">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="24" selection-start="30" selection-end="30" vertical-scroll-proportion="0.017009849" vertical-offset="0" max-vertical-offset="1117">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/js/js.js">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Tpl/Backup/backup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="493" selection-end="493" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1995">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/index.js">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="66" selection-start="2215" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="1349">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Member/Control/AccountControl.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Control/BackupControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="40" selection-start="55" selection-end="55" vertical-scroll-proportion="-1.3571428" vertical-offset="0" max-vertical-offset="1330">
+        <state line="28" column="52" selection-start="587" selection-end="587" vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="2223">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Member/Control/MemberAuthControl.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Tpl/Backup/js/js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="59" selection-end="59" vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="494">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1323" max-vertical-offset="2508">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Common/Config/config.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="253" selection-end="253" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="646">
+        <state line="12" column="92" selection-start="386" selection-end="406" vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="3952">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="54" selection-start="990" selection-end="1062" vertical-scroll-proportion="0.24979457" vertical-offset="209" max-vertical-offset="1558">
+        <state line="14" column="59" selection-start="538" selection-end="538" vertical-scroll-proportion="-9.5" vertical-offset="0" max-vertical-offset="1881">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="45" selection-start="283" selection-end="283" vertical-scroll-proportion="0.22112802" vertical-offset="0" max-vertical-offset="1117">
+          <folding>
+            <marker date="1386900524000" expanded="true" signature="236:304" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

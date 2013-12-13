@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>验证登录数据</title>
-    <script type='text/javascript' src='http://localhost/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script>
+    <script type='text/javascript' src='http://192.168.1.88/hdphp/hdphp/Extend/Org/Jquery/jquery-1.8.2.min.js'></script>
 </head>
 <body>
 <script type="text/javascript">

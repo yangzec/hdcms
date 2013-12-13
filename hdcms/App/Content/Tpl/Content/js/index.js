@@ -8,21 +8,21 @@ $(function () {
     $("div.hitarea,span.folder").live("click", function () {
         var _hidden = $(this).siblings("ul:hidden").length;
         if (_hidden) {
-            $(this).parent("li").removeClass("close").addClass("open");
+            $(this).parent("li").removeClass("c_close").addClass("open");
         } else {
-            $(this).parent("li").removeClass("open").addClass("close");
+            $(this).parent("li").removeClass("open").addClass("c_close");
         }
         return false;
     })
     //展开
     $("li.cat_tree_top").live("click", function () {
         var open_obj = $("li.collapsable[class*='open']");
-        var close_obj = $("li.collapsable[class*='close']");
+        var close_obj = $("li.collapsable[class*='c_close']");
         open_obj.each(function () {
-            $(this).removeClass("open").addClass("close");
+            $(this).removeClass("open").addClass("c_close");
         })
         close_obj.each(function () {
-            $(this).removeClass("close").addClass("open");
+            $(this).removeClass("c_close").addClass("open");
         })
     })
     function set_category_tree(d) {
@@ -36,10 +36,16 @@ $(function () {
                 h += '<div class="hitarea collapsable-hitarea"></div>';
             }
             //栏目url
-            var cat_url = APP + "&c=Content&m=content&cid=" + d[i].cid;
+            var cat_url =  _span_class=="file"?APP + "&c=Content&m=content&status=1&cid=" + d[i].cid:"javascript:;";
             var add_con_url = APP + "&c=Content&m=add&cid=" + d[i].cid;
+            if (_span_class == 'file') {
+                h += '<em class="c_base">';
+            }
             h += '<span class="' + _span_class + '"><a href="' + add_con_url + '" target="_blank">' + d[i].text + '</a></span>';
             h += '<a href="' + cat_url + '">' + d[i].text + '</a>';
+            if (_span_class == 'file') {
+                h += '</em>';
+            }
             //含有子栏目
             if (d[i].children) {
                 h += "<ul>";
@@ -50,6 +56,7 @@ $(function () {
         }
         return h;
     }
+
     $.ajax(
         {
             url: CONTROL + "&m=ajax_category_tree",
@@ -63,4 +70,22 @@ $(function () {
             }
         })
     $("#browser").treeview()
+    //li点击时
+    $("em.c_base").live("click", function () {
+        $("em.c_base").removeClass("active");
+        $(this).addClass("active");
+    })
+})
+
+//content显示区
+function alter_content() {
+    var _h = $(window).height() - 30;
+    var _w = $(window).width() - 185;
+    $("div.con").css({top:0,left:185,right:10,height: _h, width: _w});
+}
+$(function () {
+    alter_content();
+    $(top).resize(function () {
+        alter_content();
+    })
 })

@@ -2,8 +2,10 @@
 //表字段缓存
 class FieldModel extends Model
 {
+    //表
+    public $table = "field";
     //模型mid
-    private $mid;
+    public $mid;
     //字段缓存
     private $field_cache;
     //模型缓存
@@ -13,10 +15,10 @@ class FieldModel extends Model
     //自动完成
     public $auto = array(
         //模型表名小写
-        array("table_name", "_field_table_name", 1, "method"),
+        array("table_name", "_field_table_name", 2, 3, "method"),
         //控制器首字母大写
-        array("model_name", "ucfirst", 3, "function"),
-        array("set", "_field_set", 3, "method"),
+//        array("model_name", "ucfirst", 3, 3, "function"),
+        array("set", "_field_set", 2, 3, "method"),
     );
     //自动验证
     public $validate = array(
@@ -25,14 +27,14 @@ class FieldModel extends Model
     );
 
     //构造函数
-    public function __construct($table = "Field", $mid = null)
+    public function __construct()
     {
-        parent::__construct("field");
-        $this->mid = intval($mid) ? $mid : Q("request.mid", null, "intval");
+        $this->mid = Q("request.mid", null, "intval");
         //字段所在表模型信息
         $this->model_cache = F("model", false, MODEL_CACHE_PATH);
         //字段缓存
         $this->field_cache = F($this->mid, false, FIELD_CACHE_PATH);
+        parent::__construct();
     }
 
     //添加字段时，通过自动完成设置表名
@@ -59,25 +61,23 @@ class FieldModel extends Model
     }
 
 
-    //修改字段
-    public function edit_field()
-    {
-        return $this->save();
-    }
-
-    //添加字段
-    public function add_field()
-    {
-        //修改表字段 1为添加
-        if ($this->alter_table_field()) {
-            if ($this->create()) {
-                return $this->add();
-            }
-        }
-    }
+//    //修改字段
+//    public function edit_field()
+//    {
+//        return $this->save();
+//    }
+//
+//    //添加字段
+//    public function add_field()
+//    {
+//        //修改表字段 1为添加
+//        if ($this->alter_table_field() && $this->create()) {
+//            return $this->add();
+//        }
+//    }
 
     //添加表字段
-    private function alter_table_field()
+    public function alter_table_field()
     {
         //s 附表  p 请表
         $table_type = isset($_POST['table_type']) && $_POST['table_type'] == 2 ? "s" : "p";
@@ -263,7 +263,7 @@ class FieldModel extends Model
         $path = isset($value) ? $value : "";
         $src = !empty($value) ? __ROOT__ . '/' . $value : "";
         $h .= "<input id='$id' type='text' name='" . $f['field_name'] . "'  value='$path' src='$src' class='w300 images'/> ";
-        $h .= "<button class='btn3' onclick='file_upload(\"$id\",\"image\",1,\"{$f['field_name']}\")' type='button'>上传图片</button>";
+        $h .= "<button class='btn' onclick='file_upload(\"$id\",\"image\",1,\"{$f['field_name']}\")' type='button'>上传图片</button>";
         $h .= " <span class='{$f['field_name']}'>" . $set['message'] . "</span>";
         $h .= "</td>";
         $h .= "</tr>";
@@ -279,7 +279,7 @@ class FieldModel extends Model
         $num = $set['num'];
         $h = "<tr><th>{$f['title']}</th><td>";
         $h .= "<fieldset class='img_list'>
-<legend>图片列表</legend>
+<legend style='font-size: 14px;line-height: 25px;padding: 5px 3px; text-indent: 10px;margin: 0px;'>图片列表</legend>
 <center>
 <div class='onShow'>
 您最多可以同时上传
@@ -305,13 +305,12 @@ class FieldModel extends Model
         }
         $h .= "</div>
 </fieldset>
-<button class='btn3' onclick='file_upload(\"$id\",\"images\",$num,\"{$f['field_name']}\")' type='button'>上传图片</button>";
+<button class='btn' onclick='file_upload(\"$id\",\"images\",$num,\"{$f['field_name']}\")' type='button'>上传图片</button>";
         $h .= " <span class='{$f['field_name']}'>" . $set['message'] . "</span>";
         $h .= "</td>";
         $h .= "</tr>";
         return $h;
     }
-
     //时间
     private function _date($f, $value)
     {
@@ -337,6 +336,12 @@ class FieldModel extends Model
 
     //魔术方法
     public function __after_add()
+    {
+        $this->update_field_cache();
+    }
+
+    //魔术方法
+    public function __after_update()
     {
         $this->update_field_cache();
     }

@@ -270,11 +270,11 @@ class HtmlControl extends AuthControl
         }
     }
 
-    //生成栏目选择
+    //前台选择模型后的ajax加载栏目
     public function get_category()
     {
         $category = F("category", false, CATEGORY_CACHE_PATH);
-        $this->_ajax(Data::tree($category, "catname"));
+        $this->_ajax($category);
     }
 }
 

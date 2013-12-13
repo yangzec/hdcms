@@ -1,0 +1,18 @@
+@import "../../../../../static/css/common.css";
+
+li {
+    float: left;
+    height: 30px;
+}
+
+div {
+    clear: both;
+}
+tr td{
+    padding: 10px;
+    vertical-align: top;
+}
+select {
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 2px #F0F0F0 inset;
+}

@@ -15,10 +15,12 @@ $(function () {
         tablename: {
             rule: {
                 required: true,
+                regexp:/^\w+$/,
                 ajax: {url: CONTROL + "&m=check_table_name", field: ["mid"]}
             },
             error: {
                 required: "表名不能为空",
+                regexp:"表名必须由英文或数字组成",
                 ajax: "数据表已经存在"
             }
         },
@@ -47,8 +49,8 @@ function delModel(mid) {
         url: CONTROL + "&m=del",
         data: {mid: mid},
         dataType: "JSON",
-        success: function (data) {
-            if (data.stat == 1) {
+        success: function (stat) {
+            if (stat == 1) {
                 $.dialog({
                     msg: "删除模型成功",
                     type: "success",
@@ -57,9 +59,9 @@ function delModel(mid) {
                         location.href = CONTROL;
                     }
                 });
-            } else {
+            } else if(stat==2){
                 $.dialog({
-                    msg: data.msg,
+                    msg: "请先删除模型的栏目",
                     type: "error",
                     timeout: 2
                 });
@@ -78,10 +80,10 @@ $(function () {
                 cache: false,
                 dataType: "JSON",
                 data: $(this).serialize(),
-                success: function (data) {
-                    if (data.stat == 1) {
+                success: function (stat) {
+                    if (stat == 1) {
                         $.dialog({
-                            msg: data.msg,
+                            msg: "操作成功!",
                             type: "success",
                             close_handler: function () {
                                 location.href = CONTROL;
@@ -89,7 +91,7 @@ $(function () {
                         });
                     } else {
                         $.dialog({
-                            msg: data.msg,
+                            msg: "操作失败",
                             type: "error"
                         });
                     }
@@ -107,10 +109,10 @@ function update_cache() {
         cache: false,
         dataType: "JSON",
         data: $(this).serialize(),
-        success: function (data) {
-            if (data.stat == 1) {
+        success: function (stat) {
+            if (stat == 1) {
                 $.dialog({
-                    msg: data.msg,
+                    msg:"缓存更新成功",
                     type: "success",
                     close_handler: function () {
                         location.href = CONTROL;
@@ -118,7 +120,7 @@ function update_cache() {
                 });
             } else {
                 $.dialog({
-                    msg: data.msg,
+                    msg: "缓存更新失败",
                     type: "error"
                 });
             }
