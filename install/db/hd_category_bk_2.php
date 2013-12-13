@@ -1,0 +1,2 @@
+<?php if(!defined('HDPHP_PATH'))EXIT;
+$db->exe("REPLACE INTO ".$db_prefix."category (`cid`,`pid`,`catname`,`catdir`,`c_keyworks`,`c_description`,`index_tpl`,`list_tpl`,`arc_tpl`,`is_cat_html`,`is_arc_html`,`list_html_url`,`arc_html_url`,`mid`,`cattype`,`urltype`,`cat_redirecturl`,`catorder`,`cat_show`,`path`) VALUES('1','0','人人做后盾','renrenzuohoudun','','','{style}/article_index.html','{style}/article_list.html','{style}/article_default.html','1','1','{catdir}/list_{cid}_{page}.html','{catdir}/{y}/{m}{d}/{aid}.html','1','1','1','','0','1','0')");

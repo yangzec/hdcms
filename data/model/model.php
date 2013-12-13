@@ -13,18 +13,5 @@ return array (
     'm_order' => '0',
     'is_system' => '1',
   ),
-  3 => 
-  array (
-    'mid' => '3',
-    'model_name' => '练习',
-    'tablename' => 'a',
-    'enable' => '1',
-    'description' => 'a',
-    'app_name' => 'Content',
-    'type' => '1',
-    'is_submit' => '0',
-    'm_order' => '0',
-    'is_system' => '0',
-  ),
 );
 ?>
