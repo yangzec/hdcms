@@ -29,7 +29,7 @@ function get_left_menu(obj, nid) {
     } else {//缓存不存在
         $.ajax({
             type: "GET",
-            url: APP + "&c=Menu&m=get_child_menu",
+            url: ROOT + "?a=Menu&c=Menu&m=get_child_menu",
             data: {nid: nid},
             cache: false,
             success: function (html) {

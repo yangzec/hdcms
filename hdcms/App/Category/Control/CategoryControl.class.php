@@ -1,4 +1,9 @@
 <?php
+/**
+ * 栏目管理
+ * Class CategoryControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class CategoryControl extends AuthControl
 {
     //模型

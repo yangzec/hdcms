@@ -1,4 +1,9 @@
 <?php
+/**
+ * 登录处理模块
+ * Class LoginControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class LoginControl extends CommonControl
 {
     //模型

@@ -5,7 +5,7 @@ $(function () {
             $(this).css({border: "solid 5px #dcdcdc"})
         })
 })
-//选择模型
+//选择模板
 function select_tpl(dir_name) {
     $.ajax({
         url: CONTROL + "&m=select_tpl",

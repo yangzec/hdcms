@@ -1,4 +1,9 @@
 <?php
+/**
+ * 内容模型管理模块
+ * Class ModelControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class ModelControl extends AuthControl
 {
     //模型对象

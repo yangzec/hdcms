@@ -149,6 +149,27 @@ return array (
   ),
   7 => 
   array (
+    'nid' => '13',
+    'title' => '栏目管理',
+    'app' => 'Category',
+    'control' => 'Category',
+    'method' => 'index',
+    'param' => '',
+    'comment' => '',
+    'status' => '1',
+    'menu_type' => '1',
+    'pid' => '2',
+    'list_order' => '0',
+    'is_system' => '0',
+    'favorite' => '0',
+    'level' => 3,
+    'html' => '',
+    '_pre' => false,
+    '_end' => false,
+    'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─栏目管理',
+  ),
+  8 => 
+  array (
     'nid' => '28',
     'title' => '修改密码',
     'app' => 'Admin',
@@ -168,7 +189,7 @@ return array (
     '_end' => true,
     'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─修改密码',
   ),
-  8 => 
+  9 => 
   array (
     'nid' => '5',
     'title' => '生成静态',
@@ -189,7 +210,7 @@ return array (
     '_end' => false,
     'name' => '├─生成静态',
   ),
-  9 => 
+  10 => 
   array (
     'nid' => '8',
     'title' => '生成首页',
@@ -210,7 +231,7 @@ return array (
     '_end' => false,
     'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─生成首页',
   ),
-  10 => 
+  11 => 
   array (
     'nid' => '6',
     'title' => '批量更新栏目页',
@@ -231,7 +252,7 @@ return array (
     '_end' => false,
     'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─批量更新栏目页',
   ),
-  11 => 
+  12 => 
   array (
     'nid' => '9',
     'title' => '批量更新内容页',
@@ -252,7 +273,7 @@ return array (
     '_end' => true,
     'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─批量更新内容页',
   ),
-  12 => 
+  13 => 
   array (
     'nid' => '10',
     'title' => '内容相关管理',
@@ -273,7 +294,7 @@ return array (
     '_end' => false,
     'name' => '├─内容相关管理',
   ),
-  13 => 
+  14 => 
   array (
     'nid' => '12',
     'title' => '数据备份',
@@ -293,27 +314,6 @@ return array (
     '_pre' => true,
     '_end' => false,
     'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─数据备份',
-  ),
-  14 => 
-  array (
-    'nid' => '13',
-    'title' => '栏目管理',
-    'app' => 'Category',
-    'control' => 'Category',
-    'method' => 'index',
-    'param' => '',
-    'comment' => '',
-    'status' => '1',
-    'menu_type' => '1',
-    'pid' => '10',
-    'list_order' => '0',
-    'is_system' => '1',
-    'favorite' => '0',
-    'level' => 3,
-    'html' => '',
-    '_pre' => false,
-    '_end' => false,
-    'name' => '│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─栏目管理',
   ),
   15 => 
   array (

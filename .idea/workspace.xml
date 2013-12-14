@@ -2,32 +2,116 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fdfeb72-05e7-437b-b747-905afa58d1a4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_a_bk_1.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_a_data_bk_1.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_access_bk_2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_bug_bk_3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_category_access_bk_5.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_category_bk_4.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_comment_bk_6.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_config_bk_7.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_content_bk_8.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_content_data_bk_9.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_content_flag_bk_10.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_extcredits_bk_11.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_field_bk_12.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_flag_bk_13.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_member_group_bk_14.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_model_bk_15.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_node_bk_16.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_role_bk_17.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_session_bk_18.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_template_tag_bk_19.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_upload_bk_20.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/hd_user_bk_21.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/backup/20131213100559/structure.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/category/category.php" afterPath="$PROJECT_DIR$/data/category/category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/compile/create_index_690de.php" afterPath="$PROJECT_DIR$/temp/compile/create_index_690de.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Bug/Config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Field/Config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default/ab.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/template/default/article_default.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Content/Control/FlagControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Flag/Control/FlagControl.class.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Flag/add.php" afterPath="$PROJECT_DIR$/hdcms/App/Flag/Tpl/Flag/add.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Flag/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Flag/Tpl/Flag/css/css.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Flag/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Flag/Tpl/Flag/index.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Flag/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Flag/Tpl/Flag/js/js.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/ConfigControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Config/Control/ConfigControl.class.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/MenuControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Menu/Control/MenuControl.class.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/NodeControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Node/Control/NodeControl.class.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Config/Tpl/Config/css/css.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Config/Tpl/Config/edit.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Config/Tpl/Config/js/js.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/water.php" afterPath="$PROJECT_DIR$/hdcms/App/Config/Tpl/Config/water.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/welcome.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/feedback.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Menu/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Menu/Tpl/Menu/css/css.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Menu/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Menu/Tpl/Menu/js/js.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Menu/set_favorite.php" afterPath="$PROJECT_DIR$/hdcms/App/Menu/Tpl/Menu/set_favorite.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Node/add.php" afterPath="$PROJECT_DIR$/hdcms/App/Node/Tpl/Node/add.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Node/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Node/Tpl/Node/css/css.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Node/edit.php" afterPath="$PROJECT_DIR$/hdcms/App/Node/Tpl/Node/edit.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Node/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Node/Tpl/Node/index.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Node/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Node/Tpl/Node/js/js.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/hdcms/Common/Lib/Function/functions.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Function/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms_model.mwb" afterPath="$PROJECT_DIR$/hdcms_model.mwb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/AccessControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/AccessControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminManageControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/AdminManageControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Control/AuthControl.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Control/AuthControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Backup/Control/BackupControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Backup/Control/BackupControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Bug/Control/BugControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Bug/Control/BugControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Category/Control/CategoryControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Category/Control/CategoryControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" afterPath="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/Model/ConfigModel.class.php" afterPath="$PROJECT_DIR$/hdcms/Model/ConfigModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Bug/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Bug/Control/IndexControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/IndexControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/IndexControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/LoginControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Control/LoginControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Model/Control/ModelControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Model/Control/ModelControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Admin/Control/RoleControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Admin/Control/RoleControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Control/StyleControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Control/StyleControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Control/TemplateControl.class.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Control/TemplateControl.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/default/article_list.html" afterPath="$PROJECT_DIR$/template/default/article_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/config.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Html/Config/config.php" afterPath="$PROJECT_DIR$/hdcms/App/Html/Config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/config.php" afterPath="$PROJECT_DIR$/install/db/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/css/css.css" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/js/edit_tpl.js" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/js/edit_tpl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/edit_tpl.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/edit_tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/default/f.html" afterPath="$PROJECT_DIR$/template/default/f.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_access_bk_1.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_access_bk_1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_access_bk_1.php" afterPath="$PROJECT_DIR$/install/db/hd_access_bk_1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_bug_bk_1.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_bug_bk_1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_bug_bk_1.php" afterPath="$PROJECT_DIR$/install/db/hd_bug_bk_1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_category_access_bk_3.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_category_access_bk_3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_category_access_bk_3.php" afterPath="$PROJECT_DIR$/install/db/hd_category_access_bk_3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_category_bk_2.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_category_bk_2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_category_bk_2.php" afterPath="$PROJECT_DIR$/install/db/hd_category_bk_2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_comment_bk_4.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_comment_bk_4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_comment_bk_4.php" afterPath="$PROJECT_DIR$/install/db/hd_comment_bk_4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_config_bk_5.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_config_bk_5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_config_bk_5.php" afterPath="$PROJECT_DIR$/install/db/hd_config_bk_5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_content_bk_6.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_content_bk_6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_content_bk_6.php" afterPath="$PROJECT_DIR$/install/db/hd_content_bk_6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_content_data_bk_7.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_content_data_bk_7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_content_data_bk_7.php" afterPath="$PROJECT_DIR$/install/db/hd_content_data_bk_7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_content_flag_bk_8.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_content_flag_bk_8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_content_flag_bk_8.php" afterPath="$PROJECT_DIR$/install/db/hd_content_flag_bk_8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_extcredits_bk_9.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_extcredits_bk_9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_extcredits_bk_9.php" afterPath="$PROJECT_DIR$/install/db/hd_extcredits_bk_9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_field_bk_10.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_field_bk_10.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_field_bk_10.php" afterPath="$PROJECT_DIR$/install/db/hd_field_bk_10.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_flag_bk_11.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_flag_bk_11.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_flag_bk_11.php" afterPath="$PROJECT_DIR$/install/db/hd_flag_bk_11.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_member_group_bk_12.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_member_group_bk_12.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_member_group_bk_12.php" afterPath="$PROJECT_DIR$/install/db/hd_member_group_bk_12.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_model_bk_13.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_model_bk_13.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_model_bk_13.php" afterPath="$PROJECT_DIR$/install/db/hd_model_bk_13.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_node_bk_14.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_node_bk_14.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_node_bk_14.php" afterPath="$PROJECT_DIR$/install/db/hd_node_bk_14.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_role_bk_15.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_role_bk_15.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_role_bk_15.php" afterPath="$PROJECT_DIR$/install/db/hd_role_bk_15.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_session_bk_16.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_session_bk_16.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_session_bk_16.php" afterPath="$PROJECT_DIR$/install/db/hd_session_bk_16.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_template_tag_bk_17.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_template_tag_bk_17.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_template_tag_bk_17.php" afterPath="$PROJECT_DIR$/install/db/hd_template_tag_bk_17.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_upload_bk_18.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_upload_bk_18.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_upload_bk_18.php" afterPath="$PROJECT_DIR$/install/db/hd_upload_bk_18.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/hd_user_bk_19.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/hd_user_bk_19.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/hd_user_bk_19.php" afterPath="$PROJECT_DIR$/install/db/hd_user_bk_19.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/index.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/index.php" afterPath="$PROJECT_DIR$/install/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Index/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/js/js.js" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/node/node.php" afterPath="$PROJECT_DIR$/data/node/node.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/show_dir.php" afterPath="$PROJECT_DIR$/hdcms/App/Template/Tpl/Style/show_dir.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/backup/20131213114706/structure.php" afterPath="$PROJECT_DIR$/data/backup/20131213114706/structure.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/db/structure.php" afterPath="$PROJECT_DIR$/install/db/structure.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hdcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,39 +134,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php">
+      <file leaf-file-name="AuthControl.class.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hdcms/Common/Control/AuthControl.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="92" selection-start="386" selection-end="406" vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="3952">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="59" selection-start="538" selection-end="538" vertical-scroll-proportion="-9.5" vertical-offset="0" max-vertical-offset="1881">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppStartEvent.class.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="45" selection-start="283" selection-end="283" vertical-scroll-proportion="0.22112802" vertical-offset="0" max-vertical-offset="1117">
-              <folding>
-                <marker date="1386900524000" expanded="true" signature="236:304" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="js.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Tpl/Backup/js/js.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1323" max-vertical-offset="2508">
+            <state line="23" column="32" selection-start="520" selection-end="520" vertical-scroll-proportion="0.45421904" vertical-offset="0" max-vertical-offset="1254">
               <folding />
             </state>
           </provider>
@@ -106,21 +161,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hdcms/static/css/common.css" />
-        <option value="$PROJECT_DIR$/hdcms/App/Bug/Tpl/Index/resolve.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/MenuControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/move_content.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Backup/Control/BackupControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Bug/Control/BugControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Bug/Control/IndexControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Category/Control/CategoryControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Config/Control/ConfigControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/edit.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/js/js.js" />
-        <option value="$PROJECT_DIR$/hdcms/Model/ContentModel.class.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/content.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/js/js.js" />
-        <option value="$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/index.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/message.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/create_index.php" />
-        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Control/FlagControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/IndexControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Hdcms/Control/LoginControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Menu/Control/MenuControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/App/Model/Control/ModelControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/Common/Control/AuthControl.class.php" />
+        <option value="$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php" />
         <option value="$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php" />
       </list>
     </option>
@@ -157,7 +212,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -186,39 +240,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="temp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hdcms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -258,12 +280,723 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Flag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Flag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Flag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Category" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Category" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,6 +1010,13 @@
       <recent name="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/css" />
       <recent name="$PROJECT_DIR$/hdcms/App/Content/Tpl/Content" />
       <recent name="$PROJECT_DIR$/hdcms/App/Template/Tpl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hdcms/App/Flag/Tpl" />
+      <recent name="$PROJECT_DIR$/hdcms/App/Flag/Control" />
+      <recent name="$PROJECT_DIR$/hdcms/App/Config/Tpl" />
+      <recent name="$PROJECT_DIR$/hdcms/App/Config/Control" />
+      <recent name="$PROJECT_DIR$/hdcms/App/Menu/Tpl" />
     </key>
   </component>
   <component name="RunManager">
@@ -313,7 +1053,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628647" sideWeight="0.91213065" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24270557" sideWeight="0.91213065" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -340,127 +1080,119 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Upload/Tpl/Index/js/js.js">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="14" selection-start="40" selection-end="40" vertical-scroll-proportion="0.033868093" vertical-offset="0" max-vertical-offset="1122">
+        <state line="4" column="38" selection-start="79" selection-end="79" vertical-scroll-proportion="0.07992734" vertical-offset="0" max-vertical-offset="2310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AccessControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="9" selection-start="19" selection-end="19" vertical-scroll-proportion="0.03996367" vertical-offset="0" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Bug/Control/IndexControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="3" selection-start="13" selection-end="13" vertical-scroll-proportion="-0.28366247" vertical-offset="360" max-vertical-offset="1474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Category/Control/CategoryControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="38" selection-start="81" selection-end="81" vertical-scroll-proportion="0.07899462" vertical-offset="0" max-vertical-offset="3916">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Config/Control/ConfigControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="38" selection-start="83" selection-end="83" vertical-scroll-proportion="0.07992734" vertical-offset="0" max-vertical-offset="4488">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Control/ContentControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="33" selection-start="6130" selection-end="6130" vertical-scroll-proportion="3.4976873" vertical-offset="0" max-vertical-offset="6650">
+        <state line="4" column="38" selection-start="82" selection-end="82" vertical-scroll-proportion="0.07992734" vertical-offset="0" max-vertical-offset="7678">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/Model/ContentModel.class.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Control/IndexControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="274" column="46" selection-start="9184" selection-end="9184" vertical-scroll-proportion="0.44549763" vertical-offset="3311" max-vertical-offset="6593">
-          <folding>
-            <element signature="n#format_flag#0;n#ContentModel#0;n#!!top" expanded="false" />
-            <element signature="n#get_field_value#0;n#ContentModel#0;n#!!top" expanded="false" />
-            <element signature="n#alter_post_name#0;n#ContentModel#0;n#!!top" expanded="false" />
-            <element signature="n#get_field_info#0;n#ContentModel#0;n#!!top" expanded="false" />
-            <element signature="n#remove_img_flag#0;n#ContentModel#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Control/AdminControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
+        <state line="4" column="38" selection-start="82" selection-end="82" vertical-scroll-proportion="0.07899462" vertical-offset="0" max-vertical-offset="2530">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/water.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Flag/Control/FlagControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="34" selection-start="735" selection-end="735" vertical-scroll-proportion="0.2952468" vertical-offset="0" max-vertical-offset="1197">
+        <state line="2" column="7" selection-start="17" selection-end="19" vertical-scroll-proportion="0.03949731" vertical-offset="0" max-vertical-offset="1386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Control/IndexControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="7" selection-start="17" selection-end="17" vertical-scroll-proportion="0.03949731" vertical-offset="0" max-vertical-offset="1114">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Control/LoginControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="38" selection-start="80" selection-end="80" vertical-scroll-proportion="0.07992734" vertical-offset="0" max-vertical-offset="2354">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Control/HtmlControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="48" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.54486585" vertical-offset="190" max-vertical-offset="6251">
+        <state line="4" column="38" selection-start="79" selection-end="79" vertical-scroll-proportion="0.07992734" vertical-offset="0" max-vertical-offset="7238">
           <folding>
-            <marker date="1386865580000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1387011469000" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/create_index.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Menu/Control/MenuControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="38" selection-start="478" selection-end="478" vertical-scroll-proportion="0.22112802" vertical-offset="0" max-vertical-offset="1117">
+        <state line="3" column="5" selection-start="16" selection-end="16" vertical-scroll-proportion="0.059945505" vertical-offset="0" max-vertical-offset="1760">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Html/Tpl/Html/message.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/App/Model/Control/ModelControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="49" selection-start="849" selection-end="849" vertical-scroll-proportion="0.39583334" vertical-offset="0" max-vertical-offset="1104">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="30" selection-end="30" vertical-scroll-proportion="0.017009849" vertical-offset="0" max-vertical-offset="1117">
+        <state line="4" column="38" selection-start="82" selection-end="82" vertical-scroll-proportion="0.07992734" vertical-offset="0" max-vertical-offset="3168">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Tpl/Backup/backup.php">
+    <entry file="file://$PROJECT_DIR$/hdcms/Common/Control/CommonControl.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1995">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Admin/Config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Control/BackupControl.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="52" selection-start="587" selection-end="587" vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="2223">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Backup/Tpl/Backup/js/js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1323" max-vertical-offset="2508">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Content/Tpl/Content/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="92" selection-start="386" selection-end="406" vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="3952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hdcms/App/Hdcms/Tpl/Config/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="59" selection-start="538" selection-end="538" vertical-scroll-proportion="-9.5" vertical-offset="0" max-vertical-offset="1881">
+        <state line="3" column="16" selection-start="35" selection-end="35" vertical-scroll-proportion="0.059945505" vertical-offset="0" max-vertical-offset="1101">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hdcms/Common/Event/AppStartEvent.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="45" selection-start="283" selection-end="283" vertical-scroll-proportion="0.22112802" vertical-offset="0" max-vertical-offset="1117">
+        <state line="2" column="12" selection-start="22" selection-end="22" vertical-scroll-proportion="0.03949731" vertical-offset="0" max-vertical-offset="1114">
           <folding>
-            <marker date="1386900524000" expanded="true" signature="236:304" placeholder="..." />
+            <marker date="1387011596000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hdcms/Common/Control/AuthControl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="32" selection-start="520" selection-end="520" vertical-scroll-proportion="0.45421904" vertical-offset="0" max-vertical-offset="1254">
+          <folding />
         </state>
       </provider>
     </entry>

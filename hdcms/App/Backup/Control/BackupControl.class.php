@@ -1,9 +1,8 @@
 <?php
 /**
- * 数据库备份类
+ * 数据库备份
  * Class BackupControl
- * @category Admin
- * @author hdxj houdunwangxj@gmail.com
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class BackupControl extends AuthControl
 {

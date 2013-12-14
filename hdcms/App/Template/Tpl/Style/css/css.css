@@ -24,15 +24,16 @@ div.tpl-list ul li img {
 
 div.tpl-list ul li div.style_cur {
     font-size: 35px;
-    color: #dcdcdc;
-    border-bottom: solid 2px #dcdcdc;
+    color: #666;
+    border-bottom: 5px solid #DCDCDC;
     position: absolute;
     top: 0px;
     right: 0px;
     left: 0px;
     text-align: center;
     background: #fcfcfc;
-
+    height: 50px;
+    line-height: 45px;
 }
 
 div.tpl-list ul li h4 {
@@ -51,6 +52,7 @@ div.tpl-list ul li h4 strong {
 div.tpl-list ul li p {
     font-size: 12px;
     padding-left: 10px;
+    margin: 0px;
 }
 
 div.tpl-list ul li div.link {

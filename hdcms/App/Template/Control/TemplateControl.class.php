@@ -1,4 +1,5 @@
 <?php
+//栏目Category与文章管理时模板的选择操作控制器
 class TemplateControl extends AuthControl
 {
     public function __init()

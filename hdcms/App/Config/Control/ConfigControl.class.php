@@ -1,4 +1,9 @@
 <?php
+/**
+ * 后台网站配置管理
+ * Class ConfigControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class ConfigControl extends AuthControl
 {
     protected $db;

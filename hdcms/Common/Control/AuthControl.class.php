@@ -1,4 +1,10 @@
 <?php
+/**
+ * 后台公共RBAC验证基类
+ * 所有后台需要权限控制的模块都要继承此类
+ * Class AuthControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class AuthControl extends CommonControl
 {
     public function __init()

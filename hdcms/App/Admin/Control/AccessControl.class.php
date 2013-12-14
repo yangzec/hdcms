@@ -1,4 +1,9 @@
 <?php
+/**
+ * 后台rbac权限管理
+ * Class AccessControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class AccessControl extends AuthControl
 {
     //模型

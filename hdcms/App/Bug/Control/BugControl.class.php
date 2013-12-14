@@ -1,4 +1,10 @@
 <?php
+/**
+ * HDCMS系统反馈管理
+ * 只供后盾网官方使用
+ * Class BugControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class BugControl extends Control
 {
     //模型

@@ -36,8 +36,16 @@ $(function () {
                                 msg: "操作成功",
                                 type: "success",
                                 close_handler: function () {
+                                    if (window.opener)
+                                        window.opener.location.reload();
                                     window.close();
                                 }
+                            });
+                        } else if (stat == 2) {
+                            $.dialog({
+                                msg: "失败!请修改模板文件为可写",
+                                type: "error",
+                                timeout: 3
                             });
                         }
                     }

@@ -2,8 +2,7 @@
 /**
  * 后台内容管理
  * Class ContentControl
- * @category admin
- * @author hdxj <houdunwangxj@gmail.com>
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class ContentControl extends AuthControl
 {

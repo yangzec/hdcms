@@ -1,5 +1,9 @@
 <?php
-//测试控制器类
+/**
+ * 网站前台处理模块
+ * Class IndexControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class IndexControl extends CommonControl
 {
     //网站模板风格

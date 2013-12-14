@@ -38,7 +38,7 @@
                     <if value="$d.type=='dir'">
                         <a href="__METH__&dir_name={$d.path|urlencode}">进入</a>
                         <else>
-                            <a href="__CONTROL__&m=edit_tpl&tpl_name={$d.path|urlencode}"  target="_blank" >修改</a>
+                            <a href="javascript:;" onclick="_open('__CONTROL__&m=edit_tpl&file_path={$d.path|urlencode}')">修改</a>
                     </if>
                 </td>
             </tr>

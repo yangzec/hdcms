@@ -2,7 +2,7 @@
 /**
  * 管理员管理
  * Class AdminControl
- * @author hdxj <houdunwangxj@gmail.com>
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class AdminManageControl extends AuthControl
 {

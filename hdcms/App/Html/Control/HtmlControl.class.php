@@ -1,8 +1,8 @@
 <?php
 /**
- * 生成静态
+ * 静态处理模块
  * Class HtmlControl
- * @author hdxj
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class HtmlControl extends AuthControl
 {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 菜单管理
+ * 后台菜单管理模块
  * Class MenuControl
  * @author hdxj <houdunwangxj@gmail.com>
  */

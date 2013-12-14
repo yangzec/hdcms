@@ -1,13 +1,15 @@
 <?php
 /**
- * 后台管理页面
+ * 后台首页
  * Class IndexControl
  * @category Admin
- * @author hdxj
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class IndexControl extends AuthControl
 {
-    protected $db; //内容模型对象
+    //内容模型对象
+    protected $db;
+
     public function __init()
     {
         parent::__init();
@@ -26,10 +28,8 @@ class IndexControl extends AuthControl
         $this->display();
     }
 
-    /**
-     * 后台默认显示界面欢迎界面
-     */
-    public function welcome()
+    //反馈
+    public function feedback()
     {
         $this->display();
     }

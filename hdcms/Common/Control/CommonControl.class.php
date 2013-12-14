@@ -1,8 +1,9 @@
 <?php
 /**
  * 公共控制器
+ * HDCMS所有控制器的基类
  * Class CommonControl
- * @author hdxj <houdunwangxj@gmail.com>
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class CommonControl extends Control
 {

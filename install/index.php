@@ -91,6 +91,9 @@ switch ($s) {
         exit;
         break;
     case "install": //开始安装
+        //删除hdcms临时目录temp
+        require "../hdphp/Extend/Tool/Dir.class.php";
+        Dir::del("../temp");
         $config = require "config.inc.php";
         $db_prefix = $config['DB_PREFIX'];
         ob_implicit_flush(1);

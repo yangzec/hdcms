@@ -43,7 +43,7 @@
                     <a url="?a=Bug&C=Index&m=index&status=1" onclick="get_content(this,8999)" href="javascript:;" nid="8999">HDCMS反馈</a>
                 </dd>
                 <dd>
-                    <a url="?a=Hdcms&c=Menu&m=set_favorite" onclick="get_content(this,9999)" href="javascript:;" nid="9999">设置</a>
+                    <a url="?a=Menu&c=Menu&m=set_favorite" onclick="get_content(this,9999)" href="javascript:;" nid="9999">设置</a>
                 </dd>
                 <list from="$favorite_menu" name="f">
                     <dd>
@@ -63,12 +63,12 @@
         </div>
         <div class="favorite_menu">
             <ul>
-                <li class="action" nid="0"><a href="javascript:;" class="menu" nid="0">常用</a></li>
+                <li class="action" nid="0"><a href="javascript:;" class="menu" nid="0">反馈</a></li>
             </ul>
         </div>
     </div>
     <div class="top_content">
-        <iframe src="{|U:'welcome'}" nid="0"  scrolling="auto" frameborder="0" style="height: 100%;width: 100%;"></iframe>
+        <iframe src="{|U:'feedback'}" nid="0"  scrolling="auto" frameborder="0" style="height: 100%;width: 100%;"></iframe>
     </div>
     <!--内容显示区域-->
 </div>

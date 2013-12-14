@@ -1,4 +1,9 @@
 <?php
+/**
+ * 后台RBAC角色管理
+ * Class RoleControl
+ * @author 向军 <houdunwangxj@gmail.com>
+ */
 class RoleControl extends AuthControl
 {
     protected $db;

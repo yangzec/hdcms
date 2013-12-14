@@ -9,9 +9,6 @@
     <hdui/>
     <js file="__CONTROL_TPL__/js/edit_tpl.js"/>
     <css file="__CONTROL_TPL__/css/css.css"/>
-    <script>
-        var HISTORY_URL = "{$field.history_url}";
-    </script>
 </head>
 <body>
 <div class="wrap">
@@ -22,13 +19,13 @@
     </div>
     <div class="table_title">修改模板</div>
     <form action="{|U:add}" method="post" onsubmit="return false;">
-        <input type="hidden" name="file" value="{$field.file}"/>
+        <input type="hidden" name="file_path" value="{$field.file_path}"/>
         <!--右侧缩略图区域-->
         <table class="table1">
             <tr>
                 <th class="w100">文件名</th>
                 <td>
-                    <input type="text" name="filename" value="{$field.filename}" class="w300"/>
+                    <input type="text" name="file_name" value="{$field.file_name}" class="w300"/>
                 </td>
             </tr>
             <tr>
@@ -39,8 +36,8 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="确定" class="btn1"/>
-                    <input type="button" value="放弃" class="btn2" onclick="confirm('放弃编辑吗？')?window.close():'';"/>
+                    <input type="submit" value="确定" class="btn btn-primary"/>
+                    <input type="button" value="放弃" class="btn" onclick="_close('放弃编辑吗？')"/>
                 </td>
             </tr>
         </table>

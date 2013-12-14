@@ -33,8 +33,8 @@
                 <p>Email: {$style_cur[2]}</p>
 
                 <div class="link">
-                    <a href="javascript:;" class="btn1" onclick="select_tpl('{$style_cur.dir_name}')">使用</a>
-                    <a href="{|U:'show_dir',array('dir_name'=>urlencode($style_cur['dir_name']))}" class="btn1">编辑</a>
+                    <a href="javascript:;" class="btn" onclick="select_tpl('{$style_cur.dir_name}')">使用</a>
+                    <a href="{|U:'show_dir',array('dir_name'=>$style_cur['dir_name'])}" class="btn">编辑</a>
                 </div>
                 <div class="style_cur">
                     正在使用
@@ -50,8 +50,8 @@
                     <p>Email: {$t[2]}</p>
 
                     <div class="link">
-                        <a href="javascript:;" class="btn1" onclick="select_tpl('{$t.dir_name|basename}')">使用</a>
-                        <a href="{|U:'show_dir',array('dir_name'=>urlencode($t['dir_name']))}" class="btn1">编辑</a>
+                        <a href="javascript:;" class="btn" onclick="select_tpl('{$t.dir_name|basename}')">使用</a>
+                        <a href="{|U:'show_dir',array('dir_name'=>$style_cur['dir_name'])}" class="btn">编辑</a>
                     </div>
                 </li>
             </list>

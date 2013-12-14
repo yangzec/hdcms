@@ -1,9 +1,8 @@
 <?php
 /**
- * 显示内容
+ * 内容属性管理
  * Class ContentControl
- * @category admin
- * @author hdxj <houdunwangxj@gmail.com>
+ * @author 向军 <houdunwangxj@gmail.com>
  */
 class FlagControl extends AuthControl
 {

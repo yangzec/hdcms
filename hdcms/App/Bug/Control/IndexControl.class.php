@@ -1,4 +1,8 @@
 <?php
+/**
+ *
+ * Class IndexControl
+ */
 class IndexControl extends AuthControl
 {
     //模型
