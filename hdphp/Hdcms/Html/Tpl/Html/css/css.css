@@ -1,0 +1,15 @@
+@import "../../../../../static/css/common.css";
+
+div.help {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+option {
+    color: #000;
+}
+
+option.disabled {
+    color: #666;
+}
+

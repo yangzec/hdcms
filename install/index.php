@@ -120,6 +120,7 @@ switch ($s) {
 }
 function create_install_config()
 {
+    $VERSION=VERSION;
     $config = <<<str
 <?php
 if (!defined("HDPHP_PATH"))exit("No direct script access allowed");
@@ -133,6 +134,7 @@ return array(
     "DB_PREFIX"                     => "{$_POST['DB_PREFIX']}",//表前缀
     "WEB_MASTER"                    => "{$_POST['ADMIN']}",//站长
     "INSERT_TEST_DATA"              => "{$_POST['INSERT_TEST_DATA']}",//安装测试数据
+    "VERSION"                       => {$VERSION},//HDCMS版本
 );
 str;
     file_put_contents("config.inc.php", $config);
