@@ -54,10 +54,13 @@ class HtmlControl extends AuthControl
         unset($_SESSION['make_all']);
         $this->message("全站静态更新完毕", U("create_all"));
     }
+
     //一键生成配置页
-    public function create_all(){
+    public function create_all()
+    {
         $this->display();
     }
+
     //生成首页
     public function create_index()
     {
@@ -118,13 +121,24 @@ class HtmlControl extends AuthControl
                     $cat['_html'] = C("HTML_PATH") . '/' . $cat['catdir'] . '/index.html';
                     Html::make("IndexControl", "category", $cat);
                     //去掉页数为0时栏目
-                    if (Page::$staticTotalPage == 0) continue;
+                    if (!Page::$staticTotalPage) continue;
                     $cat['total_page'] = Page::$staticTotalPage;
                     //即将更新的页数，用于计算完成百分比
                     $cat['self_page'] = 1;
                     //每次生成几页
                     $cat['row'] = Q("post.step_row", 10, "intval");
                     $config[$cat['cid']] = $cat;
+                }
+                //如果所有栏目没有文章则结束静态创建
+                if (empty($config)) {
+                    if (isset($_SESSION['make_all']['category'])) {
+                        $url = U("make_all");
+                    } else {
+                        $url = U("create_category");
+                    }
+                    unset($_SESSION['make_all']['category']);
+                    unset($_SESSION['category_html_config']);
+                    $this->message("所有栏目生成完毕", $url);
                 }
                 //储存配置到session
                 session("category_html_config", $config);
@@ -292,7 +306,7 @@ class HtmlControl extends AuthControl
                     $field['aid'] = $con['aid'];
                     $field['addtime'] = $con['addtime'];
                     $field['html_path'] = $con['html_path'];
-                    $field['_html'] = C("HTML_PATH") . '/' . get_content_html($field);
+                    $field['_html'] = get_content_html($field);
                     //生成静态IndexControl中的content方法需要这2个变量
                     $_GET['cid'] = $cat['cid'];
                     $_GET['aid'] = $con['aid'];

@@ -1,2 +1,0 @@
-<?php if(!defined('HDPHP_PATH'))EXIT;
-$db->exe("REPLACE INTO ".$db_prefix."session (`sessid`,`data`,`atime`,`ip`) VALUES('i4bb3iuij18uka56otom310dj6','history|s:115:\"http://localhost/hdcms/index.php?a=Backup&c=Backup&m=backup&dirname=Li9kYXRhL2JhY2t1cC8yMDEzMTIxMzExNDcwNg==&fid=14\";code|s:4:\"FSSG\";uid|s:1:\"1\";admin|i:1;WEB_MASTER|b:1;username|s:5:\"admin\";realname|s:14:\"后盾向军23\";rid|s:1:\"1\";rname|s:15:\"超级管理员\";favicon|s:69:\"http://localhost/hdcms/./upload/favicon/2013/12/11/42661386702404.jpg\";','1386906434','0.0.0.0')");

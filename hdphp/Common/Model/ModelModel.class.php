@@ -39,9 +39,9 @@ class ModelModel extends CommonModel
                       `click` MEDIUMINT NOT NULL DEFAULT 0 COMMENT '点击次数' ,
                       `source` CHAR(30) NOT NULL DEFAULT '' COMMENT '来源' ,
                       `redirecturl` CHAR(100) NOT NULL DEFAULT '' COMMENT '转向链接' ,
-                      `url` CHAR(100) NOT NULL DEFAULT '' COMMENT 'url地址' ,
+                      `html_path` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '自定义生成的静态文件地址' ,
                       `allowreply` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '是否允许回复' ,
-                      `author` CHAR(45) NOT NULL default '' COMMENT '作者' ,
+                      `username` CHAR(45) NOT NULL default '' COMMENT '作者' ,
                       `addtime` INT(10) NOT NULL default 0 COMMENT '添加时间' ,
                       `updatetime` INT(10) NOT NULL default 0 COMMENT '发布时间 ' ,
                       `color` CHAR(7) NOT NULL default '' COMMENT '标题颜色' ,
@@ -49,10 +49,10 @@ class ModelModel extends CommonModel
                       `ishtml` TINYINT(1) NOT NULL DEFAULT 1 ,
                       `isshow` TINYINT(1) NOT NULL DEFAULT 1  COMMENT '显示' ,
                       `arc_sort` int(10) UNSIGNED NOT NULL DEFAULT 0  COMMENT '排序' ,
-                      `username` CHAR(20) NOT NULL default '',
                       `status` TINYINT(1) NOT NULL default 1,
                       `keywords` CHAR(100) NOT NULL DEFAULT '' COMMENT '关键字' ,
                       `description` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '描述' ,
+                      `uid` INT UNSIGNED NOT NULL  COMMENT '用户uid' ,
                       PRIMARY KEY (`aid`) ,
                       INDEX `cid` (`cid` ASC))
                     ENGINE = MyISAM;

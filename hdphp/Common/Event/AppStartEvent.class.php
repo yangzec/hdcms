@@ -25,6 +25,8 @@ class AppStartEvent extends Event
         define("MODEL_CACHE_PATH", DATA_PATH . 'Cache/Model/');
         //表字段缓存
         define("FIELD_CACHE_PATH", DATA_PATH . 'Cache/Field/');
+        //JS文件缓存目录
+        define("JS_CACHE_PATH", DATA_PATH . 'Cache/Js/');
     }
     //验证安装
     public function check_install()

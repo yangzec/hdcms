@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>修改模板</title>
-    <jquery/>
-    <jsconst/>
     <hdui/>
     <js file="__CONTROL_TPL__/js/edit_tpl.js"/>
     <css file="__CONTROL_TPL__/css/css.css"/>

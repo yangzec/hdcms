@@ -5,8 +5,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>属性管理</title>
-    <jquery/>
-    <jsconst/>
     <hdui/>
     <css file="__CONTROL_TPL__/css/css.css"/>
     <js file="__CONTROL_TPL__/js/js.js"/>

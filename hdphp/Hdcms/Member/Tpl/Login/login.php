@@ -3,9 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>HDCMS后台登录</title>
-    <jquery/>
     <hdui/>
-    <jsconst/>
     <css file="__CONTROL_TPL__/css/reg.css"/>
     <js file="__CONTROL_TPL__/js/js.js"/>
 </head>

@@ -29,7 +29,7 @@ class IndexControl extends CommonControl
         //模板风格路径
         $this->tpl_path = "./template/" . C("WEB_STYLE") . '/';
         //模板风格url
-        $this->tpl_url = __ROOT__ . "/template/" . C("WEB_STYLE") . '/';
+        $this->tpl_url = __ROOT__ . "/template/" . C("WEB_STYLE");
         //分配模板目录
         defined("__TEMPLATE__") or define("__TEMPLATE__", $this->tpl_url);
         $this->cid = Q("get.cid", null, "intval");
@@ -63,6 +63,7 @@ class IndexControl extends CommonControl
             $field = $db->where($db->tableFull . ".aid=" . $this->aid)->find();
             if ($field) {
                 $field['caturl'] = U("category", array("cid" => $field['cid']));
+                $field['source']=empty($field['source'])?C("WEBNAME"):$field['source'];
                 $this->assign("hdcms", $field);
                 $tpl = get_content_tpl($this->aid);
                 if (is_file($tpl))
@@ -109,6 +110,20 @@ class IndexControl extends CommonControl
         $field = $this->db->JOIN(NULL)->find($aid);
         echo "document.write({$field['click']})";
         exit;
+    }
+
+    //js调用
+    public function js()
+    {
+        $id = Q("get.id", NULL, "intval");
+        if ($id) {
+            $file = JS_CACHE_PATH . "{$id}.php";
+            ob_start();
+            require $file;
+            $con = ob_get_clean();
+            echo "document.write('" . addslashes(str_replace("\n", "", $con)) . "')";
+            exit;
+        }
     }
 }
 

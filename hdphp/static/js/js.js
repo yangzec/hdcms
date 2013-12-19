@@ -166,7 +166,7 @@ $(function () {
         })
 })
 /**
- * 删除图片
+ * 删除多图上传的图片（自定义字段）
  * @param obj 按钮对象
  */
 function remove_upload(obj) {

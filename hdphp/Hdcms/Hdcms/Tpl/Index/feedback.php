@@ -4,7 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>welcome</title>
-    <jquery/>
     <hdui/>
     <css file="__CONTROL_TPL__/css/welcome.css"/>
     <js file="__CONTROL_TPL__/js/welcome.js"/>

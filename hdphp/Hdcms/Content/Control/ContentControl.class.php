@@ -61,14 +61,18 @@ class ContentControl extends AuthControl
     //目录树
     private function get_view_tree($data)
     {
-        foreach ($data as $n => $d) {
-            $d['text'] = $d['title'];
-            if (!empty($d['data'])) {
-                $d["children"] = $this->get_view_tree($d['data']);
+        if (empty($data)) {
+            return array();
+        } else {
+            foreach ($data as $n => $d) {
+                $d['text'] = $d['title'];
+                if (!empty($d['data'])) {
+                    $d["children"] = $this->get_view_tree($d['data']);
+                }
+                $json[$n] = $d;
             }
-            $json[$n] = $d;
+            return $json;
         }
-        return $json;
     }
 
     //待审核文章

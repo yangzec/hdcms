@@ -5,6 +5,8 @@ function get_category_url($cid)
 {
     $category = F("category", false, CATEGORY_CACHE_PATH);
     $cat = $category[$cid];
+    //{catdir}/list_{cid}_{page}.html
+    return __ROOT__.'/'.C("HTML_PATH").'/'.$cat['catdir'].'/index.html';
 }
 
 //获得栏目模板
@@ -21,6 +23,18 @@ function get_content_tpl($aid)
     $content = $db->join("category")->find($aid);
     $tpl = empty($content['template']) ? $content['arc_tpl'] : $content['template'];
     return str_replace('{style}', './template/' . C("WEB_STYLE"), $tpl);
+}
+
+//获得内容页url地址
+function get_content_url($field)
+{
+    $cat = F("category", false, CATEGORY_CACHE_PATH);
+    $category = $cat[$field['cid']];
+    if ($category['is_arc_html']) {
+        return __ROOT__ . '/' . get_content_html($field);
+    } else {
+        return __WEB__ . "?a=Content&c=Index&m=content&cid={$field['cid']}&aid=" . $field['aid'];
+    }
 }
 
 //获得内容页静态地址
@@ -49,10 +63,11 @@ function get_content_html($field)
     foreach ($_s as $n => $s) {
         $arc_html_url = str_replace($s, $_r[$n], $arc_html_url);
     }
-    $url = rtrim(C("HTMLDIR"), '/\\') . '/' . $arc_html_url;
+    $url = rtrim(C("HTML_PATH"), '/\\') . '/' . $arc_html_url;
     //生成静态
     return $url;
 }
+
 //获得栏目静态html
 function get_category_html($field)
 {

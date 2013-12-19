@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>修改模型</title>
-    <jquery/>
-    <jsconst/>
     <hdui/>
     <js file="__ROOT__/hdcms/static/js/js.js"/>
     <css file="__CONTROL_TPL__/css/css.css"/>
@@ -27,7 +25,7 @@
             <input type="hidden" name="mid" value="{$field.mid}"/>
             <table class="table1">
                 <tr>
-                    <th class="w200">模型名称</th>
+                    <th class="w100">模型名称</th>
                     <td>
                         <input type="text" value="{$field.model_name}" name="model_name" class="w200"/>
                     </td>

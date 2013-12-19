@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>生成栏目静态</title>
-    <jquery/>
-    <jsconst/>
     <hdui/>
     <script>
         //栏目缓存数据

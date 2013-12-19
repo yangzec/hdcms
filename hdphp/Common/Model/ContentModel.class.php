@@ -12,27 +12,13 @@ class ContentModel extends RelationModel
     //自动完成
     public $auto = array(
         array("addtime", "time", 2, 1, "function"),
-        array("updatetime", "_updatetime", 2, 3, "method"),
-        array("username", "_username", 2, 3, "method"),
-        array("source", "_source", 2, 3, "method"),
+        array("updatetime", "_updatetime", 2, 3, "method")
     );
 
     //修改时间处理
     public function _updatetime($v)
     {
         return empty($v) ? time() : strtotime($v);
-    }
-
-    //自动完成来源source
-    public function _source($v)
-    {
-        return !empty($v) ? $v : C("webname");
-    }
-
-    //用户名字段自动完成
-    public function _username($v)
-    {
-        return empty($v) ? session("username") : $v;
     }
 
     //获得内容

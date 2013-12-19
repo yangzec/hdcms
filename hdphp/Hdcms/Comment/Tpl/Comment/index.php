@@ -1,4 +1,3 @@
-<jquery/>
 <hdui/>
 <link type="text/css" href="__ROOT__/hdcms/App/Comment/Tpl/Comment/css/css.css" rel="stylesheet"/>
 <script src="__ROOT__/hdcms/App/Comment/Tpl/Comment/js/js.js" type="text/javascript"></script>

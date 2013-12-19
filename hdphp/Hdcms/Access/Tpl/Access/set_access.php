@@ -5,8 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <css file="__STATIC__/Css/common.css"/>
     <title>管理员管理</title>
-    <jquery/>
-    <jsconst/>
     <hdui/>
     <js file="__ROOT__/hdcms/static/js/js.js"/>
     <js file="__CONTROL_TPL__/js/js.js"/>

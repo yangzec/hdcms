@@ -65,7 +65,7 @@ $(function () {
                 $(_img).each(function (i) {
                     _ul += "<li><input type='text' name='" + name + "[url][]'  value='" + $(_img[i]).attr("path") + "' src='" + $(_img[i]).attr("src") + "' class='w400 images'/> ";
                     _ul += "<input type='text' name='" + name + "[alt][]' class='w200'/>";
-                    _ul += " <a href='javascript:;' class='remove_images'>移除</a>";
+                    _ul += " <a href='javascript:;' onclick='remove_upload(this)'>移除</a>";
                     _ul += "</li>";
                 })
                 _ul = _ul + "</ul>";

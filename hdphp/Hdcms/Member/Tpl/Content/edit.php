@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>{$hd.config.webname} 会员中心</title>
-    <jquery/>
-    <jsconst/>
     <hdui/>
     <js file="__ROOT__/hdcms/static/js/js.js"/>
     <js file="__CONTROL_TPL__/js/js.js"/>

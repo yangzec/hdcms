@@ -13,8 +13,11 @@ class ContentTag
         'comment' => array('block' => 1, 'level' => 4),
         'pagelist' => array('block' => 1, 'level' => 4),
         'pageshow' => array('block' => 0),
+        'pagepath' => array('block' => 0),
+        'pagenext' => array('block' => 0),
         'include' => array('block' => 0)
     );
+
     //加载模板标签
     public function _include($attr, $content)
     {
@@ -27,6 +30,7 @@ class ContentTag
             }
         }
     }
+
     //评论显示标签
     public function _comment($attr, $content)
     {
@@ -53,9 +57,10 @@ str;
         $type = isset($attr['type']) ? $attr['type'] : "self";
         $row = isset($attr['row']) ? $attr['row'] : 10;
         $cid = isset($attr['cid']) ? $attr['cid'] : NULL;
+        $class = isset($attr['class']) ? $attr['class'] : "";
         $php = <<<str
         <?php
-        \$where = '';\$type='$type';\$cid="$cid";\$row=$row;
+        \$where = '';\$type='$type';\$cid="$cid";
 
         \$db = M("category");
         if (\$type == "top") {
@@ -81,9 +86,14 @@ str;
                 }
             }
         }
-        \$result = \$db->where(\$where)->where("cat_show=1")->order()->where(\$where)->order("catorder DESC")->limit(\$row)->all();
+        \$result = \$db->where(\$where)->where("cat_show=1")->order()->where(\$where)->order("catorder DESC")->limit($row)->all();
+        //列表页当前栏目
+        \$_self_cid = isset(\$_GET['cid'])?\$_GET['cid']:0;
         foreach (\$result as \$field):
-            \$field['url'] = get_category_url(\$field);?>
+            \$channel=\$field;
+            //当前栏目样式
+            \$field['class']=\$_self_cid==\$field['cid']?"$class":"";
+            \$field['url'] = get_category_url(\$field['cid']);?>
 str;
         $php .= $content;
         $php .= <<<str
@@ -98,16 +108,18 @@ str;
     //数据块
     public function _arclist($attr, $content)
     {
-        $cid = isset($attr['cid']) ? $attr['cid'] : "";
+        $cid = isset($attr['cid']) ? trim($attr['cid']) : 0;
+        $cid = intval($cid) > 0 ? '"' . $cid . '"' : $cid;
         $listtype = isset($attr['listtype']) ? $attr['listtype'] : "";
         $aid = isset($attr['aid']) ? $attr['aid'] : "";
         $mid = isset($attr['mid']) ? $attr['mid'] : 1;
         $row = isset($attr['row']) ? intval($attr['row']) : 10;
         $infolen = isset($attr['infolen']) ? intval($attr['infolen']) : 80;
+        $titlelen = isset($attr['titlelen']) ? intval($attr['titlelen']) : 80;
         $flag = isset($attr['flag']) ? intval($attr['flag']) : "";
         $php = "";
         $php .= <<<str
-        <?php \$mid="$mid";\$cid ="$cid";\$listtype ="$listtype";\$flag='$flag';\$aid='$aid';
+        <?php \$mid="$mid";\$cid =$cid;\$listtype ="$listtype";\$flag='$flag';\$aid='$aid';
             \$_GET['mid']="$mid";
             if(empty(\$cid)){
                 \$cid= isset(\$_GET['cid'])?intval(\$_GET['cid']):null;
@@ -135,18 +147,21 @@ str;
                 }
                 \$db->where="status=1";
                 \$db->group=\$table.".aid";
-                \$db->field("username,category.cid,catname,{\$db->table}.aid,title,new_window,thumb,source,addtime,click,description,{\$db->table}.redirecturl,author,color");
                 \$db->limit($row);
-                \$result = \$db->order("aid DESC")->all();
+                \$db->field="*,{\$db->table}.aid,{\$db->table}.cid";
+                \$result = \$db->join('category,content_flag')->field("addtime")->all();
+                if(!empty(\$result) and is_array(\$result)){
                 foreach(\$result as \$field):
                     \$field['caturl']=U('category',array('cid'=>\$field['cid']));
-                    \$field['url']="__ROOT__/".\$field['url'];
+                    \$field['url']=get_content_url(\$field);
+                    \$field['time']=date("Y-m-d",\$field['addtime']);
                     \$field['thumb']='__ROOT__'.'/'.\$field['thumb'];
+                    \$field['title']=mb_substr(\$field['title'],0,$titlelen,'utf8');
                     \$field['description']=mb_substr(\$field['description'],0,$infolen,'utf-8');
                     ?>
 str;
         $php .= $content;
-        $php .= '<?php endforeach;';
+        $php .= '<?php endforeach;}';
         $php .= '}?>';
         return $php;
     }
@@ -156,6 +171,7 @@ str;
     {
         $row = isset($attr['row']) ? intval($attr['row']) : 10;
         $cid = Q("get.cid");
+        $titlelen = isset($attr['titlelen']) ? intval($attr['titlelen']) : 80;
         $infolen = isset($attr['infolen']) ? intval($attr['infolen']) : 80;
         $php = '';
         if (!$cid) return "";
@@ -164,14 +180,15 @@ str;
         \$db = new ContentViewModel(null,\$cid);
         \$count = \$db->join(NULL)->where("cid=\$cid and status=1")->count();
         \$hd_page= new Page(\$count,$row);
-        \$field ="aid,category.cid,thumb,click,source,author,addtime,updatetime,username,catname,title,description";
+        \$field ="aid,category.cid,thumb,click,source,addtime,updatetime,username,catname,title,description";
         \$result= \$db->join("category")->field(\$field)->where("status=1")->where(\$db->tableFull.".cid=$cid")
         ->limit(\$hd_page->limit())->all();
-//        p(\$db->getallsql());exit;
         foreach(\$result as \$field):
                 \$field['caturl']=U('category',array('cid'=>\$field['cid']));
-                \$field['url']="__ROOT__/".\$field['url'];
+                \$field['url']=get_content_url(\$field);
                 \$field['thumb']='__ROOT__'.'/'.\$field['thumb'];
+                \$field['title']=mb_substr(\$field['title'],0,$titlelen,'utf8');
+                \$field['time']=date("Y-m-d",\$field['addtime']);
                 \$field['description']=mb_substr(\$field['description'],0,$infolen,'utf-8');
         ?>
 str;
@@ -185,5 +202,56 @@ str;
         return "<?php if(is_object(\$hd_page)){
                     echo \$hd_page->show();
                     }?>";
+    }
+
+    //上下篇
+    public function _pagenext($attr, $content)
+    {
+        $pre_str = isset($attr['pre']) ? $attr['pre'] : "上一篇: ";
+        $next_str = isset($attr['next']) ? $attr['next'] : "上一篇: ";
+        $php = <<<str
+        <?php
+        \$aid = \$_GET['aid'];
+        \$db = new ContentViewModel();
+        \$str = "";
+        //上一篇
+        \$field = \$db->join()->trigger()->field("aid,cid,title,addtime")->where("aid<\$aid")->order("aid desc")->find();
+        if (\$field) {
+            \$url = get_content_url(\$field);
+            \$str .= "<li>$pre_str <a href='\$url'>" . \$field['title'] . "</a></li>";
+        } else {
+            \$str .= "<li>$pre_str <span>没有了</span></li>";
+        }
+        //下一篇
+        \$field = \$db->join()->trigger()->field("aid,cid,title,addtime")->where("aid>\$aid")->order("aid asc")->find();
+        if (\$field) {
+            \$url = get_content_url(\$field);
+            \$str .= "<li>$next_str <a href='\$url'>" . \$field['title'] . "</a></li>";
+        } else {
+            \$str .= "<li>$next_str <span>没有了</span></li>";
+        }
+        echo \$str;
+        ?>
+str;
+        return $php;
+    }
+
+    //当前位置
+    public function _pagepath($attr, $content)
+    {
+        $php=<<<str
+        <?php
+        if(!empty(\$_GET['cid'])){
+            \$cat = F("category",false,CATEGORY_CACHE_PATH);
+            \$cat= Data::parentChannel(\$cat,\$_GET['cid']);
+            \$str = "<a href='__ROOT__'>首页</a> > ";
+            foreach(\$cat as \$c){
+                \$str.="<a href='".get_category_url(\$c['cid'])."'>".\$c['title'].'</a> > ';
+            }
+            echo \$str;
+        }
+        ?>
+str;
+       return $php;
     }
 }

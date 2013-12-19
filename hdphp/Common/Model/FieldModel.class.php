@@ -17,7 +17,6 @@ class FieldModel extends Model
         //模型表名小写
         array("table_name", "_field_table_name", 2, 3, "method"),
         //控制器首字母大写
-//        array("model_name", "ucfirst", 3, 3, "function"),
         array("set", "_field_set", 2, 3, "method"),
     );
     //自动验证
@@ -59,23 +58,6 @@ class FieldModel extends Model
         $this->set = $set;
         return var_export($set, true);
     }
-
-
-//    //修改字段
-//    public function edit_field()
-//    {
-//        return $this->save();
-//    }
-//
-//    //添加字段
-//    public function add_field()
-//    {
-//        //修改表字段 1为添加
-//        if ($this->alter_table_field() && $this->create()) {
-//            return $this->add();
-//        }
-//    }
-
     //添加表字段
     public function alter_table_field()
     {
