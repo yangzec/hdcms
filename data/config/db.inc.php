@@ -10,4 +10,5 @@ return array(
     "DB_PREFIX"                     => "hd_",//表前缀
     "WEB_MASTER"                    => "admin",//站长
     "INSERT_TEST_DATA"              => "1",//安装测试数据
+    "VERSION"                       => "HDCMS 简体中文 UTF8 版 2013.11 Beta1",//HDCMS版本
 );

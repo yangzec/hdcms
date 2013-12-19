@@ -8,6 +8,7 @@ return array(
     "DB_PASSWORD"                   => "admin888",//数据库密码
     "DB_DATABASE"                   => "a1",//数据库名称
     "DB_PREFIX"                     => "hd_",//表前缀
-    "WEB_MASTER"                    => "abc",//站长
+    "WEB_MASTER"                    => "admin",//站长
     "INSERT_TEST_DATA"              => "1",//安装测试数据
+    "VERSION"                       => "HDCMS 简体中文 UTF8 版 2013.11 Beta1",//HDCMS版本
 );

@@ -92,8 +92,8 @@ switch ($s) {
         break;
     case "install": //开始安装
         //删除hdcms临时目录temp
-        require "../hdphp/Extend/Tool/Dir.class.php";
-        Dir::del("../temp");
+        require "../hdphp/hdphp/Extend/Tool/Dir.class.php";
+        is_dir("../temp") and Dir::del("../temp");
         $config = require "config.inc.php";
         $db_prefix = $config['DB_PREFIX'];
         ob_implicit_flush(1);
@@ -120,7 +120,7 @@ switch ($s) {
 }
 function create_install_config()
 {
-    $VERSION=VERSION;
+    $VERSION = VERSION;
     $config = <<<str
 <?php
 if (!defined("HDPHP_PATH"))exit("No direct script access allowed");
@@ -134,7 +134,7 @@ return array(
     "DB_PREFIX"                     => "{$_POST['DB_PREFIX']}",//表前缀
     "WEB_MASTER"                    => "{$_POST['ADMIN']}",//站长
     "INSERT_TEST_DATA"              => "{$_POST['INSERT_TEST_DATA']}",//安装测试数据
-    "VERSION"                       => {$VERSION},//HDCMS版本
+    "VERSION"                       => "{$VERSION}",//HDCMS版本
 );
 str;
     file_put_contents("config.inc.php", $config);
