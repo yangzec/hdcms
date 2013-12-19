@@ -1,5 +1,5 @@
 <?php
-define("DEBUG", true);
+// define("DEBUG", true);
 //应用组目录
 define("GROUP_PATH", './hdphp/');
 //Temp目录
