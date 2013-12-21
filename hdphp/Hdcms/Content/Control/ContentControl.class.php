@@ -165,7 +165,8 @@ class ContentControl extends AuthControl
     public function add()
     {
         if (IS_POST) {
-            if ($this->db->create() && $this->db->add()) {
+            if ($this->db->create() ) {
+                $this->db->add();
                 $this->_ajax(1);
             }
         } else {
@@ -203,7 +204,7 @@ class ContentControl extends AuthControl
                 $this->assign("flag", $this->get_content_flag($aid));
                 $field['thumb_img'] = empty($field['thumb']) ? __ROOT__ . '/hdcms/static/img/upload-pic.png' : __ROOT__ . '/' . $field['thumb'];
                 $this->assign("field", $field);
-                //自定义字段
+                //自定义字段处理
                 $_field = new FieldModel();
                 $_field->mid = $this->mid;
                 $custom_field = $_field->field_view($field);

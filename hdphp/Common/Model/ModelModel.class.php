@@ -17,7 +17,6 @@ class ModelModel extends CommonModel
     );
 
 
-
     //创建模型表
     public function create_model_table()
     {

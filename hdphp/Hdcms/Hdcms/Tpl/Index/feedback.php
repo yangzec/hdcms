@@ -13,7 +13,7 @@
 
     <div class="table_title">安全提示</div>
     <div class="help">
-        <p>1. 默认应用组目录hdphp(及子目录)设置为644,文件设置为755</p>
+        <p>1. 默认应用组目录hdphp(及子目录)设置为750,文件设置为640</p>
 
         <p>2. 建议删除安装目录install</p>
     </div>

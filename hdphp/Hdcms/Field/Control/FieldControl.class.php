@@ -69,7 +69,7 @@ class FieldControl extends AuthControl
     public function add()
     {
         if (IS_POST) {
-            if ($this->db->alter_table_field() && $this->db->create() && $this->db->add()) {
+            if ($this->db->add_field()) {
                 $this->_ajax(1);
             }
         } else {
@@ -111,14 +111,8 @@ class FieldControl extends AuthControl
     public function del_field()
     {
         if ($this->fid) {
-            $field = $this->field[$this->fid];
-            if ($this->db->fieldExists($field['field_name'], $field['table_name'])) {
-                $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] .
-                    " DROP " . $field['field_name'];
-                $this->db->exe($sql);
-            }
-            $this->db->del($this->fid);
-            $this->ajax_return(1, "删除字段成功");
+            if ($this->db->del_field($this->fid))
+                $this->_ajax(1);
         }
     }
 

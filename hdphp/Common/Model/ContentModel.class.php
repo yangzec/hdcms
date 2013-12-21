@@ -62,7 +62,6 @@ class ContentModel extends RelationModel
     //下载远程图片
     protected function down_remote_pic()
     {
-
         $data =& $this->data;
         //服务器是否允许远程下载
         $php_ini = @ini_get("allow_url_fopen");

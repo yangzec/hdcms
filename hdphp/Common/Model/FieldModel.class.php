@@ -58,6 +58,22 @@ class FieldModel extends Model
         $this->set = $set;
         return var_export($set, true);
     }
+
+    //删除字段
+    public function del_field($fid)
+    {
+        $field = $this->field[$fid];
+        if ($this->fieldExists($field['field_name'], $field['table_name'])) {
+            $sql = "ALTER TABLE " . C("DB_PREFIX") . $field['table_name'] .
+                " DROP " . $field['field_name'];
+            $this->db->exe($sql);
+        }
+        return $this->del($fid);
+    }
+    //添加自定义字段
+    public function add_field(){
+        return $this->alter_table_field() && $this->create() && $this->add();
+    }
     //添加表字段
     public function alter_table_field()
     {
@@ -96,7 +112,7 @@ class FieldModel extends Model
         }
         //修改或添加字段
         $sql = "ALTER TABLE " . C("DB_PREFIX") . $table . " ADD " . $_field;
-        return $this->exe($sql);
+        return M()->exe($sql);
     }
 
     //更新字段缓存
@@ -115,6 +131,8 @@ class FieldModel extends Model
                 $_cache[$f['fid']] = $f;
             }
         }
+        //删除Content应用表缓存
+        Dir::del("./Temp/hdcms/Content/Table");
         return F($this->mid, $_cache, FIELD_CACHE_PATH);
     }
 
@@ -293,6 +311,7 @@ class FieldModel extends Model
         $h .= "</tr>";
         return $h;
     }
+
     //时间
     private function _date($f, $value)
     {

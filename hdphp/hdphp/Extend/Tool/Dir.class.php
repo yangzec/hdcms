@@ -120,6 +120,7 @@ final class Dir
             return true;
         }
         $dirPath = self::dirPath($dirName);
+        if (!is_dir($dirPath)) return false;
         foreach (glob($dirPath . "*") as $v) {
             is_dir($v) ? self::del($v) : unlink($v);
         }
